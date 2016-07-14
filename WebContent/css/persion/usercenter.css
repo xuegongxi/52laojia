@@ -1,0 +1,1596 @@
+.usercenter_nav .item .listtitle i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.usercenter_nav .item .item_list li.on a {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_normaltitle {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_tablebox tr.user_center_tabletitle {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.filter_box .filter_more i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_tablebox .user_center_tabletitle .state_select div i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_normaltitle2 {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_step_box .step_list li .tips i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.user_center_favorite_list .cancel_fav {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.my_dis_diray_con .check_user .other_users .btn i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.m_checkbox_box li.on .m_checkbox {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.upload_pic_box .pic_ico {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.upload_pic_btn .upload_pic i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.upload_pic_btn .history_check_pic i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.medical_assistant_list ul li .doc_info_user .doc_link i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.medical_assistant_tips .tips .tips_con i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.other_users_list .create_new_pat i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.other_users_list2 .create_new_pat i {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.ico_check {
+	background: url("../../images/person/usercenter_b_bg.png");
+}
+.usercenter_box * {
+	font-family: "Î¢ÈíÑÅºÚ" !important;
+}
+.usercenter_bg {
+	background: url("../../images/person/usercenter_bg.png") repeat-x left top; margin: 0px auto; left: 0px; top: 0px; width: 958px; height: 70px; position: absolute; z-index: -1;
+}
+.usercenter {
+	background: url("../../images/person/usercenter_nav_bg.png") repeat-y left top; margin: 0px auto; border: 1px solid rgb(253, 202, 180); width: 958px; position: relative;
+}
+.usercenter_nav {
+	width: 240px; float: left;
+}
+.usercenter_nav .bigtitle {
+	background: url("../../images/person/usercenter_b_bg.png");background-position: 0px -38px; height: 40px; color: rgb(0, 0, 0); line-height: 40px; font-size: 16px; font-weight: bold; margin-right: 12px; background-repeat: repeat-x;
+}
+.usercenter_nav .bigtitle a {
+	background: url("../../images/person/top_title_ico.png") no-repeat 40px; color: rgb(255, 119, 0); padding-left: 70px; display: block;
+}
+.usercenter_nav .bigtitle a:hover {
+	color: rgb(255, 68, 0); text-decoration: none;
+}
+.usercenter_nav .item {
+	margin-right: 12px; border-bottom-color: rgb(253, 202, 180); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.usercenter_nav .item .listtitle {
+	height: 38px; color: rgb(255, 68, 0); line-height: 38px; padding-left: 40px; font-size: 14px; font-weight: bold; border-bottom-color: rgb(255, 238, 223); border-bottom-width: 1px; border-bottom-style: solid; cursor: pointer;
+}
+.usercenter_nav .item .listtitle i {
+	background-position: 0px -113px; width: 13px; height: 13px; margin-top: 10px; margin-right: 10px; float: right; display: block; background-repeat: no-repeat;
+}
+.usercenter_nav .item .on.listtitle {
+	_background: none; _border: none;
+}
+.usercenter_nav .item .on.listtitle i {
+	background-position: -14px -113px;
+}
+.usercenter_nav .item .item_list {
+	padding-bottom: 10px;
+}
+.usercenter_nav .item .item_list li {
+	height: 34px; color: rgb(0, 0, 0); line-height: 34px; font-size: 14px;
+}
+.usercenter_nav .item .item_list li a {
+	height: 34px; color: rgb(0, 0, 0); padding-left: 55px; font-size: 14px; display: block;
+}
+.usercenter_nav .item .item_list li a:hover {
+	color: rgb(255, 68, 0); text-decoration: none;
+}
+.usercenter_nav .item .item_list li.on {
+	width: 240px; _border: none;
+}
+.usercenter_nav .item .item_list li.on a {
+	background-position: 0px -79px; color: rgb(255, 255, 255); background-repeat: no-repeat;
+}
+.usercenter_nav .item .item_list li .hastips {
+	background: rgb(255, 68, 0); border-radius: 100%; left: 5px; top: -5px; width: 8px; height: 8px; overflow: hidden; display: inline-block; position: relative; z-index: 1;
+}
+.usercenter_con {
+	width: 708px; float: right; _border: 1px solid #FFF; _width: 700px; _overflow: hidden;
+}
+.userinfo_box {
+	padding: 34px;
+}
+.usercenter_con .red {
+	color: rgb(255, 0, 0);
+}
+.usercenter_con .green {
+	color: rgb(89, 179, 0);
+}
+.usercenter_con .orange1 {
+	color: rgb(255, 136, 0);
+}
+.usercenter_con .gray {
+	color: rgb(105, 105, 105);
+}
+.usercenter_con .time {
+	color: rgb(153, 153, 153);
+}
+.usercenter_con .blue_tdul {
+	color: rgb(23, 106, 204); text-decoration: underline;
+}
+.userinfo_box .userpic {
+	background: rgb(211, 211, 211); border-radius: 100%; border: 1px solid rgb(211, 211, 211); width: 90px; height: 90px; overflow: hidden; float: left; position: relative; z-index: 0;
+}
+.userinfo_box .userpic span {
+	border-radius: 100%; border: 2px solid rgb(255, 255, 255); width: 86px; height: 86px; text-align: center; overflow: hidden; vertical-align: middle; display: table-cell;
+}
+.userinfo_box .userpic span img {
+	max-height: 86px; max-width: 86px;
+}
+.userinfo_box .userpic span a {
+	background: rgba(255, 255, 255, 0.7); left: -1px; top: -1px; width: 92px; height: 92px; color: rgb(23, 106, 204); line-height: 92px; font-size: 14px; display: none; position: absolute;
+}
+.userinfo_box .userinfo {
+	line-height: 2; margin-left: 120px;
+}
+.userinfo_box .userinfo .welcome {
+	font-size: 16px; font-weight: bold;
+}
+.userinfo_box .userinfo .num {
+	font-size: 14px;
+}
+.userinfo_box .userinfo .num .red {
+	font-weight: bold;
+}
+.user_center_normalbox {
+	background: rgb(255, 255, 255) !important; padding: 1px; border: 1px solid rgb(170, 217, 247); overflow: hidden; margin-right: 12px; margin-bottom: 14px; _clear: both;
+}
+.on.user_center_normalbox {
+	border: 1px solid rgb(33, 163, 236);
+}
+.user_center_normalbox .find_more {
+	padding: 24px; text-align: right; font-size: 14px;
+}
+.user_center_normalbox .find_more a {
+	color: rgb(23, 106, 204);
+}
+.user_center_normaltitle {
+	height: 37px; color: rgb(0, 0, 0); line-height: 37px; padding-left: 23px; font-size: 14px; font-weight: bold; background-repeat: repeat-x;
+}
+.user_center_normaltitle2 {
+	background-position: 0px -127px; height: 37px; color: rgb(0, 0, 0); line-height: 37px; padding-right: 20px; padding-left: 23px; font-size: 14px; font-weight: bold; background-repeat: repeat-x;
+}
+.user_center_bigtitle {
+	height: 37px; color: rgb(0, 0, 0); line-height: 37px; padding-left: 20px; font-size: 16px; font-weight: bold; margin-right: 14px; border-bottom-color: rgb(253, 202, 180); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.user_center_bigtitle .right {
+	color: rgb(23, 106, 204); font-size: 14px; float: right;
+}
+.user_center_bigtitle .time {
+	color: rgb(153, 153, 153); font-size: 14px; font-weight: normal; float: right;
+}
+.user_center_normallist {
+	margin-bottom: -3px;
+}
+.user_center_normallist li {
+	margin: 0px 23px; padding: 10px 13px; font-size: 14px; border-bottom-color: rgb(220, 220, 220); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+.user_center_normallist li table td {
+	padding: 2px 10px; font-size: 14px;
+}
+.user_center_normallist li table .time {
+	font-size: 12px;
+}
+.filter_box {
+	padding: 22px 0px 0px; margin-right: 14px; position: relative; z-index: 0;
+}
+.filter_box .filter_all {
+	padding: 0px 20px; float: left;
+}
+.filter_box .filter_list {
+	height: 43px; overflow: hidden; margin-right: 70px; margin-left: 145px; _margin-left: 0; _width: 480px; _float: left; _margin-right: 0;
+}
+.filter_box .filter_list ul {
+	width: 110%;
+}
+.filter_box .filter_list ul li {
+	padding-right: 20px; padding-bottom: 14px; float: left;
+}
+.filter_box .filter_more {
+	width: 60px; height: 30px; right: 0px; bottom: 14px; line-height: 30px; padding-left: 10px; position: absolute; cursor: pointer; _float: left; _position: inherit;
+}
+.filter_box .filter_more span {
+	color: rgb(23, 106, 204);
+}
+.filter_box .filter_more i {
+	background-position: -42px -113px; left: 5px; top: 2px; width: 13px; height: 13px; display: inline-block; position: relative; background-repeat: no-repeat;
+}
+.filter_box .filter_more i.on {
+	background-position: -28px -113px;
+}
+.filter_box .item {
+	background: rgb(255, 255, 255); padding: 1px; border: 1px solid rgb(219, 219, 219); width: 100px; height: 26px; overflow: hidden;
+}
+.filter_box .item a {
+	background: rgb(250, 250, 250); width: 100px; height: 26px; text-align: center; color: rgb(0, 0, 0); line-height: 26px; font-size: 14px; display: block;
+}
+.filter_box .item a:hover {
+	text-decoration: none;
+}
+.filter_box .hover.item {
+	border: 1px solid rgb(170, 217, 247);
+}
+.filter_box .hover.item a {
+	
+}
+.filter_box .on.item {
+	background: rgb(239, 250, 255); border: 1px solid rgb(170, 217, 247);
+}
+.filter_box .on.item a {
+	background: rgb(204, 238, 255);
+}
+.user_center_tablebox {
+	margin-top: 10px; margin-right: 14px; margin-bottom: 14px;
+}
+.user_center_tablebox table {
+	font-size: 14px;
+}
+.user_center_tablebox tr {
+	background: rgb(255, 255, 255);
+}
+.user_center_tablebox tr.user_center_tabletitle {
+	height: 37px; color: rgb(0, 0, 0); line-height: 37px; font-size: 14px; font-weight: bold; background-repeat: repeat-x;
+}
+.user_center_tablebox td {
+	padding: 10px; font-size: 14px;
+}
+.user_center_tablebox .user_center_tabletitle td {
+	padding: 0px;
+}
+.user_center_tablebox .user_center_tabletitle .state_select {
+	margin: 0px auto; width: 58px; position: relative; z-index: 0; cursor: pointer;
+}
+.user_center_tablebox .user_center_tabletitle .state_select div {
+	width: 56px; height: 18px; line-height: 18px; overflow: hidden; font-size: 14px;
+}
+.user_center_tablebox .user_center_tabletitle .state_select div.on {
+	background: rgb(218, 240, 252); border: 1px solid rgb(170, 217, 247);
+}
+.user_center_tablebox .user_center_tabletitle .state_select div i {
+	background-position: -56px -113px; left: 5px; top: 2px; width: 13px; height: 13px; display: inline-block; position: relative; background-repeat: no-repeat;
+}
+.user_center_tablebox .user_center_tabletitle .state_select ul {
+	background: rgb(255, 255, 255); border-width: medium 1px; border-style: none solid; border-color: currentColor rgb(170, 217, 247); margin: 0px auto; width: 56px; display: none; position: absolute;
+}
+.user_center_tablebox .user_center_tabletitle .state_select ul li {
+	border-bottom-color: rgb(170, 217, 247); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.user_center_tablebox .user_center_tabletitle .state_select ul li a {
+	font-size: 14px; font-weight: normal; display: block;
+}
+.p_bar {
+	padding-bottom: 14px;
+}
+.user_center_step_box {
+	margin: 24px 24px 0px; position: relative; z-index: 0; _position: static;
+}
+.user_center_step_box .step_list {
+	padding: 30px 0px 14px; overflow: hidden;
+}
+.user_center_step_box .step_list li {
+	text-align: center; float: left; position: relative; z-index: 0;
+}
+.user_center_step_box .step_list li .num {
+	padding: 4px 0px; height: 28px; display: block;
+}
+.user_center_step_box .step_list li .num span {
+	background: rgb(200, 199, 199); margin: 0px auto; border-radius: 100%; width: 28px; height: 28px; color: rgb(255, 255, 255); line-height: 28px; overflow: hidden; font-size: 20px; font-weight: bold; display: block;
+}
+.user_center_step_box .step_list li .num i {
+	margin-left: -4px;
+}
+.user_center_step_box .step_list li.on {
+	_background: none; _border: none;
+}
+.user_center_step_box .step_list li.on .num span {
+	background: rgb(20, 153, 232);
+}
+.user_center_step_box .step_list li.now .num {
+	padding: 0px; height: 36px;
+}
+.user_center_step_box .step_list li.now .num span {
+	background: rgb(192, 232, 252); border: 4px solid rgb(20, 153, 232); color: rgb(20, 153, 232);
+}
+.user_center_step_box .step_list li.error .num {
+	padding: 0px; height: 36px;
+}
+.user_center_step_box .step_list li.error .num span {
+	background: rgb(255, 130, 20); border: 4px solid rgb(20, 153, 232); color: rgb(255, 255, 255);
+}
+.user_center_step_box .step_list li .info {
+	color: rgb(116, 116, 116); font-size: 14px; font-weight: bold; display: block;
+}
+.user_center_step_box .step_list li.on .info {
+	color: rgb(20, 153, 232);
+}
+.user_center_step_box .step_list li.error .info {
+	color: rgb(255, 130, 20);
+}
+.user_center_step_box .step_list li .tips {
+	left: 0px; top: -26px; right: 0px; display: block; position: absolute; _height: 16px;
+}
+.user_center_step_box .step_list li .tips i {
+	background-position: -70px -113px; left: 50%; width: 13px; height: 13px; bottom: -8px; line-height: 1px; overflow: hidden; margin-left: -6px; display: block; position: absolute; z-index: 1; background-repeat: no-repeat;
+}
+.user_center_step_box .step_list li .tips span {
+	background: rgb(255, 241, 229); margin: 0px auto; padding: 0px 5px; border-radius: 2px; border: 1px solid rgb(255, 130, 20); width: 90%; color: rgb(255, 130, 20); display: inline-block; z-index: 2; _display: block;
+}
+.user_center_step_box .line_gray {
+	background: rgb(200, 199, 199); top: 46px; height: 4px; position: absolute; z-index: -1; _display: none;
+}
+.user_center_step_box .line_blue {
+	background: rgb(20, 153, 232); top: 46px; height: 4px; position: absolute; z-index: -1; _display: none;
+}
+.medical_request_details {
+	margin: 14px; height: 80px; line-height: 1.8; overflow: hidden; font-size: 14px;
+}
+.showall.medical_request_details {
+	height: auto;
+}
+.medical_request_details .item .tit {
+	font-size: 15px; font-weight: bold; margin-top: 15px;
+}
+.medicalRequestDetails {
+	padding: 20px; text-align: right;
+}
+.medicalRequestDetails a {
+	color: rgb(23, 106, 204);
+}
+.medicalRequestDetails a:hover {
+	text-decoration: none;
+}
+.attention_state {
+	padding: 0px 23px; font-size: 14px;
+}
+.attention_state .state_list {
+	overflow: hidden;
+}
+.attention_state .state_list li {
+	padding-bottom: 15px; margin-top: -1px; border-top-color: rgb(220, 220, 220); border-top-width: 1px; border-top-style: dashed;
+}
+.attention_state .category {
+	padding-top: 15px;
+}
+.attention_state .category .cate_name {
+	width: 70px; color: rgb(24, 150, 4); float: left;
+}
+.attention_state .category .for {
+	width: 435px; color: rgb(55, 55, 55); float: left;
+}
+.attention_state .category .state {
+	width: 70px; text-align: right; color: rgb(55, 55, 55); float: left;
+}
+.attention_state .category .operation {
+	width: 70px; text-align: right; float: left;
+}
+.attention_state .cate_info {
+	color: rgb(102, 102, 102); padding-top: 20px;
+}
+.attention_state .btn {
+	padding-top: 5px;
+}
+.attention_state .btn a {
+	background: rgb(124, 208, 255); padding: 1px; border-radius: 2px; border: 1px solid rgb(34, 142, 214); display: inline-block;
+}
+.attention_state .btn a span {
+	background: rgb(68, 187, 255); padding: 1px 38px; color: rgb(255, 255, 255); display: inline-block;
+}
+.attention_state .btn a:hover span {
+	background: rgb(51, 173, 243);
+}
+.attention_state .reminder {
+	padding-top: 15px; word-break: normal; word-wrap: normal;
+}
+.attention_state .reminder .orange {
+	color: rgb(255, 68, 0);
+}
+.user_center_favorite_list {
+	margin: 10px 0px;
+}
+.user_center_favorite_list ul {
+	padding: 0px 24px; overflow: hidden; font-size: 14px;
+}
+.user_center_favorite_list ul li {
+	height: 32px; line-height: 32px; border-bottom-color: rgb(220, 220, 220); border-bottom-width: 1px; border-bottom-style: dashed; position: relative; z-index: 0;
+}
+.user_center_favorite_list ul li:last-child {
+	border: currentColor;
+}
+.user_center_favorite_list ul li a {
+	color: rgb(20, 112, 204);
+}
+.user_center_favorite_list ul li a:hover {
+	text-decoration: underline;
+}
+.user_center_favorite_list ul li .doc_workspace {
+	right: 60px; position: absolute;
+}
+.user_center_favorite_list ul li .cancel_fav {
+	background-position: -84px -113px; top: 50%; width: 13px; height: 13px; right: 15px; margin-top: -6px; display: block; position: absolute; background-repeat: no-repeat;
+}
+.user_center_no_fav {
+	color: rgb(0, 0, 0); line-height: 30px; padding-left: 15px; font-size: 14px;
+}
+.user_center_no_fav .tips {
+	color: rgb(255, 68, 0); font-size: 16px; font-weight: bold; margin-top: 25px;
+}
+.user_center_no_fav .tit {
+	font-weight: bold; margin-top: 30px;
+}
+.user_center_no_fav .list {
+	padding-left: 30px;
+}
+.user_center_no_fav .list li {
+	position: relative; z-index: 0;
+}
+.user_center_no_fav .list li i {
+	background: rgb(253, 202, 180); border-radius: 100%; left: -10px; top: 12px; width: 6px; height: 6px; position: absolute;
+}
+.user_center_no_fav .more {
+	text-align: left; color: rgb(0, 0, 0);
+}
+.user_center_no_fav .more a {
+	color: rgb(20, 112, 204); text-decoration: underline;
+}
+.my_doc_list {
+	color: rgb(102, 102, 102); font-size: 14px; margin-top: -40px;
+}
+.my_doc_list ul {
+	margin: 0px 20px;
+}
+.my_doc_list ul li {
+	padding: 30px 0px; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dashed;
+}
+.my_doc_list ul li .doc_pic {
+	border: 1px solid rgb(204, 204, 204); width: 66px; height: 66px; float: left;
+}
+.my_doc_list ul li .doc_pic a {
+	width: 66px; height: 66px; text-align: center; vertical-align: middle; display: table-cell;
+}
+.my_doc_list ul li .doc_pic a img {
+	max-height: 66px; max-width: 66px;
+}
+.my_doc_list ul li .right_con {
+	margin-left: 90px;
+}
+.my_doc_list ul li .right_con .top_name {
+	
+}
+.my_doc_list ul li .right_con .top_name .name {
+	top: -3px; color: rgb(0, 0, 0); font-size: 16px; font-weight: bold; position: relative; z-index: 0;
+}
+.my_doc_list ul li .right_con .top_name .name:hover {
+	text-decoration: none;
+}
+.my_doc_list ul li .right_con .top_name .ico {
+	background: rgb(255, 236, 217); padding: 2px 4px; top: -4px; color: rgb(255, 136, 0); line-height: 1; font-size: 12px; margin-left: 5px; display: inline-block; position: relative; z-index: 0;
+}
+.my_doc_list ul li .right_con .top_name .right_link {
+	padding-left: 10px; float: right;
+}
+.my_doc_list ul li .right_con .top_name .right_link .red {
+	color: rgb(255, 0, 0);
+}
+.my_doc_list ul li .right_con .top_name .right_link .dot {
+	background: rgb(255, 0, 0); border-radius: 100%; top: -9px; width: 6px; height: 6px; right: -2px; display: inline-block; position: relative; z-index: 0;
+}
+.my_doc_list ul li .right_con .cen_position {
+	line-height: 1.8;
+}
+.my_doc_list ul li .right_con .bot_others {
+	line-height: 1.5;
+}
+.my_dis_diray {
+	margin-top: 15px;
+}
+.my_dis_diray_con {
+	padding: 30px; font-size: 14px; margin-top: -40px;
+}
+.my_dis_diray_con .check_user {
+	height: 40px; color: rgb(0, 0, 0); line-height: 40px; padding-bottom: 10px; font-size: 16px; font-weight: bold; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.my_dis_diray_con .check_user .name {
+	padding: 0px 10px; color: rgb(255, 68, 0); font-size: 22px;
+}
+.my_dis_diray_con .check_user .other_users {
+	width: 130px; height: 20px; text-align: right; font-size: 14px; font-weight: normal; margin-top: 10px; float: right; position: relative; z-index: 1;
+}
+.my_dis_diray_con .check_user .other_users .btn {
+	padding: 1px 11px; top: 0px; height: 30px; right: 0px; color: rgb(23, 106, 204); line-height: 30px; position: absolute; z-index: 2; cursor: pointer;
+}
+.my_dis_diray_con .check_user .other_users .btn i {
+	background-position: -42px -113px; left: 0px; top: 0px; width: 13px; height: 13px; margin-left: 10px; display: inline-block; position: relative; background-repeat: no-repeat;
+}
+.my_dis_diray_con .check_user .show.other_users .btn {
+	background: rgb(255, 255, 255); border-width: 1px 1px medium; border-style: solid solid none; border-color: rgb(204, 204, 204) rgb(204, 204, 204) currentColor; padding: 0px 10px;
+}
+.my_dis_diray_con .check_user .show.other_users .btn i {
+	background-position: -28px -113px;
+}
+.my_dis_diray_con .check_user .show.other_users .other_users_list {
+	display: block;
+}
+.other_users_list {
+	background: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); top: 30px; right: 0px; display: none; position: absolute; z-index: 1;
+}
+.other_users_list .create_new_pat {
+	padding: 5px 20px 20px; height: 24px; color: rgb(23, 106, 204); line-height: 24px; font-size: 14px;
+}
+.other_users_list .create_new_pat i {
+	background-position: -147px -165px; top: 5px; width: 20px; height: 20px; margin-right: 5px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.other_users_list .tit {
+	text-align: left; color: rgb(23, 106, 204); line-height: 2; clear: both; font-size: 14px;
+}
+.other_users_list ul {
+	overflow: hidden;
+}
+.other_users_list ul li {
+	width: 33%; overflow: hidden; padding-bottom: 8px; float: left;
+}
+.other_users_list ul li .item {
+	background: rgb(255, 255, 255); padding: 1px; border: 1px solid rgb(219, 219, 219); width: 100px; height: 26px; overflow: hidden; margin-top: 0px;
+}
+.other_users_list ul li .item a {
+	background: rgb(250, 250, 250); width: 100px; height: 26px; text-align: center; color: rgb(0, 0, 0); line-height: 26px; font-size: 14px; display: block;
+}
+.other_users_list ul li .item a:hover {
+	text-decoration: none;
+}
+.other_users_list ul li .hover.item {
+	border: 1px solid rgb(170, 217, 247);
+}
+.other_users_list ul li .on.item {
+	background: rgb(239, 250, 255); border: 1px solid rgb(170, 217, 247);
+}
+.other_users_list ul li .on.item a {
+	background: rgb(204, 238, 255);
+}
+.other_users_con {
+	padding: 20px 30px; width: 355px; overflow: auto; max-height: 320px;
+}
+.my_dis_diray_con .primary_title {
+	color: rgb(23, 106, 204); line-height: 2; font-weight: bold; margin-top: 10px;
+}
+.my_dis_diray_con .sub_title {
+	line-height: 2; padding-left: 24px; font-weight: bold;
+}
+.my_dis_diray_con .con {
+	padding: 5px 0px 5px 24px;
+}
+.my_dis_diray_con .remarks {
+	color: rgb(20, 154, 233); padding-left: 24px;
+}
+.textarea {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.form_controls_mini {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.form_controls_small {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.form_controls_normal {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.form_controls_big {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.form_controls_large {
+	border: 1px solid rgb(170, 217, 247); width: 100%; color: rgb(0, 0, 0); font-size: 14px; resize: none;
+}
+.textarea {
+	height: 100px;
+}
+.form_controls_mini {
+	margin: 0px 10px; width: 50px;
+}
+.form_controls_small {
+	margin: 0px 10px; width: 100px;
+}
+.form_controls_normal {
+	margin: 0px 10px; width: 150px;
+}
+.form_controls_big {
+	margin: 0px 10px; width: 200px;
+}
+.form_controls_large {
+	margin: 0px 10px; width: 300px;
+}
+.m_checkbox_box {
+	overflow: hidden;
+}
+.m_checkbox_box li {
+	padding: 5px; float: left;
+}
+.m_checkbox_box li .m_checkbox {
+	background: rgb(255, 255, 255); border: 1px solid rgb(170, 217, 247); top: 3px; width: 13px; height: 13px; margin-right: 5px; display: inline-block; position: relative; z-index: 0; cursor: pointer;
+}
+.m_checkbox_box li.on .m_checkbox {
+	background-position: -98px -113px; background-repeat: no-repeat; background-color: rgb(255, 255, 255);
+}
+.m_radio_box {
+	overflow: hidden;
+}
+.m_radio_box li {
+	padding: 5px; float: left;
+}
+.m_radio_box li .m_radio {
+	background: rgb(255, 255, 255); border-radius: 100%; border: 1px solid rgb(170, 217, 247); top: 4px; width: 14px; height: 14px; margin-right: 5px; display: inline-block; position: relative; z-index: 0; cursor: pointer;
+}
+.m_radio_box li .m_radio i {
+	background: rgb(170, 217, 247); border-radius: 100%; left: 50%; top: 50%; width: 6px; height: 6px; margin-top: -3px; margin-left: -3px; display: none; position: absolute;
+}
+.m_radio_box li.on .m_radio i {
+	display: inline-block;
+}
+.my_dis_diray_con .m_checkbox_box li {
+	margin-right: 100px;
+}
+.my_dis_diray_con .m_radio_box li {
+	margin-right: 100px;
+}
+.my_dis_diray_con .bottom_line {
+	padding-top: 20px; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: solid;
+}
+.upload_pic_box .preview {
+	padding: 0px 10px; color: rgb(87, 134, 203);
+}
+.upload_pic_box .delete {
+	padding: 0px 10px; color: rgb(255, 102, 0);
+}
+.upload_pic_box .pic_ico {
+	background-position: 0px -165px; margin: 0px 5px; top: 5px; width: 20px; height: 20px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.upload_pic_btn {
+	overflow: hidden;
+}
+.upload_pic_btn .upload_pic {
+	background: rgb(222, 242, 255); border: 1px solid rgb(170, 217, 247); height: 28px; color: rgb(87, 134, 203); line-height: 28px; margin-right: 20px; float: left; display: block;
+}
+.upload_pic_btn .upload_pic b {
+	background: rgb(255, 255, 255); width: 33px; height: 28px; line-height: 1; border-right-color: rgb(170, 217, 247); border-right-width: 1px; border-right-style: solid; float: left; display: block; position: relative; z-index: 0;
+}
+.upload_pic_btn .upload_pic i {
+	background-position: -21px -165px; left: 50%; top: 50%; width: 20px; height: 20px; line-height: 1; margin-top: -10px; margin-left: -10px; display: inline-block; position: absolute; background-repeat: no-repeat;
+}
+.upload_pic_btn .upload_pic span {
+	padding: 0px 10px; height: 28px; float: left; display: block; position: relative; z-index: 0;
+}
+.upload_pic_btn .history_check_pic {
+	background: rgb(222, 242, 255); border: 1px solid rgb(170, 217, 247); height: 28px; color: rgb(87, 134, 203); line-height: 28px; margin-right: 20px; float: left; display: block;
+}
+.upload_pic_btn .history_check_pic b {
+	background: rgb(255, 255, 255); width: 33px; height: 28px; line-height: 1; border-right-color: rgb(170, 217, 247); border-right-width: 1px; border-right-style: solid; float: left; display: block; position: relative; z-index: 0;
+}
+.upload_pic_btn .history_check_pic i {
+	background-position: -42px -165px; left: 50%; top: 50%; width: 20px; height: 20px; line-height: 1; margin-top: -10px; margin-left: -10px; display: inline-block; position: absolute; background-repeat: no-repeat;
+}
+.upload_pic_btn .history_check_pic span {
+	padding: 0px 10px; height: 28px; float: left; display: block; position: relative; z-index: 0;
+}
+.usercenter_btn {
+	overflow: hidden; padding-top: 5px;
+}
+.blue_btn {
+	background: rgb(124, 208, 255); padding: 1px; border-radius: 2px; border: 1px solid rgb(34, 142, 214); margin-right: 20px; display: inline-block;
+}
+.blue_btn span {
+	background: rgb(68, 187, 255); padding: 3px 38px; color: rgb(255, 255, 255); display: inline-block;
+}
+.blue_btn:hover span {
+	background: rgb(51, 173, 243);
+}
+.usercenter_btn .right {
+	color: rgb(23, 106, 204);
+}
+.medical_assistant_list ul li .doc_info_user .btn .blue_btn {
+	padding: 1px; border: 1px solid rgb(34, 142, 214); float: left;
+}
+.medical_assistant_list ul li .doc_info_user .btn .blue_btn span {
+	padding: 3px 10px; line-height: 1;
+}
+.medical_assistant_list ul li .doc_info_user .btn .blue_btn:hover {
+	border: 1px solid rgb(20, 137, 204);
+}
+.medical_assistant_list {
+	padding: 10px 23px;
+}
+.medical_assistant_list ul {
+	overflow: hidden;
+}
+.medical_assistant_list ul li {
+	padding: 25px 0px 25px 27px; font-size: 14px; margin-top: -1px; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dashed;
+}
+.medical_assistant_list ul li .doc_info_user {
+	width: 425px; float: left;
+}
+.medical_assistant_list ul li .maxwidth.doc_info_user {
+	width: 100%;
+}
+.medical_assistant_list ul li .doc_info_user .top_name {
+	margin-bottom: 8px; position: relative; z-index: 0;
+}
+.medical_assistant_list ul li .doc_info_user .top_name .dot {
+	background: rgb(255, 153, 0); border-radius: 3px; left: -20px; top: 50%; width: 16px; height: 16px; margin-top: -8px; display: block; position: absolute; z-index: 0;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link {
+	margin-bottom: 5px;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link i {
+	top: 5px; width: 20px; height: 20px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link .strong {
+	background-position: -63px -165px;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link .article {
+	background-position: -84px -165px;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link .ask {
+	background-position: -105px -165px;
+}
+.medical_assistant_list ul li .doc_info_user .doc_link .wardmate {
+	background-position: -126px -165px;
+}
+.medical_assistant_list ul li .doc_info_user .bot_others {
+	color: rgb(102, 102, 102);
+}
+.medical_assistant_list ul li .doc_info_user .btn {
+	height: 23px; padding-right: 10px; margin-top: 15px; position: relative;
+}
+.medical_assistant_list ul li .doc_info_user .btn a {
+	padding: 0px 10px; border-radius: 3px; border: 1px solid rgb(204, 204, 204); color: rgb(20, 137, 204); margin-left: 4px; float: right;
+}
+.medical_assistant_list ul li .doc_info_user .btn a:hover {
+	border: 1px solid rgb(20, 137, 204); text-decoration: none;
+}
+.medical_assistant_tips {
+	width: 197px; height: 120px; right: -187px; bottom: 0px; position: absolute;
+}
+.medical_assistant_tips_con {
+	width: 197px; height: 120px; position: relative; z-index: 0;
+}
+.medical_assistant_tips_con .pic {
+	right: 1px; bottom: 0px; position: absolute; z-index: 0;
+}
+.medical_assistant_tips_con .tips {
+	background: rgb(255, 247, 204); padding: 5px 10px; border-radius: 10px; right: 62px; bottom: 50px; font-size: 12px; position: absolute;
+}
+.medical_assistant_tips_con .tips .tips_con {
+	position: relative; z-index: 0;
+}
+.medical_assistant_tips_con .tips .tips_con i {
+	background-position: -112px -113px; width: 13px; height: 10px; right: -20px; bottom: 0px; display: block; position: absolute;
+}
+.medical_assistant_tips_con .link {
+	left: 0px; bottom: 0px; position: absolute;
+}
+.medical_assistant_tips_con .link a {
+	background: rgb(255, 255, 255); padding: 0px 6px; border-radius: 3px; border: 1px solid rgb(204, 204, 204); float: left;
+}
+.medical_assistant_list ul li .doc_info_user .btn .medical_assistant_tips_con .link a {
+	background: rgb(255, 255, 255); padding: 0px 6px; border-radius: 3px; border: 1px solid rgb(204, 204, 204); float: left;
+}
+.medical_assistant_tips_con .link a i {
+	font-style: normal;
+}
+.medical_assistant_tips_con .link a:hover {
+	border: 1px solid rgb(20, 137, 204); text-decoration: none;
+}
+.service_bot_tips {
+	color: rgb(102, 102, 102); padding-top: 10px; clear: both;
+}
+.diray_list {
+	font-size: 14px; margin-top: 14px;
+}
+.diray_list_con {
+	padding: 0px 30px; overflow: hidden; margin-top: -30px;
+}
+.diray_list .item {
+	padding: 20px; margin-top: -1px; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dashed;
+}
+.diray_list .item .list_time {
+	font-size: 16px; font-weight: bold;
+}
+.diray_list .item .list_time .importamt {
+	background: rgb(255, 68, 0); padding: 0px 6px; height: 22px; color: rgb(255, 255, 255); line-height: 22px; font-size: 14px; font-weight: normal; margin-left: 12px; display: inline-block; position: relative; z-index: 0;
+}
+.diray_list .item .list_time .importamt i {
+	border-width: 5px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 68, 0) rgb(255, 255, 255) rgb(255, 255, 255); left: -10px; top: 50%; width: 0px; height: 0px; overflow: hidden; margin-top: -5px; display: block; position: absolute;
+}
+.diray_list .item .title {
+	margin: 20px 0px 0px; color: rgb(23, 106, 204); font-weight: bold;
+}
+.diray_list .item .con {
+	padding-left: 24px;
+}
+.diray_list .item .con .imglist {
+	width: 650px;
+}
+.diray_list .item .con .imglist ul {
+	width: 680px; overflow: hidden;
+}
+.diray_list .item .con .imglist ul li {
+	padding: 2px; border: 1px solid rgb(204, 204, 204); width: 80px; margin-top: 10px; margin-right: 40px; float: left;
+}
+.diray_list .item .con .imglist ul li span {
+	width: 80px; height: 80px; text-align: center; vertical-align: middle; display: table-cell;
+}
+.diray_list .item .con .imglist ul li span img {
+	max-height: 80px; max-width: 80px;
+}
+.medical_assistant_attention {
+	background: rgb(250, 250, 250); padding: 10px; border: 1px solid rgb(204, 204, 204); margin-top: 20px;
+}
+.gray_btn_notclick {
+	background: rgb(204, 204, 204) !important; border: 1px solid rgb(153, 153, 153) !important; color: rgb(0, 0, 0) !important;
+}
+.gray_btn_notclick:hover {
+	background: rgb(204, 204, 204) !important; border: 1px solid rgb(153, 153, 153) !important; color: rgb(0, 0, 0) !important;
+}
+.u_tips {
+	padding: 0px 14px 28px; margin-top: -8px;
+}
+.u_tips h3 {
+	color: rgb(255, 102, 0); font-size: 16px;
+}
+.u_tips p {
+	padding: 15px 0px; font-size: 14px;
+}
+.con_has_tips {
+	line-height: 1.5; padding-right: 200px;
+}
+.u_tips .btn_has_tips {
+	height: 24px; padding-right: 60px; position: relative; z-index: 0;
+}
+.u_tips .btn_has_tips .p {
+	width: 197px; height: 90px; right: 0px; bottom: 0px; position: absolute; z-index: -1;
+}
+.u_tips .btn_has_tips .p .rr {
+	background: url("http://i1.hdfimg.com/passport/images/p.png") no-repeat; top: 0px; width: 63px; height: 85px; right: 0px; position: absolute;
+}
+.u_btn {
+	padding: 0px 10px; border-radius: 4px; border: 1px solid rgb(204, 204, 204); color: rgb(20, 137, 204); font-size: 14px; margin-left: 3px; float: right;
+}
+.u_btns {
+	padding: 0px 10px; border-radius: 4px; border: 1px solid rgb(204, 204, 204); color: rgb(20, 137, 204); font-size: 14px; margin-left: 3px; float: right;
+}
+.u_btn:hover {
+	border-color: rgb(20, 137, 204); text-decoration: none;
+}
+.u_btns:hover {
+	border-color: rgb(20, 137, 204); text-decoration: none;
+}
+.u_btn .p {
+	background: url("http://i1.hdfimg.com/passport/images/p.png") no-repeat; top: -60px; width: 63px; height: 85px; right: -75px; position: absolute;
+}
+.show_tips {
+	padding: 10px; border-radius: 16px; right: 55px; bottom: 40px; line-height: 1.2; position: absolute; background-color: rgb(222, 239, 252);
+}
+.show_tips span {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat -126px -114px; width: 11px; height: 10px; right: -9px; bottom: 10px; position: absolute;
+}
+.u_tips p.pz {
+	color: rgb(102, 102, 102); line-height: 1.5em; font-size: 14px; margin-top: -24px;
+}
+.u_p_tips {
+	padding: 0px 14px 8px;
+}
+.myspace_dialog_box1 {
+	background: rgb(255, 255, 255); padding: 1px; border: 1px solid rgb(170, 217, 247); width: 638px;
+}
+.myspace_dialog_box1 * {
+	font-family: "Î¢ÈíÑÅºÚ" !important;
+}
+.myspace_dialog_con {
+	padding: 0px 45px 40px;
+}
+.myspace_dialog_title1 {
+	color: rgb(0, 0, 0); font-size: 18px; font-weight: bold; margin-top: -10px;
+}
+.myspace_dialog_title2 {
+	color: rgb(0, 0, 0); font-size: 14px; font-weight: bold;
+}
+.myspace_dialog_box1 .text_box {
+	margin: 10px 0px; padding: 5px; border: 1px solid rgb(204, 204, 204);
+}
+.myspace_dialog_box1 .text_box textarea {
+	width: 100%; resize: none;
+}
+.myspace_dialog_box1 .text_box input {
+	width: 100%; resize: none;
+}
+.myspace_dialog_box1 .bot_links {
+	color: rgb(0, 0, 0); padding-top: 20px; padding-bottom: 20px; font-size: 14px; margin-top: 25px; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dashed;
+}
+.myspace_dialog_box1 .bot_links .tit {
+	
+}
+.myspace_dialog_box1 .bot_links .input_text {
+	height: 40px;
+}
+.myspace_dialog_box1 .radio_box {
+	margin: 10px 0px; font-size: 14px;
+}
+.myspace_dialog_box1 .radio_box input {
+	margin-left: 30px;
+}
+.myspace_dialog_box2 {
+	width: 680px;
+}
+.myspace_dialog_box2 .title {
+	background: rgb(215, 233, 255); padding: 0px 20px; height: 42px; color: rgb(0, 0, 0); line-height: 42px; font-size: 14px; font-weight: bold; border-bottom-color: rgb(148, 183, 223); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.myspace_dialog_box2 .con {
+	padding: 20px;
+}
+.myspace_dialog_box2 .check_all {
+	color: rgb(26, 106, 205); padding-bottom: 20px; font-size: 14px; cursor: pointer;
+}
+.myspace_dialog_box2 .ico_check {
+	background: rgb(255, 255, 255); border: 1px solid rgb(170, 217, 247); width: 13px; height: 13px; margin-top: 3px; margin-right: 5px; float: left; display: block;
+}
+.myspace_dialog_box2 .on .ico_check {
+	background-position: -98px -113px; background-repeat: no-repeat; background-color: rgb(255, 255, 255);
+}
+.myspace_dialog_box2 .check_list {
+	padding-left: 20px;
+}
+.myspace_dialog_box2 .check_list ul {
+	overflow: hidden;
+}
+.myspace_dialog_box2 .check_list ul li {
+	padding-right: 20px; padding-bottom: 20px; float: left;
+}
+.myspace_dialog_box2 .check_list .check_con {
+	margin-left: 20px;
+}
+.myspace_dialog_box2 .check_list .ico_check {
+	margin-top: 0px;
+}
+.myspace_dialog_box2 .check_con .name {
+	color: rgb(0, 0, 0); line-height: 1; padding-bottom: 5px;
+}
+.myspace_dialog_box2 .check_con .time {
+	color: rgb(153, 153, 153); line-height: 1; padding-bottom: 5px;
+}
+.myspace_dialog_box2 .check_con .do {
+	color: rgb(0, 125, 210); line-height: 1;
+}
+.myspace_dialog_box2 .check_con .do a {
+	color: rgb(0, 125, 210);
+}
+.myspace_dialog_box2 .textbox {
+	padding: 5px; border: 1px solid rgb(170, 217, 247);
+}
+.myspace_dialog_box2 .textbox input {
+	border: currentColor; width: 100%; resize: none;
+}
+.myspace_dialog_box2 .textbox textarea {
+	border: currentColor; width: 100%; resize: none;
+}
+.myspace_dialog_box2 .textbox input {
+	height: 18px; line-height: 18px;
+}
+.myspace_dialog_box2 .textbox textarea {
+	height: 100px; line-height: 1.5;
+}
+.diray_success_con {
+	padding: 30px;
+}
+.diray_success_con .face {
+	background: url("../images/smile_face.png") no-repeat 130px 0px; color: rgb(0, 171, 245); padding-bottom: 60px; padding-left: 240px; font-size: 30px;
+}
+.diray_add {
+	padding-top: 14px; font-size: 14px;
+}
+.diray_add_con {
+	padding: 0px 30px 30px;
+}
+.diray_add_con .tipsbox {
+	background: url("http://i1.hdfimg.com/passport/images/logo_bg.png") no-repeat right bottom rgb(254, 249, 243); padding: 20px; border: 1px solid rgb(254, 212, 173); width: 480px; line-height: 30px; margin-bottom: 40px;
+}
+.diray_add_con .form_box {
+	
+}
+.diray_add_con .form_box .item {
+	padding: 5px 0px;
+}
+.diray_add_con .form_box .item .l {
+	width: 100px; text-align: right; margin-right: 10px; float: left;
+}
+.diray_add_con .form_box .item .c {
+	width: 160px; float: left;
+}
+.diray_add_con .form_box .item .r {
+	width: 300px; height: 20px; float: left; position: relative; z-index: 0;
+}
+.diray_add_con .form_box .item .r .tips {
+	background: rgb(253, 247, 229); padding: 0px 8px; border-radius: 3px; border: 1px solid rgb(255, 224, 151); left: 0px; top: 0px; width: 250px; color: rgb(210, 152, 14); position: absolute; z-index: 2;
+}
+.mg_info .tips {
+	background: rgb(253, 247, 229); padding: 0px 8px; border-radius: 3px; border: 1px solid rgb(255, 224, 151); left: 0px; top: 0px; width: 250px; color: rgb(210, 152, 14); position: absolute; z-index: 2;
+}
+.diray_add_con .form_box .form_controls_normal {
+	margin: 0px;
+}
+.diray_add_con .form_box .blue_btn {
+	margin-right: 0px;
+}
+.diray_add_con .form_box .blue_btn span {
+	padding: 3px 60px;
+}
+.tips .arrow {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat -140px -114px; left: -7px; top: 5px; width: 7px; height: 10px; position: absolute;
+}
+.f1414 {
+	color: rgb(66, 66, 66); font-size: 14px; font-style: normal; font-weight: normal;
+}
+.mg_info h3 {
+	padding: 20px 0px; color: rgb(0, 0, 0); line-height: 1; font-size: 16px;
+}
+.mg_info p {
+	color: rgb(0, 0, 0); line-height: 40px; overflow: hidden; font-size: 14px;
+}
+.mg_info p span {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat -168px -166px; margin: 10px 13px 0px 0px; width: 20px; height: 20px; float: left;
+}
+.mg_info .btnmg {
+	margin: 50px 0px 0px 233px;
+}
+.mg_info p em {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat -188px -166px; margin: 11px 13px 0px 0px; width: 20px; height: 20px; float: left;
+}
+.mg_info .btnequal {
+	margin: 10px 85px 30px 0px;
+}
+.mg_info .btnequal span {
+	width: 64px; text-align: center;
+}
+.btn_no {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat -212px -165px; color: rgb(23, 106, 204); padding-left: 22px; font-size: 14px;
+}
+.bds {
+	padding: 10px 24px; border: 1px solid rgb(176, 220, 248);
+}
+.btn_no:hover {
+	color: rgb(23, 106, 204);
+}
+.mg_info .face {
+	height: 34px; line-height: 34px; text-indent: 20px; position: relative;
+}
+.mg_info .face span {
+	background: url("http://i1.hdfimg.com/passport/images/face.png") no-repeat; left: 190px; width: 34px; height: 34px; position: absolute;
+}
+.mg_info .f1414 {
+	line-height: 24px; font-size: 14px; font-weight: bold;
+}
+.mg_info .tips {
+	width: 170px; position: relative; z-index: 0;
+}
+.mg_info .form_controls_normal {
+	margin: 0px; width: 96%;
+}
+.mg_info td {
+	font-size: 14px; vertical-align: top;
+}
+.mg_info td h4 {
+	padding-top: 22px; font-weight: normal;
+}
+.cf40 {
+	color: rgb(255, 68, 0);
+}
+.m_table textarea {
+	height: 75px;
+}
+.mg_info .pt0 {
+	padding-top: 0px;
+}
+.other_users_title2 {
+	margin: 10px 0px; font-size: 16px; font-weight: bold;
+}
+.other_users_list2 .create_new_pat {
+	padding: 5px 0px 20px; height: 24px; color: rgb(23, 106, 204); line-height: 24px; font-size: 14px;
+}
+.other_users_list2 .create_new_pat i {
+	background-position: -147px -165px; top: 5px; width: 20px; height: 20px; margin-right: 5px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.other_users_list2 .tit {
+	padding: 15px 0px 5px; text-align: left; color: rgb(23, 106, 204); line-height: 2; font-size: 14px;
+}
+.other_users_list2 ul {
+	overflow: hidden;
+}
+.other_users_list2 ul li {
+	overflow: hidden; padding-bottom: 8px; margin-right: 14px; float: left;
+}
+.other_users_list2 ul li .item {
+	background: rgb(255, 255, 255); padding: 1px; border: 1px solid rgb(219, 219, 219); width: 100px; height: 26px; overflow: hidden; margin-top: 0px;
+}
+.other_users_list2 ul li .item a {
+	background: rgb(250, 250, 250); width: 100px; height: 26px; text-align: center; color: rgb(0, 0, 0); line-height: 26px; font-size: 14px; display: block;
+}
+.other_users_list2 ul li .item a:hover {
+	text-decoration: none;
+}
+.other_users_list2 ul li .hover.item {
+	border: 1px solid rgb(170, 217, 247);
+}
+.other_users_list2 ul li .on.item {
+	background: rgb(239, 250, 255); border: 1px solid rgb(170, 217, 247);
+}
+.other_users_list2 ul li .on.item a {
+	background: rgb(204, 238, 255);
+}
+.user_center_no_fav {
+	color: rgb(0, 0, 0); line-height: 30px; padding-left: 15px; font-size: 14px;
+}
+.user_center_no_fav .tips {
+	color: rgb(255, 68, 0); font-size: 16px; font-weight: bold; margin-top: 25px;
+}
+.user_center_no_fav .tit {
+	font-weight: bold; margin-top: 30px;
+}
+.user_center_no_fav .list {
+	padding-left: 30px;
+}
+.user_center_no_fav .list li {
+	position: relative; z-index: 0;
+}
+.user_center_no_fav .list li i {
+	background: rgb(253, 202, 180); border-radius: 100%; left: -10px; top: 12px; width: 6px; height: 6px; position: absolute;
+}
+.user_center_no_fav .more {
+	text-align: left; color: rgb(0, 0, 0);
+}
+.user_center_no_fav .more a {
+	color: rgb(20, 112, 204); text-decoration: underline;
+}
+.pl70 {
+	padding-left: 70px;
+}
+.pr70 {
+	padding-right: 70px;
+}
+.gray3 {
+	color: rgb(102, 102, 102);
+}
+.f-yahei {
+	font-family: Î¢ÈíÑÅºÚ;
+}
+.blue1 {
+	color: rgb(23, 106, 204);
+}
+.w290 {
+	width: 290px;
+}
+.pt80 {
+	padding-top: 80px;
+}
+.userlrv1_uc_con {
+	font-size: 14px;
+}
+.userlrv1_item {
+	height: 38px;
+}
+.userlrv1_uc_bind {
+	margin: 0px auto; width: 400px;
+}
+.userlrv1_tit {
+	width: 100px; height: 38px; line-height: 38px; float: left;
+}
+.userlrv1_i_box {
+	background: rgb(255, 255, 255); width: 290px; height: 38px; float: left; position: relative; z-index: 2;
+}
+.userlrv1_i_text {
+	padding: 9px 14px; border: 1px solid rgb(191, 191, 191); left: 0px; top: 0px; width: 262px; height: 18px; font-size: 14px; position: absolute; z-index: 1;
+}
+.userlrv1_tipsbox {
+	left: 14px; top: 0px; width: 260px; height: 38px; color: rgb(153, 153, 153); line-height: 38px; position: absolute; z-index: 0;
+}
+.userlrv1_error_tipsbox {
+	color: rgb(204, 0, 0);
+}
+.userlrv1_errorbox {
+	background: rgb(255, 242, 242); padding: 0px 14px; border: 1px solid rgb(255, 144, 142); width: 262px; height: 26px; color: rgb(204, 0, 0); line-height: 26px; clear: both; margin-top: -1px; margin-left: 100px; position: relative; z-index: 1;
+}
+.userlrv1_successbox {
+	background: url("../images/success_ico1.png") no-repeat center; top: 50%; width: 16px; height: 16px; right: 10px; margin-top: -8px; position: absolute; z-index: 1;
+}
+.userlrv1_i_box2 {
+	background: rgb(255, 255, 255); width: 184px; height: 38px; float: left; position: relative; z-index: 0;
+}
+.userlrv1_i_text2 {
+	padding: 9px 14px; border: 1px solid rgb(191, 191, 191); left: 0px; top: 0px; width: 154px; height: 18px; font-size: 14px; position: absolute; z-index: 1;
+}
+.userlrv1_text_error {
+	color: rgb(204, 0, 0);
+}
+.userlrv1_errorbox2 {
+	background: rgb(255, 242, 242); padding: 0px 14px; border: 1px solid rgb(255, 144, 142); width: 154px; height: 26px; color: rgb(204, 0, 0); line-height: 26px; clear: both; margin-top: -1px; margin-left: 100px; position: relative; z-index: 1;
+}
+.userlrv1_successbox2 {
+	background: url("../images/success_ico1.png") no-repeat center; top: 50%; width: 16px; height: 16px; right: 10px; margin-top: -8px; position: absolute; z-index: 1;
+}
+.userlrv1_getcode {
+	background: rgb(255, 245, 222); border: 1px solid rgb(255, 227, 193); top: 0px; width: 98px; height: 36px; text-align: center; right: -108px; color: rgb(255, 102, 0); line-height: 36px; display: block; position: absolute;
+}
+.userlrv1_getcode:hover {
+	background: rgb(255, 229, 169); border: 1px solid rgb(255, 208, 151); color: rgb(255, 68, 0); text-decoration: none;
+}
+.userlrv1_getcode_on {
+	background: rgb(230, 230, 230); border: 1px solid rgb(210, 210, 210); color: rgb(153, 153, 153);
+}
+.userlrv1_getcode_on:hover {
+	background: rgb(230, 230, 230); border: 1px solid rgb(210, 210, 210); color: rgb(153, 153, 153);
+}
+.userlrv1_code {
+	top: 0px; right: -110px; display: block; position: absolute; cursor: pointer;
+}
+.userlrv1_blue_btn {
+	background: rgb(22, 137, 255); border-radius: 5px; height: 38px; text-align: center; color: rgb(255, 255, 255); line-height: 38px; font-size: 16px; display: block;
+}
+.userlrv1_blue_btn:hover {
+	background: rgb(0, 114, 230); color: rgb(255, 255, 255); text-decoration: none;
+}
+.userlrv1_change_bind {
+	
+}
+.userlrv1_change_bind ul {
+	margin-top: 50px; margin-left: 50px;
+}
+.userlrv1_change_bind ul li {
+	background: url("../images/step2.png") no-repeat left; width: 160px; height: 30px; color: rgb(51, 51, 51); line-height: 30px; padding-left: 20px; font-size: 14px; font-weight: bold; float: left;
+}
+.userlrv1_change_bind ul .step1 {
+	background: url("../images/step1.png") no-repeat left; width: 170px;
+}
+.userlrv1_change_bind ul .stepon {
+	background: url("../images/step2_on.png") no-repeat left; color: rgb(255, 255, 255);
+}
+.userlrv1_change_bind ul .step1on {
+	background: url("../images/step1_on.png") no-repeat left; color: rgb(255, 255, 255);
+}
+.userlrv1_success_btn .userlrv1_blue_btn {
+	padding: 0px 30px; display: inline-block;
+}
+.userlrv1_success_others {
+	margin: 20px 30px; padding: 40px 20px; border-top-color: rgb(221, 221, 221); border-top-width: 1px; border-top-style: dashed;
+}
+.upload_pic_btn .upload_by_hand {
+	background: rgb(222, 242, 255); border: 1px solid rgb(170, 217, 247); height: 28px; color: rgb(87, 134, 203); line-height: 28px; margin-right: 20px; float: left; display: block;
+}
+.upload_pic_btn .upload_by_hand b {
+	background: rgb(255, 255, 255); width: 33px; height: 28px; line-height: 1; border-right-color: rgb(170, 217, 247); border-right-width: 1px; border-right-style: solid; float: left; display: block; position: relative; z-index: 0;
+}
+.upload_pic_btn .upload_by_hand i {
+	background: url("../images/byhand.png") no-repeat center; left: 50%; top: 50%; width: 20px; height: 20px; line-height: 1; margin-top: -10px; margin-left: -10px; display: inline-block; position: absolute;
+}
+.upload_pic_btn .upload_by_hand span {
+	padding: 0px 10px; height: 28px; float: left; display: block; position: relative; z-index: 0;
+}
+.task_pic_list ul {
+	overflow: hidden;
+}
+.task_pic_list ul li {
+	width: 50px; height: 50px; text-align: center; line-height: 50px; overflow: hidden; margin-right: 10px; float: left;
+}
+.task_pic_list ul li img {
+	max-height: 50px; max-width: 50px;
+}
+.user_center_normalbox_orange {
+	background: rgb(255, 255, 255) !important; padding: 1px; border: 1px solid rgb(253, 202, 180); overflow: hidden; margin-right: 12px; margin-bottom: 14px; _clear: both;
+}
+.user_center_normalbox_orange .find_more {
+	padding: 24px; text-align: right; font-size: 14px;
+}
+.user_center_normalbox_orange .find_more a {
+	color: rgb(23, 106, 204);
+}
+.user_center_normaltitle_orange {
+	background: url("../images/orange_tit_bg.png") repeat-x left top; height: 37px; color: rgb(0, 0, 0); line-height: 37px; padding-left: 23px; font-size: 14px; font-weight: bold;
+}
+.slide_align_toploop {
+	width: 257px; height: 20px; line-height: 20px; overflow: hidden; font-size: 14px; margin-top: 7px; margin-left: 6px; float: right;
+}
+.hastips {
+	background: rgb(255, 68, 0); border-radius: 100%; left: 5px; top: -5px; width: 8px; height: 8px; overflow: hidden; display: inline-block; position: relative; z-index: 1;
+}
+.listtitle_hl {
+	width: 240px; height: 38px; color: rgb(255, 68, 0); line-height: 38px; font-size: 14px; font-weight: bold; border-bottom-color: rgb(255, 238, 223); border-bottom-width: 1px; border-bottom-style: solid; cursor: pointer;
+}
+.listtitle_hl a {
+	height: 34px; color: rgb(0, 0, 0); line-height: 34px; padding-left: 40px; font-size: 14px; display: block;
+}
+.listtitle_hl a:hover {
+	text-decoration: none;
+}
+.listtitle_hl_on a {
+	background: url("http://i1.hdfimg.com/passport/images/usercenter_b_bg.png") no-repeat 0px -79px; color: rgb(255, 255, 255);
+}
+.name_ico_red_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 51, 0); color: rgb(255, 51, 0); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_blue_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(19, 124, 242); color: rgb(19, 124, 242); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_green_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(0, 153, 68); color: rgb(0, 153, 68); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_red_bac {
+	background: rgb(255, 51, 0); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 51, 0); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_blue_bac {
+	background: rgb(19, 124, 242); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(19, 124, 242); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_green_bac {
+	background: rgb(0, 153, 68); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(0, 153, 68); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_orange_bac {
+	background: rgb(255, 153, 0); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 153, 0); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_orange_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 153, 0); color: rgb(255, 153, 0); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_red_bor:hover {
+	color: rgb(255, 51, 0) !important; text-decoration: none !important;
+}
+.name_ico_blue_bor:hover {
+	color: rgb(19, 124, 242) !important; text-decoration: none !important;
+}
+.name_ico_green_bor:hover {
+	color: rgb(0, 153, 68) !important; text-decoration: none !important;
+}
+.name_ico_red_bac:hover {
+	color: rgb(255, 255, 255) !important; text-decoration: none !important;
+}
+.name_ico_blue_bac:hover {
+	color: rgb(255, 255, 255) !important; text-decoration: none !important;
+}
+.name_ico_green_bac:hover {
+	color: rgb(255, 255, 255) !important; text-decoration: none !important;
+}
+.name_ico_orange_bac {
+	color: rgb(255, 255, 255) !important; text-decoration: none !important;
+}
+.name_ico_orange_bor {
+	color: rgb(255, 153, 0) !important; text-decoration: none !important;
+}
+.name_ico_red_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 51, 0); color: rgb(255, 51, 0); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.name_ico_blue_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(19, 124, 242); color: rgb(19, 124, 242); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_green_bor {
+	background: rgb(255, 255, 255); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(0, 153, 68); color: rgb(0, 153, 68); line-height: 1; font-size: 12px; display: inline-block;
+}
+.name_ico_red_bac {
+	background: rgb(255, 51, 0); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 51, 0); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.name_ico_blue_bac {
+	background: rgb(19, 124, 242); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(19, 124, 242); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.name_ico_green_bac {
+	background: rgb(0, 153, 68); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(0, 153, 68); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.name_ico_orange_bac {
+	background: rgb(255, 153, 0); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(255, 153, 0); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.name_ico_green_bac {
+	background: rgb(0, 153, 68); padding: 3px 5px; border-radius: 3px; border: 1px solid rgb(0, 153, 68); color: rgb(255, 255, 255); line-height: 1; font-size: 12px; display: inline-block; cursor: text;
+}
+.yy_vioce_box {
+	padding: 20px; height: 44px; color: rgb(42, 161, 255); line-height: 44px; font-size: 16px; cursor: pointer;
+}
+.yy_voice_pic {
+	background: url("http://i1.hdfimg.com/zixun/v1.png") no-repeat left; width: 175px; height: 44px; margin-right: 20px; float: left; display: block;
+}
+.on.yy_voice_pic {
+	background: url("http://i1.hdfimg.com/zixun/v1.gif") no-repeat left;
+}
+.pops_small_audio .yy_voice_pic {
+	
+}
+.submit_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn2 {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn3 {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn_big {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn1 {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn4 {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; vertical-align: middle; display: inline-block; cursor: pointer;
+}
+.submit_btn2 {
+	padding: 0px 10px; height: 28px; line-height: 28px; font-size: 12px;
+}
+.submit_btn3 {
+	padding: 0px 10px; height: 28px; line-height: 28px; font-size: 12px;
+}
+.submit_btn4 {
+	padding: 0px 10px; height: 28px; line-height: 28px; font-size: 12px;
+}
+.submit_btn {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-size: 14px;
+}
+.submit_btn_big {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-size: 14px;
+}
+.submit_btn1 {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-size: 14px;
+}
+.submit_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40);
+}
+.submit_btn2:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40);
+}
+.submit_btn3:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40);
+}
+.submit_btn_big:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40);
+}
+.submit_btn1:hover {
+	background: rgb(204, 204, 204);
+}
+.submit_btn4:hover {
+	background: rgb(204, 204, 204);
+}
+.tel_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.lit_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.lit_btn:link {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.lit_btn:visited {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.continue_btn_a {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.continue_btn_a:link {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.continue_btn_a:visited {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.case_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.give_pre_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.green_a_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.report_btn {
+	background: rgb(54, 203, 43); border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255); text-decoration: none; display: inline-block;
+}
+.lit_btn1 {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; text-decoration: none; display: inline-block;
+}
+.lit_btn1:link {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; text-decoration: none; display: inline-block;
+}
+.lit_btn1:visited {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; text-decoration: none; display: inline-block;
+}
+.gray_a_btn {
+	background: rgb(221, 221, 221); border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); font-family: Arial,"simsun"; text-decoration: none; display: inline-block;
+}
+.tel_btn {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-family: "Hiragino Sans GB","Helvetica","microsoft yahei","simsun",arial; font-size: 16px;
+}
+.lit_btn:link {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.lit_btn:visited {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.case_btn {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.give_pre_btn {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.lit_btn1 {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.lit_btn1:link {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.lit_btn1:visited {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.report_btn {
+	padding: 0px 10px; height: 24px; line-height: 24px; font-family: Arial,"simsun"; font-size: 12px;
+}
+.green_a_btn {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-family: Arial,"simsun"; font-size: 14px;
+}
+.gray_a_btn {
+	padding: 0px 12px; height: 32px; line-height: 32px; font-family: Arial,"simsun"; font-size: 14px;
+}
+.continue_btn_a {
+	padding: 0px 12px; height: 36px; line-height: 36px; font-family: Arial,"simsun"; font-size: 14px;
+}
+.continue_btn_a:link {
+	padding: 0px 12px; height: 36px; line-height: 36px; font-family: Arial,"simsun"; font-size: 14px;
+}
+.continue_btn_a:visited {
+	padding: 0px 12px; height: 36px; line-height: 36px; font-family: Arial,"simsun"; font-size: 14px;
+}
+.lit_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.lit_btn:active {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.case_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.give_pre_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.green_a_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.report_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.tel_btn:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.continue_btn_a:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(49, 168, 40); color: rgb(255, 255, 255); text-decoration: none;
+}
+.lit_btn1:hover {
+	background: rgb(204, 204, 204); color: rgb(51, 51, 51); text-decoration: none;
+}
+.lit_btn1:active {
+	background: rgb(204, 204, 204); color: rgb(51, 51, 51); text-decoration: none;
+}
+.gray_a_btn:hover {
+	background: rgb(204, 204, 204); color: rgb(51, 51, 51); text-decoration: none;
+}

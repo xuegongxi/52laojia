@@ -1,0 +1,258 @@
+* {
+	margin: 0px; padding: 0px;
+}
+body {
+	background: rgb(255, 255, 255); font: 12px/1.5 "ËÎÌå", tahoma, Srial, helvetica, sans-serif; margin: 0px auto; font-size-adjust: none; font-stretch: normal;
+}
+ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+img {
+	border: currentColor;
+}
+.clear {
+	height: 0px; line-height: 0; clear: both; font-size: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+.hdf_menu {
+	margin: 10px auto 0px; width: 960px; font-size: 14px;
+}
+.hdf_menu .logo {
+	background: url("images/hdf_logo.png") no-repeat 0px 2px; width: 133px; height: 28px; text-indent: -9999px; overflow: hidden; float: left; display: inline;
+}
+.hdf_menu .logo a {
+	width: 153px; height: 23px; padding-bottom: 0px; display: block;
+}
+.hdf_menu_subTitle {
+	margin: 6px 0px 0px 5px; height: 20px; line-height: 24px; overflow: hidden; padding-left: 10px; font-family: "SimHei"; font-size: 18px; border-left-color: rgb(216, 216, 216); border-left-width: 2px; border-left-style: solid; float: left; display: inline; _height: 18px;
+}
+.hdf_menu .menu_list {
+	margin: 6px 8px 0px 0px; float: right; display: inline;
+}
+.hdf_menu .menu_list li {
+	height: 27px; line-height: 22px; overflow: hidden; margin-left: 5px; float: left; display: inline; position: relative;
+}
+#consult .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/menu_reapat.gif") repeat-x; border: 1px solid rgb(115, 189, 0);
+}
+#green .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/menu_reapat.gif") repeat-x; border: 1px solid rgb(115, 189, 0);
+}
+#jiahao .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/menu_reapat_jiahao.gif") repeat-x; border: 1px solid rgb(0, 190, 231);
+}
+#blue .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/menu_reapat_jiahao.gif") repeat-x; border: 1px solid rgb(0, 190, 231);
+}
+#blood .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/xinxueguan_title.gif") repeat-x; border: 1px solid rgb(255, 146, 0);
+}
+#orange .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/xinxueguan_title.gif") repeat-x; border: 1px solid rgb(255, 146, 0);
+}
+#jiahao .hdf_menu .menu_list li.active_jiahao {
+	background: rgb(0, 190, 231);
+}
+.hdf_menu .menu_list li.active_jiahao a {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+#blood .hdf_menu .menu_list li.active_blood {
+	background: rgb(255, 146, 0);
+}
+.hdf_menu .menu_list li.active_blood a {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+.hdf_menu a {
+	padding: 3px 8px 5px; bottom: 0px; color: rgb(51, 51, 51); text-decoration: none; float: left; position: relative; _padding: 6px 8px 3px;
+}
+.hdf_menu a:hover {
+	text-decoration: underline;
+}
+.hdf_menu strong {
+	padding: 3px 0px 0px 9px; float: left;
+}
+.hdf_menu .active_consult {
+	background: rgb(115, 189, 0); color: rgb(255, 255, 255); font-weight: bold;
+}
+.hdf_menu .active_blue {
+	background: rgb(17, 133, 203); color: rgb(255, 255, 255); font-weight: bold;
+}
+.hdf_menu .active_green {
+	background: rgb(115, 189, 0); color: rgb(255, 255, 255); font-weight: bold;
+}
+.hdf_menu .active_orange {
+	background: rgb(255, 146, 0); color: rgb(255, 255, 255); font-weight: bold;
+}
+.hdf_menu_sec {
+	margin: 0px auto 8px; top: -1px; width: 960px; height: 36px; clear: both; position: relative;
+}
+#consult .hdf_menu_sec {
+	background: rgb(115, 189, 0);
+}
+#jiahao .hdf_menu_sec {
+	background: rgb(0, 190, 231);
+}
+#blood .hdf_menu_sec {
+	background: rgb(255, 146, 0);
+}
+.hdf_menu_sec .menu_sec {
+	margin: 0px auto; padding: 0px 10px; width: 940px; line-height: 36px;
+}
+.hdf_menu_sec .menu_sec p {
+	color: rgb(255, 255, 255); line-height: 36px;
+}
+#consult p.tel_img {
+	background: url("http://i1.hdfimg.com/nav/images/tel_title01.gif") no-repeat right;
+}
+#consult p.inter_img {
+	background: url("http://i1.hdfimg.com/nav/images/inter_title01.gif") no-repeat right;
+}
+#jiahao p.jiahao_img {
+	background: url("http://i1.hdfimg.com/nav/images/jiahao_title.gif") no-repeat right;
+}
+.hdf_menu_sec .menu_sec span a {
+	padding: 0px 10px; color: rgb(255, 255, 255); font-size: 14px; text-decoration: none;
+}
+.hdf_menu_sec .menu_sec span a:hover {
+	text-decoration: underline;
+}
+.hdf_menu_sec .menu_sec span a.del_padding {
+	padding-left: 0px;
+}
+#blood a.del_padding {
+	font-weight: bold;
+}
+.hdf_menu_sec .menu_img {
+	margin: 10px 10px 0px 0px; height: 18px; float: right;
+}
+#blue .hdf_menu_sec {
+	background: rgb(17, 133, 203); top: -1px; height: 1px; overflow: hidden; clear: both; position: relative;
+}
+#green .hdf_menu_sec {
+	background: rgb(115, 189, 0); top: -1px; height: 1px; overflow: hidden; clear: both; position: relative;
+}
+#orange .hdf_menu_sec {
+	background: rgb(255, 146, 0); top: -1px; height: 1px; overflow: hidden; clear: both; position: relative;
+}
+#gray .hdf_menu .menu_list li {
+	background: url("http://i1.hdfimg.com/nav/images/menu_repeat_gray.gif") repeat-x; border: 1px solid rgb(224, 224, 224);
+}
+#gray .hdf_menu_sec {
+	background: rgb(224, 224, 224); top: -1px; height: 1px; overflow: hidden; clear: both; position: relative;
+}
+.hdf_topnav {
+	background: rgb(238, 238, 238); height: 29px; border-bottom-color: rgb(220, 220, 220); border-bottom-width: 1px; border-bottom-style: solid; min-width: 1000px;
+}
+.topnav_content {
+	margin: 0px auto; width: 960px; color: rgb(102, 102, 102);
+}
+.topnav_content a {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.topnav_content a:hover {
+	text-decoration: underline;
+}
+.topnav_content .toplist {
+	width: 650px; text-align: left; line-height: 29px; font-family: "ËÎÌå",tahoma,Srial,helvetica,sans-serif; font-size: 12px; float: left;
+}
+.topnav_content .toplist strong {
+	padding-right: 5px; font-weight: normal;
+}
+.topnav_content .toplist span {
+	margin: 0px 3px;
+}
+.topnav_content .toplist .letter {
+	background: url("http://i1.hdfimg.com/msg/msg.gif") no-repeat left; padding-left: 22px;
+}
+.topnav_content .toplist .small_logo {
+	margin-right: 5px; vertical-align: middle;
+}
+.topnav_content div.p_s_logo {
+	width: 603px; _padding-top: 4px;
+}
+.topnav_content .search input {
+	padding: 0px; border: currentColor; color: rgb(221, 221, 221); font-size: 12px;
+}
+.topnav_content .search {
+	width: 165px; padding-top: 5px; float: left;
+}
+.topnav_content .search input.text {
+	background: rgb(255, 255, 255); border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(221, 221, 221) currentColor rgb(221, 221, 221) rgb(221, 221, 221); width: 140px; height: 17px; line-height: 17px; vertical-align: middle;
+}
+.topnav_content .search input.text_change {
+	width: 150px; margin-left: 45px;
+}
+.topnav_content .search input.btn {
+	background: url("http://i1.hdfimg.com/nav/images/search.gif") no-repeat; width: 21px; height: 19px; vertical-align: middle; cursor: pointer;
+}
+.topnav_content .map {
+	line-height: 29px; float: right;
+}
+.topnav_content .map .mobile {
+	background: url("http://i1.hdfimg.com/homepage/images/ico_new_index1.gif") no-repeat right top; padding: 5px 25px 0px 14px;
+}
+.sec_blood_nav {
+	background: rgb(254, 235, 210); margin: 10px auto 0px; padding: 2px; width: 956px;
+}
+.sec_blood_nav div {
+	padding: 5px 15px; border: 1px solid rgb(251, 201, 144);
+}
+.sec_blood_nav div strong {
+	font-size: 14px;
+}
+.sec_blood_nav div a {
+	color: rgb(51, 51, 51); padding-right: 15px; font-size: 14px; text-decoration: none;
+}
+.sec_blood_nav div a:hover {
+	text-decoration: underline;
+}
+.topnav_city {
+	background: url("images/hdf_loginbar_city_bg.jpg") repeat-x left; padding: 0px 10px; height: 29px; line-height: 29px; float: left;
+}
+.topnav_city span {
+	color: rgb(255, 255, 0); font-size: 16px; font-weight: bold;
+}
+.topnav_city a {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+.lg-float {
+	margin: 0px auto; border: 2px solid rgb(118, 160, 69); width: 645px; height: 475px; text-align: left; position: absolute; z-index: 999;
+}
+.lg-float1 {
+	margin: 0px auto; border: 2px solid rgb(118, 160, 69); width: 645px; height: 475px; text-align: left; position: absolute; z-index: 999;
+}
+.lg-float-title {
+	background: rgb(221, 237, 204); margin: 0px; padding: 0px 0px 0px 20px; height: 35px; color: rgb(118, 160, 69); line-height: 35px; font-size: 14px;
+}
+.lg-float-title img {
+	padding: 6px 5px 0px 0px; float: right; display: inline; cursor: pointer;
+}
+.lg-float-title span {
+	float: left; display: inline;
+}
+.lg-space {
+	background: rgb(255, 255, 255); height: 440px; overflow: auto; font-family: "Î¢ÈíÑÅºÚ","ºÚÌå"; font-size: 14px;
+}
+.lg-space-list {
+	list-style: none; padding: 5px 0px 0px;
+}
+.lg-space-list li {
+	list-style: none; padding: 5px 0px; height: 25px; line-height: 25px;
+}
+.lg-space-list li span {
+	margin: 5px 0px; padding: 0px 20px; display: inline-block;
+}
+.lg-space-list-span {
+	font-weight: bold; float: left; display: inline;
+}
+.lg-space-list-span1 {
+	width: 500px; color: rgb(58, 100, 141); border-left-color: rgb(204, 204, 204); border-left-width: 1px; border-left-style: dotted; float: left; display: inline;
+}
+.lg-float-cor {
+	padding: 0px 0px 15px 20px; font-weight: bold;
+}

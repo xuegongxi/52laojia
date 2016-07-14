@@ -1,0 +1,204 @@
+.position_rela {
+	position: relative;
+}
+.mar_t3 {
+	margin-top: 3px;
+}
+.text_center {
+	text-align: center;
+}
+.upload_button2 .upload_button_i4 {
+	background: url("../images/sprite_mobile_img.png") no-repeat 8px 6px; border: 1px solid rgb(224, 224, 224); width: 30px; height: 28px; float: left;
+}
+.tips_recommend {
+	top: -10px; right: -12px; color: rgb(0, 153, 255); font-size: 12px; display: block; position: absolute;
+}
+.popup_block .mobile_content {
+	padding: 15px; line-height: 22px; font-size: 14px;
+}
+.popup_block .mobile_content p {
+	margin-bottom: 10px;
+}
+.popup_block .mobile_content .erweima {
+	padding-left: 23px; margin-bottom: 5px; display: block;
+}
+.popup_block .mobile_content .add {
+	margin: 0px 10px; vertical-align: -10px;
+}
+.tips_index_codeimg {
+	padding: 11px 0px 4px; border: 1px solid rgb(160, 160, 160); left: -37px; top: 56px; width: 153px; position: absolute; box-shadow: 2px 3px 3px rgba(160,160,160,0.5); background-color: rgb(255, 255, 255); -webkit-box-shadow: 2px 3px 3px rgba(160, 160, 160, 0.5); -moz-box-shadow: 2px 3px 3px rgba(160, 160, 160, 0.5);
+}
+.tips_index_codeimg .triangle {
+	background: url("../images/tips_index_triangle.png") no-repeat; left: 66px; top: -10px; width: 16px; height: 8px; padding-top: 0px; display: block; position: absolute !important;
+}
+.tips_index_codeimg p {
+	line-height: 22px; font-size: 15px;
+}
+.tips_index_codeimg .zeroyuan {
+	color: rgb(46, 127, 239); font-size: 17px;
+}
+.hospitalcode {
+	width: 365px; margin-bottom: 5px;
+}
+.border_blue_radio {
+	border-radius: 3px; border: 1px solid rgb(58, 162, 217); text-align: center; font-family: Î¢ÈíÑÅºÚ,ºÚÌå;
+}
+.border_blue_radio h1 {
+	line-height: 26px; font-size: 16px; font-weight: normal;
+}
+.border_blue_radio .codebody {
+	border-top-color: rgb(58, 162, 217); border-top-width: 1px; border-top-style: solid;
+}
+.border_blue_radio .codebody .codeimg {
+	background: url("../images/codeimg_bac.png") no-repeat; width: 250px; height: 105px; text-align: left; line-height: 27px; padding-top: 5px; font-size: 18px; float: left;
+}
+.border_blue_radio .codebody .codeimg p {
+	padding-left: 49px; font-family: Î¢ÈíÑÅºÚ;
+}
+.border_blue_radio .codebody .codeimg .blue {
+	color: rgb(48, 130, 232); font-size: 17px;
+}
+.border_blue_radio .codebody .codeimg_r {
+	padding: 2px 5px; height: 105px; float: right;
+}
+.download_please {
+	margin: 20px 0px; text-align: center;
+}
+.download_please span {
+	padding: 10px 0px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 19px; display: inline-block;
+}
+.wait_please {
+	margin: 30px 0px 20px; text-align: center; color: rgb(65, 91, 120);
+}
+.wait_please span {
+	padding: 10px 0px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 16px; display: inline-block;
+}
+.right10 {
+	top: 108px !important; right: 6px !important;
+}
+.doctor_top_erweima {
+	top: 39px; right: 0px; position: absolute;
+}
+.doctor_top_erweima .number {
+	background: url("../images/doctor_top_erweima_number.png?20160203") no-repeat; padding: 8px 0px 0px 10px; left: -122px; top: 7px; width: 113px; height: 62px; position: absolute;
+}
+.doctor_top_erweima .number p {
+	line-height: 18px; font-size: 13px;
+}
+.doctor_top_erweima .number .gray {
+	color: rgb(125, 125, 125); line-height: 24px; font-size: 12px; margin-left: 4px;
+}
+.right_codeimg {
+	background: url("http://i1.hdfimg.com/apptransform201603/images/codeimg_doctor.jpg") no-repeat; margin: 3px auto 5px; border-radius: 6px; border: 1px solid rgb(255, 196, 120); width: 362px; height: 138px; font-family: Î¢ÈíÑÅºÚ; position: relative; box-shadow: 0px 0px 0px 2px rgba(255,196,120,0.3); -webkit-box-shadow: 0 0 0 2px rgba(255, 196, 120, 0.3); -moz-box-shadow: 0 0 0 2px rgba(255, 196, 120, 0.3);
+}
+.right_codeimg .number {
+	left: 144px; bottom: 8px; color: rgb(125, 125, 125); font-size: 13px; display: block; position: absolute;
+}
+.text_bott_lf {
+	text-align: left; padding-left: 43px; float: left;
+}
+.text_bott_rt {
+	text-align: left; margin-top: 5px; float: right;
+}
+.codeimg_bottom_right {
+	top: 0px; width: 308px; height: 101px; right: -308px; position: absolute;
+}
+.right_title_center {
+	width: 270px; height: 31px; text-align: center; color: rgb(69, 55, 52); line-height: 30px; font-size: 14px; font-weight: bold; display: block;
+}
+.doc_down_codeimg {
+	background: url("../../images/person/preson_logo.png") no-repeat center; width: 729px; height: 143px; margin-left: -21px; border-bottom-color: rgb(253, 202, 180); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+.doc_down_codeimg .close {
+	background: url("http://i1.hdfimg.com/apptransform/images/doc_down_codeimg_close.png") no-repeat center; top: 3px; width: 13px; height: 12px; right: 3px; display: block; position: absolute; cursor: pointer;
+}
+.codeimg_bottom_right_top {
+	top: -106px; right: 1px; position: absolute; z-index: 2;
+}
+.code_learn_img {
+	background: url("http://i1.hdfimg.com/apptransform/images/liuliangmianfei03.jpg") no-repeat; width: 980px; height: 110px; text-align: center; color: rgb(255, 255, 255); padding-top: 10px; padding-right: 5px; padding-left: 215px; font-family: "ºÚÌå"; display: block;
+}
+.code_learn_img:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.code_learn_img h1 {
+	line-height: 58px; letter-spacing: 2px; font-size: 36px; font-weight: normal;
+}
+.code_article {
+	background: url("http://i1.hdfimg.com/apptransform/images/code_learn_yellowlogo.png") no-repeat 0px 9px; text-align: left; line-height: 33px; padding-left: 24px; font-size: 22px; margin-right: 40px; display: inline-block; _zoom: 1;
+}
+.code_learn_img .danhuang {
+	color: rgb(254, 248, 42);
+}
+.max9_font {
+	font-size: 34px !important;
+}
+body {
+	margin: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 20px; font-family: "ËÎÌå", "Î¢ÈíÑÅºÚ", Tahoma, Verdana, "ËÎÌå"; font-size: 12px;
+}
+.tab_white {
+	background-color: rgb(255, 255, 255);
+}
+.table_white {
+	background-color: rgb(255, 255, 255);
+}
+form {
+	margin: 0px;
+}
+img {
+	
+}
+textarea {
+	font-size: 14px;
+}
+.cls {
+	margin: 0px auto; padding: 0px; clear: both;
+}
+form {
+	margin: 0px;
+}
+img {
+	
+}
+.turn_padt8 {
+	padding-bottom: 8px;
+}
+.jiahao_icon_aixinren {
+	background: url("../images/aixinren.gif") no-repeat left 6px rgba(0, 0, 0, 0); line-height: 26px; padding-left: 18px; display: inline-block;
+}
+.online_advise_btn_aixin {
+	background: url("../images/sprite_btn_aixin.png") no-repeat 10px !important;
+}
+.online_advise_btn_aixin:hover {
+	background: url("../images/sprite_btn_aixin.png") no-repeat 10px rgb(255, 102, 0) !important;
+}
+.hyyy_head {
+	height: 57px; border-bottom-color: rgb(249, 249, 249); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.hyyy_content {
+	margin: 0px auto; width: 952px; text-align: left;
+}
+.hyyy_zhengwen {
+	margin: 0px auto; width: 915px; padding-top: 50px;
+}
+.hyyy_zhengwen .title {
+	text-align: center; color: rgb(50, 50, 50); font-family: "Î¢ÈíÑÅºÚ" , Tahoma, Verdana, "ËÎÌå"; font-size: 24px; font-weight: normal;
+}
+.hyyy_zhengwen .zhengwen {
+	text-align: left; color: rgb(50, 50, 50); line-height: 24px; text-indent: 2em; font-size: 16px; font-weight: normal; margin-top: 30px;
+}
+.hyyy_content_img {
+	background: url("../images/hyyy_content_img.png") no-repeat right 15px; margin: 0px auto; width: 1200px; height: 550px; position: relative;
+}
+.hyyy_content_img .jieshao {
+	background: url("../images/hyyy_jieshao.png") no-repeat; left: 0px; top: 75px; width: 240px; height: 420px; position: absolute;
+}
+.hyyy_mart_11 {
+	margin-top: 13px;
+}
+.hyyy_marl_120 {
+	margin-left: 120px;
+}
+.hyyy_cor_ora {
+	color: rgb(250, 150, 90);
+}

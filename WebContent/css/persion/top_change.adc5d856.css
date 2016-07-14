@@ -1,0 +1,555 @@
+.i_service_list .arrow {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.right_service .item .show_box span i.ico_num {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topbar_left .logo {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topbar_left .message i {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topbar_right .favorite i {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topbar_search .right_sub {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topsearch .left_logo {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png");
+}
+.topbar_box {
+	background: rgb(235, 238, 240); height: 34px; line-height: 34px; font-size: 14px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.topbar_box2 {
+	background: rgb(235, 238, 240); height: 34px; line-height: 34px; font-size: 14px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.topbar_box3 {
+	background: rgb(235, 238, 240); height: 60px; line-height: 60px; font-size: 14px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.topbar_box3 .topbar_left .logo {
+	background-position: -221px 0px; top: 12px; width: 183px; height: 34px; float: left; display: block;
+}
+.topbar_box3 .topbar {
+	margin: 0px auto; width: 1002px !important;
+}
+.topbar_box3 .topbar_search {
+	margin-top: 18px;
+}
+.topbar_box3 .topbar_right .item {
+	width: 100px;
+}
+.topbar_box3 .topbar_right .item .show_box {
+	width: 100px; text-align: center; line-height: 1; margin-top: 10px;
+}
+.topbar_box3 .topbar_right .item .show_box i {
+	margin: 0px auto; width: 29px; height: 24px; line-height: 1; float: none; display: block;
+}
+.topbar_box3 .topbar_right .item .show_box i.ico_service {
+	background-position: -173px -54px;
+}
+.topbar_box3 .topbar_right .item .show_box i.ico_mydoc {
+	background-position: -203px -54px;
+}
+.topbar_box3 .topbar_right .item .show_box i.ico_myspace {
+	background-position: -233px -54px;
+}
+.topbar_box3 .topbar_right .item .show_box span {
+	line-height: 1.5; display: block;
+}
+.topbar_box3 .topbar_right .line1.item {
+	top: 10px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+.topbar_box3 .topbar_right .line2.item {
+	top: 10px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+.topbar_box3 .topbar_right .line1.item {
+	left: 100px;
+}
+.topbar_box3 .topbar_right .line2.item {
+	left: 200px;
+}
+.topbar_box3 .topbar_right .item .hide_box {
+	background: rgb(255, 255, 255); border: 2px solid rgb(255, 136, 0); top: 60px; width: 424px; right: 0px; display: none; position: absolute;
+}
+.topbar_box3 .i_service_list .find_all {
+	line-height: 1.5;
+}
+.topbar_box * {
+	font-family: "Î¢ÈíÑÅºÚ" !important;
+}
+.topbar {
+	margin: 0px auto; width: 960px;
+}
+.topbar_box2 .topbar {
+	margin: 0px auto; width: 1000px;
+}
+.topbar_left {
+	float: left;
+}
+.topbar_left .red {
+	color: rgb(255, 119, 0); font-size: 14px; font-weight: 700; margin-right: 5px;
+}
+.topbar_left a {
+	text-decoration: none;
+}
+.topbar_left .logingrey {
+	color: rgb(102, 102, 102); padding-left: 20px;
+}
+.topbar_left .grey {
+	color: rgb(102, 102, 102); padding-left: 20px;
+}
+.topbar_left .nologininfo {
+	margin-left: 15px !important;
+}
+.topbar_left .userlogin {
+	margin-right: 10px;
+}
+.topbar_left .username {
+	color: rgb(76, 76, 76); font-weight: 700; margin-right: 10px;
+}
+.topbar_left .message {
+	color: rgb(102, 102, 102); margin-right: -8px;
+}
+.topbar_left .message i {
+	background-position: -35px -85px; top: 2px; width: 20px; height: 14px; margin-right: 5px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.topbar_left .on.message i {
+	background: url("http://i1.hdfimg.com/passport/images/hasmessage1.gif") no-repeat left top;
+}
+.topbar_left .logout {
+	color: rgb(102, 102, 102); margin-left: 5px;
+}
+.topbar_left .welcome {
+	color: rgb(102, 102, 102); margin-right: 10px;
+}
+.topbar_left .logo {
+	background-position: -57px -85px; top: 9px; width: 100px; height: 18px; text-indent: -9999px; padding-top: 0px; margin-right: 10px; display: inline-block; position: relative; z-index: 0; background-repeat: no-repeat;
+}
+.topbar_right {
+	float: right;
+}
+.topbar_right .favorite {
+	color: rgb(102, 102, 102);
+}
+.topbar_right .favorite i {
+	background-position: 0px -84px; top: 4px; width: 16px; height: 16px; margin-right: 5px; display: inline-block; position: relative; z-index: 1;
+}
+.topbar_right .grey {
+	padding: 0px 2px; color: rgb(102, 102, 102);
+}
+.topbar_right ul {
+	position: relative; z-index: 101;
+}
+.topbar_right .item {
+	padding: 0px; width: 130px; float: left; position: relative; z-index: 101;
+}
+.topbar_right .item .show_box {
+	width: 130px; text-align: right;
+}
+.topbar_right .item .show_box i {
+	left: 45px; top: 9px; width: 22px; height: 19px; float: left; display: inline-block; position: relative;
+}
+.topbar_right .item .show_box i.ico_service {
+	background-position: -105px -54px;
+}
+.topbar_right .item .show_box i.ico_mydoc {
+	background-position: -127px -54px;
+}
+.topbar_right .item .show_box i.ico_myspace {
+	background-position: -150px -54px;
+}
+.topbar_right .item .show_box span {
+	color: rgb(255, 136, 0); font-size: 14px; font-weight: 700; display: block;
+}
+.topbar_right .item .show_box a {
+	text-decoration: none; display: block;
+}
+.topbar_right .item .hide_box {
+	background: rgb(255, 255, 255); border: 2px solid rgb(255, 136, 0); top: 34px; width: 424px; right: 0px; display: none; position: absolute;
+}
+.topbar_right .line1.item {
+	top: 8px; width: 0px; height: 20px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+.topbar_right .line2.item {
+	top: 8px; width: 0px; height: 20px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+.topbar_right .line1.item {
+	left: 150px;
+}
+.topbar_right .line2.item {
+	left: 280px;
+}
+.topbar_search {
+	background: rgb(255, 255, 255); border-radius: 2px; border: 1px solid rgb(221, 221, 221); width: 200px; height: 22px; line-height: 1; margin-top: 5px; margin-left: 10px; float: left;
+}
+.topbar_search .leftinput {
+	background: rgb(255, 255, 255); padding: 0px 5px; width: 150px; height: 22px; border-right-color: rgb(221, 221, 221); border-right-width: 1px; border-right-style: solid; float: left;
+}
+.topbar_search .leftinput input {
+	padding: 2px 0px; border: currentColor; width: 100%; height: 18px; line-height: 1;
+}
+.topbar_search .right_sub {
+	background-position: -162px -85px; width: 38px; height: 22px; float: left; background-repeat: no-repeat;
+}
+.topbar_search .right_sub input {
+	border: currentColor; width: 100%; height: 22px; line-height: 1; text-indent: -9999px; cursor: pointer;
+}
+.topsearch_box * {
+	font-family: "Î¢ÈíÑÅºÚ" !important;
+}
+.topsearch {
+	margin: 0px auto; width: 960px; padding-top: 30px; padding-bottom: 14px;
+}
+.topsearch .left_logo {
+	width: 218px; height: 53px; overflow: hidden; margin-right: 35px; float: left;
+}
+.topsearch .left_logo a {
+	height: 54px; text-indent: -9999px; display: block;
+}
+.center_search {
+	width: 378px; overflow: hidden; float: left;
+}
+.center_search .top_check {
+	margin-bottom: 2px;
+}
+.center_search .top_check ul li {
+	padding: 0px 12px 2px; font-size: 14px; float: left; cursor: pointer;
+}
+.center_search .top_check ul li.on {
+	background: rgb(0, 171, 245); color: rgb(255, 255, 255);
+}
+.center_search .bot_form {
+	background: rgb(0, 171, 245); padding: 2px;
+}
+.center_search .bot_form .leftinput {
+	background: rgb(255, 255, 255); padding: 0px 3px; width: 294px; margin-bottom: 0px; float: left;
+}
+.center_search .bot_form .leftinput input {
+	padding: 3px 0px; border: currentColor; width: 100%; height: 18px; line-height: 18px;
+}
+.center_search .bot_form .right_sub {
+	width: 70px; float: left;
+}
+.center_search .bot_form .right_sub input {
+	border: currentColor; width: 100%; height: 24px; color: rgb(255, 255, 255); line-height: 1; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.right_service {
+	width: 300px; float: right; position: relative; z-index: 7;
+}
+.right_service .item {
+	float: left; position: relative; z-index: 100;
+}
+.right_service .item .show_box {
+	text-align: center; padding-bottom: 10px;
+}
+.right_service .item .show_box i {
+	display: inline-block;
+}
+.right_service .item .show_box span {
+	color: rgb(255, 136, 0); display: block; position: relative; z-index: 0;
+}
+.right_service .item .show_box span i.ico_num {
+	background-position: -222px -38px; top: -4px; width: 12px; height: 12px; text-align: center; color: rgb(255, 255, 255); line-height: 1; padding-left: 3px; font-family: Srial; font-size: 12px; font-style: normal; font-weight: 400; display: block; position: absolute;
+}
+.right_service .item .show_box a {
+	text-decoration: none; display: block;
+}
+.right_service .item .hide_box {
+	background: rgb(255, 255, 255); top: 56px; width: 424px; right: 0px; display: none; position: absolute;
+}
+.navigation_box {
+	margin-bottom: 14px;
+}
+.navigation .o_z_center dl dd ul li.has_children {
+	z-index: 100;
+}
+.i_service_list {
+	font-size: 14px; position: relative;
+}
+.i_service_list .arrow {
+	background-position: -16px -84px; width: 16px; height: 16px; position: absolute;
+}
+.i_service_list li {
+	padding: 10px 0px 10px 20px; line-height: 1.5; border-bottom-color: rgb(229, 229, 229); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.i_service_list li .top {
+	padding-right: 80px; position: relative;
+}
+.i_service_list li .state {
+	background: rgb(255, 230, 204); width: 54px; height: 18px; text-align: center; right: 10px; color: rgb(0, 0, 0); line-height: 18px; font-size: 12px; float: right; position: absolute;
+}
+.i_service_list li .state i {
+	border-width: 9px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 230, 204) rgb(255, 255, 255) rgb(255, 255, 255); left: -18px; width: 0px; height: 0px; position: absolute;
+}
+.i_service_list li.on {
+	background: rgb(250, 250, 250);
+}
+.i_service_list li.on .state i {
+	border-width: 9px; border-style: solid; border-color: rgb(250, 250, 250) rgb(255, 230, 204) rgb(250, 250, 250) rgb(250, 250, 250);
+}
+.i_service_list li .bot {
+	padding-right: 10px;
+}
+.i_service_list li .bot .blue {
+	float: right;
+}
+.i_service_list .time {
+	color: rgb(153, 153, 153);
+}
+.i_service_list .green {
+	color: rgb(89, 179, 0);
+}
+.i_service_list .blue {
+	color: rgb(0, 102, 204);
+}
+.i_service_list .orange1 {
+	color: rgb(255, 130, 20);
+}
+.i_service_list .find_all {
+	padding: 10px 20px;
+}
+.doc_login .lr {
+	padding-left: 30px; font-size: 14px;
+}
+.doc_login .lr2 {
+	padding-left: 47px; font-size: 14px;
+}
+.doc_login b {
+	padding: 0px 5px;
+}
+.doc_login a {
+	background: url("http://i1.hdfimg.com/images/doctor/doctor_head_black_32_39.png") no-repeat 20px rgb(76, 201, 255); border: 1px solid rgb(0, 161, 230); height: 54px; color: rgb(255, 255, 255); line-height: 54px; padding-left: 70px; font-family: "Î¢ÈíÑÅºÚ" !important; font-size: 24px; font-weight: 700; display: block;
+}
+.doc_login a:hover {
+	text-decoration: none;
+}
+.login {
+	width: 100%; height: 39px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; min-width: 1002px;
+}
+.login_main_box {
+	background: rgb(247, 247, 247); width: 100%; height: 39px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; z-index: 9999;
+}
+.login_main {
+	background: rgb(247, 247, 247); margin: 0px auto; height: 39px;
+}
+.logo {
+	width: auto; height: auto; padding-top: 12px;
+}
+.logo img {
+	border: 0px currentColor;
+}
+.login_p {
+	font: 12px/24px simsun, arial; width: auto; height: auto; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+.login_p a {
+	padding: 0px 3px; color: rgb(118, 141, 172); text-decoration: none;
+}
+.login_p a:hover {
+	color: rgb(38, 112, 213);
+}
+.login_p span {
+	color: rgb(204, 204, 204);
+}
+.login_r {
+	width: auto; height: 40px;
+}
+.login_s {
+	padding-top: 8px;
+}
+.unread_msg_cnt {
+	background: rgb(227, 0, 27); padding: 0px 4px; border-radius: 3px; left: 15px; top: -8px; color: rgb(255, 255, 255); line-height: 12px; display: inline-block; position: absolute;
+}
+.search_input {
+	background: rgb(255, 255, 255); font: 14px/22px "microsoft yahei", arial; border-radius: 2px 0px 0px 2px; border: 1px solid rgb(221, 221, 221); width: 150px; height: 22px; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+.btn_input {
+	background: url("http://i1.hdfimg.com/doctorzone/images/icon_search.png") no-repeat center rgb(255, 255, 255); border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(221, 221, 221) currentColor; border-radius: 0px 2px 2px 0px; width: 40px; height: 24px; cursor: pointer;
+}
+.btn_input:hover {
+	background: url("http://i1.hdfimg.com/doctorzone/images/icon_search.png") no-repeat center rgb(255, 255, 255);
+}
+.login_link {
+	font: 12px/24px arial; width: auto; height: auto; font-size-adjust: none; font-stretch: normal;
+}
+.login_link a {
+	padding: 0px 3px; color: rgb(118, 141, 172); text-decoration: none;
+}
+.login_link a:hover {
+	color: rgb(38, 112, 213);
+}
+.login_link span {
+	color: rgb(204, 204, 204);
+}
+.bubble_msg_w {
+	border-radius: 3px; border: 3px solid rgba(51, 51, 51, 0.3); left: -118px; top: 20px; width: 330px; position: absolute; z-index: 999;
+}
+.bubble_msg {
+	background: rgb(255, 255, 255); padding: 15px; width: 300px; line-height: 1.5; z-index: 999;
+}
+.bubble_msg_w .bubble_msg span {
+	color: rgb(51, 51, 51);
+}
+.bubble_msg_w .bubble_msg p {
+	height: 30px; color: rgb(51, 51, 51);
+}
+.bubble_msg_w .bubble_msg .orange1 {
+	color: rgb(255, 68, 0);
+}
+.bubble_msg_w .bubble_msg .site_letter li {
+	padding: 5px 0px; color: rgb(51, 51, 51); border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: dashed; word-break: break-all; word-wrap: break-word;
+}
+.bubble_msg_w .bubble_msg .bubble_next {
+	background: rgb(54, 203, 43); padding: 3px 8px; border-radius: 2px; border: 1px solid rgb(59, 193, 49); color: rgb(255, 255, 255);
+}
+.bubble_msg_w .bubble_msg .bubble_next:hover {
+	background: rgb(54, 177, 45); border: 1px solid rgb(45, 170, 36); color: rgb(255, 255, 255); text-decoration: none;
+}
+.bubble_msg_w .bubble_msg .bubble_close {
+	background: rgb(221, 221, 221); padding: 3px 8px; border-radius: 2px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51);
+}
+.bubble_msg_w .bubble_msg .bubble_close:hover {
+	background: rgb(204, 204, 204); color: rgb(51, 51, 51); text-decoration: none;
+}
+.bubble_msg_w .bubble_msg .bubble_close2 {
+	background: url("http://i1.hdfimg.com/doctorzone/images/close_pop.png") no-repeat 10px 5px; padding: 3px 5px; border-radius: 3px; top: 5px; width: 20px; height: 20px; right: 0px; color: rgb(153, 153, 153); display: block; position: absolute;
+}
+.bubble_msg_w .bubble_msg .bubble_close2:hover {
+	background: url("../images/close_pop.png") no-repeat 6px -36px;
+}
+.bubble_msg .arrow {
+	background: url("http://i1.hdfimg.com/doctorzone/images/bubble_arrow.png") no-repeat; left: 120px; top: -7px; width: 25px; height: 25px; display: block; position: absolute;
+}
+.bubble_msg_w .bubble_msg .site_letter li a {
+	color: rgb(38, 112, 213);
+}
+.bubble_msg_w .bubble_msg .site_letter li a:hover {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.fl {
+	float: left; display: inline;
+}
+.fr {
+	float: right; display: inline;
+}
+.dil {
+	display: inline-block;
+}
+.pl20 {
+	padding-left: 20px;
+}
+.pt10 {
+	padding-top: 10px;
+}
+.pr25 {
+	padding-right: 25px;
+}
+body .topbar_box3 {
+	background: rgb(254, 254, 254); border-bottom-color: rgb(245, 245, 245); border-bottom-width: 1px; border-bottom-style: solid;
+}
+body .topbar_box3 .topbar_right .item {
+	width: 75px;
+}
+body .topbar_box3 .topbar_right .item .show_box {
+	width: 100%;
+}
+.topbar_box3 .topbar_right .line2.item {
+	top: 10px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+.topbar_box3 .topbar_right .line3.item {
+	top: 10px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+body .topbar_box3 .topbar_right .line1.item {
+	top: 10px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: solid; position: absolute;
+}
+body .topbar_box3 .topbar_right .line1.item {
+	left: 75px;
+}
+body .topbar_box3 .topbar_right .line2.item {
+	left: 150px;
+}
+body .topbar_box3 .topbar_right .line3.item {
+	left: 225px;
+}
+body .topbar_right .item .show_box span {
+	font-family: arial; font-size: 12px; font-weight: 400;
+}
+body .topbar_right .item .show_box i {
+	background-image: url("http://i1.hdfimg.com/passport/images/top_menu_ico.png"); background-size: 100px 18px;
+}
+body .topbar_box3 .topbar_right .item .show_box i {
+	top: 15px; width: 18px; height: 18px;
+}
+body .topbar_box3 .topbar_right .item .show_box i.ico_myspace {
+	
+}
+body .topbar_box3 .topbar_right .item .show_box i.ico_service {
+	background-position: -25px 0px;
+}
+body .topbar_box3 .topbar_right .item .show_box i.ico_mydoc {
+	background-position: -50px 0px;
+}
+body .topbar_box3 .topbar_right .item .show_box i.ico_downloadapp {
+	background-position: -75px 0px;
+}
+.right_service .item {
+	width: 75px;
+}
+.right_service .item .show_box {
+	width: 100%;
+}
+.right_service .line1.item {
+	top: 5px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: dotted; position: absolute;
+}
+.right_service .line2.item {
+	top: 5px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: dotted; position: absolute;
+}
+.right_service .line3.item {
+	top: 5px; width: 0px; height: 40px; border-right-color: rgb(204, 204, 204); border-right-width: 1px; border-right-style: dotted; position: absolute;
+}
+.right_service .line1.item {
+	left: 75px;
+}
+.right_service .line2.item {
+	left: 150px;
+}
+.right_service .line3.item {
+	left: 225px;
+}
+.right_service .item .show_box span {
+	padding-top: 30px; font-family: arial; font-size: 12px; font-weight: 400;
+}
+.right_service .item .show_box i {
+	top: 5px; width: 18px; height: 18px; background-image: url("http://i1.hdfimg.com/passport/images/top_menu_ico.png") !important;
+}
+.right_service .item .show_box i.ico_myspace {
+	
+}
+.right_service .item .show_box i.ico_service {
+	background-position: -25px 0px;
+}
+.right_service .item .show_box i.ico_mydoc {
+	background-position: -50px 0px;
+}
+.right_service .item .show_box i.ico_downloadapp {
+	background-position: -75px 0px;
+}
+.right_service .item .hide_box {
+	border: 1px solid rgb(255, 136, 0);
+}
+.i_service_list .arrow {
+	top: -8px; right: 27px; z-index: -1;
+}
+.right_service .item .show_box span i.ico_num {
+	left: -10px !important; right: 4px !important; background-image: url("http://i1.hdfimg.com/passport/images/top_bg.png") !important;
+}
+.right_service .item .show_box i {
+	left: 50% !important; margin-left: -10px !important; position: absolute !important;
+}
+.topbar_box3 .topbar_right .item .show_box i {
+	left: 50% !important; margin-left: -10px !important; position: absolute !important;
+}
+.topbar_box3 .topbar_right .item .show_box span {
+	padding-top: 24px !important;
+}

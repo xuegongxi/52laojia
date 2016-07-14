@@ -1,0 +1,174 @@
+.clear {
+	width: 0px; height: 0px; line-height: 0; overflow: hidden; clear: both; font-size: 0px;
+}
+.navigation {
+	background: url("../images/1.png") no-repeat;
+}
+.navigation .o_z_left {
+	background: url("../images/1.png") no-repeat;
+}
+.navigation .o_z_right {
+	background: url("../images/1.png") no-repeat;
+}
+.navigation .o_z_center .o_z_index {
+	background: url("../images/1.png") no-repeat;
+}
+.navigation .o_z_center dl dd ul li .o_z_line {
+	background: url("../images/1.png") no-repeat;
+}
+.navigation .o_z_center dl dd ul li .o_z_arrow {
+	background: url("../images/all_bg.png") no-repeat;
+}
+.banner_download .download_IOS {
+	background: url("../images/all_bg.png") no-repeat;
+}
+.banner_download .download_Android {
+	background: url("../images/all_bg.png") no-repeat;
+}
+.navigation {
+	background-position: 0px -70px; margin: 0px auto; width: 960px; font-family: "微软雅黑"; position: relative; background-repeat: repeat-x;
+}
+.navigation * {
+	font-family: Microsoft YaHei;
+}
+.navigation .o_z_left {
+	top: 0px; width: 1px; height: 70px; position: absolute;
+}
+.navigation .o_z_right {
+	top: 0px; width: 1px; height: 70px; position: absolute;
+}
+.navigation .o_z_left {
+	left: 0px;
+}
+.navigation .o_z_right {
+	right: 0px;
+}
+.navigation .o_z_center .o_z_index {
+	background-position: right -140px; width: 133px; height: 70px; text-align: center; line-height: 70px; float: left;
+}
+.navigation .o_z_center .o_z_index a {
+	color: rgb(255, 255, 255); font-size: 16px; font-weight: bold; display: block;
+}
+.navigation .o_z_center .o_z_index a:hover {
+	text-decoration: none;
+}
+.navigation .o_z_center dl {
+	width: 826px; padding-top: 7px; float: left;
+}
+.navigation .o_z_center dl dd {
+	color: rgb(255, 255, 255); padding-left: 53px; font-size: 14px; margin-top: 3px; float: left;
+}
+.navigation .o_z_center dl dd h6 {
+	width: 62px; font-size: 16px; float: left;
+}
+.navigation .o_z_center dl dd ul {
+	width: 246px; float: left;
+}
+.navigation .o_z_center dl dd ul li {
+	height: 23px; padding-right: 6px; float: left;
+}
+.navigation .o_z_center dl dd ul li.has_children {
+	position: relative;
+}
+.navigation .o_z_center dl dd ul li .o_z_line {
+	background-position: 0px -210px; width: 1px; height: 12px; overflow: hidden; margin-top: 8px; margin-right: 6px; float: left; display: block;
+}
+.navigation .o_z_center dl dd ul li .o_z_arrow {
+	width: 10px; height: 6px; text-indent: -9999px; overflow: hidden; margin-top: 10px; margin-left: 5px; float: left; display: block;
+}
+.navigation .o_z_center dl dd ul li .on.o_z_arrow {
+	background-position: 0px -6px;
+}
+.navigation .o_z_center dl dd ul li a {
+	padding: 0px 5px; color: rgb(255, 255, 255); margin-top: 2px; float: left; display: block;
+}
+.navigation .o_z_center dl dd ul li a:hover {
+	background: rgb(229, 247, 255); color: rgb(18, 136, 220); text-decoration: none; text-shadow: none;
+}
+.navigation .o_z_center dl dd ul li.on {
+	background: rgb(250, 250, 250);
+}
+.navigation .o_z_center dl dd ul li.on a {
+	color: rgb(18, 136, 220); text-decoration: none; text-shadow: none;
+}
+.navigation .o_z_center dl dd ul li.on a:hover {
+	background: rgb(250, 250, 250); color: rgb(18, 136, 220);
+}
+.navigation .o_z_center dl dd ul li .o_z_area_box {
+	background: rgb(250, 250, 250); padding: 10px 15px; left: 0px; top: 22px; width: 432px; overflow: hidden; display: none; position: absolute; box-shadow: 2px 2px 2px #666;
+}
+.navigation .o_z_center dl dd ul li .o_z_area_box ul {
+	width: 463px;
+}
+.navigation .o_z_center dl dd ul li .o_z_area_box li {
+	width: 60px;
+}
+.navigation .o_z_center dl dd ul li .o_z_area_box li a {
+	color: rgb(77, 77, 77); float: none; text-shadow: none;
+}
+.navigation .o_z_center dl dd ul li .o_z_area_box li a:hover {
+	color: rgb(20, 128, 204);
+}
+.bannerSlide {
+	border: 1px solid rgb(219, 219, 219); width: 648px; overflow: hidden; margin-bottom: 10px;
+}
+.bannerSlide .bd {
+	height: 210px; overflow: hidden; border-bottom-color: rgb(219, 219, 219); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.bannerSlide .bd ul {
+	height: 210px;
+}
+.bannerSlide .bd ul li {
+	height: 210px;
+}
+.bannerSlide .hd {
+	width: 648px; overflow: hidden;
+}
+.bannerSlide .hd ul {
+	width: 660px; height: 30px; font-size: 16px; font-weight: bold;
+}
+.bannerSlide .hd ul li {
+	width: 129px; height: 30px; border-right-color: rgb(219, 219, 219); border-right-width: 1px; border-right-style: solid; float: left;
+}
+.bannerSlide .hd ul li a {
+	height: 27px; text-align: center; line-height: 27px; border-bottom-color: rgb(255, 255, 255); border-bottom-width: 3px; border-bottom-style: solid; display: block;
+}
+.bannerSlide .hd ul li a:hover {
+	color: rgb(0, 119, 204); text-decoration: none; border-bottom-color: rgb(254, 162, 24); border-bottom-width: 3px; border-bottom-style: solid;
+}
+.bannerSlide .hd ul li.on a {
+	color: rgb(0, 119, 204); text-decoration: none; border-bottom-color: rgb(254, 162, 24); border-bottom-width: 3px; border-bottom-style: solid;
+}
+.banner_download {
+	width: 100%; height: 210px; position: relative;
+}
+.banner_download .download_IOS {
+	background-position: 0px -12px; width: 144px; height: 33px; text-align: center; bottom: 30px; color: rgb(255, 255, 255); line-height: 33px; font-size: 16px; display: block; position: absolute;
+}
+.banner_download .download_Android {
+	background-position: 0px -12px; width: 144px; height: 33px; text-align: center; bottom: 30px; color: rgb(255, 255, 255); line-height: 33px; font-size: 16px; display: block; position: absolute;
+}
+.banner_download .download_IOS:hover {
+	background-position: 0px -46px; text-decoration: none;
+}
+.banner_download .download_Android:hover {
+	background-position: 0px -46px; text-decoration: none;
+}
+.banner_download .download_IOS {
+	left: 35px;
+}
+.banner_download .download_Android {
+	left: 208px;
+}
+.banner_download .mes_to_iphone {
+	bottom: 10px; color: rgb(23, 106, 204); font-size: 14px; position: absolute;
+}
+.banner_download .mes_to_Android {
+	bottom: 10px; color: rgb(23, 106, 204); font-size: 14px; position: absolute;
+}
+.banner_download .mes_to_iphone {
+	left: 43px;
+}
+.banner_download .mes_to_Android {
+	left: 218px;
+}

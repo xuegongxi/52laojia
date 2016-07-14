@@ -1,0 +1,180 @@
+.reveiwNotice-btn {
+	width: 75px; height: 28px; text-align: center; line-height: 28px; font-size: 14px;
+}
+.reveiwNotice-btn:hover {
+	text-decoration: none;
+}
+.reveiwNotice-nowBtn {
+	background: rgb(236, 236, 236); border: 1px solid rgb(193, 193, 193);
+}
+.reveiwNotice-hoverBtn {
+	background: rgb(255, 255, 255); border: 2px solid rgb(0, 102, 204); width: 73px; height: 26px; line-height: 26px;
+}
+.reveiwNotice-activeBtn {
+	background: rgb(0, 102, 204); border: currentColor; width: 77px; height: 30px; color: rgb(255, 255, 255); line-height: 30px; font-weight: bold;
+}
+.reveiwNotice-activeBtn:hover {
+	color: rgb(255, 255, 255);
+}
+.reveiwNotice-box {
+	padding: 10px; border: 2px solid rgb(56, 149, 215); margin-right: auto; margin-left: auto;
+}
+.reveiwHis-box {
+	padding: 10px; width: 678px; margin-right: auto; margin-left: auto;
+}
+.reveiwNotice-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") no-repeat left; height: 33px; line-height: 33px;
+}
+.reveiwNotice-title h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/reveiwnotice01.gif") no-repeat left; font: bold 16px/33px "Î¢ÈíÑÅºÚ", "ºÚÌå"; padding-left: 20px; margin-left: 20px; font-size-adjust: none; font-stretch: normal;
+}
+.reveiwNotice-content-title {
+	border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.reveiwNotice-check-details {
+	padding: 20px 0px 0px 15px;
+}
+.reveiwNotice-check-details-content {
+	padding-left: 22px;
+}
+.reveiwNotice-check-details-list {
+	background: rgb(243, 243, 243); padding: 10px 15px 10px 0px; border: 1px solid rgb(222, 222, 222);
+}
+.reveiwNotice-check-details-list li {
+	padding: 5px 0px;
+}
+.reveiwNotice-check-details-list-name {
+	width: 175px; text-align: right;
+}
+.reveiwNotice-check-details-list-num {
+	background: rgb(255, 255, 255); border: 1px solid rgb(221, 221, 221); width: 88px; height: 20px; line-height: 20px;
+}
+.reveiwNotice-check-details-list-select {
+	background: rgb(255, 255, 255); border: 1px solid rgb(221, 221, 221); width: 130px; height: 22px; line-height: 22px;
+}
+.reveiwNotice-check-details-list-corner {
+	left: 187px; top: -11px; position: absolute;
+}
+.adterOperation {
+	border-top-color: rgb(221, 221, 221); border-top-width: 1px; border-top-style: dotted;
+}
+.reveiwNotice-submit {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; width: 100px; height: 32px; text-align: center; line-height: 32px;
+}
+.reveiwNotice-fs {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold;
+}
+.reveiwNotice-fs:hover {
+	color: rgb(255, 255, 255); font-weight: bold; text-decoration: none;
+}
+.reveiwNotice-fs span {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter14.gif") no-repeat left; padding-left: 20px;
+}
+.reveiwNotice-submit a {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter14.gif") no-repeat left; color: rgb(255, 255, 255); padding-left: 20px; font-weight: bold;
+}
+.reveiwNotice-submit a:hover {
+	text-decoration: none;
+}
+.reveiwNotice-noSubmit {
+	background: url("http://i1.hdfimg.com/userspace/images/reveiwnotice03.gif") no-repeat left; width: 231px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold;
+}
+.reveiwNotice-noSubmit:hover {
+	text-decoration: none;
+}
+.upReport {
+	background: rgb(255, 255, 255); padding: 5px 15px 15px; border: 2px solid rgb(56, 149, 215); top: 45px; right: 0px; z-index: 99;
+}
+.upReport-list {
+	padding: 6px 0px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.upReport-listNoborder {
+	border: currentColor;
+}
+.upReport-list-name {
+	width: 113px;
+}
+.upReport-size {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter31.gif") no-repeat left; padding-right: 20px; padding-left: 12px;
+}
+.upReport-btn {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold;
+}
+.upReport-btn:hover {
+	text-decoration: none;
+}
+.upReport-close {
+	top: 5px; right: 5px; position: absolute; cursor: pointer;
+}
+.InvestigationIcon {
+	background: url("http://i1.hdfimg.com/userspace/images/reveiwnotice04.gif") no-repeat left; padding-left: 25px; margin-left: 20px;
+}
+.reveiwHis-list {
+	background: rgb(240, 240, 240); margin: 15px 15px 0px; padding: 15px;
+}
+.reveiwHis-list-wd {
+	padding: 3px 0px; width: 200px; text-align: center;
+}
+.reveiwHis-list-wdActive {
+	background: rgb(0, 102, 204); font-weight: bold;
+}
+.reveiwHis-list-wdActive a {
+	color: rgb(255, 255, 255);
+}
+.reveiwHis-list-wd-color {
+	color: rgb(198, 255, 0);
+}
+.radioDiv-l {
+	width: 20px;
+}
+.radioDiv-r {
+	width: 550px;
+}
+.doctor-link span {
+	background: url("http://i1.hdfimg.com/userspace/images/doctor.png") no-repeat left; color: rgb(255, 255, 255); padding-left: 15px; font-weight: bold; _background: url(http://i1.hdfimg.com/space/images/doctor_review.gif) no-repeat left center;
+}
+.reviewNotice-input {
+	margin: 0px auto; width: 575px;
+}
+.reviewNotice-onload {
+	margin: 0px auto; width: 575px;
+}
+.reviwNotice-input-menu {
+	background: rgb(243, 243, 243); padding: 0px 25px; height: 30px; line-height: 30px;
+}
+.reviwNotice-input-menu li {
+	padding: 0px 22px; color: rgb(51, 51, 51); margin-right: 3px; float: left; display: inline; cursor: pointer;
+}
+.reviwNotice-input-menu .active {
+	background: rgb(53, 151, 216); color: rgb(255, 255, 255); font-weight: bold;
+}
+.reviwNotice-input-menu .active a {
+	font-weight: normal;
+}
+.reviwNotice-input-menu li.reviwNotice-input-menu-other em {
+	background: url("http://i1.hdfimg.com/userspace/images/reviewnotice_close.png") no-repeat right; width: 30px; padding-right: 13px; display: inline-block;
+}
+.reviwNotice-input-menu-other-details {
+	top: 30px; width: 400px; right: 0px; overflow: hidden; _right: -1px;
+}
+.reviwNotice-input-menu-other-detailsInner {
+	background: rgb(255, 255, 255); border: 3px solid rgb(53, 151, 216);
+}
+.reviwNotice-input-menu-other-details a {
+	padding: 0px 5px; height: 30px; line-height: 30px; display: inline-block;
+}
+.reviwNotice-input-menu-other-details a:hover {
+	text-decoration: none;
+}
+.B_iframe {
+	background: rgb(243, 243, 243); left: 0px; top: 0px; width: 100%; position: absolute; z-index: -1;
+}
+.reviewNotice-secondTitle {
+	background: rgb(234, 246, 201); height: 35px; line-height: 35px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.reviewnotice-popClose {
+	top: 5px; right: 5px; cursor: pointer;
+}
+.reviewNotice-prompt {
+	background: url("http://i1.hdfimg.com/userspace/images/reviewnotice_bar.jpg") no-repeat; width: 561px; height: 44px; line-height: 44px; padding-left: 50px;
+}

@@ -1,0 +1,912 @@
+.scenter-doc {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter03.gif") repeat-y; margin: 0px auto; width: 960px;
+}
+.scenter-top {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter01.gif") no-repeat left top; height: 10px;
+}
+.scenter-bottom {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter02.gif") no-repeat left bottom; height: 10px;
+}
+.scenter-main {
+	padding: 0px 10px;
+}
+.scenter-notice {
+	background: 0px 0px rgb(255, 244, 219); padding: 10px 15px;
+}
+.scenter-mainNav {
+	width: 240px;
+}
+.scenter-corner-t {
+	background: rgb(255, 255, 255); height: 14px;
+}
+.scenter-corner-b {
+	background: rgb(255, 255, 255); height: 14px;
+}
+.scenter-mainNav-main {
+	background: rgb(255, 255, 255); padding: 0px 12px;
+}
+.scenter-mainNav-main h3 {
+	padding-left: 20px; font-family: "Microsoft YaHei","SimHei"; font-size: 14px;
+}
+.scenter-icon {
+	border: 1px solid rgb(204, 204, 204); width: 61px; height: 61px;
+}
+.scenter-detail {
+	width: 130px; overflow: hidden; zoom: 1;
+}
+.scenter-pending {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter05.jpg") no-repeat left bottom; width: 216px; padding-bottom: 4px;
+}
+.scenter-pending h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter04.gif") no-repeat left top; width: 196px; height: 28px; line-height: 28px;
+}
+.scenter-pendingMain-sf {
+	background: rgb(255, 244, 219); border-width: medium 1px; border-style: none solid; border-color: currentColor rgb(255, 219, 145); padding: 10px 15px; color: rgb(255, 132, 0);
+}
+.scenter-pendingMain-sf li {
+	background: url("http://i1.hdfimg.com/userspace/images/tip_todo.gif") no-repeat left 2px; padding: 0px 0px 5px 20px;
+}
+.scenter-nav-box {
+	padding-top: 10px;
+}
+.scenter-nav-box h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter08.gif") no-repeat; height: 29px; line-height: 29px;
+}
+.scenter-nav-box h3.scenter-nav-box-hover {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter09.gif") no-repeat;
+}
+.scenter-nav-box h3.scenter-nav-box-click {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter08.gif") no-repeat;
+}
+.scenter-nav-box h3.scenter-nav-box-hover1 {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter26.gif") no-repeat;
+}
+.scenter-nav-list {
+	padding-top: 10px;
+}
+.scenter-nav-list li {
+	padding: 4px 0px 4px 15px; margin-left: 3px;
+}
+.scenter-nav-list li.scenter-nav-list-active {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter10.gif") no-repeat; font-weight: bold;
+}
+.scenter-serverTel {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter37.gif") no-repeat; font: bold 14px/normal "Microsoft YaHei", "SimHei"; width: 216px; height: 49px; margin-top: 15px; font-size-adjust: none; font-stretch: normal;
+}
+.scenter-serverTel span {
+	line-height: 49px; padding-left: 37px;
+}
+.scenter-mainContent {
+	background: rgb(255, 255, 255); width: 690px; margin-left: 10px;
+}
+.scenter-mainContent h3 {
+	font-family: "Microsoft YaHei","SimHei"; font-size: 14px;
+}
+.scenterMain {
+	padding: 0px 6px;
+}
+.scenter-main-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") no-repeat; width: 678px; height: 33px; line-height: 33px;
+}
+.scenter-review-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter12.gif") no-repeat 33px 6px; padding-left: 55px; font-size: 14px;
+}
+.scenter-talkToDoc {
+	background: url("http://i1.hdfimg.com/space/css/../doctor/global/icon_doctor.gif") no-repeat left; padding: 0px 30px 0px 15px;
+}
+.reviewCom {
+	padding-left: 10px; font-weight: normal; cursor: pointer;
+}
+.review-success {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; margin: 10px 0px 0px 230px; width: 109px; height: 32px; line-height: 32px; cursor: pointer;
+}
+.review-success span {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter14.gif") no-repeat left; color: rgb(255, 255, 255); line-height: 32px; padding-left: 20px; font-weight: bold; margin-left: 10px;
+}
+.scenter-review-options {
+	padding-bottom: 10px;
+}
+.scenter-updata {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter31.gif") no-repeat 5px; padding-left: 20px;
+}
+.scenter-handing {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter31.gif") no-repeat 5px; padding-left: 20px;
+}
+.scenter-bluebtn {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter16.gif") repeat-x; margin: 3px 5px 0px 0px; height: 27px; line-height: 27px; cursor: pointer;
+}
+.scenter-bluebtn span {
+	float: left; display: inline;
+}
+.scenter-bluebtn-l {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter15.gif") no-repeat; width: 6px; height: 27px;
+}
+.scenter-bluebtn-c {
+	padding: 0px 3px 0px 5px;
+}
+.scenter-bluebtn-r {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter17.gif") no-repeat right; width: 9px; height: 27px;
+}
+.scenter-diary-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter13.gif") no-repeat 33px 6px; padding-left: 55px;
+}
+.scenter-review-content {
+	padding: 15px 0px 0px 33px; font-size: 14px;
+}
+.scenter-review-content p {
+	line-height: 190%;
+}
+.scenter-review-content1 {
+	padding: 0px 0px 0px 33px; font-size: 14px;
+}
+.scenter-review-content1 p {
+	line-height: 190%;
+}
+.scenter-diary {
+	padding-top: 2px;
+}
+.scenter-diary form {
+	padding-top: 10px; font-size: 14px;
+}
+.scenter-diary-content {
+	background: rgb(242, 242, 242); margin: 0px auto; width: 670px; padding-bottom: 20px; position: relative;
+}
+.scenter-form-list {
+	padding: 5px 0px;
+}
+.scenter-form-list label {
+	width: 120px; text-align: right; padding-right: 5px;
+}
+.scenter-form-input {
+	border: 1px solid rgb(186, 186, 186); width: 36px; height: 17px; line-height: 17px;
+}
+#other-form-list {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter28.gif") no-repeat right; border: 1px solid rgb(203, 203, 203); top: 18px; width: 84px; height: 23px; right: 30px; line-height: 23px; padding-left: 10px; position: absolute; cursor: pointer;
+}
+.other-form-content {
+	background: rgb(245, 245, 245); padding: 15px 15px 15px 16px; top: 55px; width: 373px; right: 30px; position: absolute;
+}
+.other-form-content li {
+	border: 1px solid rgb(203, 203, 203); width: 61px; height: 22px; text-align: center; line-height: 24px; margin-right: 14px; float: left; display: inline; cursor: pointer;
+}
+.other-form-content li.other-form-lastLi {
+	margin: 0px;
+}
+.other-form-content li.other-form-liHover {
+	border: 1px solid rgb(0, 119, 195); color: rgb(0, 119, 195);
+}
+.other-form-content li.other-form-liActive {
+	background: rgb(0, 119, 195); border: 1px solid rgb(0, 119, 195); color: rgb(255, 255, 255);
+}
+.scenter-pillList {
+	padding: 20px 15px 10px;
+}
+.scenter-pillList table {
+	width: 100%; cursor: pointer;
+}
+.scenter-pillList table th {
+	background: rgb(235, 235, 235);
+}
+.scenter-pillList table td {
+	background: rgb(244, 244, 244); border: 2px solid rgb(255, 255, 255); height: 30px; text-align: center; padding-top: 5px; padding-bottom: 5px;
+}
+.scenter-pillList table td .tdHover {
+	background: url("http://i1.hdfimg.com/userspace/images/tdHover.gif?2011") no-repeat left; width: 49px; height: 28px; line-height: 28px; display: inline-block; cursor: pointer;
+}
+.scenter-pillList table td.s-pilltd-click {
+	padding-left: 10px;
+}
+.scenter-pillList table .s-pilltdActive td {
+	background: rgb(237, 246, 243);
+}
+.scenter-pillList table th {
+	padding: 7px 0px 5px; border: 2px solid rgb(255, 255, 255);
+}
+.s-pillcon1 {
+	width: 21%;
+}
+.s-pillcon2 {
+	width: 10%;
+}
+.s-pillcon3 {
+	width: 11%;
+}
+.s-pillcon4 {
+	width: 18%;
+}
+.s-pillNum {
+	text-align: center;
+}
+.s-pillcon5 {
+	width: 8%;
+}
+.s-pillcon6 {
+	width: 8%;
+}
+.s-pillcon7 {
+	width: 8%;
+}
+.s-pillcon8 {
+	width: 8%;
+}
+.s-pillcon9 {
+	width: 8%;
+}
+.add-s-pillList {
+	background: rgb(244, 244, 244); padding: 5px 0px 5px 15px; border-right-color: rgb(255, 255, 255); border-left-color: rgb(255, 255, 255); border-right-width: 2px; border-left-width: 2px; border-right-style: solid; border-left-style: solid;
+}
+.add-s-pillList span {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter18.gif") no-repeat left; padding-left: 15px; cursor: pointer;
+}
+.scenter-nearly {
+	background: rgb(237, 244, 248); margin: 0px 17px 10px; padding: 15px 16px 15px 20px;
+}
+.scenter-nearly-details {
+	margin: 0px 17px 10px; padding: 15px 16px 15px 10px;
+}
+.scenter-nearly h3 {
+	font-family: "Microsoft YaHei","SimHei"; font-size: 14px;
+}
+.scenter-topic {
+	padding: 10px 0px 0px 3px; margin-left: 45px;
+}
+.scenter-topic textarea {
+	padding: 5px; border: 2px solid rgb(164, 200, 215); width: 495px; height: 45px;
+}
+.scenter-topic input {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter32.gif") no-repeat; border: currentColor; width: 74px; height: 58px; margin-top: 0px; margin-left: 10px; vertical-align: top;
+}
+.review-result-choose {
+	background: rgb(255, 255, 255); padding: 20px; border: 2px solid rgb(56, 149, 215); width: 350px; height: 98px; position: absolute; z-index: 10;
+}
+.review-result-ok {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter34.gif") no-repeat; margin: 0px 20px 0px 5px; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold; cursor: pointer;
+}
+.review-result-no {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter35.gif") no-repeat; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold; margin-left: 20px; cursor: pointer;
+}
+.review-result-clear {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold; cursor: pointer;
+}
+.review-result-choose-close {
+	top: 5px; right: 5px; position: absolute; cursor: pointer;
+}
+.abnormalOptions-close {
+	top: 5px; right: 5px; position: absolute; cursor: pointer;
+}
+.abnormalOptions {
+	background: rgb(255, 255, 255); padding: 15px; border: 2px solid rgb(56, 149, 215); width: 360px; position: absolute; z-index: 10;
+}
+.abnormalOptions-list {
+	padding-top: 8px;
+}
+.abnormalOptions-list select {
+	border: 1px solid rgb(221, 221, 221); width: 135px; height: 20px; line-height: 20px;
+}
+.abnormalOptions-list input {
+	border: 1px solid rgb(221, 221, 221); width: 88px; height: 20px; line-height: 20px;
+}
+.abnormalOptions-listAdd {
+	padding-top: 20px; cursor: pointer;
+}
+.abnormalOptions-listAdd span {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter18.gif") no-repeat left; padding-left: 15px;
+}
+.review-pop-btn {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold; margin-left: 20px; cursor: pointer;
+}
+.abnormalOptions-success {
+	margin-left: 125px;
+}
+.review-drawal {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter35.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold; margin-left: 10px; cursor: pointer;
+}
+.review-selfdrawal {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter35.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold; margin-left: 10px; cursor: pointer;
+}
+#clickChangePill {
+	background: rgb(255, 255, 255); border: 1px solid rgb(56, 149, 215); width: 95px; height: 97px; position: absolute;
+}
+#clickChangePill .clickChangePill-hover {
+	background: rgb(237, 244, 248); color: rgb(0, 119, 195); font-weight: bold;
+}
+.clickChangePill-A {
+	background: rgb(255, 255, 255); padding: 4px; cursor: pointer;
+}
+.clickChangePill-B {
+	background: rgb(255, 255, 255); padding: 4px; cursor: pointer;
+}
+#s-pillNumBox {
+	background: rgb(255, 255, 255); padding: 15px; border: 2px solid rgb(56, 149, 215); width: 360px; position: absolute; z-index: 10;
+}
+#s-otherPill {
+	background: rgb(255, 255, 255); padding: 15px; border: 2px solid rgb(56, 149, 215); width: 360px; position: absolute; z-index: 10;
+}
+#otherPillName {
+	border: 1px solid rgb(221, 221, 221); width: 105px; height: 20px; line-height: 20px;
+}
+#otherPillNum {
+	border: 1px solid rgb(221, 221, 221); width: 53px; height: 20px; line-height: 20px;
+}
+.review-pop-addBtn {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold; margin-left: 125px; cursor: pointer;
+}
+.scenterNotice-main-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") no-repeat; width: 678px; height: 33px; line-height: 33px;
+}
+.scenterNotice-review-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter38.gif") no-repeat 33px 11px; padding-left: 55px;
+}
+.sn-suggest {
+	background: rgb(243, 243, 243); margin: 0px 10px; padding: 15px;
+}
+.sn-iknow {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat; border: currentColor; width: 100px; height: 32px; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold; margin-top: 20px; cursor: pointer;
+}
+.scenter-pillList table td.needtdNode {
+	background: rgb(241, 241, 241); border: currentColor;
+}
+.sHistoryDetails {
+	margin: 10px 10px 0px;
+}
+.sHistoryDetails-title {
+	background: rgb(247, 247, 247); padding: 0px 10px; height: 28px; line-height: 28px; border-bottom-color: rgb(171, 171, 171); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.sHistoryDetails-content p {
+	line-height: 140%;
+}
+.redCells {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter39a.gif") no-repeat right; padding-right: 15px;
+}
+.whiteCells {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter40a.gif") no-repeat right; padding-right: 15px;
+}
+.sHistoryDetails-content-line {
+	margin: 15px 0px 10px; width: 290px; height: 0px; overflow: hidden; border-bottom-color: rgb(171, 171, 171); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.sHistoryDetails-titleNotice {
+	background: rgb(255, 244, 219);
+}
+.sHistoryDetails-content a {
+	color: rgb(9, 139, 206);
+}
+.scenterHealthDiary-review-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter13.gif") no-repeat 33px 6px; padding-left: 55px;
+}
+.my_submit_button {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat left; border: currentColor; width: 100px; height: 32px; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold; cursor: pointer;
+}
+x {
+	width: 680px;
+}
+.nav-yz-box {
+	width: 29.5%;
+}
+.min-sHistoryDetails-content {
+	width: 68%;
+}
+.telDoc-share {
+	padding: 10px 0px;
+}
+.telDoc-share-l {
+	width: 55px;
+}
+.telDoc-share-l img {
+	border: 1px solid rgb(221, 221, 221);
+}
+.telDoc-share-l p a {
+	background: url("http://i1.hdfimg.com/400/images/index/400_16.gif") no-repeat left; padding-left: 14px;
+}
+.telDoc-share-r {
+	width: 610px;
+}
+.telDoc-share-r a {
+	color: rgb(9, 139, 206);
+}
+.tel-saybox {
+	background: url("http://i1.hdfimg.com/userspace/images/yzll.gif") no-repeat left top;
+}
+.tel-saybox-cpadding {
+	padding: 3px 0px 0px 60px;
+}
+.tel-saybox-tr {
+	background: url("http://i1.hdfimg.com/userspace/images/yztr.gif") no-repeat right top; height: 10px;
+}
+.tel-saybox-tc {
+	background: url("http://i1.hdfimg.com/userspace/images/yzcr.gif") repeat-y right top;
+}
+.tel-saybox-tc a {
+	color: rgb(9, 139, 206);
+}
+.tel-saybox-bl {
+	background: url("http://i1.hdfimg.com/userspace/images/yzlb.gif") no-repeat left bottom; height: 10px;
+}
+.tel-saybox-br {
+	background: url("http://i1.hdfimg.com/userspace/images/yzbr.gif") no-repeat right bottom; height: 10px;
+}
+.tel-saybox-conner {
+	left: -7px; top: 23px; position: absolute; z-index: 2;
+}
+.tel-saybox-tconner {
+	left: 40px; top: -7px; position: absolute; z-index: 2;
+}
+.yztop {
+	left: 0px; top: 0px;
+}
+.yzbottom {
+	right: 0px; bottom: 0px; _bottom: 45px; _right: 10px;
+}
+.min-yzbottom {
+	right: 0px; bottom: 0px; _bottom: 85px; _right: 10px;
+}
+.yellowarea {
+	background: 0px 0px rgb(255, 244, 219);
+}
+.scenter-form-radio {
+	margin: 0px 5px;
+}
+.scenter-form-lInput {
+	background: rgb(255, 255, 255); border: 1px solid rgb(186, 186, 186); width: 500px; height: 25px; line-height: 25px;
+}
+.scenter-form-radioBox {
+	width: 100px; height: 20px; overflow: hidden; float: left; display: inline;
+}
+.scenter-form-textForbody {
+	background: rgb(255, 255, 255); border: 1px solid rgb(186, 186, 186); width: 500px; height: 50px;
+}
+.scenter-form-textForlive {
+	background: rgb(255, 255, 255); border: 1px solid rgb(186, 186, 186); width: 500px; height: 50px;
+}
+.consent-title {
+	background: url("http://i1.hdfimg.com/userspace/images/consent.gif") no-repeat; width: 653px; height: 48px; line-height: 48px; font-size: 18px; font-weight: bold;
+}
+.scenter-suggest-l {
+	width: 15%;
+}
+.scenter-suggest-r {
+	width: 83%;
+}
+.scenter-suggest-r-ta {
+	background: rgb(255, 255, 255); border: 1px solid rgb(221, 221, 221); width: 100%; height: 400px;
+}
+.scenter-btn {
+	width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-size: 14px; font-weight: bold;
+}
+.scenter-btn:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.scenter-blue-btn {
+	background: url("http://i1.hdfimg.com/userspace/css/../images/scenter33.gif") no-repeat;
+}
+.scenter-red-btn {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter-rbtn.gif") no-repeat;
+}
+.scenter-remittance-box-title {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif"); width: 678px; height: 33px; line-height: 33px;
+}
+.scenter-remittance-box-title-nbg {
+	
+}
+.scenter-remittance-stream {
+	background: url("http://i1.hdfimg.com/userspace/images/stream.gif") no-repeat 15px; padding-left: 60px;
+}
+.scenter-remittance-payment {
+	background: url("http://i1.hdfimg.com/userspace/images/remittance01.gif") no-repeat 25px; padding-left: 65px;
+}
+.scenter-remittance-wel {
+	background: url("http://i1.hdfimg.com/userspace/images/remittance02.gif") no-repeat 15px; padding-left: 60px;
+}
+.scenter-remittance-tel {
+	background: url("http://i1.hdfimg.com/userspace/images/stel.gif") no-repeat 15px; padding-left: 60px;
+}
+.scenter-remittance-bank {
+	padding: 20px 0px 20px 20px;
+}
+.scenter-remittance-bank li {
+	margin-right: 20px; float: left; display: inline;
+}
+.scenter-remittance-bankNum {
+	margin: 0px auto; width: 663px;
+}
+.scenter-remittance-bankNum p {
+	line-height: 180%;
+}
+.scenter-remittance-callUs {
+	background: rgb(253, 247, 204); height: 33px; line-height: 33px;
+}
+.general-btn {
+	background: url("http://i1.hdfimg.com/userspace/images/general02.jpg") repeat-x; height: 32px; color: rgb(255, 255, 255); line-height: 32px; display: inline-block; cursor: pointer;
+}
+.general-btn:hover {
+	text-decoration: none;
+}
+.general-btn-l {
+	background: url("http://i1.hdfimg.com/userspace/images/general01.jpg") no-repeat left; height: 32px; display: inline-block;
+}
+.general-btn-r {
+	background: url("http://i1.hdfimg.com/userspace/images/general03.jpg") no-repeat right; height: 32px; display: inline-block;
+}
+.admin-index {
+	background: url("http://i1.hdfimg.com/userspace/images/scenterai.jpg"); width: 216px; height: 29px; line-height: 29px;
+}
+.admin-index a {
+	padding-left: 20px; font-size: 14px; font-weight: bold;
+}
+.scenter-icon-box {
+	width: 63px; height: 63px; overflow: hidden; _height: 64px;
+}
+.scenter-icon-revise {
+	background: rgb(102, 102, 102); left: 0px; width: 63px; height: 18px; text-align: center; bottom: -30px; color: rgb(255, 255, 255); line-height: 18px; display: block;
+}
+.scenter-curve-title {
+	background: url("http://i1.hdfimg.com/userspace/images/healthcurve.gif") no-repeat 25px 7px; padding-left: 55px;
+}
+.curve-menu li {
+	background: rgb(255, 255, 255); border: 1px solid rgb(241, 241, 241); width: 72px; height: 25px; bottom: -1px; line-height: 25px; overflow: hidden; margin-right: 5px; float: left; position: relative; cursor: pointer; _display: inline;
+}
+.curve-menu li a {
+	padding: 0px 10px; height: 25px; display: block;
+}
+.curve-menu li.curve-menu-active {
+	background: rgb(231, 240, 246); border: 1px solid rgb(231, 240, 246); font-weight: bold;
+}
+.curve-content {
+	background: rgb(231, 240, 246);
+}
+.curve-date {
+	top: 0px; right: 10px;
+}
+.curve-date select {
+	border: 1px solid rgb(221, 221, 221); height: 20px; line-height: 20px;
+}
+.curve-view-btn {
+	background: 0px 0px rgb(118, 154, 193); padding: 2px 8px; color: rgb(255, 255, 255); vertical-align: middle;
+}
+.scenter-review-vip {
+	background: url("http://i1.hdfimg.com/userspace/images/medicalhelpservice.gif") no-repeat 25px; padding-left: 110px;
+}
+.scenter-review-apply {
+	background: url("http://i1.hdfimg.com/userspace/images/vipservice03.gif") no-repeat 25px; padding-left: 70px;
+}
+.user-vip-t {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") 0px 0px; width: 678px; height: 33px; line-height: 33px;
+}
+.user-vip-t h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/medicalhelpservice.gif") no-repeat 20px; padding-left: 110px;
+}
+.user-vip-c {
+	padding: 10px 8px;
+}
+.user-vip-c-cell {
+	background: rgb(244, 246, 244); border: 1px solid rgb(224, 224, 224);
+}
+.vipservice-corner {
+	height: 12px;
+}
+.vipservice-corner-lt {
+	left: -1px; top: -1px; position: absolute;
+}
+.vipservice-corner-rt {
+	top: -1px; right: -1px; position: absolute;
+}
+.vipservice-corner-lb {
+	left: -1px; bottom: -1px; position: absolute;
+}
+.vipservice-corner-rb {
+	right: -1px; bottom: -1px; position: absolute;
+}
+.scenter-assess-list {
+	background: rgb(240, 240, 240); margin: 10px; padding: 10px 0px 10px 15px;
+}
+.scenter-assess-list li {
+	float: left; _display: inline;
+}
+.scenter-assess-list li a {
+	width: 142px; height: 30px; line-height: 30px; padding-left: 6px; display: inline-block;
+}
+.scenter-assess-list li a.active {
+	background: rgb(0, 102, 204); color: rgb(255, 255, 255); font-weight: bold;
+}
+.scenter-assess-details {
+	border: 1px solid rgb(221, 221, 221);
+}
+.scenter-assess-details-t {
+	background: rgb(237, 244, 248); height: 36px; line-height: 36px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.scenter-assess-details-c {
+	margin: 10px 15px 15px;
+}
+.scenter-assess-details-c-date {
+	width: 200px;
+}
+.scenter-assess-details-c-inner {
+	background: rgb(240, 240, 240); border: 1px solid rgb(221, 221, 221);
+}
+.scenter-assess-details-c-inner-cell {
+	padding: 10px 15px;
+}
+.hasbb-solid {
+	border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.pill-change-box {
+	background: rgb(242, 242, 242); padding: 8px 10px;
+}
+.pill-change-box-txt {
+	background: rgb(255, 255, 255); padding: 5px; border: 1px solid rgb(221, 221, 221); width: 615px; height: 55px;
+}
+.pill-change-box-submit {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter33.gif") no-repeat; width: 100px; height: 32px; text-align: center; color: rgb(255, 255, 255); line-height: 32px; font-weight: bold; display: block;
+}
+.pill-change-box-submit:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.use-pill-history-l {
+	width: 165px;
+}
+.use-pill-history-r {
+	width: 440px;
+}
+.pill-case-shell {
+	padding-top: 10px;
+}
+.scenterTitle {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") no-repeat left; width: 678px; height: 33px; line-height: 33px;
+}
+.pending h3 {
+	padding-left: 35px;
+}
+.pendingUl {
+	margin: 0px 20px; padding: 10px 0px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+.myAdvisory h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/user1_message.png") no-repeat 10px; padding-left: 35px;
+}
+.myAdvisory-menu {
+	border-bottom-color: rgb(231, 240, 246); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.myAdvisory-menu li {
+	background: 0px 0px rgb(249, 249, 249); margin: 3px; padding: 0px 15px; border-radius: 5px; border: 1px solid rgb(224, 224, 224); height: 28px; bottom: -1px; line-height: 28px; overflow: hidden; float: left; display: inline; position: static; cursor: pointer;
+}
+.myAdvisory-menu li.myAdvisory-menu-active {
+	background: 0px 0px rgb(231, 240, 246); border: 1px solid rgb(231, 240, 246); font-weight: bold;
+}
+.myAdvisory-list {
+	margin: 10px;
+}
+.myAdvisory-list li {
+	padding: 5px 15px;
+}
+.myAdvisory-list li.odd {
+	background: rgb(244, 244, 244);
+}
+.myAdvisory-list-title {
+	background: url("http://i1.hdfimg.com/userspace/images/icondotgreen.gif") no-repeat left; padding-left: 10px;
+}
+.myPlus h3 {
+	background: url("http://i1.hdfimg.com/space/booking/images/jiahao_03.gif") no-repeat 10px; padding-left: 35px;
+}
+.myItem-list td {
+	padding: 5px 0px 5px 10px;
+}
+.myItem-list .tr_bg {
+	background: rgb(244, 244, 244);
+}
+.myTelAdvisory h3 {
+	background: url("http://i1.hdfimg.com/www/images/icon_xxzxy_07.gif") no-repeat 10px; padding-left: 35px;
+}
+.myPF h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/residentevil.gif") no-repeat 10px; padding-left: 35px;
+}
+.myMsg h3 {
+	background: url("http://i1.hdfimg.com/userspace/images/gear.png") no-repeat 10px; padding-left: 35px;
+}
+.myMsg-list table {
+	width: 100%; text-align: center;
+}
+.myMsg-list table th {
+	background: 0px 0px rgb(235, 235, 235); padding: 5px 8px; border: 2px solid rgb(255, 255, 255);
+}
+.myMsg-list table td {
+	padding: 5px 8px; border: 2px solid rgb(255, 255, 255);
+}
+.myMsg-list table tr.odd {
+	background: 0px 0px rgb(244, 244, 244);
+}
+.myMsg-list table tr.even {
+	background: 0px 0px rgb(237, 246, 243);
+}
+.save {
+	background: rgb(235, 235, 235); padding: 3px 5px; border: 1px solid rgb(221, 221, 221); margin-left: 5px; cursor: pointer;
+}
+.num input {
+	border: 1px solid rgb(221, 221, 221); width: 100px; height: 20px; line-height: 20px;
+}
+.myMsg-right {
+	text-align: right;
+}
+.checkPatients-msg-notice {
+	background: 0px 0px rgb(255, 249, 227); padding: 8px 10px; border: 1px solid rgb(247, 214, 112); font-weight: bold; margin-bottom: 8px;
+}
+.add-myMsg-box {
+	width: 525px; margin-left: 20px;
+}
+.add-myMsg-box input {
+	padding: 2px;
+}
+.add-myMsg-box tr {
+	padding: 2px; height: 30px;
+}
+.add-myMsg-box td {
+	padding: 5px;
+}
+.user_presentOrder li {
+	padding: 5px;
+}
+.user_presentOrder_content_right {
+	padding: 5px; border: 1px solid rgb(227, 225, 213); background-color: rgb(241, 240, 234);
+}
+.user_icon14 {
+	background: url("http://i1.hdfimg.com/score/images/presentIcon.gif") no-repeat 5px 0px; padding-left: 24px;
+}
+.user_presentOrder_wish {
+	width: 450px;
+}
+.doctor-instruction {
+	border: 1px solid rgb(202, 203, 203);
+}
+.doctor-instruction-t {
+	background: rgb(208, 219, 226); height: 33px; line-height: 33px;
+}
+.doctor-instruction-c {
+	padding: 8px 30px;
+}
+.doctor-instruction-c-cell {
+	border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.doctor-instruction-clickBtn {
+	top: 2px; right: 40px; position: absolute;
+}
+.general-gray-btn {
+	background: url("http://i1.hdfimg.com/userspace/images/centergraybtn03.gif") repeat-x 0px 0px; height: 32px; line-height: 32px; display: inline-block; cursor: pointer;
+}
+.general-gray-btn-l {
+	background: url("http://i1.hdfimg.com/userspace/images/centergraybtn01.gif") no-repeat left; height: 32px; display: inline-block;
+}
+.general-gray-btn-r {
+	background: url("http://i1.hdfimg.com/userspace/images/centergraybtn02.gif") no-repeat right; height: 32px; display: inline-block;
+}
+.applyVip-box {
+	background: rgb(255, 255, 255); padding: 8px 10px; border: 2px solid rgb(56, 149, 215); left: 10px; top: 10px; width: 400px; z-index: 10;
+}
+.applyVip-success-box {
+	background: rgb(255, 255, 255); padding: 20px 10px; border: 2px solid rgb(56, 149, 215); top: 500px; width: 370px; z-index: 10;
+}
+.applyVip-start-box {
+	background: rgb(255, 255, 255); padding: 20px 10px; border: 2px solid rgb(56, 149, 215); top: 500px; width: 370px; z-index: 10;
+}
+.applyVip-box-link:hover {
+	color: rgb(255, 255, 255);
+}
+.closeBtn {
+	top: 5px; right: 5px; position: absolute; cursor: pointer;
+}
+.contactDate {
+	margin: 8px 0px 10px;
+}
+.rightnow {
+	top: 5px; right: 0px;
+}
+.recharge {
+	font-family: "宋体";
+}
+.recharge-hd {
+	background: url("http://i1.hdfimg.com/userspace/images/scenter11.gif") no-repeat; height: 33px; line-height: 33px;
+}
+.recharge-hd h3 {
+	background: url("../images/recharge01.jpg") no-repeat 15px; padding-left: 38px; font-size: 14px;
+}
+.recharge-bd {
+	padding: 15px;
+}
+.recharge-bd-box {
+	border: 1px solid rgb(187, 212, 229);
+}
+.recharge-bd-box-t {
+	height: 49px; line-height: 49px; border-bottom-color: rgb(187, 212, 229); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.recharge-bd-box-t h4 {
+	background: url("../images/recharge02.png") no-repeat left; padding-left: 25px;
+}
+.serviceBtnBox {
+	height: 45px; overflow: hidden;
+}
+.serviceBtn {
+	color: rgb(255, 255, 255); display: inline-block; cursor: pointer;
+}
+.serviceBtn span {
+	height: 45px; line-height: 45px; float: left; display: inline; background-image: url("../images/recharge03.png");
+}
+.serviceBtn-l {
+	width: 5px; background-repeat: no-repeat;
+}
+.serviceBtn-r {
+	background-position: 0px -45px; width: 5px; background-repeat: no-repeat;
+}
+.serviceBtn-c {
+	background-position: 0px -90px; background-repeat: repeat-x;
+}
+.serviceBtn:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.serviceBtn:hover .serviceBtn-l {
+	background-position: 0px -135px; background-repeat: no-repeat;
+}
+.serviceBtn:hover .serviceBtn-r {
+	background-position: 0px -180px; background-repeat: no-repeat;
+}
+.serviceBtn:hover .serviceBtn-c {
+	background-position: 0px -225px; background-repeat: repeat-x;
+}
+.serviceBtnHover .serviceBtn-l {
+	background-position: 0px -135px; background-repeat: no-repeat;
+}
+.serviceBtnHover .serviceBtn-r {
+	background-position: 0px -180px; background-repeat: no-repeat;
+}
+.serviceBtnHover .serviceBtn-c {
+	background-position: 0px -225px; background-repeat: repeat-x;
+}
+.buyZixun-hd {
+	background: rgb(225, 238, 245); height: 37px; color: rgb(3, 51, 51); line-height: 37px; padding-left: 15px;
+}
+.buyZixun-hd-corner {
+	left: 85px; top: -17px; color: rgb(225, 238, 245); font-size: 30px;
+}
+.buyZixun-bd-cell {
+	padding: 25px 15px; position: relative; zoom: 1;
+}
+.buyZixun-btn {
+	background: url("../images/recharge04.png") no-repeat; width: 90px; height: 30px; text-align: center; right: 20px; bottom: 25px; color: rgb(255, 255, 255); line-height: 30px;
+}
+.buyZixun-btn:hover {
+	color: rgb(255, 255, 255);
+}
+.choiceList li {
+	line-height: 200%;
+}
+.inputNum {
+	border: 1px solid rgb(153, 153, 153); width: 44px; height: 18px; padding-left: 4px; font-size: 14px; margin-left: 7px;
+}
+#showError {
+	height: 16px;
+}
+.buyZixunSubmit {
+	background: url("../images/recharge04.png") no-repeat; border: currentColor; width: 90px; height: 30px; text-align: center; color: rgb(255, 255, 255); line-height: 30px; font-size: 14px; cursor: pointer;
+}
+.darkblue {
+	color: rgb(3, 51, 51);
+}
+.ml80 {
+	margin-left: 80px;
+}
+.bb-d {
+	border-bottom-color: rgb(186, 186, 186); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.va2 {
+	vertical-align: -2px;
+}
+.nb {
+	border: currentColor;
+}
+.rechargeSos {
+	bottom: 0px;
+}
+.chart-box-l {
+	width: 40px; margin-top: 120px;
+}
+.chart-box-r {
+	width: 40px; margin-top: 120px;
+}
+.chart-box-c {
+	width: 598px;
+}

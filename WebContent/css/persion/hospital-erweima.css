@@ -1,0 +1,147 @@
+.orangep .hospital-name {
+	text-align: center; font-size: 14px;
+}
+.border1px {
+	border-top-color: rgb(255, 196, 120); border-top-width: 1px; border-top-style: solid;
+}
+.borradius-left {
+	border-bottom-left-radius: 4px; -webkit-border-bottom-left-radius: 4px; -moz-border-radius-bottomleft: 4px;
+}
+.borradius-right {
+	border-bottom-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -moz-border-radius-bottomright: 4px;
+}
+.hospital-erweima {
+	
+}
+.hospital-erweima-left {
+	width: 166px; height: 116px; padding-left: 18px; float: left; background-color: rgb(7, 193, 208);
+}
+.hospital-erweima-left img {
+	margin-top: 20px;
+}
+.hospital-jiantou {
+	float: left;
+}
+.hospital-erweima-img {
+	width: 103px; height: 116px; float: left; background-color: rgb(94, 215, 224);
+}
+.hospital-erweima-img img {
+	width: 92px; height: 92px; margin-top: 12px;
+}
+.hospital-erweima-text {
+	text-align: left; color: white; padding-right: 5px; font-size: 16px; margin-top: 22px;
+}
+.hospital-erweima-texts {
+	text-align: left; color: white; padding-right: 5px; font-size: 14px; margin-top: 22px;
+}
+.hospital-erweima-textss {
+	text-align: left; color: white; padding-right: 5px; font-size: 13px; margin-top: 22px;
+}
+.hospital-erweima-text span {
+	color: rgb(255, 249, 43);
+}
+.hospital-erweima-texts span {
+	color: rgb(255, 249, 43);
+}
+.hospital-erweima-textss span {
+	color: rgb(255, 249, 43);
+}
+.hospital-erweima .butn-text {
+	background: url("../images/btn-text.jpg") no-repeat; width: 143px; height: 22px; text-align: center; color: rgb(7, 193, 208); line-height: 22px; font-size: 12px; margin-top: 11px;
+}
+.hospital-erweima .butn-texts {
+	background: rgb(255, 249, 43); padding: 2px 10px; border-radius: 4px; border: currentColor; width: 70px; color: rgb(7, 193, 208); margin-top: 11px;
+}
+.mengright {
+	left: 50%; top: 135px; margin-left: 490px; position: fixed; z-index: 99;
+}
+.mengright_1002 {
+	margin-left: 511px !important;
+}
+.mengright_close_1002 {
+	margin-left: 653px !important;
+}
+.mengright_mengbut_1002 {
+	margin-left: 546px !important;
+}
+.mengright_780 {
+	margin-left: 290px !important;
+}
+.mengright_close_780 {
+	margin-left: 432px !important;
+}
+.mengright_mengbut_780 {
+	margin-left: 325px !important;
+}
+.mengleftcenter_1002 {
+	margin-left: 254px !important;
+}
+.mengleftclose_1002 {
+	margin-left: 486px !important;
+}
+.mengleftcenter_780 {
+	margin-left: 33px !important;
+}
+.mengleftclose_780 {
+	margin-left: 265px !important;
+}
+.mengbut {
+	left: 50%; top: 410px; margin-left: 525px; position: fixed; z-index: 999; cursor: pointer;
+}
+.mengclose {
+	left: 50%; top: 135px; margin-left: 632px; position: fixed; z-index: 9999; cursor: pointer;
+}
+.show {
+	display: block;
+}
+.hidden {
+	display: none;
+}
+.mengleftcenter {
+	left: 50%; top: 135px; margin-left: 233px; position: fixed; z-index: 99;
+}
+.mengleftclose {
+	left: 50%; top: 135px; margin-left: 465px; position: fixed; z-index: 99; cursor: pointer;
+}
+.mengbot {
+	height: 20px; text-align: center; font-size: 14px; margin-bottom: 30px;
+}
+.mengbot a {
+	color: rgb(36, 120, 237);
+}
+.menger {
+	margin-top: -47px; margin-left: 519px; z-index: 1; cursor: pointer;
+}
+.mengercloses {
+	margin-top: -217.5px; margin-left: 125px;
+}
+* + html .mengercloses {
+	margin-top: -215px; margin-left: 125px;
+}
+.mengall {
+	height: 40px;
+}
+.mengalls {
+	height: 20px; position: relative !important; z-index: 9999 !important;
+}
+.zzx_t_repeat {
+	position: relative !important; z-index: 1 !important;
+}
+.mengers {
+	margin-top: -47px; margin-left: 409px; z-index: 1; cursor: pointer;
+}
+.mengerclose {
+	left: 50%; margin-top: -220px; margin-left: 54px; position: absolute; z-index: 9999; cursor: pointer;
+}
+.bdr {
+	border-radius: 4px; width: 305px; overflow: hidden;
+}
+.mengcenter {
+	text-align: center;
+}
+.mengcenter p {
+	width: 50%; margin-top: 35px; float: left;
+}
+.mengcenter p a {
+	background: rgb(54, 203, 43); padding: 2px 10px;
+}

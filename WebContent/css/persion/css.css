@@ -1,0 +1,390 @@
+body {
+	margin: 0px; padding: 0px; color: rgb(51, 51, 51); line-height: 20px; font-size: 12px;
+}
+.tab_white {
+	background-color: rgb(255, 255, 255);
+}
+.table_white {
+	background-color: rgb(255, 255, 255);
+}
+form {
+	margin: 0px;
+}
+img {
+	
+}
+textarea {
+	font-size: 14px;
+}
+.cls {
+	margin: 0px auto; padding: 0px; clear: both;
+}
+form {
+	margin: 0px;
+}
+img {
+	
+}
+.red {
+	color: rgb(230, 0, 0);
+}
+.green {
+	color: rgb(15, 134, 44);
+}
+.darkgreen {
+	color: rgb(115, 150, 22);
+}
+.gray {
+	color: rgb(153, 153, 153);
+}
+.orange {
+	color: rgb(241, 135, 0);
+}
+.white {
+	color: rgb(255, 255, 255);
+}
+.yellow {
+	color: rgb(227, 198, 0);
+}
+.blue {
+	color: rgb(9, 139, 206);
+}
+.blueg {
+	color: rgb(35, 180, 174);
+}
+.darkblue {
+	color: rgb(5, 98, 146);
+}
+.font12 {
+	font-size: 12px;
+}
+.font14 {
+	font-size: 14px;
+}
+.font16 {
+	font-size: 16px;
+}
+.bold {
+	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+.more {
+	text-align: right; padding-right: 20px;
+}
+.lb_line {
+	height: 5px; background-image: url("http://i1.hdfimg.com/images/common/dotline.gif"); background-repeat: repeat-x;
+}
+a {
+	color: rgb(51, 51, 51);
+}
+a.underline {
+	text-decoration: underline;
+}
+a.black_link {
+	color: rgb(51, 51, 51);
+}
+a.black_link:active {
+	color: rgb(51, 51, 51);
+}
+a.black_link:hover {
+	color: rgb(51, 51, 51);
+}
+a.black_link2 {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+a.black_link2:active {
+	color: rgb(51, 51, 51); text-decoration: underline;
+}
+a.black_link2:hover {
+	color: rgb(51, 51, 51); text-decoration: underline;
+}
+a.blue_link {
+	color: rgb(9, 139, 206);
+}
+a.blue_link:active {
+	color: rgb(9, 139, 206);
+}
+a.blue_link:hover {
+	color: rgb(9, 139, 206);
+}
+a.blue_link2 {
+	color: rgb(9, 139, 206); text-decoration: none;
+}
+a.blue_link2:active {
+	color: rgb(9, 139, 206); text-decoration: underline;
+}
+a.blue_link2:hover {
+	color: rgb(9, 139, 206); text-decoration: underline;
+}
+a.blueg_link {
+	color: rgb(35, 180, 174);
+}
+a.blueg_link:active {
+	color: rgb(35, 180, 174);
+}
+a.blueg_link:hover {
+	color: rgb(35, 180, 174);
+}
+a.blueg_link2 {
+	color: rgb(35, 180, 174); text-decoration: none;
+}
+a.blueg_link2:active {
+	color: rgb(35, 180, 174); text-decoration: underline;
+}
+a.blueg_link2:hover {
+	color: rgb(35, 180, 174); text-decoration: underline;
+}
+a.darkblue_link {
+	color: rgb(5, 98, 146);
+}
+a.darkblue_link:active {
+	color: rgb(5, 98, 146);
+}
+a.darkblue_link:hover {
+	color: rgb(5, 98, 146);
+}
+a.darkblue_link2 {
+	color: rgb(5, 98, 146); text-decoration: none;
+}
+a.darkblue_link2:active {
+	color: rgb(5, 98, 146); text-decoration: underline;
+}
+a.darkblue_link2:hover {
+	color: rgb(5, 98, 146); text-decoration: underline;
+}
+a.orange_link {
+	color: rgb(241, 135, 0);
+}
+a.orange_link:active {
+	color: rgb(241, 135, 0);
+}
+a.orange_link:hover {
+	color: rgb(241, 135, 0);
+}
+a.orange_link2 {
+	color: rgb(241, 135, 0); text-decoration: none;
+}
+a.orange_link2:active {
+	color: rgb(241, 135, 0); text-decoration: underline;
+}
+a.orange_link2:hover {
+	color: rgb(241, 135, 0); text-decoration: underline;
+}
+a.darkgreen_link {
+	color: rgb(115, 150, 22);
+}
+a.darkgreen_link:active {
+	color: rgb(115, 150, 22);
+}
+a.darkgreen_link:hover {
+	color: rgb(115, 150, 22);
+}
+a.darkgreen_link2 {
+	color: rgb(115, 150, 22); text-decoration: none;
+}
+a.darkgreen_link2:active {
+	color: rgb(115, 150, 22); text-decoration: underline;
+}
+a.darkgreen_link2:hover {
+	color: rgb(115, 150, 22); text-decoration: underline;
+}
+a.gray_link {
+	color: rgb(153, 153, 153);
+}
+a.gray_link:active {
+	color: rgb(153, 153, 153);
+}
+a.gray_link:hover {
+	color: rgb(153, 153, 153);
+}
+a.gray_link2 {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+a.gray_link2:active {
+	color: rgb(153, 153, 153); text-decoration: underline;
+}
+a.gray_link2:hover {
+	color: rgb(153, 153, 153); text-decoration: underline;
+}
+a.white_link {
+	color: rgb(255, 255, 255);
+}
+a.white_link:active {
+	color: rgb(255, 255, 255);
+}
+a.white_link:hover {
+	color: rgb(255, 255, 255);
+}
+a.white_link2 {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+a.white_link2:active {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+a.white_link2:hover {
+	color: rgb(255, 255, 255); text-decoration: underline;
+}
+a.yellow_link {
+	color: rgb(190, 165, 21);
+}
+a.yellow_link:active {
+	color: rgb(190, 165, 21);
+}
+a.yellow_link:hover {
+	color: rgb(190, 165, 21);
+}
+a.yellow_link2 {
+	color: rgb(190, 165, 21); text-decoration: none;
+}
+a.yellow_link2:active {
+	color: rgb(190, 165, 21); text-decoration: underline;
+}
+a.yellow_link2:hover {
+	color: rgb(190, 165, 21); text-decoration: underline;
+}
+.p_bar {
+	line-height: normal; clear: both;
+}
+.p_bar a {
+	padding: 4px 4px 2px; color: rgb(51, 51, 51); line-height: 14px; font-size: 12px; text-decoration: none; float: left;
+}
+.p_bar a.p_num {
+	border: 1px solid rgb(204, 204, 204); margin-right: 4px; background-color: rgb(255, 255, 255);
+}
+.p_bar a.p_num:hover {
+	border: 1px solid rgb(206, 225, 240); text-decoration: none; background-color: rgb(221, 233, 245);
+}
+.p_bar a.p_curpage {
+	padding: 5px 4px 2px; font-weight: bold; margin-right: 4px;
+}
+.p_bar a.p_text {
+	border: 1px solid rgb(204, 204, 204); margin-right: 4px; background-color: rgb(255, 255, 255);
+}
+.p_bar input {
+	padding: 2px 0px 0px 4px; border: 1px solid rgb(204, 204, 204); width: 22px; height: 18px; line-height: 12px; font-size: 12px; margin-right: 4px; float: left;
+}
+.p_bar button {
+	padding: 1px; border: 1px solid rgb(204, 204, 204); width: 25px; height: 22px; line-height: 14px; font-size: 12px; font-weight: bold; float: left; background-color: rgb(255, 255, 255);
+}
+.p_bar button:hover {
+	border: 1px solid rgb(206, 225, 240); background-color: rgb(221, 233, 245);
+}
+input[type=text].btn1 {
+	border: 1px solid rgb(110, 110, 110); color: rgb(126, 126, 126); font-size: 12px;
+}
+input[type=password].btn1 {
+	border: 1px solid rgb(110, 110, 110); color: rgb(126, 126, 126); font-size: 12px;
+}
+input[type=button].btn1 {
+	border: 1px solid rgb(110, 110, 110); color: rgb(126, 126, 126); font-size: 12px;
+}
+input[type=submit].btn1 {
+	border: 1px solid rgb(110, 110, 110); color: rgb(126, 126, 126); font-size: 12px;
+}
+input[type=reset].btn1 {
+	border: 1px solid rgb(110, 110, 110); color: rgb(126, 126, 126); font-size: 12px;
+}
+input[type=image].btn1 {
+	
+}
+input[type=button].btn1 {
+	background-color: white;
+}
+input[type=submit].btn1 {
+	background-color: white;
+}
+input[type=reset].btn1 {
+	background-color: white;
+}
+div.bt1 a {
+	background: rgb(242, 255, 238); border-width: 1px; border-style: solid; border-color: rgb(170, 170, 170) rgb(102, 174, 85) rgb(102, 174, 85) rgb(170, 170, 170); height: 20px; text-align: center; color: rgb(0, 0, 0); line-height: 20px; padding-right: 5px; padding-left: 5px; font-size: 12px; text-decoration: none; float: left; display: block;
+}
+div.bt1 a:hover {
+	color: rgb(255, 255, 255); background-color: rgb(244, 156, 0);
+}
+a.button_01 {
+	height: 29px; color: rgb(0, 0, 0); line-height: 29px; text-decoration: none; margin-right: 10px; float: left; display: block; cursor: pointer;
+}
+a.button_01 span {
+	height: 29px; display: block;
+}
+a.button_01 span.ct {
+	background: url("http://i1.hdfimg.com/images/common/botton01_01.gif"); padding: 0px 0px 0px 11px; float: left;
+}
+a.button_01 span.rgt {
+	background: url("http://i2.hdfimg.com/images/common/botton01_02.gif"); width: 11px; float: left;
+}
+a.button_01 span.cls {
+	clear: both;
+}
+a.button_02 {
+	height: 29px; color: rgb(0, 0, 0); line-height: 29px; text-decoration: none; margin-right: 10px; float: left; display: block; cursor: pointer;
+}
+a.button_02 span {
+	height: 29px; display: block;
+}
+a.button_02 span.ct {
+	background: url("http://i1.hdfimg.com/images/common/botton02_01.gif"); padding: 0px 0px 0px 11px; float: left;
+}
+a.button_02 span.rgt {
+	background: url("http://i2.hdfimg.com/images/common/botton02_02.gif"); width: 11px; float: left;
+}
+a.button_02 span.cls {
+	clear: both;
+}
+div#mini_search {
+	background: url("http://i1.hdfimg.com/images/loginbar/miniserch_bg12.gif") no-repeat; width: 291px; height: 23px; margin-top: 0px; float: right;
+}
+#loginframe_login {
+	background: url("http://i2.hdfimg.com/images/loginbar/02.gif") no-repeat; border: 0px currentColor; width: 40px; height: 20px; margin-top: 1px;
+}
+div#mini_search span {
+	background: url("http://i1.hdfimg.com/images/loginbar/miniserch_button12.gif") no-repeat; margin: 0px; padding: 0px; border: currentColor; width: 55px; height: 23px; text-align: center; line-height: 23px; font-size: 12px; float: right; display: block; cursor: pointer;
+}
+div#mini_search input {
+	border: transparent; width: 200px; height: 12px; color: rgb(153, 153, 153); line-height: 12px; font-family: inherit; font-size: 12px; margin-top: 6px; float: right; outline-width: 0px; outline-style: none;
+}
+#el_count {
+	font-size: 12px;
+}
+#el_count a {
+	text-decoration: none;
+}
+#el_count a:visited {
+	text-decoration: none;
+}
+#el_count a:hover {
+	text-decoration: none;
+}
+#el_count a.new {
+	color: rgb(215, 3, 0);
+}
+#el_count a.none {
+	color: rgb(0, 0, 0);
+}
+#el_hello {
+	font-size: 14px; margin-right: 25px;
+}
+span#loginbar_user_msg_new {
+	background: url("http://i1.hdfimg.com/msg/msgnew.gif") no-repeat; padding-left: 16px;
+}
+span#loginbar_user_msg {
+	background: url("http://i1.hdfimg.com/msg/msg.gif") no-repeat; padding-left: 16px;
+}
+form#loginbar #username {
+	border: 1px solid rgb(126, 126, 238); color: rgb(126, 126, 238); font-size: 12px;
+}
+form#loginbar #password {
+	border: 1px solid rgb(126, 126, 238); color: rgb(126, 126, 238); font-size: 12px;
+}
+#searchform_left {
+	background-position: top; padding: 10px 0px 0px 10px; width: 570px; height: 38px; float: left; background-image: url("http://i2.hdfimg.com/images/loginbar/01.gif"); background-repeat: repeat-x;
+}
+#searchform_right {
+	background-position: top; padding: 6px 10px; width: 380px; height: 30px; float: right; background-image: url("http://i2.hdfimg.com/images/loginbar/01.gif"); background-repeat: repeat-x;
+}
