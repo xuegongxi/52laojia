@@ -10,6 +10,8 @@ $(function(){
     select1();
     $('#S1').bind("change", select2);
     $('#S2').bind("change", select3);
+    $('#S3').bind("change", select4);
+    $('#S4').bind("change", select5);
 });
 
 function select1() {
