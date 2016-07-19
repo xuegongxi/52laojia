@@ -1,6 +1,8 @@
 package cn.laojia.user.web;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
@@ -179,4 +180,142 @@ public class UserController {
 			e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping(params = "method=getposition")
+	public void getposition(HttpServletRequest request, HttpServletResponse response){
+		response.setHeader("Content-Type", "text/html;charset=UTF-8");
+		String type=request.getParameter("type");
+		String provinceID=request.getParameter("provinceID");
+		String cityID=request.getParameter("cityID");
+		String countyID=request.getParameter("countyID");
+		String townID=request.getParameter("townID");
+		try {
+			if (StringUtils.isNotEmpty(type)) {
+				if (type.equals("province")) {
+					String province_str =this.select1();
+					response.getWriter().print(province_str);
+				} else if (type.equals("city")) {
+					String city_str =this.select2(provinceID);
+					response.getWriter().print(city_str);
+				} else if (type.equals("county")) {
+					String county_str =this.select3(cityID);
+					response.getWriter().print(county_str);
+				}else if (type.equals("town")) {
+					String town_str =this.select4(countyID);
+					response.getWriter().print(town_str);
+				}else if (type.equals("village")) {
+					String village_str =this.select5(townID);
+					response.getWriter().print(village_str);
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	 public String select1() {
+	        StringBuffer sb = new StringBuffer();
+	        sb.append("[");
+	        
+	        List<Map<String, Object>> list = userService.getProvince();
+			for(Map<String, Object> m : list)
+			{
+			 String provice_id=m.get("provice_id").toString();
+			 String provice_name=(String) m.get("provice_name");
+			 sb.append("{");
+	         sb.append("\"ProvinceID\":\"" + provice_id + "\",\"ProvinceName\":\"" + provice_name + "\"");
+	         sb.append("},");
+			}
+			sb.delete((sb.length()-1), sb.length());
+			sb.append("]");
+			String str=sb.toString();
+	        return str;
+	    }
+
+
+	    public String  select2 (String  provice_id ) {
+	    	if(StringUtils.isEmpty(provice_id)){
+	    		return null;
+	    	}
+	        StringBuffer sb = new StringBuffer();
+	        List<Map<String, Object>> list = userService.getCity(provice_id);
+	        sb.append ( "[" );
+	    	for(Map<String, Object> m : list) {
+	    		 String city_id=m.get("city_id").toString();
+				 String city_name=(String) m.get("city_name");
+	            sb.append ( "{" );
+	            sb.append ( "\"CityID\":\"" + city_id + "\",\"CityName\":\"" + city_name + "\"" );
+	            sb.append ( "}," );
+	        }
+	    	sb.delete((sb.length()-1), sb.length());
+			sb.append("]");
+	        return sb.toString();
+	    }
+	    
+	    public String select3(String city_id) {
+	    	if(StringUtils.isEmpty(city_id)){
+	    		return null;
+	    	}
+	        StringBuffer sb = new StringBuffer();
+	        List<Map<String, Object>> list = userService.getCounty(city_id);
+	      
+	        sb.append("[");
+	        for(Map<String, Object> m : list)
+	        {
+	        	 String county_id=m.get("county_id").toString();
+				 String county_name=(String) m.get("county_name");
+	            sb.append("{");
+	            sb.append("\"county_id\":\"" + county_id + "\",\"county_name\":\"" + county_name + "\"");
+	            sb.append("},");
+	        }
+	    	sb.delete((sb.length()-1), sb.length());
+			sb.append("]");
+	        return sb.toString();
+	    }
+	
+	    public String select4(String countyID) {
+	    	if(StringUtils.isEmpty(countyID)){
+	    		return null;
+	    	}
+	        StringBuffer sb = new StringBuffer();
+	        List<Map<String, Object>> list = userService.getTown(countyID);
+	      
+	        sb.append("[");
+	        for(Map<String, Object> m : list)
+	        {
+	        	 String town_id=m.get("town_id").toString();
+				 String town_name=(String) m.get("town_name");
+	            sb.append("{");
+	            sb.append("\"town_id\":\"" + town_id + "\",\"town_name\":\"" + town_name + "\"");
+	            sb.append("},");
+	        }
+	    	sb.delete((sb.length()-1), sb.length());
+			sb.append("]");
+	        return sb.toString();
+	    }
+	
+	    public String select5(String town_id) {
+	    	if(StringUtils.isEmpty(town_id)){
+	    		return null;
+	    	}
+	        StringBuffer sb = new StringBuffer();
+	        List<Map<String, Object>> list = userService.getVillage(town_id);
+	      
+	        sb.append("[");
+	        for(Map<String, Object> m : list)
+	        {
+	        	 String village_id=m.get("village_id").toString();
+				 String village_name=(String) m.get("village_name");
+	            sb.append("{");
+	            sb.append("\"village_id\":\"" + village_id + "\",\"village_name\":\"" + village_name + "\"");
+	            sb.append("},");
+	        }
+	    	sb.delete((sb.length()-1), sb.length());
+			sb.append("]");
+	        return sb.toString();
+	    }
+	
+	
 }

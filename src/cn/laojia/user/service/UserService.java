@@ -20,4 +20,34 @@ public interface UserService {
 	 * @return
 	 */
 	public boolean findUserByName(String username);
+	
+	/**
+	 * 获取省的列表
+	 * @return
+	 */
+	public List getProvince();
+	
+
+	/**
+	 * 获取市的列表
+	 * @return
+	 */
+	public List getCity(String provice_id);
+	/**
+	 * 获取区的列表
+	 * @return
+	 */
+	public List getCounty(String city_id);
+	/**
+	 * 获取镇的列表
+	 * @return
+	 */
+	public List getTown(String countyID);
+	
+	/**
+	 * 获取村的列表
+	 * @return
+	 */
+	public List getVillage(String town_id);
+	
 }

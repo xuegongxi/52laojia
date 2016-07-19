@@ -1,7 +1,9 @@
 package cn.laojia.user.dao.impl;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -49,6 +51,76 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 		}
 		return is_exist;
 	}
+	/**
+	 * 获取省的列表
+	 * @return
+	 */
+	public List getProvince(){
+		String sql = "SELECT * FROM j_position_provice";
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
+	
+	/**
+	 * 获取市的列表
+	 * @return
+	 */
+	public List getCity(String provice_id) {
+		String sql = "SELECT s.city_id ,s.city_name FROM j_position_city  s  where s.province_id="+provice_id;
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
+	/**
+	 * 获取区的列表
+	 * @return
+	 */
+	public List getCounty(String city_id) {
+		String sql = "SELECT s.county_id ,s.county_name FROM j_position_county  s  where s.city_id="+city_id;
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
+	/**
+	 * 获取镇的列表
+	 * @return
+	 */
+	public List getTown(String countyID) {
+		String sql = "SELECT s.town_id ,s.town_name FROM j_position_town s where s.county_id="+countyID;
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
+	
+	/**
+	 * 获取村的列表
+	 * @return
+	 */
+	public List getVillage(String town_id) {
+		String sql = "SELECT s.village_id ,s.village_name FROM j_position_village s where s.town_id="+town_id;;
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
+	
+	
+	
 	
 	/*public void addUser(User user){
 		String SQL = "insert into user1(username,password) values(' "+user.getUsername() + "' ,'"  

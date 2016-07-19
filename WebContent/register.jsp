@@ -6,7 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>我爱老家--注册页面</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" />
-<SCRIPT type="text/javascript" src="/script/jquery.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/script/jquery.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/script/jquery-1.4.2.min.js"></SCRIPT>
 <SCRIPT>
 	jQ = jQuery.noConflict();
 </SCRIPT>
@@ -14,7 +15,7 @@
 	var strongpw = new Array();
 	var pwlength = 6;
 </SCRIPT>
-<SCRIPT type="text/javascript" src="/js/register.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
 <style type="text/css">
 .bm_h {
 	background: rgb(242, 242, 242);
@@ -272,6 +273,21 @@ hr.l {
 												<TD class="tipcol"><I id="tip_reg_mobile2"
 													class="p_tip">重要！请准确填写，以便激活帐号、找回密码。</I> <KBD
 														id="chk_reg_mobile2" class="p_chk"></KBD></TD>
+											</TR>
+										</TBODY>
+									</TABLE>
+								</DIV>
+								<DIV class="rfm">
+									<TABLE>
+										<TBODY>
+											<TR>
+												<TH><LABEL for="reg_mobile2">家乡所在地:</LABEL></TH>
+												<TD><select id="S1"></select>
+												    <select id="S2"></select>
+												    <select id="S3"></select>
+												    <select id="S4"></select>
+												    <select id="S5"></select>
+												 </TD>												
 											</TR>
 										</TBODY>
 									</TABLE>

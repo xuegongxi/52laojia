@@ -44,5 +44,47 @@ public class UserServiceImpl implements UserService {
 	public boolean findUserByName(String username) {
 		return userDao.findUserByName(username);
 	}
+
+	/**
+	 * 获取省的列表
+	 * @return
+	 */
+	public List getProvince() {
+		// TODO Auto-generated method stub
+		return userDao.getProvince();
+	}
      
+	/**
+	 * 获取市的列表
+	 * @return
+	 */
+	public List getCity(String provice_id) {
+		// TODO Auto-generated method stub
+		return userDao.getCity(provice_id);
+	}
+	/**
+	 * 获取区的列表
+	 * @return
+	 */
+	public List getCounty(String city_id) {
+		// TODO Auto-generated method stub
+		return userDao.getCounty(city_id);
+	}
+	/**
+	 * 获取镇的列表
+	 * @return
+	 */
+	public List getTown(String countyID) {
+		// TODO Auto-generated method stub
+		return userDao.getTown(countyID);
+	}
+	
+	/**
+	 * 获取村的列表
+	 * @return
+	 */
+	public List getVillage(String town_id) {
+		// TODO Auto-generated method stub
+		return userDao.getVillage(town_id);
+	}
 }
