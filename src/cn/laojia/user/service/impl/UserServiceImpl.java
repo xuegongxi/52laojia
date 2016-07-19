@@ -87,4 +87,13 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.getVillage(town_id);
 	}
+	
+	/**
+	 * 根据家乡的ID，获取家乡的地址
+	 * @param village_id
+	 * @return
+	 */
+	public String getHomeTownAddress(String village_id){
+		return userDao.getHomeTownAddress(village_id);
+	}
 }

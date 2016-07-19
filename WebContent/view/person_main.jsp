@@ -142,7 +142,7 @@ $(function(){
 							</DIV>
 							<DIV class="num">
 								<DIV>
-									<SPAN>家乡地址：北京海淀</SPAN>
+									<SPAN>家乡地址：${user.village}</SPAN>
 								</DIV>
 							</DIV>
 							<DIV class="num">

@@ -30,6 +30,19 @@ public class User implements Serializable  {
 	private String email;
 	@Column(name = "phone")
 	private String phone;
+	@Column(name = "province")
+	private String province;
+	@Column(name = "city")
+	private String city;
+	@Column(name = "county")
+	private String county;
+	@Column(name = "town")
+	private String town;
+	@Column(name = "village")
+	private String village;
+	
+	
+	
 
 	public Integer getUserid() {
 		return userid;
@@ -82,7 +95,47 @@ public class User implements Serializable  {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+    
 
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCounty() {
+		return county;
+	}
+
+	public void setCounty(String county) {
+		this.county = county;
+	}
+
+	public String getTown() {
+		return town;
+	}
+
+	public void setTown(String town) {
+		this.town = town;
+	}
+
+	public String getVillage() {
+		return village;
+	}
+
+	public void setVillage(String village) {
+		this.village = village;
+	}
 
 	public User() {
 		// TODO Auto-generated constructor stub

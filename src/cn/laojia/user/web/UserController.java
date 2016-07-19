@@ -23,7 +23,7 @@ import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
 
 @Controller
-@SessionAttributes({"username"})//将ModelMap中属性名字为u的再放入session中。这样，request和session中都有了。
+@SessionAttributes({"username","user"})//将ModelMap中属性名字为u的再放入session中。这样，request和session中都有了。
 @RequestMapping("/user.do")
 public class UserController {
 	protected final transient Log log = LogFactory
@@ -61,6 +61,10 @@ public class UserController {
 	    if(list!=null&&list.size()>0){
 	    	modelMap.addAttribute("username",username);  //将u放入request作用域中，这样转发页面也可以取到这个数据。
 	    	User user = list.get(0);
+	    	String village_id=user.getVillage();
+	    	String hometownAddress=userService.getHomeTownAddress(village_id);
+	    	user.setVillage(hometownAddress);
+	    	modelMap.addAttribute("user", user);
 	    	modelMap.addAttribute("email", user.getEmail());
 	    	modelMap.addAttribute("phone", user.getPhone());
 	    	//return "view/person_main";
@@ -84,7 +88,7 @@ public class UserController {
 			if (session == null) {
 				return "index";
 			}
-			//session.removeAttribute(username);
+			session.removeAttribute(username);
 			modelMap.addAttribute("username","");
 			//session.invalidate();
 			return "redirect:user.do?method=index";
@@ -139,12 +143,22 @@ public class UserController {
 		String password2 = (String) request.getParameter("password2");
 		String phone = (String) request.getParameter("phone");
 		String email = (String) request.getParameter("email");
+		String province =request.getParameter("S1");
+		String city =request.getParameter("S2");
+		String county =request.getParameter("S3");
+		String town =request.getParameter("S4");
+		String village =request.getParameter("S5");
 		User st = new User();
 		st.setUsername(username);
 		st.setPassword(psw);
 		st.setEmail(email);
 		st.setPassword2(password2);
 		st.setPhone(phone);
+		st.setProvince(province);
+		st.setCity(city);
+		st.setCounty(county);
+		st.setTown(town);
+		st.setVillage(village);
 		//1.首先检查用户是否存在
 		boolean is_exist=userService.findUserByName(username);
 		 if(is_exist){

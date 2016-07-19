@@ -51,5 +51,12 @@ public interface UserDao {
 	 * @return
 	 */
 	public List getVillage(String town_id);
+	
+	/**
+	 * 根据家乡的ID，获取家乡的地址
+	 * @param village_id
+	 * @return
+	 */
+	public String getHomeTownAddress(String village_id);
 }
  

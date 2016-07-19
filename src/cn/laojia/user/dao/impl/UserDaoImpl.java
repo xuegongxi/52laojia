@@ -119,7 +119,16 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 		}
 	}
 	
-	
+	/**
+	 * 根据家乡的ID，获取家乡的地址
+	 * @param village_id
+	 * @return
+	 */
+	public String getHomeTownAddress(String village_id){
+		String sql = "SELECT concat(j.province_name,j.city_name,j.county_name,j.town_name,j.village_name) from j_position  j where j.village_id=?";
+	     // 返回类型为String(String.class)
+		return this.getJdbcTemplate().queryForObject(sql, String.class, village_id);
+	}
 	
 	
 	/*public void addUser(User user){

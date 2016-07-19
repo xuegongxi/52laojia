@@ -282,11 +282,11 @@ hr.l {
 										<TBODY>
 											<TR>
 												<TH><LABEL for="reg_mobile2">家乡所在地:</LABEL></TH>
-												<TD><select id="S1"></select>
-												    <select id="S2"></select>
-												    <select id="S3"></select>
-												    <select id="S4"></select>
-												    <select id="S5"></select>
+												<TD><select id="S1" name="S1"></select>
+												    <select id="S2" name="S2"></select>
+												    <select id="S3" name="S3"></select>
+												    <select id="S4" name="S4"></select>
+												    <select id="S5" name="S5"></select>
 												 </TD>												
 											</TR>
 										</TBODY>
