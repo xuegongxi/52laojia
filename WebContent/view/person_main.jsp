@@ -42,64 +42,7 @@ $(function(){
 	<DIV class="usercenter_box">
 		<DIV class="usercenter clearfix">
 			<DIV class="usercenter_bg"></DIV>
-			<DIV class="usercenter_nav">
-				<DIV class="bigtitle">
-					<A href="#">我的中心</A>
-				</DIV>
-				<DIV class="item">
-					<DIV class="listtitle on">
-						<I></I>个人服务
-					</DIV>
-					<UL class="item_list">
-						<LI><A href="#">我的文章</A></LI>
-						<LI><A href="#">我的旅游</A></LI>
-						<LI><A href="#">品质生活</A></LI>
-						<LI><A href="#">老乡会</A></LI>
-					</UL>
-				</DIV>
-				<DIV class="item">
-					<DIV class="listtitle on">
-						<I></I>信息管理
-					</DIV>
-					<UL class="item_list">
-						<LI><A
-							href="#">信息发布</A></LI>
-						<LI><A
-							href="#">信息列表</A></LI>
-						<!--li>
-                            <a href="/healthmanage/nolist">患者选择</a>
-                        </li-->
-					</UL>
-				</DIV>
-				<DIV class="item">
-					<DIV class="listtitle on">
-						<I></I>收藏与订阅
-					</DIV>
-					<UL class="item_list">
-						<LI><A href="#">我的收藏</A></LI>
-						<LI><A href="#">医生动态</A></LI>
-						<LI><A href="#">疾病文章</A></LI>
-					</UL>
-				</DIV>
-				<DIV class="item">
-					<DIV class="listtitle">
-						<I></I>我的账户
-					</DIV>
-					<UL style="display: none;" class="item_list">
-						<LI><A href="#">我的个人资料</A></LI>
-						<LI><A href="#">更改手机</A></LI>
-						<LI><A href="#">修改密码</A></LI>
-					</UL>
-				</DIV>
-				<DIV class="item">
-					<DIV class="listtitle">
-						<I></I>通知中心
-					</DIV>
-					<UL style="display: none;" class="item_list">
-						<LI><A href="#">站内信</A></LI>
-					</UL>
-				</DIV>
-			</DIV>
+			<jsp:include page="/view/left_menu.jsp"></jsp:include>
 			<!--start scenterContent-->
 			<DIV class="usercenter_con">
 				<!--start scenterMain-->
@@ -128,7 +71,7 @@ $(function(){
 							</SPAN>
 						</DIV>
 						<DIV class="userinfo">
-							<DIV class="welcome">${username}&nbsp;您好！</DIV>
+							<DIV class="welcome">${user.username}&nbsp;您好！</DIV>
 							<DIV class="num">
 								家乡新闻: <A class="blue"	href="#">3个</A>&nbsp;&nbsp;&nbsp;&nbsp;
 								账户余额: <A class="red" href="#">0.00</A>	元 
@@ -234,7 +177,7 @@ $(function(){
 					$(this).addClass("on");
 				}, function() {
 					$(this).removeClass("on");
-				})
+				});
 			</SCRIPT>
 		</DIV>
 	</DIV>

@@ -65,8 +65,6 @@ public class UserController {
 	    	String hometownAddress=userService.getHomeTownAddress(village_id);
 	    	user.setVillage(hometownAddress);
 	    	modelMap.addAttribute("user", user);
-	    	modelMap.addAttribute("email", user.getEmail());
-	    	modelMap.addAttribute("phone", user.getPhone());
 	    	//return "view/person_main";
 	    	return "redirect:view/person_main.jsp";   
 	    }else{
@@ -89,8 +87,9 @@ public class UserController {
 				return "index";
 			}
 			session.removeAttribute(username);
+			session.removeAttribute("user");
 			modelMap.addAttribute("username","");
-			//session.invalidate();
+			session.invalidate();
 			return "redirect:user.do?method=index";
 			//return "index";
 			
@@ -139,6 +138,7 @@ public class UserController {
 	@RequestMapping(params = "method=save")
 	public String save(HttpServletRequest request, ModelMap modelMap){
 		String username = (String) request.getParameter("username");
+		String nickname = (String) request.getParameter("nickname");
 		String psw = (String) request.getParameter("password");
 		String password2 = (String) request.getParameter("password2");
 		String phone = (String) request.getParameter("phone");
@@ -150,6 +150,7 @@ public class UserController {
 		String village =request.getParameter("S5");
 		User st = new User();
 		st.setUsername(username);
+		st.setNickname(nickname);
 		st.setPassword(psw);
 		st.setEmail(email);
 		st.setPassword2(password2);

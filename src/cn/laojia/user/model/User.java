@@ -22,6 +22,8 @@ public class User implements Serializable  {
 	private Integer userid;
 	@Column(name = "username")
 	private String username;
+	@Column(name = "nickname")
+	private String nickname;
 	@Column(name = "password")
 	private String password;
 	@Column(name = "password2")
@@ -41,9 +43,6 @@ public class User implements Serializable  {
 	@Column(name = "village")
 	private String village;
 	
-	
-	
-
 	public Integer getUserid() {
 		return userid;
 	}
@@ -59,6 +58,14 @@ public class User implements Serializable  {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public String getPassword() {

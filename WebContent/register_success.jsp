@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<META HTTP-EQUIV="Refresh" CONTENT="3000000; URL=index.jsp"/>
+<META HTTP-EQUIV="Refresh" CONTENT="300; URL=index.jsp"/>
 <title>我爱老家--注册页面</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <SCRIPT type="text/javascript" src="/script/jquery.min.js"></SCRIPT>

@@ -238,6 +238,20 @@ hr.l {
 									<TABLE>
 										<TBODY>
 											<TR>
+												<TH><SPAN class="rq">*</SPAN><LABEL for="DYmmkZ2">昵称:</LABEL></TH>
+												<TD><INPUT id="DYmmkZ2" class="reg_username"
+													tabIndex="1" name="nickname" maxLength="15" size="25"
+													type="text"></TD>
+												<TD class="tipcol"><I id="tip_DYmmkZ2" class="p_tip">昵称由
+														3 到 15 个字符组成</I></TD>
+											</TR>
+										</TBODY>
+									</TABLE>
+								</DIV>
+								<DIV class="rfm">
+									<TABLE>
+										<TBODY>
+											<TR>
 												<TH><SPAN class="rq">*</SPAN><LABEL for="EXWfnn2">密码:</LABEL></TH>
 												<TD><INPUT id="EXWfnn2" class="reg_password"
 													tabIndex="1" name="password" size="25" type="password"
