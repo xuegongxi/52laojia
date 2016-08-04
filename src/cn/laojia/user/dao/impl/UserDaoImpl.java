@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
+import cn.laojia.common.utils.string.StringUtils;
 import cn.laojia.user.dao.UserDao;
 import cn.laojia.user.model.User;
 
@@ -127,7 +129,14 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 	public String getHomeTownAddress(String village_id){
 		String sql = "SELECT concat(j.province_name,j.city_name,j.county_name,j.town_name,j.village_name) from j_position  j where j.village_id=?";
 	     // 返回类型为String(String.class)
-		return this.getJdbcTemplate().queryForObject(sql, String.class, village_id);
+		String address="";
+		try {
+		    address=this.getJdbcTemplate().queryForObject(sql, String.class, village_id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return address;
 	}
 	
 	

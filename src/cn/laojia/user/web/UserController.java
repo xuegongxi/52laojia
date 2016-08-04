@@ -168,6 +168,10 @@ public class UserController {
 		 }else{
 			 try{
 					userService.save(st);
+					String village_id=st.getVillage();
+			    	String hometownAddress=userService.getHomeTownAddress(village_id);
+			    	st.setVillage(hometownAddress);
+					modelMap.addAttribute("user", st);
 					modelMap.put("addstate", "×¢²á³É¹¦£¡");
 					modelMap.addAttribute("username",username);
 				}

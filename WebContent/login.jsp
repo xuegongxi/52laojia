@@ -8,10 +8,10 @@
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <style type="text/css">
 .bm_h {
-	background: rgb(242, 242, 242); padding: 0px 10px; height: 31px; line-height: 31px; overflow: hidden; border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(194, 213, 227); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; white-space: nowrap;
+	 padding: 0px 10px; height: 35px; line-height: 35px; overflow: hidden;   border-top-width: 1px; border-bottom-width: 1px;   white-space: nowrap;background-repeat: repeat-x;
 }
 .bbs {
-	border-bottom-color: rgb(205, 205, 205) !important; border-bottom-width: 1px !important; border-bottom-style: solid !important;
+	border-bottom-color: rgb(205, 205, 205) !important; border-bottom-width: 1px !important; border-bottom-style: solid !important; background: url("images/person/usercenter_b_bg.png");
 }
 .bm {
 	margin-bottom: 10px;
