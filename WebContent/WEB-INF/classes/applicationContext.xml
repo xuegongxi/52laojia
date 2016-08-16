@@ -33,6 +33,7 @@
 			<list>
 				<value>com.laojia.entity</value><!-- 扫描实体类，也就是平时所说的model -->
 				<value>cn.laojia.user.model</value>
+				<value>cn.laojia.news.model</value>
 			</list>
 	   </property>
 	   <property name="hibernateProperties">

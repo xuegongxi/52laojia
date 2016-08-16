@@ -88,7 +88,7 @@ function checklogin(){
 									</h1>
 								</div>
 								<div class="bm_c">
-									<form id="ttHtmlEditor" method="post"  action="news.jsp" >
+									<form id="ttHtmlEditor" method="post"  action="../news.do?method=save" >
 
 										<table cellspacing="0" cellpadding="0" class="tfm">
 											<tr>
