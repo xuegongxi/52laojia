@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,18 +31,35 @@ public class NewsController {
 	}
 	
 	@RequestMapping
-	public String load(ModelMap modelMap){
-		List<News> list = newsService.getListUsers();
+	public String getNewsList(ModelMap modelMap){
+		List<News> list = newsService.getNewsList();
+		/*if(list!=null&&list.size()>0){
+			for (int i = 0; i < list.size(); i++) {
+				News news = list.get(i);
+				String s=news.getContent();
+				System.out.println(s);
+				
+				
+				
+			}
+			
+		}*/
+		
 		modelMap.put("list", list);
-		return "user";
+		return "view/messageList";
 	}
 	
-	@RequestMapping(params = "method=index")
-	public String index(HttpServletRequest request, ModelMap modelMap,RedirectAttributes ra){
-	    /*RedirectView redirect = new RedirectView("/success/");
-		 redirect.setExposeModelAttributes(false);
-		 return redirect;*/
-		return "redirect:index.jsp";  
+	@RequestMapping(params = "method=news_detail")
+	public String news_detail(HttpServletRequest request, ModelMap modelMap){
+		String news_id= request.getParameter("news_id");
+		News  news=null;
+		if(StringUtils.isNotBlank(news_id)){
+			  news = newsService.findNewsById(Integer.valueOf(news_id));
+		}
+		
+		modelMap.put("newscontent",news.getContent());
+	  
+		return "/view/news_detail";  
 	}
 	
 	
@@ -62,7 +80,7 @@ public class NewsController {
 		News news = new News();
 		news.setNews_title(news_title);
 		news.setNews_from(news_from);
-		news.setNews_content(news_content);
+		news.setNews_content(news_content.getBytes());
 		news.setNews_type(news_type);
 		news.setNews_address(village);
 		 try{
@@ -73,8 +91,7 @@ public class NewsController {
 					log.error(e.getMessage());
 					modelMap.put("addstate", "Ìí¼ÓÊ§°Ü£¡");
 				} 
-		 return "view/messageList";
-		//return "forward:index.jsp";
+		 return "redirect:news.do?method=getNewsList";
 	}
 	
 	

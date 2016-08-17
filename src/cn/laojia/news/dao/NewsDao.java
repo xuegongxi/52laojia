@@ -5,7 +5,7 @@ import java.util.List;
 import cn.laojia.news.model.News;
 
 public interface NewsDao {
-	public List<News> getListUsers();
+	public List<News> getNewsList();
 	
 	/**
 	 *  根据用户名和密码查找用户是否存在
@@ -16,6 +16,8 @@ public interface NewsDao {
 	public Object save(final Object model);
 	public void update(final Object model);
 	public void delete(final Object model);
+	//根据信息ID，获取信息
+	public News findNewsById(int id);
 	/**
 	 * 根据用户名查找用户是否存在
 	 * @param username

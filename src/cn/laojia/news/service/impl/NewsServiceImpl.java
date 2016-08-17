@@ -20,10 +20,13 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<News> getListUsers() {
-		return newsDao.getListUsers();
+	public List<News> getNewsList() {
+		return newsDao.getNewsList();
 	}
-
+	//根据信息ID，获取信息
+	public News findNewsById(int id){
+		return newsDao.findNewsById(id);
+	}
 	public void save(News news){
 		newsDao.save(news);
 	}

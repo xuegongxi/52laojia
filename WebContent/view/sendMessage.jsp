@@ -35,7 +35,7 @@
 	var strongpw = new Array();
 	var pwlength = 6;
 </SCRIPT>
-<SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/js/sendMessage.js"></SCRIPT>
 <script type="text/javascript">
 function checklogin(){
 	var session_username ='${sessionScope.username}';
@@ -95,6 +95,10 @@ function checklogin(){
 												<td>标题：<input type="text" id="news_title" name="news_title"
 													value="" size="60" /></td>
 											</tr>
+											<tr>
+												<td>信息发布人：<input type="text" id="news_person" name="news_person"
+													value="" size="20" /></td>
+											</tr>
 											 <tr>
 												<td>											
 												<script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
@@ -130,12 +134,8 @@ function checklogin(){
 											</tr>
 
 											<tr>
-												<th>信息发生地</th>
-												<td><label for="makefeed"><input
-														type="checkbox" name="makefeed" id="makefeed" value="1"
-														class="pc" checked="checked">发送动态 (<a
-														href="http://www.zlsgx.com/home.php?mod=spacecp&amp;ac=privacy&amp;op=feed"
-														target="_blank">更改默认配置</a>)</label></td>
+												<th></th>
+												<td></td>
 											</tr>
 											<tr>
 												<th>&nbsp;</th>

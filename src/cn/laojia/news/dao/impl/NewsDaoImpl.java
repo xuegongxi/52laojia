@@ -14,7 +14,7 @@ import cn.laojia.news.model.News;
 @Repository
 public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	
-	public List<News> getListUsers() {
+	public List<News> getNewsList() {
 		String hql="From News";
 		//List<User>  lists=hibernateTemplate.find(hql);//方法一
 		List<News>  lists=getHibernateTemplate().find(hql);//方法二
@@ -29,6 +29,15 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	public void delete(final Object model) {
 		super.delete(model);
 	}
+	/**
+	 * 根据信息ID，获取信息
+	 */
+	public News findNewsById(int id){
+		Object obj =super.get(News.class, id);
+		return (News) obj;
+	}
+	
+	
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 */

@@ -1,6 +1,9 @@
 <%@page import="com.sun.java.swing.plaf.windows.resources.windows"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="cn.laojia.news.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,6 +60,16 @@
 </SCRIPT>
 <SCRIPT type="text/javascript"
 	src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
+<style>
+A:link {
+	color: blue;
+	text-decoration: underline;
+}
+A:hover {
+	color:black;
+	text-decoration:none;
+}
+</style>
 <script type="text/javascript">
 function checklogin(){
 	var session_username ='${sessionScope.username}';
@@ -104,12 +117,26 @@ function checklogin(){
 					bgColor="#aad9f7">
 					<TBODY>
 						<TR class="user_center_tabletitle">
-							<TD width="50%" align="center">提交的医疗请求</TD>
+						    <TD width="5%" align="center">序号</TD>
+							<TD width="50%" align="center">信息标题</TD>
 							<TD width="17%" align="center">提交时间</TD>
 							<TD width="14%" align="center">状态</TD>
 							<TD width="19%" align="center">操作</TD>
 						</TR>
-						<TR>
+
+						<c:forEach items="${list}" var="news" varStatus="status">
+								<tr>
+								    <td>${ status.index + 1}</td>
+									<td class="rela_pad90" align="left"><A  target="_blank"  href="news.do?method=news_detail&news_id=${news.news_id}"><c:out value="${news.news_title}"/></A></td>
+									<td align="center"><c:out value="${news.create_time}" /></td>
+									<td align="center">待审核</td>
+									<td align="center"><input type="button" onclick="del('<c:out value="${news.news_id}"/>')" value="删除"/></td>
+								</tr>
+						</c:forEach>	
+
+                      <!-- 
+							<TR>
+							<td>1</td>
 							<TD class="rela_pad90" align="left"><SPAN class="green">网上咨询</SPAN>
 								：胎儿多囊肾<BR> 请求医生： 卢彦平 301医院 妇产科</TD>
 							<TD align="center">2016-05-23<BR> 16:47
@@ -117,25 +144,7 @@ function checklogin(){
 							<TD align="center"><SPAN>分诊完成</SPAN></TD>
 							<TD align="center"><A class="blue"
 								href="http://passport.haodf.com/myhealthcare/myservicedetail?id=4465760676&amp;type=INTENTION">查看详情</A></TD>
-						</TR>
-						<TR>
-							<TD class="rela_pad90" align="left"><SPAN class="green">网上咨询</SPAN>
-								：胎儿多囊肾<BR> 请求医生： 魏瑗 北医三院 产科</TD>
-							<TD align="center">2016-05-20<BR> 11:45
-							</TD>
-							<TD align="center"><SPAN>分诊完成</SPAN></TD>
-							<TD align="center"><A class="blue"
-								href="http://passport.haodf.com/myhealthcare/myservicedetail?id=4458560400&amp;type=INTENTION">查看详情</A></TD>
-						</TR>
-						<TR>
-							<TD class="rela_pad90" align="left"><SPAN class="green">网上咨询</SPAN>
-								：前2胎都是婴儿多囊肾，做试管能避免吗 修改<BR> 请求医生： 高江曼 北医三院 生殖医学中心</TD>
-							<TD align="center">2016-01-11<BR> 12:36
-							</TD>
-							<TD align="center"><SPAN>分诊完成</SPAN></TD>
-							<TD align="center"><A class="blue"
-								href="http://passport.haodf.com/myhealthcare/myservicedetail?id=4108683650&amp;type=INTENTION">查看详情</A></TD>
-						</TR>
+						</TR> -->
 					</TBODY>
 				</TABLE>
 			</DIV>

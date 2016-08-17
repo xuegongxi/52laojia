@@ -5,7 +5,7 @@ import java.util.List;
 import cn.laojia.news.model.News;
 
 public interface NewsService {
-	public List<News> getListUsers();
+	public List<News> getNewsList();
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 * @param user
@@ -14,6 +14,8 @@ public interface NewsService {
 	public List<News> getListUsers(News news);
 	public void save(News news);
 	public void delete(Object obj);
+	//根据信息ID，获取信息
+	public News findNewsById(int id);
 	/**
 	 * 根据用户名查找用户是否存在
 	 * @param username
