@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Spring声明式事务配置管理方法 - 一个无聊的人 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=Ugwf7ssw_T-Y4bsdVDPHPhPR9NEESRNHOF-E8IRqEJk1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/ClassicBlue/bundle-ClassicBlue.css?v=ODH5PdkzBpXPSWnsvPqdntRPm3FfsxzPatY8k7hQ7ls1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/88231.css?v=KXF%2fjgL0%2fw8WlXuFFV2quxGtEpc%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/rushoooooo/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/rushoooooo/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/rushoooooo/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'rushoooooo', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=8FFEwmkKjj4L2Jdg5MVt_REQarVq6knH44yFAGuBeJU1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/rushoooooo/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/rushoooooo/">一个无聊的人</a></h1>
+<h2>人生中最重要的事情是确立一个远大的目标并尽自己的努力去实现!</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/rushoooooo/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E4%B8%80%E4%B8%AA%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/rushoooooo/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/rushoooooo/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<span id="stats_post_count">随笔 - 48&nbsp; </span>
+<span id="stats_article_count">文章 - 4&nbsp; </span>
+<span id="stats-comment_count">评论 - 252</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/rushoooooo/archive/2011/08/28/2155960.html">Spring声明式事务配置管理方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>/*2011年8月28日 10:03:30 by <a href="http://www.cnblogs.com/rushoooooo">Rush</a>&nbsp; */</p>
+<h1>环境配置</h1>
+<p>项目使用SSH架构，现在要添加Spring事务管理功能，针对当前环境，只需要添加Spring 2.0 AOP类库即可。添加方法：</p>
+<ul>
+<li>点击项目右键-&gt;Build Path-&gt;Add librarys:</li>
+</ul>
+<p><a href="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004033211.jpg"><img style="display: inline; margin-left: 0px; margin-right: 0px; border-width: 0px;" title="9(V[673_ZRWHP65{U81_AW0" border="0" alt="9(V[673_ZRWHP65{U81_AW0" align="left" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004044574.jpg" width="585" height="310" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>&nbsp;打开Add Libraries对话框，然后选定 MyEclipse Libraries：</li>
+</ul>
+<p><a href="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004048129.png"><img style="display: inline; margin-left: 0px; margin-right: 0px; border-width: 0px;" title="image" border="0" alt="image" align="left" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004041127.png" width="420" height="336" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li>点击Next，找到Spring 2.0 aop Libraries并勾选上，点击finsh即可。</li>
+</ul>
+<p><a href="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004059458.png"><img style="display: inline; border-width: 0px;" title="image" border="0" alt="image" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004054093.png" width="424" height="315" /></a></p>
+<ul>
+<li>如果在项目里面能看到下面的库文件，说明已经安装成功。</li>
+</ul>
+<p><a href="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004051028.png"><img style="display: inline; border-width: 0px;" title="image" border="0" alt="image" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004064899.png" width="393" height="204" /></a></p>
+<h1>事务配置</h1>
+<ul>
+<li>首先在/WEB-INF/applicationContext.xml添加以下内容：</li>
+</ul>
+<pre><span style="color: #008000;">&lt;!-- 配置事务管理器 --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.orm.hibernate3.HibernateTransactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre></pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"sessionFactory"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre></pre>
+<pre>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"mySessionFactory"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre></pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<p>注：这是作为公共使用的事务管理器Bean。这个会是事先配置好的，不需各个模块各自去配。</p>
+<ul>
+<li>下面就开始配置各个模块所必须的部分，在各自的applicationContext-XXX-beans.xml配置的对于事务管理的详细信息。</li>
+</ul>
+<p>首先就是配置事务的传播特性，如下：</p>
+<pre><span style="color: #008000;">&lt;!--  配置事务传播特性 --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">advice</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"TestAdvice"</span> <span style="color: #ff0000;">transaction</span>-<span style="color: #ff0000;">manager</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">attributes</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"save*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"del*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"update*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"add*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"find*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"get*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">method</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"apply*"</span> <span style="color: #ff0000;">propagation</span>=<span style="color: #0000ff;">"REQUIRED"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">attributes</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #c71585;">tx</span>:<span style="color: #800000;">advice</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre></pre>
+<pre></pre>
+<pre><span style="color: #008000;">&lt;!--  配置参与事务的类 --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">aop</span>:<span style="color: #800000;">config</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">aop</span>:<span style="color: #800000;">pointcut</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"allTestServiceMethod"</span> <span style="color: #ff0000;">expression</span>=<span style="color: #0000ff;">"execution(* com.test.testAda.test.model.service.*.*(..))"</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #c71585;">aop</span>:<span style="color: #800000;">advisor</span> <span style="color: #ff0000;">pointcut</span>-<span style="color: #ff0000;">ref</span>=<span style="color: #0000ff;">"allTestServiceMethod"</span> <span style="color: #ff0000;">advice</span>-<span style="color: #ff0000;">ref</span>=<span style="color: #0000ff;">"TestAdvice"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #c71585;">aop</span>:<span style="color: #800000;">config</span><span style="color: #0000ff;">&gt;</span></pre>
+<p>需要注意的地方:</p>
+<p>（1） advice（建议）的命名：由于每个模块都会有自己的Advice，所以在命名上需要作出规范，初步的构想就是模块名+Advice（只是一种命名规范）。</p>
+<p>（2） <strong>tx:attribute标签所配置的是作为事务的方法的命名类型</strong>。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如&lt;tx:method <b>name</b>="save*" <b>propagation</b>="REQUIRED"/&gt;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其中*为通配符，即代表以save为开头的所有方法，即表示符合此命名规则的方法作为一个事务。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>propagation</b>="REQUIRED"代表支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。</p>
+<p>（3） aop:pointcut标签配置参与事务的类，由于是在Service中进行数据库业务操作，配的应该是包含那些作为事务的方法的Service类。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 首先应该特别注意的是id的命名，同样由于每个模块都有自己事务切面，所以我觉得初步的命名规则因为 all+模块名+ServiceMethod。而且每个模块之间不同之处还在于以下一句：</p>
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expression</b>="execution(* com.test.testAda.test.model.service.*.*(..))"</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其中第一个*代表返回值，第二*代表service下子包，第三个*代表方法名，&ldquo;（..）&rdquo;代表方法参数。</p>
+<p>（4） aop:advisor标签就是把上面我们所配置的事务管理两部分属性整合起来作为整个事务管理。</p>
+<p>图解：</p>
+<p><a href="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004069849.png"><img style="display: inline; border-width: 0px;" title="image" border="0" alt="image" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/201108/201108281004079468.png" width="801" height="299" /></a></p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;" color="#ff0000"><strong>下面附上配置声明式事务的一些相关的资料，以下资料均来源于互联网：</strong></span></p>
+<p><span style="color: #ff0000;" color="#ff0000"><strong>附一、Spring事务类型详解</strong></span></p>
+<p><span style="color: #ff0000;" color="#ff0000"><strong>附二、对spring事务类型详解的一点补充（关于嵌套事务）</strong></span></p>
+<p><span style="color: #ff0000;" color="#ff0000"><strong>附三、Transaction后缀给声明式事务管理带来的好处</strong></span></p>
+<p><span style="color: #ff0000;" color="#ff0000"><strong>附四、Spring中的四种声明式事务的配置</strong></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>附一、Spring事务类型详解</h1>
+<p>&lt;prop key="load*"&gt;PROPAGATION_REQUIRED,readOnly&lt;/prop&gt;&lt;prop key="store*"&gt;PROPAGATION_REQUIRED&lt;/prop&gt;</p>
+<p>估计有好多朋友还没有弄清楚里面的值的意思，仔细看完下面应该知道自己什么情况下面应该使用什么样的声明。^_^</p>
+<p>Spring中常用事务类型：</p>
+<blockquote>
+<p>PROPAGATION_REQUIRED--支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。</p>
+<p>PROPAGATION_SUPPORTS--支持当前事务，如果当前没有事务，就以非事务方式执行。</p>
+<p>PROPAGATION_MANDATORY--支持当前事务，如果当前没有事务，就抛出异常。</p>
+<p>PROPAGATION_REQUIRES_NEW--新建事务，如果当前存在事务，把当前事务挂起。</p>
+<p>PROPAGATION_NOT_SUPPORTED--以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p>
+<p>PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛出异常。</p>
+<p>PROPAGATION_NESTED--如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。</p>
+</blockquote>
+<p>&nbsp;</p>
+<h1>附二、对spring事务类型详解的一点补充（关于嵌套事务）</h1>
+<blockquote>
+<p>&middot; PROPAGATION_REQUIRED--支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。</p>
+<p>&middot; PROPAGATION_SUPPORTS--支持当前事务，如果当前没有事务，就以非事务方式执行。</p>
+<p>&middot; PROPAGATION_MANDATORY--支持当前事务，如果当前没有事务，就抛出异常。</p>
+<p>&middot; PROPAGATION_REQUIRES_NEW--新建事务，如果当前存在事务，把当前事务挂起。</p>
+<p>&middot; PROPAGATION_NOT_SUPPORTED--以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p>
+</blockquote>
+<blockquote>
+<p>&middot; PROPAGATION_NEVER--以非事务方式执行，如果当前存在事务，则抛出异常。</p>
+</blockquote>
+<p align="left"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 可能大家对PROPAGATION_NESTED还不怎么了解，觉得有必要再补充一下^_^！<br />PROPAGATION_NESTED: 嵌套事务类型，是相对上面提到的六种情况（上面的六种应该称为平面事务类型），打个比方我现在有一个事务主要有一下几部分：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1，从A用户帐户里面减去100元钱<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2，往B用户帐户里面添加100元钱<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这样看和以前不同的事务可能没有什么区别，那我现在有点特殊的要求就是，A用户有3个帐户，B用户有2个帐户，现在我的要求就是只要再A用户的3个帐户里面任意一个减去100元，往B用户的两个帐户中任意一个里面增加100元就可以了！<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一旦你有这样的要求那嵌套事务类型就非常适合你！我们可以这样理解，<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一：将&ldquo;从A用户帐户里面减去100元钱&rdquo; 和 &ldquo;往B用户帐户里面增加100元钱&rdquo;我们暂时认为是一级事务操作<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 二：将从A用户的3个帐户的任意一个帐户里面减钱看做是&ldquo;从A用户帐户里面减去100元钱&rdquo;这个一级事务的子事务（二级事务），同样把后面存钱的看成是另一个的二级事务。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 问题一：当二级事务被rollback一级事务会不会被rollback？<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 答案是不会的，二级事务的rollback只针对自己。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 问题二：什么时候这个一级事务会commit，什么时候会被rollback呢？<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我们主要看二级里面出现的情况，当所有的二级事务被commit了并且一级事务没有失败的操作，那整个事务就算是一个成功的事务，这种情况整个事务会被commit。<br />当任意一个二级事务没有被commit那整个事务就是失败的，整个事务会被roolback。<br />还是拿上面的例子来说明吧！如果我在a的三个帐户里面减钱的操作都被二级事务给rollback了，也就是3个帐户里面都没有减钱成功，整个事务就失败了就会被rollback。如果A用户帐户三个帐户里面有一个可以扣钱而且B用户的两个帐户里面也有一个帐户可以增加钱，那整个事务就算成功的，会被 commit。<br />看了一下觉得上面的例子好像不是很深刻，看这个情况（A用户的3个帐户都是有信用额度的，也就是说可以超支，但是超支有金额限制）。不过原理是一样的，简单点也好说明一点，祝你好运！^_^</p>
+<p align="left">&nbsp;</p>
+<h1>附三、Transaction后缀给声明式事务管理带来的好处</h1>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 良好的面向对象的程序，一般都使用接口和实现分离的模式。我在《事务管理最佳实践全面解析》一文中提出，用*Transaction和*Dao后缀这样的形式，区分方法的不同用途。</p>
+<p>这样，可以提醒接口的实现者和方法的使用者注意到它们对于数据库连接和事务的依赖。</p>
+<p>实际上，使用*Transaction后缀这样的命名方式，对于声明式事务管理也是很有用处的。如，Spring的事务管理中，我们一般使用方法名的匹配来应用声明式事务。</p>
+<p>一、请看下面的Spring配置：</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"txProxyTemplate"</span> <span style="color: #ff0000;">abstract</span>=<span style="color: #0000ff;">"true"</span> <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionProxyFactoryBean"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #ff0000;">ref</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">/&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionAttributes"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"*"</span><span style="color: #0000ff;">&gt;</span>readOnly<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"add*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"save*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"modify*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"update*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"delete*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"remove*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"query*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED, readOnly,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"load*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED, -Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>这是来自于真实项目中的Spring声明式事务配置。我们对每一个业务层的实现类都应用了这样的事务配置。</p>
+<p>我们对所有业务服务Service方法使用了只读事务。对以add,save,modify,update,delete,remove,load开头的方法都使用了事务。</p>
+<p>但是，实际上，虽然我们开发的软件一个&ldquo;信息管理系统&rdquo;，是围绕数据库开发的。但是，在Service层，我们还是有很多不操作数据库的方法。</p>
+<p>如，单纯根据业务逻辑进行计算的，适用缓存进行计算的，执行email发送，文件上传等等任务的方法，在这种配置下都不分青红皂白的应用了事务。</p>
+<p>SpringAOP生成的代理对象代理了我们的服务实现类，所有的方法执行前后都被拦截，用来得到和关闭数据库连接，设置、提交和回滚事务。而不管这个方法是否用到了这个数据库。</p>
+<p>如果遵照我提出的这个方法，使用*Transaction后缀来标识需要处理事务的方法，那么我们使用Spring声明式事务时，就可以非常精确、有效的应用事务了！</p>
+<p>二、请看下面的Spring事务配置：</p>
+<pre><span style="color: #008000;">&lt;!-- UninstallWcmsJbpmProcessDefinition --&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"uninstallWcmsJbpmProcessDefinition"</span> <span style="color: #ff0000;">parent</span>=<span style="color: #0000ff;">"txProxyTemplate"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"target"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>       <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"uninstallWcmsJbpmProcessDefinitionTarget"</span><span style="color: #0000ff;">/&gt;</span> 
+</pre>
+<pre></pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionAttributes"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"uninstall*Wcms*Transaction"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,-Exception<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>我们对这个类中以uninstall开头，中间包含Wcms，最后以Transaction结尾，这样的规则命名的方法，应用了事务。</p>
+<p>三、部分源代码：</p>
+<p>（一）2个应用了Spring声明式事务的方法：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:java;gutter:false;">/** 
+*使用SPring的ibatis，主要要配置iBatis的Spring声明式事务。 
+*@throwsException 
+*&lt;prop key="uninstall*Wcms*Transaction"&gt;PROPAGATION_REQUIRED,-Exception&lt;/prop&gt; 
+*1，还要删除所有 频道---新闻--工作流表中标记不为1的记录。 
+*/ 
+publicvoid uninstallAllWcmsProcessDefinitionsTransaction() throws Exception{ 
+/** 
+* 
+* 
+*/ 
+this.getWcmsSystemChannelProcessdefinitionDao().deleteAll(); 
+this.getWcmsSystemChannelNewsinfoDao().deleteAllProcessingWcmsSystemChannelNewsinfoModule(); 
+    } 
+/** 
+*&lt;prop key="uninstall*Wcms*Transaction"&gt;PROPAGATION_REQUIRED,-Exception&lt;/prop&gt; 
+*@paramname 
+*@throwsException 
+*/ 
+publicvoid uninstallWcmsSystemChannelProcessdefinitionTransaction(String name) throws Exception{ 
+this.getWcmsSystemChannelProcessdefinitionDao().deleteByProcessdefinitionName(name); 
+this.getWcmsSystemChannelNewsinfoDao().deleteAllProcessingWcmsSystemChannelNewsinfoModuleByProcessdefinitionName(name); 
+    } 
+（二）用到的Dao类，用来实际访问数据库的2个DAO对象。
+
+/**
+
+*SPring管理的ibatis功能
+
+*/
+
+private IWcmsSystemChannelProcessdefinitionDao wcmsSystemChannelProcessdefinitionDao;
+
+private IWcmsSystemChannelNewsinfoDao wcmsSystemChannelNewsinfoDao;
+
+</pre>
+</div>
+<p></p>
+<p>&nbsp;</p>
+<h1>附四、Spring中的四种声明式事务的配置</h1>
+<p>让我们言归正传吧。</p>
+<p>以下两个bean的配置是下面要用到的。</p>
+<pre><span style="color: #008000;">&lt;!-- 定义事务管理器（声明式的事务） --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionManager"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.orm.hibernate3.HibernateTransactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"sessionFactory"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">local</span>=<span style="color: #0000ff;">"sessionFactory"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #008000;">&lt;!-- *******业务逻辑层(是对各个DAO层的正面封装)主要用到&lt;&lt;门面模式&gt;&gt;****** --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"fundService"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"com.jack.fund.service.serviceimpl.FundService"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"operdao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"operatorDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"producedao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"fundProduceDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"customerdao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"customerDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"accountdao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"accountDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"fundaccountdao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"fundAccountDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"fundtransdao"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"fundTransDAO"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>可能还有其他很多模块。&lt;bean id="fundService"/&gt;可能只是其中的模块。</p>
+<p>第一种：配置声明式事务的方法如下。也是我们最常用的方法了，它适用于你的库表比较少的情况下。</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"fundServiceDAOProxy"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionProxyFactoryBean"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 配置事务管理器 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 此属性指定目标类本省是否是代理的对象，如果目标类没有实现任何类，就设为true代表自己 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"proxyTargetClass"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>false<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"proxyInterfaces"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>com.jack.fund.service.IFundService<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 目标bean --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"target"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"fundService"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 配置事务属性 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionAttributes"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"delete*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"add*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"update*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"save*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span>   <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"find*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,readOnly<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> </pre>
+<p>以下可能还有其他的xxxServiceDAOProxy.大家可以看出针对每一个功能模块配置一个业务代理服务。如果模块多大话，就显得代码有点多了，发现他们只是稍微一点不一样。这时我们就应该想到继承的思想。用第二种方法。</p>
+<p>第二种：配置声明式事务的方法如下。这种情况适合相对比较多的模块时使用。</p>
+<pre><span style="color: #008000;">&lt;!-- 利用继承的思想简化配置，要把abstract="true" --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionBase"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionProxyFactoryBean"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">lazy</span>-<span style="color: #ff0000;">init</span>=<span style="color: #0000ff;">"true"</span> <span style="color: #ff0000;">abstract</span>=<span style="color: #0000ff;">"true"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 配置事务管理器 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 配置事务属性 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionAttributes"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"delete*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"add*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"update*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"save*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"find*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,readOnly<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> </pre>
+<p>而具体的模块可以简单的这样配置。只要指明它的parent（父类）就可以了。父类一般把abstract="true"，因为在容器加载的时候不需要初始化，等到用的时候再有它的子类调用的时候，再去初始化。</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"fundServiceDAOProxy"</span> <span style="color: #ff0000;">parent</span>=<span style="color: #0000ff;">"transactionBase"</span> <span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"target"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"fundService"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> </pre>
+<p>这样配置的话，如果有多个像fundService这样模块时，可以少些很多重复的代码。</p>
+<p>第三种：配置声明式事务的方法如下。主要利用BeanNameAutoProxyCreator自动创建事务代理</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionInterceptor"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionInterceptor"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 配置事务属性 --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionAttributes"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"delete*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"add*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"update*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"save*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">prop</span> <span style="color: #ff0000;">key</span>=<span style="color: #0000ff;">"find*"</span><span style="color: #0000ff;">&gt;</span>PROPAGATION_REQUIRED,readOnly<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">prop</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">props</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"beanNames"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>fundService<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"interceptorNames"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>transactionInterceptor<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>这种方法主要利用了拦截器的原理。</p>
+<p>前三种方法一般都必需指定具体的模块bean.如果模块过多话，比如一个大型的网站一般有几十个模块。我们就得考虑用第四种的配置方式了。自动创建事务代理的方式了。</p>
+<p>第四种：配置声明式事务的方法如下。</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionInterceptor"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionInterceptor"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #008000;">&lt;!-- 自动代理 --&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"autoproxy"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #008000;">&lt;!-- 可以是Service或DAO层（最好是针对业务层*Service） --&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"beanNames"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>     <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>*Service<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"interceptorNames"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>transactionInterceptor<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">list</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>自动代理还有一种用法就是结合正规表达式和advice使用。</p>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"transactionInterceptor"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.transaction.interceptor.TransactionInterceptor"</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"transactionManager"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionManager"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"autoProxyCreator"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"</span> <span style="color: #0000ff;">/&gt;</span> 
+</pre>
+<pre></pre>
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">bean</span> <span style="color: #ff0000;">id</span>=<span style="color: #0000ff;">"regexpMethodPointcutAdvisor"</span>
+</pre>
+<pre>   <span style="color: #ff0000;">class</span>=<span style="color: #0000ff;">"org.springframework.aop.support.RegexpMethodPointcutAdvisor"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"advice"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">ref</span> <span style="color: #ff0000;">bean</span>=<span style="color: #0000ff;">"transactionInterceptor"</span> <span style="color: #0000ff;">/&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">property</span> <span style="color: #ff0000;">name</span>=<span style="color: #0000ff;">"pattern"</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>.*<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">value</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">property</span><span style="color: #0000ff;">&gt;</span>
+</pre>
+<pre>   <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> 
+</pre>
+<p>这个方法可以针对具体的模块进行拦截并进行事务处理。</p>
+<p>在你的实际项目中，你可以根据你的情况选用不同的方法。</p>
+<p>/2011年8月28日 10:03:17/</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2011-08-28 10:12</span> <a href='http://www.cnblogs.com/rushoooooo/'>一个无聊的人</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=2155960" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2155960);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=88231,cb_entryId=2155960,cb_blogApp=currentBlogApp,cb_blogUserGuid='fc118645-7271-e011-a53f-842b2b196315',cb_entryCreatedDate='2011/8/28 10:12:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2016 一个无聊的人
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<script type="text/javascript">
+window.onload=function(){
+ var divs = document.getElementsByTagName('div');
+ for(var i = 0 ; i < divs.length ; i++){
+    if(divs[i].className == 'catListPostCategory' || 
+       divs[i].className == 'catListPostArchive'  ||
+       divs[i].className == 'catListBlogRank'  ||
+       divs[i].className == 'catListComment'  ||
+       divs[i].className == 'catListView'  ||
+       divs[i].className == 'catListFeedback'
+     ){
+        divs[i].style.backgroundColor = '#EEEEEE';
+        divs[i].style.border = '0px';
+      }
+     if(divs[i].className == 'feedback_area_title')
+{
+     divs[i].innerHTML = '<a href="#pl" style="text-decoration:none;">发表评论(↓↓↓)</a>';
+}
+      if(divs[i].className == 'catListPostCategory'){
+        var htitle = document.createElement('h3');
+        htitle.id = 'cloudTag'; 
+        htitle.innerText = '标签云';
+        htitle.className = 'catListTitle'; 
+        divs[i].appendChild(htitle);
+      
+       ////////
+        var divTag = document.createElement('div');
+        divTag.id = 'tagsDiv';
+        divTag.style.border = '0px';
+        divs[i].appendChild(divTag);
+        divTag.innerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="200" height="200" id="myFlashContent">'
++'<param name="movie" value="http://files.cnblogs.com/rushoooooo/rushTags.swf"/><param name="allowfullscreen" value="true"/><param name="allowscriptaccess" value="always" /><param name="wmode" value="transparent" /><param name="allownetworking" value="all" />'
++'<param name="flashvars" value=\'jsonData={"type":"tagBall","delicacy":2,"renderCycleTime":15,"radius":50,"focalLength":300,"color":"#FFFFFF","rotationModeX":150,"rotationModeY":80,"elements":['
++'{"type":"text","data":"Spring事务配置","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/28/2155960.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'
++'{"type":"text","data":"JBoss虚拟目录,支持中文","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/27/2155367.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'
++'{"type":"text","data":"JBoss管理数据库","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/25/2152940.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'
++'{"type":"text","data":"端口冲突","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/25/2152909.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'
++'{"type":"text","data":"数字证书","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/24/2152626.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'
++'{"type":"text","data":"log4j","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/29/2157361.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"Hibernate查询","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/08/24/2151588.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"VC++中list的使用方式","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/07/24/2115429.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"ActiveX控件","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/06/22/2087571.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"ExtJs","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/04/29/2032749.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"SSH配置","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/04/29/2032341.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"卡尔曼滤波器 Kalman Filter","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/04/29/2032338.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"HTML表格","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/07/04/2097701.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":".net MVC3","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/05/04/2036019.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"Javascript操作","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/05/01/2033670.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"TortoiseSVN安装使用","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/archive/2011/04/29/2032346.html","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"},'+
+'{"type":"text","data":"ireprot客户端打印","hcolor":"0xFF6600","size":16,"bold":1,"herf":"http://www.cnblogs.com/rushoooooo/default.html?page=3","window":"_blank","fontFamily":"\u5fae\u8f6f\u96c5\u9ed1"}'
++']}\' /><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a><!--[if !IE]>--></object><!--<![endif]--></object>';
+     }
+     if(divs[i].className == 'divRecentCommentAticle'){
+        divs[i].style.backgroundColor = '#FFFFCC';
+     }
+ }
+ loadRSS();
+ setBottom();
+}
+</script>
+<script type="text/javascript">
+function loadRSS(){
+
+var mainC = document.getElementsByTagName('div');
+var mainS;
+for(var i = 0 ; i < mainC.length ; i++){
+   if(mainC[i].className == 'forFlow'){
+      mainS = mainC[i];
+      break;
+    }
+}
+if(!mainS){
+  return;
+}
+var disdy = document.createElement('div');
+disdy.style.width = '100%';
+//disdy.style.height = '30px';
+//disdy.style.border = 'solid 1px ';
+mainS.insertBefore(disdy,mainS.childNodes[0]);  
+
+//////
+/////
+var pngBtn = document.createElement('div');
+pngBtn.id = 'fullScreen';
+pngBtn.width = '100%';
+pngBtn.height = '50px';
+pngBtn.style.float = 'right';
+pngBtn.style.position = 'absolute';
+pngBtn.style.zIndex = 999;
+pngBtn.onmouseover = changeBorderColor;
+pngBtn.onmouseout = backBorderColor;
+pngBtn.style.pixelRight = mainS.offsetRight - 200 + 'px';
+pngBtn.style.right = pngBtn.style.pixelRight + 50 + 'px';
+mainS.insertBefore(pngBtn,mainS.childNodes[1]); 
+pngBtn.innerHTML ='<a id="titleA" title="全屏阅读模式" href="javascript:void(0);" onclick="converseScreen()"><img alt="全屏阅读模式"  id="backIcon" src="http://images.cnblogs.com/cnblogs_com/rushoooooo/318868/o_full_screen.png" width="50px" height="50px"/></a>';
+}
+
+function changeBorderColor(){
+  var sc = document.getElementById('fullScreen');
+  sc.style.border = 'solid 1px red';
+}
+function backBorderColor(){
+  var sc = document.getElementById('fullScreen');
+  sc.style.border = 'solid 0px red';
+}
+var isFullScreen = false;
+var oldWidth;
+var oldMainWid;
+var marL,marR;
+function converseScreen(){
+   var sider = document.getElementById('sideBar');
+   var main = document.getElementById('mainContent');
+   var father = document.getElementById('main');
+   var form = document.getElementById('Form1');
+   var bkIcon = document.getElementById('backIcon');
+   var title = document.getElementById('titleA');
+     if(!isFullScreen){
+     isFullScreen = true;
+     oldWidth= sider.style.width;
+     oldMainWid = main.style.width;
+     sider.style.position = 'absolute';
+     sider.style.display = 'none';
+     sider.style.width = '0px';  
+     main.style.width = form.style.width;
+     marL = main.style.marginLeft;
+     marR = main.style.marginRight;
+     main.style.marginLeft = '5%'; 
+     main.style.marginRight = '5%'; 
+     title.title = '返回浏览模式';
+     bkIcon.alt = '返回浏览模式';
+     bkIcon.src = 'http://images.cnblogs.com/cnblogs_com/rushoooooo/318868/o_redo.png';
+   }else{
+    isFullScreen = false;
+    sider.style.width = oldWidth;
+    main.style.width = oldMainWid;
+    main.style.marginLeft = marL;
+    main.style.marginRight = marR;
+    sider.style.display = 'block';
+    title.title = '切换全屏阅读模式';
+     bkIcon.alt = '切换全屏阅读模式';
+    bkIcon.src = 'http://images.cnblogs.com/cnblogs_com/rushoooooo/318868/o_full_screen.png';
+  }
+}
+
+///////
+function setBottom(){
+    var ddiv = document.getElementById('commentform_title');
+
+     var aa = document.createElement('A');
+     if(!ddiv){
+       return;
+     }
+     aa.name = 'pl';
+     aa.id = 'pl';
+     ddiv.appendChild(aa);
+}
+
+</script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

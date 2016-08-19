@@ -30,6 +30,7 @@ public class PageModel extends BaseEntity{
 	public void setRecordCount(int recordCount) {
 		this.recordCount = recordCount;
 	}
+	//Ò³Êý
 	public int getTotalSize(){
 		return this.getRecordCount() % this.getPageSize() == 0
 					? this.getRecordCount() / this.getPageSize() 

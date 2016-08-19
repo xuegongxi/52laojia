@@ -37,7 +37,27 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 		return (News) obj;
 	}
 	
-	
+	 public  String getJson(String tableName,String select,String where,String orderby,int pageIndex,int pageCount){
+         StringBuilder sb=new StringBuilder();
+         sb.append("select "+select+" from "+tableName);
+         if(!"".equals(where)){
+        	 sb.append(" ");
+        	 if(where.startsWith("where")){
+        		 sb.append(" "+where);
+        	 }else{
+        		 sb.append(" where "+where);
+        	 }
+         }
+         sb.append(" "+orderby+" ");
+         int temp=(pageIndex-1) * pageCount;
+         sb.append(" limit "+temp+","+pageCount);
+         List list = super.find(sb.toString());
+    	 RowSet rt=DBop.search(sb.toString());
+    	 //求数据总条目数
+         int rowNum=0;
+         rowNum=DBop.getNum(tableName,where);
+    	 return RowSetToJson(rt,rowNum,pageCount);
+     }
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 */

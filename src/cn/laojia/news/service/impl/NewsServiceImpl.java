@@ -1,5 +1,6 @@
 package cn.laojia.news.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -8,7 +9,9 @@ import org.springframework.stereotype.Service;
 
 import cn.laojia.news.dao.NewsDao;
 import cn.laojia.news.model.News;
+import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
+import cn.laojia.user.model.User;
 
 @Service
 public class NewsServiceImpl implements NewsService {
@@ -27,8 +30,16 @@ public class NewsServiceImpl implements NewsService {
 	public News findNewsById(int id){
 		return newsDao.findNewsById(id);
 	}
-	public void save(News news){
-		newsDao.save(news);
+	public void save(News news, User user){
+		//1.保存新闻信息
+		int news_id=(int) newsDao.save(news);
+		//2.保存信息审核信息
+		NewsApprove approve = new  NewsApprove();
+		approve.setCreate_time(new Date());
+		approve.setNews_create_userid(user.getUserid());
+		approve.setNews_id(news_id);
+		newsDao.save(approve);
+		
 	}
 	public void delete(Object obj){
 		newsDao.delete(obj);

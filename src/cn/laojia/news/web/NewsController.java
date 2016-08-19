@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -83,8 +84,12 @@ public class NewsController {
 		news.setNews_content(news_content.getBytes());
 		news.setNews_type(news_type);
 		news.setNews_address(village);
+		
+		//获取用户信息
+		HttpSession session = request.getSession();// 防止创建Session
+		 User user = (User) session.getAttribute("user");
 		 try{
-				 newsService.save(news);
+				 newsService.save(news,user);
 					modelMap.put("addstate", "添加成功！");
 				}
 				catch(Exception e){

@@ -12,7 +12,7 @@
     <!-- 配置jdbc -->
 	<context:property-placeholder location="classpath:properties/hibernate.properties" />
 	
-	<!-- 配置數據源 -->
+	<!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="${dataSource.driverClassName}" />
@@ -25,7 +25,7 @@
         <property name="maxIdle" value="2"/>        
         <property name="minIdle" value="1"/> 
 	</bean>
-
+	
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
@@ -53,18 +53,36 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-    <!-- 配置那个类那个方法用到事务处理 -->
+    <!-- 配置事务的传播特性-->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="get*" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED"/>
 			<tx:method name="add*" propagation="REQUIRED" />
 			<tx:method name="update*" propagation="REQUIRED" />
 			<tx:method name="delete*" propagation="REQUIRED" />
 			<tx:method name="*" propagation="REQUIRED" />
 		</tx:attributes>
 	</tx:advice>
+  <!--  配置参与事务的类 -->
 
+	<aop:config>
+	 <aop:pointcut id="allNewsServiceMethod" expression="execution(* cn.laojia.news.service.*.*(..))"/>
+	 <aop:advisor pointcut-ref="allNewsServiceMethod" advice-ref="txAdvice" />
+	</aop:config>
 
+	
+	  <!--  
+	  （2） tx:attribute标签所配置的是作为事务的方法的命名类型。
+	         如<tx:method name="save*" propagation="REQUIRED"/>
+	        其中*为通配符，即代表以save为开头的所有方法，即表示符合此命名规则的方法作为一个事务。
+	        propagation="REQUIRED"代表支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。
+	（3） aop:pointcut标签配置参与事务的类，由于是在Service中进行数据库业务操作，配的应该是包含那些作为事务的方法的Service类。
+	       首先应该特别注意的是id的命名，同样由于每个模块都有自己事务切面，所以我觉得初步的命名规则因为 all+模块名+ServiceMethod。而且每个模块之间不同之处还在于以下一句：
+	       expression="execution(* com.test.testAda.test.model.service.*.*(..))"
+	       其中第一个*代表返回值，第二*代表service下子包，第三个*代表方法名，“（..）”代表方法参数。
+	（4） aop:advisor标签就是把上面我们所配置的事务管理两部分属性整合起来作为整个事务管理。 -->
+  
     <!-- 这个映射配置主要是用来进行静态资源的访问 -->
     <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/> 
     <mvc:resources mapping="/script/**" location="/script/" cache-period="31556926"/> 

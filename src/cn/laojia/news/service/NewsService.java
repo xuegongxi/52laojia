@@ -3,6 +3,7 @@ package cn.laojia.news.service;
 import java.util.List;
 
 import cn.laojia.news.model.News;
+import cn.laojia.user.model.User;
 
 public interface NewsService {
 	public List<News> getNewsList();
@@ -12,7 +13,7 @@ public interface NewsService {
 	 * @return
 	 */
 	public List<News> getListUsers(News news);
-	public void save(News news);
+	public void save(News news, User user);
 	public void delete(Object obj);
 	//根据信息ID，获取信息
 	public News findNewsById(int id);

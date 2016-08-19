@@ -4,62 +4,33 @@
 <%@ page import="java.util.*"%>
 <%@ page import="cn.laojia.news.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<base href="<%=path%>">
 <!-- <title>我爱我家-个人空间管理</title> -->
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/userspace.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/erweima.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/css.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/css(1).css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/base.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/nav.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/top_change.adc5d856.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/scenter.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/reveiwnotice.css">
-<LINK rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/persion/index_nav_noshadow_style.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/usercenter.css">
-<LINK rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/css/persion/style_3_common.css">
-<SCRIPT language="javascript" type="text/javascript"
-	src="<%=request.getContextPath()%>/script/jquery-1.4.2.min.js"></SCRIPT>
-<SCRIPT type="text/javascript"
-	src="<%=request.getContextPath()%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
-<link href="<%=request.getContextPath()%>/css/style.css" type="text/css"
-	rel="stylesheet" />
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/js/banner1.js"></script>
-<script type="text/javascript" charset="utf-8"
-	src="<%=request.getContextPath()%>/ueditor1_4_3/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8"
-	src="<%=request.getContextPath()%>/ueditor1_4_3/ueditor.all.min.js"> </script>
-<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-<script type="text/javascript" charset="utf-8"
-	src="<%=request.getContextPath()%>/ueditor1_4_3/lang/zh-cn/zh-cn.js"></script>
-<SCRIPT type="text/javascript"
-	src="<%=request.getContextPath() %>/script/jquery.min.js"></SCRIPT>
-<SCRIPT>
-	jQ = jQuery.noConflict();
-</SCRIPT>
-<SCRIPT type="text/javascript">
-	var strongpw = new Array();
-	var pwlength = 6;
-</SCRIPT>
-<SCRIPT type="text/javascript"
-	src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
+<link rel="stylesheet" type="text/css"  href="<%=path%>/css/style.css"/>
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/userspace.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/erweima.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/css.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/css(1).css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/base.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/nav.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/top_change.adc5d856.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/scenter.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/reveiwnotice.css">
+<LINK rel="stylesheet"	href="<%=path%>/css/persion/index_nav_noshadow_style.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/usercenter.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/style_3_common.css">
+<SCRIPT language="javascript" type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
+<SCRIPT type="text/javascript"	src="<%=path%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
+<script type="text/javascript"	src="<%=path%>/js/banner1.js"></script>
+<SCRIPT type="text/javascript"	src="<%=path%>/script/jquery.min.js"></SCRIPT>
+
 <style>
 A:link {
 	color: blue;
@@ -83,22 +54,6 @@ function checklogin(){
 			$(this).parent("div").css("display", "none");
 		});
 	});
-</script>
-<script type="text/javascript">
-
-    //实例化编辑器
-    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('editor');
-
-
-    function getContent() {
-        var arr = [];
-        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
-        arr.push("内容为：");
-        arr.push(UE.getEditor('editor').getContent());
-        alert(arr.join("\n"));
-    }
-
 </script>
 </head>
 <body onload="">
@@ -147,9 +102,21 @@ function checklogin(){
 						</TR> -->
 					</TBODY>
 				</TABLE>
+				<div id="Pagination" class="flickr" style="text-align:left"></div>
 			</DIV>
 			</div>
 		</DIV>
 	</DIV>
+	 <div class="footer">
+		<p>
+			<a href="/gygx/"> 关于我们</a> | <a href=#>人才招聘</a> | <a href="#">联系我们</a>
+			| <a href="#">广告合作</a> | <a href="#">业务合作</a> | <a href="#">版权说明</a>
+			| <a href="#">免责说明</a> | <a href="#">隐私权保护</a> |<a href="#">法律顾问</a>
+		</p>
+		<p>
+			Copyright 2014-2015 Inc.All Right Reserved <br>我爱老家网 
+		</p>
+
+	</div>
 </body>
 </html>
