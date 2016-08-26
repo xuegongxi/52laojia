@@ -24,7 +24,11 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	public PageModel getNewsList(PageModel model) {
 	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id";
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
-	    Session session= super.getSession();
+	    List total = super.getJdbcTemplate().queryForList(sql);
+	    model.setRecordCount(total.size());
+	    
+	    //hibernate 纯SQL执行 因行号的问题 hibernate3.jar有bug
+	   /* Session session= super.getSession();
 	    //1.总数
 	    SQLQuery query1 = session.createSQLQuery(sql);
 	    List newslist1 = query1.list();
@@ -35,7 +39,7 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	    query.setFirstResult(model.getStartRow());//从第一条记录开始
 	    query.setMaxResults(model.getEndRow());//取出四条记录
 	    List newslist = query.list();
-		model.setDatas(newslist);
+		model.setDatas(newslist);*/
 		return model;
 	}
 	public Serializable save(final Object model) {
