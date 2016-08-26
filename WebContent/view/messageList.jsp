@@ -26,10 +26,13 @@ String path = request.getContextPath();
 <LINK rel="stylesheet"	href="<%=path%>/css/persion/index_nav_noshadow_style.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/usercenter.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/style_3_common.css">
-<SCRIPT language="javascript" type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
+<SCRIPT type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
 <SCRIPT type="text/javascript"	src="<%=path%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
 <script type="text/javascript"	src="<%=path%>/js/banner1.js"></script>
 <SCRIPT type="text/javascript"	src="<%=path%>/script/jquery.min.js"></SCRIPT>
+<script type="text/javascript" src="<%=path%>/js/jquery-1.6.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery.myPagination.js"></script>
+<script type="text/javascript" src="<%=path%>/js/msgbox/msgbox.js"></script>
 
 <style>
 A:link {
@@ -40,6 +43,7 @@ A:hover {
 	color:black;
 	text-decoration:none;
 }
+.dl{background:#D4E4E4;height:26px;border:1px solid #ccc;padding-top: 3PX;font-size: 14px};
 </style>
 <script type="text/javascript">
 function checklogin(){
@@ -48,12 +52,80 @@ function checklogin(){
 		window.location.href='<%=request.getContextPath()%>/index.jsp';
 		}
 	}
-
+ var myPagination;
 	$(function() {
+		
+		init();
+		initEvent();
+		
+		
 		$(".doc_down_codeimg .close").bind("click", function() {
 			$(this).parent("div").css("display", "none");
 		});
 	});
+	function init(){
+		var formData = $("#queryForm").serialize(); //序列化表单
+        formData = decodeURIComponent(formData, true);	//解码
+		myPagination = $("#demo1").myPagination({
+					currPage: 1,
+					pageSize: 10,
+					ajax: {
+					  on: true,
+					  url: "<%=path%>/news.do?method=getNewsList",
+					  dataType: 'json',
+					  param:formData,
+					  ajaxStart:function(){
+						  ZENG.msgbox.show(" 正在加载中，请稍后...", 6, 10000);
+					  },onClick:function(page){
+						  $.fn.debug(page);
+					  },
+					  callback: 'ajaxCallBack'
+					}
+				  }); 
+	}
+	
+	//自定义 回调函数  
+	function ajaxCallBack(data) {
+		ZENG.msgbox.hide(); //隐藏加载提示
+		var result = data.result;
+		var insetViewData = "";
+		 $.each(result, function(i) {
+			insetViewData += createTR(result[i]);
+		 });
+		 
+		 $("#mytab > tbody").html(insetViewData);
+		 $('#mytab > tbody > tr:even').addClass('a1'); //奇偶变色，添加样式 
+	}
+
+	function initEvent() {
+		$("#keywords").focus();
+		$("#query").click(function() {
+			var formData = $("#queryForm").serialize(); //序列化表单
+			formData = decodeURIComponent(formData, true); //解码
+			 $("#demo1").myPagination({
+				 currPage: 1,
+			     pageSize: 10,
+			      ajax: {
+			              on: true,                         
+			              url: "<%=path%>/news.do?method=getNewsList",
+						  dataType: 'json', 
+						  param:{on:true,page:1,url_param:formData},
+						  callback: 'ajaxCallBack'
+			            }
+			    });
+		});
+	}
+
+	function createTR(obj) {
+		var tr = "<tr>";
+		tr += "<td>" + obj[0] + "</td>";
+		tr += "<td><a href='<%=path%>/news.do?method=news_detail&news_id="+obj[0]+"'>" + obj[1] + "</a></td>";
+		tr += "<td>" + obj[2] + "</td>";
+		tr += "<td><a href='"+obj[3]+"'>" + obj[3] + "</a></td>";
+		tr += "<td>" + obj[4] + "</td>";
+		tr += "</tr>";
+		return tr;
+	}
 </script>
 </head>
 <body onload="">
@@ -66,11 +138,11 @@ function checklogin(){
 			<!--start scenterContent-->
 			<div class="usercenter_con">
 			<DIV class="user_center_tablebox">
-				<TABLE
+				<TABLE id="mytab"
 					style="padding: inherit; border-collapse: separate; border-spacing: 1px;"
 					border="0" cellSpacing="1" cellPadding="0" width="100%"
 					bgColor="#aad9f7">
-					<TBODY>
+					<thead>
 						<TR class="user_center_tabletitle">
 						    <TD width="5%" align="center">序号</TD>
 							<TD width="50%" align="center">信息标题</TD>
@@ -78,7 +150,23 @@ function checklogin(){
 							<TD width="14%" align="center">状态</TD>
 							<TD width="19%" align="center">操作</TD>
 						</TR>
-
+                    </thead>
+						<tbody>
+						  <tr class="a1">
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						  </tr>
+						  <tr>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						  </tr>
+						  </tbody>
 						<c:forEach items="${list}" var="news" varStatus="status">
 								<tr>
 								    <td>${ status.index + 1}</td>
@@ -88,22 +176,9 @@ function checklogin(){
 									<td align="center"><input type="button" onclick="del('<c:out value="${news.news_id}"/>')" value="删除"/></td>
 								</tr>
 						</c:forEach>	
-
-                      <!-- 
-							<TR>
-							<td>1</td>
-							<TD class="rela_pad90" align="left"><SPAN class="green">网上咨询</SPAN>
-								：胎儿多囊肾<BR> 请求医生： 卢彦平 301医院 妇产科</TD>
-							<TD align="center">2016-05-23<BR> 16:47
-							</TD>
-							<TD align="center"><SPAN>分诊完成</SPAN></TD>
-							<TD align="center"><A class="blue"
-								href="http://passport.haodf.com/myhealthcare/myservicedetail?id=4465760676&amp;type=INTENTION">查看详情</A></TD>
-						</TR> -->
-					</TBODY>
 				</TABLE>
-				<div id="Pagination" class="flickr" style="text-align:left"></div>
-			</DIV>
+				<div id="demo1"></div>
+				</DIV>
 			</div>
 		</DIV>
 	</DIV>

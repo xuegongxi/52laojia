@@ -4,9 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
+import cn.laojia.common.PageModel;
 import cn.laojia.news.dao.NewsDao;
 import cn.laojia.news.model.News;
 
@@ -14,11 +18,25 @@ import cn.laojia.news.model.News;
 @Repository
 public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	
-	public List<News> getNewsList() {
-		String hql="From News";
-		//List<User>  lists=hibernateTemplate.find(hql);//方法一
-		List<News>  lists=getHibernateTemplate().find(hql);//方法二
-		return lists;
+	/**
+	 * 纯SQL 进行分页
+	 */
+	public PageModel getNewsList(PageModel model) {
+	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id";
+		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
+	    Session session= super.getSession();
+	    //1.总数
+	    SQLQuery query1 = session.createSQLQuery(sql);
+	    List newslist1 = query1.list();
+	    model.setRecordCount(newslist1.size());
+	    
+	    //2.分页查询
+	    SQLQuery query = session.createSQLQuery(sql);
+	    query.setFirstResult(model.getStartRow());//从第一条记录开始
+	    query.setMaxResults(model.getEndRow());//取出四条记录
+	    List newslist = query.list();
+		model.setDatas(newslist);
+		return model;
 	}
 	public Serializable save(final Object model) {
 		return  super.save(model);
@@ -52,11 +70,11 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
          int temp=(pageIndex-1) * pageCount;
          sb.append(" limit "+temp+","+pageCount);
          List list = super.find(sb.toString());
-    	 RowSet rt=DBop.search(sb.toString());
+    	 //RowSet rt=DBop.search(sb.toString());
     	 //求数据总条目数
          int rowNum=0;
-         rowNum=DBop.getNum(tableName,where);
-    	 return RowSetToJson(rt,rowNum,pageCount);
+        // rowNum=DBop.getNum(tableName,where);
+    	 return null;
      }
 	/**
 	 * 根据用户名和密码查找用户是否存在

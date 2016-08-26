@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+        if (window.location.toString().indexOf("shtml?") > 0) {
+            self.location = window.location.toString().replace(window.location.search.toString(), "");
+        }
+        function doccheckart(json) {
+            if (json[0].result == "1") {
+                self.location = "http://www.360doc.com/noarticle.aspx";
+            }
+        }
+    </script>
+    <script src="http://blockart.360doc.com/ajax/getstatusv2.ashx?aid=382274995" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/jquery1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        if (navigator.userAgent.indexOf("iPhone") > 0 || navigator.userAgent.indexOf("Android") > 0 || navigator.userAgent.indexOf("iPod") > 0) {  //手机端跳转
+            var patt1 = new RegExp("[0-9]*_[0-9]*");
+            var url = patt1.exec(location.href);
+            if (url != "") {
+                self.location = "http://www.360doc.cn/article/" + url + ".html";
+            }
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta content="360doc" name="classification" /><link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/16002580_382274995.html"/><meta content="note,sql,sqlquery" name=keywords><meta content="使用Hibernate SQLQuery执行原生SQL" name=description><meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/16002580_382274995.html"/><meta content="使用Hibernate SQLQuery执行原生SQL.session.createSQLQuery(String sql);session.createSQLQuery(&quot;select id,note,createtime,author from note where id = ?&quot;).addEntity(Note.class);SQLQuery query = session.createSQLQuery(&quot;select note.id as {note.id},note as {note.note},createtime as {note.createTime},author as {note.author}, {author.*} from note, user author where note.id = ?and note.author = author.id&quot;);" name=360docabstract><meta content="www.360doc.com" name="author" /><title>
+	使用Hibernate SQLQuery执行原生SQL
+</title>
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+    <script src="/js/indexhead.js?t=20160421" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/showarticlefollow20160329.js?t=2016041901" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.360doc.com/js/jQuery.md5.min.js?t=2016041501" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?d86954201130d615136257dde062a503";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://css.360doc.com/wzhead-cleaned.css?t=2016040801" /><link rel="stylesheet" type="text/css" href="http://css.360doc.com/newArticle20160509.css?t=2016051701" /></head>
+<body onmouseup="setDragEnd()" onclick="delAllDiv(event)">
+    
+    <script type="text/javascript">
+        var baiduImagePlus = {
+            noLogo: true,
+            unionId: 'u2617463',
+            maxMiniAdCount: 0,
+            formList: [{ formId: 10 }]
+        };
+    </script>
+    <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/i.js"></script>
+    
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 2147483647; left: 0;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <a href="http://www.360doc.com/index.html">
+                        <img src="http://pubimage.360doc.com/newsite/logoo.gif" /></a>
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td width="100" class="  navwz1">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td width="88" class="  navwz1">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td width="132" class="  navwz1">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv">
+                </div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px; position: relative;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()"
+                            onkeyup="showIntelliSense()" onfocus="if(this.value=='搜文章 找馆友') this.value='';this.style.color='#272727'"
+                            onblur="if(!this.value) {this.value='搜文章 找馆友';this.style.color='#b2b2b2';}" onpaste="showIntelliSense1()"
+                            type="text" value="搜文章 找馆友" />
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; left: 1px; display: block; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+    <div class="both"></div>
+
+    <div class="doc360article_content">
+
+        <div style="height: 90px; padding-top: 13px;">
+            <div id="ADAboveArtContent">
+            </div>
+        </div>
+        <p class="clearboth"></p>
+        <div class="a_left">
+            <div id="bgchange">
+                <div class="fontsize_bgcolor_controler">
+                    <div class="a_bgcolor">
+                        <img src="http://pubimage.360doc.com/NewArticle/bgcolor.jpg" />
+                        <div class="a_colorlist">
+                            <span class="a_color1" onclick="wzhitnew(18);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color2" onclick="wzhitnew(19);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color3" onclick="wzhitnew(20);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color4" onclick="wzhitnew(21);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color5" onclick="wzhitnew(22);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                            <span class="a_color6 cur" onclick="wzhitnew(23);">
+                                <img src="http://pubimage.360doc.com/NewArticle/yes.gif" /></span>
+                        </div>
+                    </div>
+                    <div class="a_fontsize">
+                        <img src="http://pubimage.360doc.com/NewArticle/fontSize.jpg" />
+                        <div class="fschange">
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="18" onclick="wzhitnew(15);" />大
+                           
+                            </label>
+                            &nbsp;
+                           
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="16" onclick="wzhitnew(16);" />中
+                           
+                            </label>
+                            &nbsp;
+                           
+                            <label>
+                                <input type="radio" name="font_Size" id="" value="14" onclick="wzhitnew(17);" />小
+                           
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="titiletext">使用Hibernate SQLQuery执行原生SQL</h2>
+                <div class="article_data">
+                    <div class="article_data_left">
+                        2014-05-30
+                        <span class="a_username">&nbsp;<a href="http://www.360doc.com/userhome/16002580" id="savernickname" target="_blank" onclick="wzhitnew(1);" title="飞鹰飞龙飞天">飞鹰飞龙...</a>
+                        </span>
+                        <span id="articleinfo">
+                            <span id="docsource" class="a_from"></span><span id="360doc_Readnum"></span><span id="360docResaveCount"><span onclick="ShowSaverUser();wzhitnew(3);" id="360doc_saverNum" style="cursor: pointer;"></span>
+                                <span id="360doc_saverUser">
+                                    <div style="position: absolute; height: 305px; width: 144px; left: 0px; z-index: 2;" id="sameArtOuter">
+                                        <div onclick="event.cancelBubble=true;" style="overflow-y: auto; height: 300px; overflow-x: hidden; z-index: 100; right: 0px; margin-top: -10px;" id="sameArt">
+                                        </div>
+                                    </div>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                    <div id="resavelayer1" class="bdsharebuttonbox article_data_right">
+                    </div>
+                </div>
+                
+                <div id="articlecontent" class="article_container" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event);">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="artContent" width="656">
+                                    <div style="width: 656px; margin: 0; padding: 0; height: 0;"></div>
+                                    <p>Hibernate对原生SQL查询的支持和控制是通过SQLQuery接口实现的。通过Session接口，我们能够很方便的创建一个SQLQuery(SQLQuery是一个接口，在Hibernate4.2.2之前，默认返回的是SQLQuery的实现类——SQLQueryImpl对象，在下文中出现的SQLQuery如非注明，都是指该子类)对象来进行原生SQL查询：
+  </p>
+  <pre>session.createSQLQuery(String sql);</pre>
+  <p>
+    SQLQuery实现了Query接口，因此你可以使用Query接口中提供的API来获取数据。
+  </p>
+  <h1>
+    最简单的示例
+  </h1>
+  <pre>//获取所有查询结果
+session.createSQLQuery("select * from note").list();
+//仅获取第一条结果
+session.createSQLQuery("select * from note where id = 1").uniqueResult();</pre>
+  <h1>
+    使用预处理SQL
+  </h1>
+  <p>
+    预处理SQL的好处自然不必多说，除了众所周知的能够防止SQL注入攻击外，还能够在一定程度上提高SQL的查询效率。SQLQuery提供了众多的接口来分别设置不同类型的参数，诸如setBigDecimal、setBinary、setDouble等，详参SQLQuery的JavaDoc，此处不再赘述。这里仅重点说一下通用的SQL参数设置接口setParameter。
+  </p>
+  <p>
+    如下代码示范了如何使用SQLQuery执行预处理SQL：
+  </p>
+  <pre>SQLQuery query = session.createSQLQuery("select * from note where id = ?");
+//设置第一个参数的值为12,即查询ID=12的note
+query.setParameter(0, 12);
+List list = query.list();
+...</pre>
+  <p>
+    
+      这里需要注明一点，
+      <span style="color:#9933E5;">无论是通过不同类型参数的设置接口来设置SQL参数，还是通过setParameter来设置参数，下标都是从0开始的，而不是从1开始的</span>
+      ！
+    
+  </p>
+  <h1>
+    使用自定义的结果转换器处理查询结果
+  </h1>
+  <p>
+    SQLQuery接口预留了setResultTransformer接口以实现使用用户自定义的ResultTransformer结果集转换器处理查询结果。ResultTransformer接口非常简单，只有两个方法，分别用来转换单行数据和所有结果数据。经过自定义ResultTransformer生成的实体，并未加入Session，因此是非受管实体。
+  </p>
+  <p>
+    如下代码，示范了如何将单行数据装入LinkedHashMap对象中:
+  </p>
+  <pre>query.setResultTransformer(new ResultTransformer() {
+         
+   @Override
+   public Object transformTuple(Object[] values, String[] columns) {
+      Map&lt;String, Object&gt; map = new LinkedHashMap&lt;String, Object&gt;(1);
+      int i = 0;
+      for(String column : columns){
+         map.put(column, values[i++]);
+      }
+      return map;
+   }
+   
+   @Override
+   public List transformList(List list) {
+      return list;
+   }
+});</pre>
+  <p>
+    如果不设置自定义的ResultTransformer转换器，则Hibernate将每行返回结果的数据按照结果列的顺序装入Object数组中。
+  </p><p>当然,也可以直接指定默认的MAP转换规则:</p><p>query.setResultTransformer( &nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Transformers.ALIAS_TO_ENTITY_MAP);</p>
+  <p>
+    
+      这里介绍一个工具类：
+      <strong>
+        <span style="color:#9933E5;">Transformers</span>
+      </strong>
+      ，它提供了一些常用的转换器，能够帮助我们快速转换结果集，如
+      <span style="color:#9933E5;">Transformers.aliasToBean(Note.class)</span>
+      能够将查询结果依别名注入到Note实体中。
+    
+  </p>
+  <h1>
+    使用标量
+  </h1>
+  <p>
+    使用SQLQuery执行原生SQL时，Hibernate会使用ResultSetMetadata来判定返回的标量值的实际顺序和类型。如果要避免过多的使用ResultSetMetadata,或者只是为了更加明确的指名返回值，可以使用addScalar()。
+  </p>
+  <pre>session.createSQLQuery("select * from note where id = 1")
+ .addScalar("id", LongType.INSTANCE)
+ .addScalar("name", StringType.INSTANCE)
+ .addScalar("createtime", DateType.INSTANCE);</pre>
+  <p>
+    这个查询指定了SQL查询字符串,要返回的字段和类型.它仍然会返回Object数组,但是此时不再使用ResultSetMetdata,而是明确的将id,name和createtime按照Long, String和Date类型从resultset中取出。同时，也指明了就算query是使用*来查询的，可能获得超过列出的这三个字段，也仅仅会返回这三个字段。
+  </p>
+  <p>
+    对全部或者部分的标量值不设置类型信息也是可以的：
+  </p>
+  <pre>session.createSQLQuery("select * from note where id = 1")
+ .addScalar("id")
+ .addScalar("name")
+ .addScalar("createtime", DateType.INSTANCE);</pre>
+  <p>
+    
+      没有被指定类型的字段将仍然使用ResultSetMetdata获取其类型。
+      <strong>
+        <span style="color:#9933E5;background-color:#999999;">注意</span>
+      </strong>
+      <span style="color:#9933E5;">，字段不区分大小写，同时不能够指定不存在的字段</span>
+      ！
+    
+  </p>
+  <p>
+    关于从ResultSetMetaData返回的java.sql.Types是如何映射到Hibernate类型，是由方言(Dialect)控制的。假若某个指定的类型没有被映射，或者不是你所预期的类型，你可以通过Dialet的registerHibernateType调用自行定义。
+  </p>
+  <p>
+    如果仅指定了一个scalar，那么...
+  </p>
+  <pre>Date createTime = (Date)session.createSQLQuery("select * from note where id = 1")
+ .addScalar("createtime", DateType.INSTANCE)
+ .uniqueResult();</pre>
+  <p>
+    如果我们的SQL语句使用了聚合函数，如count、max、min、avg等，且返回结果仅一个字段，那么Hibernate提供的这种提取标量结果的方式就非常便捷了。
+  </p>
+  <h1>
+    实体查询
+  </h1>
+  <p>
+    上面的查询都是返回标量值的，也就是从resultset中返回的“裸”数据。下面展示如何通过addEntity()让原生查询返回实体对象。
+  </p>
+  <pre>session.createSQLQuery("select * from note where id = 1").addEntity(Note.class);
+session.createSQLQuery("select id,name,createtime from note where id = 1").addEntity(Note.class);</pre>
+  <p>
+    这个查询指定SQL查询字符串,要返回的实体。假设Note被映射为拥有id,name和createtime三个字段的类，以上的两个查询都返回一个List，每个元素都是一个Note实体。
+  </p>
+  <p>
+    假若实体在映射时有一个many-to-one的关联指向另外一个实体，在查询时必须也返回那个实体，否则会导致发生一个"column not found"的数据库错误。这些附加的字段可以使用*标注来自动返回，但我们希望还是明确指明，看下面这个具有指向Dog的many-to-one的例子：
+  </p>
+  <pre>session.createSQLQuery("select id,note,createtime,author from note where id = ?").addEntity(Note.class);</pre>
+  <p>
+    author字段即为Note实体和Author实体的关联字段，只需在查询时得到该字段的值，Hibernate即可使用该值找到对应的关联实体。如上例中，note.getAuthor()即可返回当前Note所属的Author对象。
+  </p>
+  <h1>
+    处理关联和集合类
+  </h1>
+  <p>
+    通过提前抓取将Author连接获得，而避免初始化proxy带来的额外开销也是可能的。这是通过addJoin()方法进行的，这个方法可以让你将关联或集合连接进来。
+  </p>
+  <pre>session.createSQLQuery("select {note.*}, {author.*} from note note, user author where note.author = author.id")
+ .addEntity("note", Note.class)
+ .addJoin("author", "note.author");</pre>
+  <p>
+    上面的例子是多对一的关联查询，反过来做一对多的关联查询也是可以的。如下的例子中，author.notes表示该用户发表的所有日记(Note)，Set集合类型：&nbsp;
+  </p>
+  <pre>session.createSQLQuery("select {author.*},{note.*} from note note, user author where author.id = ? and note.author = author.id")
+ .addEntity("author", User.class)
+ .addJoin("note", "author.notes");</pre>
+  <p>
+    
+      <strong>
+        <span style="color:#9933E5;background-color:#999999;">注意</span>
+      </strong>
+      ：
+      <span style="color:#9933E5;">join查询会在每行返回多个实体对象，处理时需要注意</span>
+      。
+    
+  </p>
+  <h1>
+    别名和属性引用
+  </h1>
+  <p>
+    假若SQL查询连接了多个表，同一个字段名可能在多个表中出现多次，这会导致SQL错误。不过在我们可以通过使用占位符来完美地解决这一问题。
+  </p>
+  <p>
+    其实在上例中已经用到了占位符：
+  </p>
+  <pre>session.createSQLQuery("select {note.*}, {author.*} from note note, user author where note.author = author.id")
+ .addEntity("note", Note.class)
+ .addJoin("author", "note.author");</pre>
+  <p>
+    这个查询指明SQL查询语句，其中包含占位附来让Hibernate注入字段别名,查询并返回的实体。
+  </p>
+  <p>
+    上面使用的{note.*}和{author.*}标记是作为“所有属性”的简写形式出现的，当然你也可以明确地罗列出字段名。但如下的范例代码中我们让Hibernate来为每个属性注入SQL字段别名，字段别名的占位符是表别名 + . + 属性名。
+  </p>
+  <p>
+    
+      <strong>
+        <span style="color:#9933E5;background-color:#999999;">注意</span>
+      </strong>
+      :
+      <span style="color:#9933E5;">属性名区分大小写，而且不能够在where子句中使用占位符</span>
+      。
+    
+  </p>
+  <pre>SQLQuery query = session.createSQLQuery("select note.id as {note.id},note as {note.note},createtime as {note.createTime},author as {note.author}, {author.*} from note, user author where note.id = ? and note.author = author.id");
+query.addEntity("note", Note.class);
+query.addJoin("author", "note.author");</pre>
+  <p>
+    大多数情况下，上面的别名注入方式可以满足需要，但在使用更加复杂的映射，比如复合属性、通过标识符构造继承树，以及集合类等等情况下，则需要更加复杂的别名注入方式。
+  </p>
+  <p>
+    下表列出了使用别名注射参数的不同方式：
+  </p>
+  <table style="width:100%;" border="1" cellspacing="0" bordercolor="#000000" cellpadding="2">
+    <tbody>
+      <tr align="center" style="font-weight:bold">
+        <td>&nbsp;别名注入(alias injection names) 描述</td>
+        <td>&nbsp;语法</td>
+        <td>&nbsp;示例</td>
+      </tr>
+      <tr>
+        <td>&nbsp;简单属性</td>
+        <td>&nbsp;{[aliasname].[propertyname]</td>
+        <td>&nbsp;A_NAME as {item.name}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;复合属性</td>
+        <td>&nbsp;{[aliasname].[componentname].[propertyname]}</td>
+        <td>&nbsp;CURRENCY as {item.amount.currency}, VALUE as {item.amount.value}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;实体辨别器</td>
+        <td>&nbsp;{[aliasname].class}</td>
+        <td>&nbsp;DISC as {item.class}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;实体的所有属性</td>
+        <td>&nbsp;{[aliasname].*}</td>
+        <td>&nbsp;{item.*}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合键(collection key)</td>
+        <td>&nbsp;{[aliasname].key}</td>
+        <td>&nbsp;ORGID as {coll.key}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合id</td>
+        <td>&nbsp;{[aliasname].id}</td>
+        <td>&nbsp;EMPID as {coll.id}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合元素</td>
+        <td>&nbsp;{[aliasname].element}</td>
+        <td>&nbsp;XID as {coll.element}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合元素的属性</td>
+        <td>&nbsp;{[aliasname].element.[propertyname]}</td>
+        <td>&nbsp;NAME as {coll.element.name}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合元素的所有属性</td>
+        <td>&nbsp;{[aliasname].element.*}</td>
+        <td>&nbsp;{coll.element.*}</td>
+      </tr>
+      <tr>
+        <td>&nbsp;集合的所有属性</td>
+        <td>&nbsp;{[aliasname].*}</td>
+        <td>&nbsp;{coll.*}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1>
+    在hbm文件中描述结果集映射信息，并在查询中使用
+  </h1>
+  <p>
+    对于一些复杂的结果集映射，往往需要像MyBatis那样在文件中手动配置好，然后在程序中使用。幸运的是Hibernate也提供了类似的功能，你可以使用自己配置的结果集映射来处理返回的结果集数据：
+  </p>
+  <pre>SQLQuery query = session.createSQLQuery("select note.id as {note.id},note as {note.note},createtime as {note.createTime},author as {note.author}, {author.*} from note, user author where note.id = ? and note.author = author.id");
+//使用在hbm文件中配置的自定义结果集映射
+query.setResultSetMapping("noteAnduthor");
+query.list();</pre>
+  <h1>
+    执行更新操作
+  </h1>
+  <p>
+    使用SQLQuery执行数据库更新操作比较容易，除了像查询时那样需要指定SQL语句（如有需要还需设置SQL参数）外，仅需调用executeUpdate()方法，即可提交更新操作。代码如下所示：
+  </p>
+  <pre>session.createSQLQuery("update createtime = ? from note where note.id = ?");
+query.setDate(0, new Date());
+query.setLong(1, 1L);
+query.executeUpdate();</pre>
+  <p>
+    executeUpdate方法的返回结果为改变的数据库记录的行数。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none; margin: 0 auto;">
+                    </div>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul></ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div></div>
+                <span></span>
+                <a></a>
+                <p style="margin: 0; padding: 0;"></p>
+                <p class="clearboth"></p>
+                <div class="bdsharebuttonbox bottombtn">
+                    <div class="zcommond" style="overflow: visible;">
+                        <a href="javascript:void(0);" class="btn_collect" onclick="SaveArt();wzhitnew(26);">转藏到我的图书馆</a>
+                        <a id="flowimg3" href="javascript:void(0);" class="btn_good" onclick="Showflowerlayer('sendedLayer1');wzhitnew(27);">献花（<span id="articleflowernum">0</span>）
+                        <span id="flowernumadd" style="display: none;">+1</span>
+
+                        </a>
+                        <span class="span1 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);wzhitnew(33);" onmouseover="this.style.color='#0f659c'" onmouseout="this.style.color=''">分享：</span>
+                        <a class="sharewx f_left" href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">微信</a>
+                        <div class="s2 f_left" onclick="setTimeout(function(){$('.bottombtn .sharelist_new').slideToggle(0);},10);wzhitnew(34);"><span></span></div>
+                    </div>
+                    <div class="sharelist_new" id="fenxiangLayer2">
+                        <a class="slbg1" href="javascript:void(0);" data-cmd="qzone" onclick="wzhitnew(13);">QQ空间</a>
+                        <a class="slbg2" href="javascript:void(0);" data-cmd="sqq" onclick="wzhitnew(7);">QQ好友</a>
+                        <a class="slbg3" href="javascript:void(0);" data-cmd="tsina" onclick="wzhitnew(55);">新浪微博</a>
+                        <a class="slbg4" href="javascript:void(0);" data-cmd="tqq" onclick="wzhitnew(56);">腾讯微博</a>
+                        <a class="slbg5" href="javascript:void(0);" onclick="showdivemail1();wzhitnew(35);">推荐给朋友</a>
+                    </div>
+                </div>
+                <div class="bottom_controler">
+                    <p class="bottom_cleft">
+                        来自：
+                         <span class="a_username" style="width: auto;" onclick="wzhitnew(59)">
+                             <a href="http://www.360doc.com/userhome/16002580" id="savernickname2" target="_blank">飞鹰飞龙飞天</a>
+                         </span>
+                        &gt; 
+                        <span id="cname" class="a_from" onclick="wzhitnew(60)"></span>
+                    </p>
+                    <div class="bottom_cright">
+                        <a href=" https://www.baidu.com/s?wd=note+sql+sqlquery&tn=SE_hldp01010_6r0gix1f" target="_blank" class="a1" onclick="wzhitnew(100);">以文找文</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="javascript:void(0);" class="a2" onclick="showAlertLayer1();wzhitnew(36);">举报</a>
+                    </div>
+                </div>
+                <div class="prev_next">
+                    <p id="lastart" class="p1">
+                    </p>
+                    <p id="nextart" class="p2">
+                    </p>
+                </div>
+            </div>
+            <p class="clearboth"></p>
+            <div style="width: 676px; float: left;">
+                <div class="str_border" style="border: none; position: relative; z-index: 2;">
+                    <strong>猜你喜欢</strong>
+                </div>
+                <ul class="youlike" style="margin-top: -18px; position: relative; z-index: 1;">
+                    <iframe id="youlikead" style="width: 676px; height: 280px; border: 0;" frameborder="0" scrolling="no"></iframe>
+                </ul>
+                <div class="zcommond" style="padding: 10px 0 20px;">
+                    <div class="bottom_article f_left">
+                        <div class="str_border">
+                            <strong>类似文章</strong>
+                            <a href=http://www.360doc.com/relevant/382274995_more.shtml target='_blank' class='a_more f_right'  onclick='wzhitnew(38)'>更多</a>
+                        </div>
+                        <ul class="barticle_list">
+                            
+                                    <li><span><a href=http://www.360doc.com/content/10/0608/14/1404822_31938753.shtml target=_blank onclick='wzhitnew(37)'>hibernate SQLQuery实践指南</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/13/0819/17/203871_308328426.shtml target=_blank onclick='wzhitnew(37)'>Hibernate sql查询</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/15/0825/16/10087950_494653107.shtml target=_blank onclick='wzhitnew(37)'>Hibernate使用原生SQL适应复杂数据查询</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/12/0720/14/8899110_225437461.shtml target=_blank onclick='wzhitnew(37)'>hibernate原生SQL查询，返回值映射到MAP...</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/10/1018/18/1947337_62026750.shtml target=_blank onclick='wzhitnew(37)'>Hibernate的SQLQuery</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/12/0921/17/9316347_237429782.shtml target=_blank onclick='wzhitnew(37)'>Hibernate中使用SQLQuery</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/11/0104/18/4154133_83940871.shtml target=_blank onclick='wzhitnew(37)'>巧用SQLQuery中的addScalar</a></span></li>
+                                
+                                    <li><span><a href=http://www.360doc.com/content/08/0829/19/73618_1589494.shtml target=_blank onclick='wzhitnew(37)'>Hibernate Native SQL Example</a></span></li>
+                                
+                        </ul>
+                    </div>
+                    <div class="bottom_article f_right">
+                        <div class="str_border">
+                            <strong>精选文章</strong>
+                        </div>
+                        <ul class="barticle_list">
+                            
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/0121/21/1622595_261639010.shtml target=_blank onclick='wzhitnew(37)'>使你强大起来的心理学知识</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/11/1023/10/7436990_158375995.shtml target=_blank onclick='wzhitnew(37)'>0~6岁宝宝右脑开发必做16款游戏</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/14/0422/17/411060_371179934.shtml target=_blank onclick='wzhitnew(37)'>唐诗宋词中蕴含的妙语之最</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/15/1126/20/2369606_516138680.shtml target=_blank onclick='wzhitnew(37)'>一家公司要了你后，凭什么给你开高工资</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/15/1009/11/25581181_504372399.shtml target=_blank onclick='wzhitnew(37)'>38元一只的青岛虾，"宰客"背后的潜规则</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/0905/07/6085160_312304361.shtml target=_blank onclick='wzhitnew(37)'>祖传秘方：毒蛇咬伤一剂治愈黄花草穿心莲汤</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/12/1218/21/2700481_254862948.shtml target=_blank onclick='wzhitnew(37)'>皇家秘制红烧肉，不看会后悔的，超级美味哦!</a></span></li>
+                                
+                                    <li><span><a onclick="wzhitnew(40);" href=http://www.360doc.com/content/13/1029/11/5473201_324999006.shtml target=_blank onclick='wzhitnew(37)'>图示《孙子兵法》</a></span></li>
+                                
+                        </ul>
+                    </div>
+                </div>
+                
+                <iframe id="underZcommondAd" style="width: 676px; height: 202px;" frameborder="0" scrolling="no"></iframe>
+                <div class="zcommond" style="margin-top: 10px;">
+                    
+                    <div class="f_left" style="width: 300px; height: 90px;">
+                        <iframe id="aboveReflectionAd1" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    
+                    <div class="f_left" style="width: 300px; height: 90px; margin-left: 44px;">
+                        <iframe id="aboveReflectionAd2" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+
+                <p></p>
+                <div id="ReflectionPart">
+                    <div style="height: 156px; margin: 0px 0px;">
+                        <div class="plbox">
+                            <div class="plmain">
+                                <div class="titwx" style="height: 23px;">
+                                    发表评论：
+                                </div>
+                                <textarea name="SendRefTB" id="SendRefTB" style="width: 100%; height: 75px; border: 1px solid #e7e7e7; background-color: #fff; overflow: auto; font-size: 12px;"
+                                    onfocus="testContent(1);" onblur="testContent(2)"></textarea>
+                                <div style="text-align: right; padding-right: 3px; padding-top: 6px;">
+                                    <div class="huifubt">
+                                        <a id="ImgSendPL" href="javascript:void(0);" onclick="SubmitReflection();wzhitnew(50);"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top: 15px; padding-left: 15px;" id="Reflction">
+                </div>
+            </div>
+        </div>
+        <div class="a_right">
+            <div class="user_info">
+                <div class="user_photo f_left">
+                    <p class="user_photopic">
+                        <a href="http://www.360doc.com/userhome/16002580" id="userphotourl" target="_blank" onclick="wzhitnew(28);">
+                            <img src="http://userimage5.360doc.com/14/0715/19/16002580_201407151951200297_main.jpg" id="userphoto" width="58" height="58" />
+                        </a>
+                    </p>
+                    <a href="javascript:void(0);" onclick="docTalk();wzhitnew(106);" class="user_talk" title="与TA对话"></a>
+                </div>
+                <div class="user_data f_right">
+                    <div class="user_data_name">
+                        <a href="http://www.360doc.com/userhome/16002580" id="nickname" target="_blank" onclick="wzhitnew(29);">飞鹰飞龙飞天</a>
+                        <img src="http://pubimage.360doc.com/NewArticle/user_name_tag.gif" alt="图书馆" />
+                    </div>
+                    <p id="userdegree"><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar1.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar3.gif' /><img src='http://pubimage.360doc.com/NewArticle/userstar3.gif' /></p>
+                    <div class="user_data_num">
+                        <a id="spanfollowstatus" class="gz_no"></a>
+                        <script type="text/javascript">isfollow(16002580);</script>
+                        <span id="follownum">36</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>馆藏</span>&nbsp;<span id="artnum">563</span>
+                    </div>
+                </div>
+            </div>
+            <div class="his_her"><ul class='his_her_type'><li class='f_left curone'>TA的最新馆藏</li></ul><div class='his_her_div' style="height:190px;"><ul class='his_her_list'><li><div><span></span><a href=http://www.360doc.com/content/16/0825/16/16002580_585864820.shtml target=_blank onclick='wzhitnew(51)'>Redux三分钟入门</a></div><div><span></span><a href=http://www.360doc.com/content/16/0825/16/16002580_585863007.shtml target=_blank onclick='wzhitnew(51)'>Redux管理你的React应用</a></div><div><span></span><a href=http://www.360doc.com/content/16/0824/16/16002580_585612496.shtml target=_blank onclick='wzhitnew(51)'>在react-native中使用redux</a></div><div><span></span><a href=http://www.360doc.com/content/16/0822/13/16002580_585078237.shtml target=_blank onclick='wzhitnew(51)'>zeppelin入门使用</a></div><div><span></span><a href=http://www.360doc.com/content/16/0822/11/16002580_585053303.shtml target=_blank onclick='wzhitnew(51)'>POWER BI 微软又一逆天可视化神器</a></div><div><span></span><a href=http://www.360doc.com/content/16/0822/11/16002580_585051990.shtml target=_blank onclick='wzhitnew(51)'>(tableau)介绍一个功能非常强大的可视化数据分析软件</a></div></li></ul></div></div>
+
+
+
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+    <iframe id="ifartad1" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div class="his_her" id="recommendArt" style="margin-top: 5px;">
+    <div class="str_border" style="margin: 0;">
+        <span style="font-size: 14px; float: left;">推荐阅读</span>
+        <a style="float: right;" class="a_more" onclick="wzhitnew(32)" href="http://www.360doc.com/readroom.html" target="_blank">更多</a>
+    </div>
+    <div class='his_her_div' style="height: 264px;">
+        <ul class='his_her_list'>
+            <li id="recommendArtLists"></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="both" style="padding-top: 10px;">
+    <iframe id="ifartad2" height="250" width="250" frameborder="0" scrolling="no"></iframe>
+</div>
+<br />
+
+
+<iframe id="ifartrightsogou" height="190" width="250" frameborder="0" scrolling="no"></iframe>
+            <div class="both" id="divad5" style="padding-top: 11px; zoom: 1; width: 300px;">
+                <div id="divad4" style="display: none;">
+                    <div>
+                        
+                        <iframe id="ifartad" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="ggwz">
+                        <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                    </div>
+                    <div style="height: 13px;">
+                    </div>
+                </div>
+                <div style="clear: both; display: none;" id="divad6">
+                    <div id="adfloatbaidu">
+                        <iframe id="ifartadfloadbaidu" height="250px" width="250px" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div class="ggwz" style="left: 25px;">
+                        <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                    </div>
+                    <div style="height: 13px;">
+                    </div>
+                </div>
+                <div style="height: 75px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="clearboth"></p>
+    <input type="hidden" id="docarttitle" value="%e4%bd%bf%e7%94%a8Hibernate+SQLQuery%e6%89%a7%e8%a1%8c%e5%8e%9f%e7%94%9fSQL" />
+    <input type="hidden" id="firstartid" value="382274995" />
+    <input type="hidden" id="artreadroomid" value="0" />
+    <script src="http://www.360doc.com/js/StickySystem20160414.js?t=2016062801" type="text/javascript" charset="utf-8"></script>
+    <script>GerLookingUserInfo(1,16002580,1,0,'-1',-1,10,0);OutputSource('http%3a%2f%2fwww.tuicool.com%2farticles%2fZn2qQf','');OutputCategory(16002580,33,'%e3%80%8ahibernate%e3%80%8b');OutputLastNextArt('HIbernate+createSQLQuery+%e4%bd%bf%e7%94%a8%e4%ba%8c%e7%ba%a7%e7%bc%93%e5%ad%98','http://www.360doc.com/content/14/0327/22/16002580_364278246.shtml',0);</script>
+</body>
+</html>

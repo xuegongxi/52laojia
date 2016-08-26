@@ -2,10 +2,11 @@ package cn.laojia.news.dao;
 
 import java.util.List;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 
 public interface NewsDao {
-	public List<News> getNewsList();
+	public PageModel getNewsList(PageModel model);
 	
 	/**
 	 *  根据用户名和密码查找用户是否存在

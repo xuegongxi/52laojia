@@ -1,6 +1,7 @@
 package cn.laojia.news.web;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +15,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import cn.laojia.common.CtrlUtils;
+import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
+
+import com.zzh.json.Json;
 
 @Controller
 @RequestMapping("/news.do")
@@ -30,24 +34,66 @@ public class NewsController {
 	public NewsController(){
 		
 	}
-	
+	private static Integer NUM = 100;
+	private Map json = new HashMap(); 
+	private Integer toPage;
+	private Integer pageSize;
+	private String keyword;
+
 	@RequestMapping
-	public String getNewsList(ModelMap modelMap){
-		List<News> list = newsService.getNewsList();
-		/*if(list!=null&&list.size()>0){
-			for (int i = 0; i < list.size(); i++) {
-				News news = list.get(i);
-				String s=news.getContent();
-				System.out.println(s);
-				
-				
-				
-			}
-			
-		}*/
+	public void getNewsList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		PageModel info = new PageModel();
+		info.setPageSize(10);
+		info.setCurrPageNumberFormRequest(request);
+
+		info = newsService.getNewsList(info);
+		Map map = new HashMap();
+		map.put("pageCount", info.getPageCount());
+		map.put("result", info.getDatas());
+		String jsonStr = Json.toJson(map);
+		System.out.println(jsonStr);
+		CtrlUtils.writeStrRes(jsonStr, res);
+		/*
+      List<String []> list = new ArrayList<String []>();
 		
-		modelMap.put("list", list);
-		return "view/messageList";
+		for(int i=0;i<NUM;i++){
+			list.add(new String[]{"¹«Ë¾" + i,"www.add"+i + ".com","1"+i,"2"+i});
+		}
+		if(toPage < 1){
+			toPage = 1;
+		}
+		if(pageSize < 1){
+			pageSize = 10;
+		}
+		
+		Integer start = (toPage - 1)*pageSize;
+		Integer end = toPage*pageSize;
+		int c = 0 ;
+		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
+			String[] strings = (String[]) iterator.next();
+			if(keyword != null && strings[0].indexOf(keyword) == -1){
+				c ++;
+				iterator.remove();
+			}
+		}
+		String[][] data = null;
+
+		if(start > NUM -c){
+			json.put("data", data);
+			json.put("totalRecord", 0);
+			return "view/messageList";
+		}
+		
+		if(end > NUM -c)end = NUM -c;
+		List<String []> list1 = list.subList(start, end);
+		
+		data = list1.toArray(new String[list1.size()][4]);
+		
+		json.put("data", data);
+		json.put("totalRecord", NUM - c);
+		modelMap.put("list", json);*/
+		
+		
 	}
 	
 	@RequestMapping(params = "method=news_detail")

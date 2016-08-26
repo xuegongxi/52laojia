@@ -27,7 +27,7 @@
 		</DIV>
 		<UL class="item_list">
 			<LI><A href="<%=request.getContextPath() %>/view/sendMessage.jsp">信息发布</A></LI>
-			<LI><A href="../news.do?method=getNewsList">信息列表</A></LI>
+			<LI><A href="<%=request.getContextPath() %>/view/messageList.jsp">信息列表</A></LI>
 			<!--li>
                             <a href="/healthmanage/nolist">患者选择</a>
                         </li-->

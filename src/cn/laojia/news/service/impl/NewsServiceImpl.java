@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.news.dao.NewsDao;
 import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
@@ -23,8 +24,8 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<News> getNewsList() {
-		return newsDao.getNewsList();
+	public PageModel getNewsList(PageModel model) {
+		return newsDao.getNewsList(model);
 	}
 	//根据信息ID，获取信息
 	public News findNewsById(int id){

@@ -2,11 +2,13 @@ package cn.laojia.news.service;
 
 import java.util.List;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 import cn.laojia.user.model.User;
 
 public interface NewsService {
-	public List<News> getNewsList();
+	
+	public PageModel getNewsList(PageModel model);
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 * @param user
