@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.laojia.common.CtrlUtils;
 import cn.laojia.common.PageModel;
+import cn.laojia.common.utils.JSONUtils;
 import cn.laojia.news.model.News;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
 
-import com.zzh.json.Json;
 
 @Controller
 @RequestMapping("/news.do")
@@ -50,7 +50,7 @@ public class NewsController {
 		Map map = new HashMap();
 		map.put("pageCount", info.getPageCount());
 		map.put("result", info.getDatas());
-		String jsonStr = Json.toJson(map);
+		String jsonStr = JSONUtils.toJSONString(map);
 		System.out.println(jsonStr);
 		CtrlUtils.writeStrRes(jsonStr, res);
 		/*

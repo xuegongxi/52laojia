@@ -72,11 +72,7 @@ public class PageModel extends BaseEntity{
 		this.currPage = this.getCurrPage() > this.getPageCount() ? this.getPageCount() : this.getCurrPage();
 		return (currPage - 1) * this.getPageSize();
 	}
-	/** 分页时获取结束的行数 */
-	public int getEndRow() {
-		this.currPage = this.getCurrPage() > this.getPageCount() ? this.getPageCount() : this.getCurrPage();
-		return this.currPage * this.getPageSize();
-	}
+	
 	public List getDatas() {
 		return datas;
 	}

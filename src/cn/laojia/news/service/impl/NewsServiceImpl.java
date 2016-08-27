@@ -31,6 +31,9 @@ public class NewsServiceImpl implements NewsService {
 	public News findNewsById(int id){
 		return newsDao.findNewsById(id);
 	}
+	/**
+	 * 事务 没有起作用
+	 */
 	public void save(News news, User user){
 		//1.保存新闻信息
 		int news_id=(int) newsDao.save(news);

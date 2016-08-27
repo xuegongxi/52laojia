@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
@@ -27,6 +24,9 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());
 	    
+	    String sql1=sql+" limit  "+ model.getStartRow()+"," +model.getPageSize();
+	    List newslist = super.getJdbcTemplate().queryForList(sql1);
+	    model.setDatas(newslist);
 	    //hibernate 纯SQL执行 因行号的问题 hibernate3.jar有bug
 	   /* Session session= super.getSession();
 	    //1.总数

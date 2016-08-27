@@ -118,11 +118,11 @@ function checklogin(){
 
 	function createTR(obj) {
 		var tr = "<tr>";
-		tr += "<td>" + obj[0] + "</td>";
-		tr += "<td><a href='<%=path%>/news.do?method=news_detail&news_id="+obj[0]+"'>" + obj[1] + "</a></td>";
-		tr += "<td>" + obj[2] + "</td>";
-		tr += "<td><a href='"+obj[3]+"'>" + obj[3] + "</a></td>";
-		tr += "<td>" + obj[4] + "</td>";
+		tr += "<td>" + obj.rowno + "</td>";
+		tr += "<td><a href='<%=path%>/news.do?method=news_detail&news_id="+obj.rowno+"'>" + obj.news_title + "</a></td>";
+		tr += "<td>" + obj.news_title + "</td>";
+		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
+		tr += "<td>" + obj.rowno + "</td>";
 		tr += "</tr>";
 		return tr;
 	}
