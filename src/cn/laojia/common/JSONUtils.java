@@ -1,4 +1,4 @@
-package cn.laojia.common.utils;
+package cn.laojia.common;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

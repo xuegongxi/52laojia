@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONObject;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -18,10 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.laojia.common.CtrlUtils;
 import cn.laojia.common.PageModel;
-import cn.laojia.common.utils.JSONUtils;
 import cn.laojia.news.model.News;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
+
 
 
 @Controller
@@ -50,7 +52,7 @@ public class NewsController {
 		Map map = new HashMap();
 		map.put("pageCount", info.getPageCount());
 		map.put("result", info.getDatas());
-		String jsonStr = JSONUtils.toJSONString(map);
+		String jsonStr = JSONObject.fromObject(map).toString();
 		System.out.println(jsonStr);
 		CtrlUtils.writeStrRes(jsonStr, res);
 		/*

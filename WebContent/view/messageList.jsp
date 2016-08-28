@@ -119,10 +119,10 @@ function checklogin(){
 	function createTR(obj) {
 		var tr = "<tr>";
 		tr += "<td>" + obj.rowno + "</td>";
-		tr += "<td><a href='<%=path%>/news.do?method=news_detail&news_id="+obj.rowno+"'>" + obj.news_title + "</a></td>";
-		tr += "<td>" + obj.news_title + "</td>";
+		tr += "<td><a target='_blank' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"'>" + obj.news_title + "</a></td>";
+		tr += "<td>" + obj.create_time + "</td>";
 		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
-		tr += "<td>" + obj.rowno + "</td>";
+		tr += "<td>" + "删除" + "</td>";
 		tr += "</tr>";
 		return tr;
 	}
