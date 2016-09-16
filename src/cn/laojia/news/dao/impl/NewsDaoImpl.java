@@ -19,7 +19,7 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	 * 纯SQL 进行分页
 	 */
 	public PageModel getNewsList(PageModel model) {
-	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id";
+	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());
@@ -42,6 +42,23 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 		model.setDatas(newslist);*/
 		return model;
 	}
+	/**
+	 * 纯SQL 进行分页
+	 */
+	public PageModel getNewsListByAdmin(PageModel model) {
+	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
+		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
+	    List total = super.getJdbcTemplate().queryForList(sql);
+	    model.setRecordCount(total.size());
+	    
+	    String sql1=sql+" limit  "+ model.getStartRow()+"," +model.getPageSize();
+	    List newslist = super.getJdbcTemplate().queryForList(sql1);
+	    model.setDatas(newslist);
+	 
+		return model;
+	}
+	
+	
 	public Serializable save(final Object model) {
 		return  super.save(model);
 	}
@@ -49,7 +66,7 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 		super.update(model);
 	}
 	public void delete(final Object model) {
-		super.delete(model);
+		super.update(model);
 	}
 	/**
 	 * 根据信息ID，获取信息

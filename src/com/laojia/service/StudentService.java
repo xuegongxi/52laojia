@@ -23,7 +23,7 @@ public class StudentService {
 		List<Object> list = entityDao.createQuery(sff.toString());
 		return list;
 	}
-	
+	@Transactional
 	public void save(Student st){
 		entityDao.save(st);
 	}

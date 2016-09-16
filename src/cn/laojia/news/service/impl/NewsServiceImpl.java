@@ -5,7 +5,9 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.catalina.startup.HomesUserDatabase;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.laojia.common.PageModel;
 import cn.laojia.news.dao.NewsDao;
@@ -13,6 +15,7 @@ import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
+import cn.laojia.utils.HomeConstants;
 
 @Service
 public class NewsServiceImpl implements NewsService {
@@ -27,24 +30,38 @@ public class NewsServiceImpl implements NewsService {
 	public PageModel getNewsList(PageModel model) {
 		return newsDao.getNewsList(model);
 	}
+	
+	public PageModel getNewsListByAdmin(PageModel model) {
+		return newsDao.getNewsListByAdmin(model);
+	}
+	
 	//根据信息ID，获取信息
 	public News findNewsById(int id){
 		return newsDao.findNewsById(id);
 	}
 	/**
-	 * 事务 没有起作用
+	 * 事务 起作用
 	 */
-	public void save(News news, User user){
-		//1.保存新闻信息
-		int news_id=(int) newsDao.save(news);
-		//2.保存信息审核信息
-		NewsApprove approve = new  NewsApprove();
-		approve.setCreate_time(new Date());
-		approve.setNews_create_userid(user.getUserid());
-		approve.setNews_id(news_id);
-		newsDao.save(approve);
+	@Transactional
+	public void saveNews(News news, User user){
+		try {
+			//1.保存新闻信息
+			int news_id=(int) newsDao.save(news);
+			//2.保存信息审核信息
+			NewsApprove approve = new  NewsApprove();
+			approve.setCreate_time(new Date());
+			approve.setNews_create_userid(user.getUserid());
+			approve.setNews_id(news_id);
+			approve.setApprove_state(HomeConstants.NEWS_APPROVE_NOSTART);
+			newsDao.save(approve);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RuntimeException();
+		}
 		
 	}
+	@Transactional
 	public void delete(Object obj){
 		newsDao.delete(obj);
 	}

@@ -7,7 +7,7 @@ import cn.laojia.news.model.News;
 
 public interface NewsDao {
 	public PageModel getNewsList(PageModel model);
-	
+	public PageModel getNewsListByAdmin(PageModel model);
 	/**
 	 *  根据用户名和密码查找用户是否存在
 	 * @param user

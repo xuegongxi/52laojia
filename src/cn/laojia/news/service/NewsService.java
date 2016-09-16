@@ -9,13 +9,15 @@ import cn.laojia.user.model.User;
 public interface NewsService {
 	
 	public PageModel getNewsList(PageModel model);
+	public PageModel getNewsListByAdmin(PageModel model);
+	
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 * @param user
 	 * @return
 	 */
 	public List<News> getListUsers(News news);
-	public void save(News news, User user);
+	public void saveNews(News news, User user);
 	public void delete(Object obj);
 	//根据信息ID，获取信息
 	public News findNewsById(int id);

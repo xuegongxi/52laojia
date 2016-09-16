@@ -39,6 +39,9 @@ public class News implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "create_time", nullable = false, length = 10)
 	private Date create_time;
+	@Column(name = "is_delete")
+	private Integer is_delete;
+	
 	
 	public Integer getNews_id() {
 		return news_id;
@@ -102,6 +105,14 @@ public class News implements Serializable{
 
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
+	}
+	
+	public Integer getIs_delete() {
+		return is_delete;
+	}
+
+	public void setIs_delete(Integer is_delete) {
+		this.is_delete = is_delete;
 	}
 
 	public String getContent(){

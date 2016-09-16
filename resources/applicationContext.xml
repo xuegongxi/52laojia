@@ -53,6 +53,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	
     <!-- 配置事务的传播特性-->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -67,8 +68,8 @@
   <!--  配置参与事务的类 -->
 
 	<aop:config>
-	 <aop:pointcut id="allNewsServiceMethod" expression="execution(* cn.laojia.news.service.*.*(..))"/>
-	 <aop:advisor pointcut-ref="allNewsServiceMethod" advice-ref="txAdvice" />
+	 <aop:advisor pointcut="execution(* cn.laojia.news.service.*.*(..))" advice-ref="txAdvice" />
+	 <aop:advisor pointcut="execution(* com.laojia.service.*.*(..))" advice-ref="txAdvice" />
 	</aop:config>
 
 	

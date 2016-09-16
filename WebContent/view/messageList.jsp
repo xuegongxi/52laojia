@@ -14,6 +14,7 @@ String path = request.getContextPath();
 <base href="<%=path%>">
 <!-- <title>我爱我家-个人空间管理</title> -->
 <link rel="stylesheet" type="text/css"  href="<%=path%>/css/style.css"/>
+<link rel="stylesheet" type="text/css"  href="<%=path%>/css/page.css"/>
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/userspace.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/erweima.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/css.css">
@@ -117,18 +118,38 @@ function checklogin(){
 	}
 
 	function createTR(obj) {
-		var tr = "<tr>";
+		var tr = "<tr id="+obj.news_id +">";
 		tr += "<td>" + obj.rowno + "</td>";
 		tr += "<td><a target='_blank' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"'>" + obj.news_title + "</a></td>";
 		tr += "<td>" + obj.create_time + "</td>";
 		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
-		tr += "<td>" + "删除" + "</td>";
+		tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
 		tr += "</tr>";
 		return tr;
 	}
+	
+	function del(id){
+		$.ajax( {
+			type : "POST",
+			url : "<%=path%>/news.do?method=del&id=" + id,
+			dataType: "json",
+			success : function(data) {
+				if(data.del == "true"){
+					alert("删除成功！");
+					$("#" + id).remove();
+				}
+				else{
+					alert("删除失败！");
+				}
+			},
+			error :function(){
+				alert("网络连接出错！");
+			}
+		});
+		}
 </script>
 </head>
-<body onload="">
+<body onload="checklogin()">
 	<iframe style="width: 100%; height: 200px" scrolling="no"
 		frameborder="0" src="<%=request.getContextPath()%>/header.jsp"></iframe>
 	<DIV class="usercenter_box">

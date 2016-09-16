@@ -41,7 +41,17 @@
         <filter-name>CharacterEncodingFilter</filter-name>  
         <url-pattern>/*</url-pattern>  
     </filter-mapping>  
-
+	<!-- Spring的OpenSessionInView实现 -->
+	<filter>
+	    <filter-name>openSessionInViewFilter</filter-name>
+	    <filter-class>
+	        org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+	    </filter-class>
+	</filter>
+	<filter-mapping>
+	    <filter-name>openSessionInViewFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<!-- 默认跳转到根目录下的页面，在这里为index.jsp -->
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

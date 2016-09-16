@@ -1,5 +1,8 @@
 package cn.laojia.news.web;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -97,6 +100,22 @@ public class NewsController {
 		
 		
 	}
+	@RequestMapping(params = "method=getNewsListByAdmin")
+	public void getNewsListByAdmin(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		PageModel info = new PageModel();
+		info.setPageSize(10);
+		info.setCurrPageNumberFormRequest(request);
+
+		info = newsService.getNewsListByAdmin(info);
+		Map map = new HashMap();
+		map.put("pageCount", info.getPageCount());
+		map.put("result", info.getDatas());
+		String jsonStr = JSONObject.fromObject(map).toString();
+		System.out.println(jsonStr);
+		CtrlUtils.writeStrRes(jsonStr, res);
+		
+	}
+	
 	
 	@RequestMapping(params = "method=news_detail")
 	public String news_detail(HttpServletRequest request, ModelMap modelMap){
@@ -116,7 +135,7 @@ public class NewsController {
 	
 	
 	@RequestMapping(params = "method=save")
-	public String save(HttpServletRequest request, ModelMap modelMap){
+	public String save(HttpServletRequest request, HttpServletResponse response,ModelMap modelMap){
 		String news_content = request.getParameter("editorValue");
 		String news_title = request.getParameter("news_title");
 		String news_type = request.getParameter("news_type");
@@ -132,19 +151,33 @@ public class NewsController {
 		news.setNews_content(news_content.getBytes());
 		news.setNews_type(news_type);
 		news.setNews_address(village);
-		
+		news.setCreate_time(new Date());
+		news.setIs_delete(0);
 		//获取用户信息
 		HttpSession session = request.getSession();// 防止创建Session
 		 User user = (User) session.getAttribute("user");
-		 try{
-				 newsService.save(news,user);
-					modelMap.put("addstate", "添加成功！");
-				}
-				catch(Exception e){
-					log.error(e.getMessage());
-					modelMap.put("addstate", "添加失败！");
-				} 
-		 return "redirect:news.do?method=getNewsList";
+		boolean save_yes=true;
+		try {
+			 newsService.saveNews(news,user);
+		} catch (Exception e) {
+			save_yes=false;
+		    e.printStackTrace();
+		}
+		//返回信息
+		response.setContentType("text/html;charset=gb2312");
+	    try {
+			PrintWriter out = response.getWriter();
+			if(save_yes){
+			out.print("<script language=\"javascript\">alert('添加成功！');</script>");
+			return "/view/messageList";
+			}else{
+			  out.print("<script language=\"javascript\">alert('添加失败！');history.go(-1);</script>");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	
@@ -152,9 +185,9 @@ public class NewsController {
 	@RequestMapping(params = "method=del")
 	public void del(@RequestParam("id") String id, HttpServletResponse response){
 		try{
-			User st = new User();
-			st.setUserid(Integer.valueOf(id));
-			newsService.delete(st);
+			News news = newsService.findNewsById(Integer.valueOf(id));
+			news.setIs_delete(1);//逻辑删除
+			newsService.delete(news);
 			response.getWriter().print("{\"del\":\"true\"}");
 		}
 		catch(Exception e){

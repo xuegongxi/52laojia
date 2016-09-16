@@ -70,7 +70,12 @@ public class PageModel extends BaseEntity{
 		// 3 : µ±Ç°Ò³Êý£º pageIndex
 		
 		this.currPage = this.getCurrPage() > this.getPageCount() ? this.getPageCount() : this.getCurrPage();
-		return (currPage - 1) * this.getPageSize();
+		int start  =(currPage - 1) * this.getPageSize();
+		if(start<0){
+			return 0;
+		}else{
+			return start;
+		}
 	}
 	
 	public List getDatas() {

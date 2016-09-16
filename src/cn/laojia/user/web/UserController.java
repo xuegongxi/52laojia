@@ -66,7 +66,13 @@ public class UserController {
 	    	user.setVillage(hometownAddress);
 	    	modelMap.addAttribute("user", user);
 	    	//return "view/person_main";
-	    	return "redirect:view/person_main.jsp";   
+	    	//判断是否是管理员
+	    	if(username.equals("xuegongxi")){
+	    		return "redirect:view/admin/admin_main.jsp";   
+	    	}else{
+	    		return "redirect:view/person_main.jsp";   
+	    	}
+	 
 	    }else{
 	    	modelMap.put("loginerror", "用户名或密码错误，请重新登录！");
 	    	return "login";
