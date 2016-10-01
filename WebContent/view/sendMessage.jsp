@@ -116,11 +116,11 @@ function checklogin(){
 											<tr>
 												<th>信息分类</th>
 												<td><select name="news_type" id="classid">
-														<option value="0">家乡动态</option>
-														<option value="1">家乡美食</option>
-														<option value="2">家乡特产</option>
-														<option value="3">风俗文化</option>
-														<option value="3">旅游日志</option>
+														<option value="1001-0">家乡动态</option>
+														<option value="1001-1">家乡美食</option>
+														<option value="1001-2">家乡特产</option>
+														<option value="1001-3">风俗文化</option>
+														<option value="1001-4">旅游日志</option>
 												</select></td>
 											</tr>
 											<tr>

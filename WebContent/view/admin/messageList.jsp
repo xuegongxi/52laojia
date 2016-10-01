@@ -13,8 +13,10 @@ String path = request.getContextPath();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <base href="<%=path%>">
 <!-- <title>我爱我家-个人空间管理</title> -->
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/where.css"/>
 <link rel="stylesheet" type="text/css"  href="<%=path%>/css/style.css"/>
 <link rel="stylesheet" type="text/css"  href="<%=path%>/css/page.css"/>
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/table/table.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/userspace.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/erweima.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/css.css">
@@ -34,7 +36,7 @@ String path = request.getContextPath();
 <script type="text/javascript" src="<%=path%>/js/jquery-1.6.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jquery.myPagination.js"></script>
 <script type="text/javascript" src="<%=path%>/js/msgbox/msgbox.js"></script>
-
+<script type="text/javascript" src="<%=path%>/js/My97DatePicker/WdatePicker.js"></script>
 <style>
 A:link {
 	color: blue;
@@ -107,8 +109,8 @@ function checklogin(){
 				 currPage: 1,
 			     pageSize: 10,
 			      ajax: {
-			              on: true,                         
-			              url: "<%=path%>/news.do?method=getNewsList",
+			              on: true,   
+			              url: "<%=path%>/news.do?method=getNewsListByAdmin",
 						  dataType: 'json', 
 						  param:{on:true,page:1,url_param:formData},
 						  callback: 'ajaxCallBack'
@@ -121,9 +123,15 @@ function checklogin(){
 		var tr = "<tr id="+obj.news_id +">";
 		tr += "<td>" + obj.rowno + "</td>";
 		tr += "<td><a target='_blank' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"'>" + obj.news_title + "</a></td>";
+		tr += "<td>" + obj.news_type + "</td>";
+		tr += "<td>" + obj.news_person + "</td>";
 		tr += "<td>" + obj.create_time + "</td>";
 		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
-		tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
+		if(obj.approve_state=="未审核"){
+			tr += "<td><input type='button' onclick='openApproveNews(" + obj.news_id + ")' value='审核'/>&nbsp;<input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
+		}else{
+			tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
+		}
 		tr += "</tr>";
 		return tr;
 	}
@@ -158,7 +166,70 @@ function checklogin(){
 			<jsp:include page="/view/admin/left_menu.jsp"></jsp:include>
 			<!--start scenterContent-->
 			<div class="usercenter_con">
-			<DIV class="user_center_tablebox">
+				<form id="queryForm" name="queryForm">
+					<table width="100%" id="tab">
+						<thead>
+							<tr>
+								<th colspan="7">查询条件</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="td_css">关&nbsp;&nbsp;键&nbsp;&nbsp;字：</td>
+								<td colspan="2"><input type="text" id="keywords"
+									name="keywords" style="width: 130px; color: #000;" /></td>
+								<td class="td_css">信息发布人：</td>
+								<td colspan="2"><input type="text" id="news_person"
+									name="news_person" style="width: 130px; color: #000;"/></td>
+								<td colspan="1"><input id="query" name="query"
+									type="button"
+									style="width: 63px; height: 25px; line-height: 21px; margin: 0 50px 0 0px; font-weight: bold; float: right;"
+									value="搜索" /></td>
+							</tr>
+							<tr class="tr_edd">
+								<td class="td_css">审核状态：</td>
+								<td colspan="6"><label style="margin: 0 10px 0 0;">
+										<input name="approve_status" type="radio" value="" /> 全部
+								</label> <label style="margin: 0 10px 0 0;"> <input
+										name="approve_status" type="radio" value="1000-0" /> 未审核
+								</label> <label style="margin: 0 10px 0 0;"> <input
+										name="approve_status" type="radio" value="1000-2" /> 审核通过
+								</label> <label style="margin: 0 10px 0 0;"> <input
+										name="approve_status" type="radio" value="1000-1" /> 审核不通过
+								</label></td>
+							</tr>
+							<tr class="tr_edd">
+								<td class="td_css">日志类型：</td>
+								<td colspan="2"><select name="news_type"><option
+											value="" selected="">--请选择--</option>
+										<option value="1001-0">家乡动态</option>
+										<option value="1001-1">家乡美食</option>
+										<option value="1001-2">家乡特产</option>
+										<option value="1001-3">风俗文化</option>
+										<option value="1001-4">旅游日志</option>
+								</select></td>
+								<td class="td_css">删除状态：</td>
+								<td colspan="3"><label style="margin: 0 10px 0 0;">
+										<label style="margin: 0 10px 0 0;"> <input
+											name="is_delte" type="checkbox" value="1" /> 用户删除
+									</label> <label style="margin: 0 10px 0 0;"> <input
+											name="is_delte" type="checkbox" value="2" /> 管理员删除
+									</label></td>
+							</tr>
+							<tr>
+								<td class="td_css">发布日期：</td>
+								<td colspan="6"><input name ="start_date"class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
+								&nbsp;至&nbsp;   <input name="end_date" class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
+								</td>
+								
+							</tr>
+						</tbody>
+					</table>
+				</form>
+
+
+				<DIV class="user_center_tablebox">
+			
 				<TABLE id="mytab"
 					style="padding: inherit; border-collapse: separate; border-spacing: 1px;"
 					border="0" cellSpacing="1" cellPadding="0" width="100%"
@@ -166,9 +237,11 @@ function checklogin(){
 					<thead>
 						<TR class="user_center_tabletitle">
 						    <TD width="5%" align="center">序号</TD>
-							<TD width="50%" align="center">信息标题</TD>
+							<TD width="40%" align="center">标题</TD>
+							<TD width="15%" align="center">信息类型</TD>
+							<TD width="15%" align="center">创建人</TD>
 							<TD width="17%" align="center">提交时间</TD>
-							<TD width="14%" align="center">状态</TD>
+							<TD width="14%" align="center">审核状态</TD>
 							<TD width="19%" align="center">操作</TD>
 						</TR>
                     </thead>
@@ -179,8 +252,13 @@ function checklogin(){
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
+						    
 						  </tr>
 						  <tr>
+						    <td>&nbsp;</td>
+						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>

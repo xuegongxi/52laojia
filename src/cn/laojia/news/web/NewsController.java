@@ -2,6 +2,7 @@ package cn.laojia.news.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +27,7 @@ import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
+import cn.laojia.utils.DictEnum;
 
 
 
@@ -102,15 +104,52 @@ public class NewsController {
 	}
 	@RequestMapping(params = "method=getNewsListByAdmin")
 	public void getNewsListByAdmin(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		String url_parameters="";
+		try {
+			System.out.println("on参数列表-----------------------"+pageSize);
+			Map<String,String[]> map = request.getParameterMap();
+			for(Map.Entry<String,String[]> entry :map.entrySet()){
+					String key = entry.getKey();
+					System.out.print("key:"+key);
+					String str = new String(request.getParameter(key).getBytes("ISO-8859-1"),"UTF-8");
+                    if(key.equals("url_param")){
+                    	url_parameters=str;
+					}
+					System.out.println("---value:"+str);
+			}
+			System.out.println("end参数列表-----------------------");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//keywords=为&news_person=额为为&approve_status=&news_type=0&is_delte=1&start_date=2016-08-30&end_date=2016-08-31
+		//1.先按照&拆分
+		HashMap<String,String> map_parameter = new HashMap<String,String>();
+		if (StringUtils.isNotEmpty(url_parameters)&&!url_parameters.equals("null")&&url_parameters!="") {
+			String[] split = url_parameters.split("&");
+			for (int i = 0; i < split.length; i++) {
+				String str_split=split[i];
+				   String[] split_2 = str_split.split("=");
+				   String key =split_2[0];
+				   if(split_2.length>1){
+					   String value =split_2[1];
+					   map_parameter.put(key, value);
+				   }else{
+					   map_parameter.put(key, "");
+				   }
+			}
+			
+		}
+		
 		PageModel info = new PageModel();
 		info.setPageSize(10);
 		info.setCurrPageNumberFormRequest(request);
 
-		info = newsService.getNewsListByAdmin(info);
-		Map map = new HashMap();
-		map.put("pageCount", info.getPageCount());
-		map.put("result", info.getDatas());
-		String jsonStr = JSONObject.fromObject(map).toString();
+		info = newsService.getNewsListByAdmin(info,map_parameter);
+		Map map1 = new HashMap();
+		map1.put("pageCount", info.getPageCount());
+		map1.put("result", info.getDatas());
+		String jsonStr = JSONObject.fromObject(map1).toString();
 		System.out.println(jsonStr);
 		CtrlUtils.writeStrRes(jsonStr, res);
 		
@@ -136,6 +175,10 @@ public class NewsController {
 	
 	@RequestMapping(params = "method=save")
 	public String save(HttpServletRequest request, HttpServletResponse response,ModelMap modelMap){
+		//获取用户信息
+		HttpSession session = request.getSession();// 防止创建Session
+	    User user = (User) session.getAttribute("user");
+		
 		String news_content = request.getParameter("editorValue");
 		String news_title = request.getParameter("news_title");
 		String news_type = request.getParameter("news_type");
@@ -146,6 +189,7 @@ public class NewsController {
 		String town =request.getParameter("S4");
 		String village =request.getParameter("S5");
 		News news = new News();
+		news.setNews_person(user.getUsername());
 		news.setNews_title(news_title);
 		news.setNews_from(news_from);
 		news.setNews_content(news_content.getBytes());
@@ -153,9 +197,7 @@ public class NewsController {
 		news.setNews_address(village);
 		news.setCreate_time(new Date());
 		news.setIs_delete(0);
-		//获取用户信息
-		HttpSession session = request.getSession();// 防止创建Session
-		 User user = (User) session.getAttribute("user");
+		
 		boolean save_yes=true;
 		try {
 			 newsService.saveNews(news,user);

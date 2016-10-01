@@ -29,7 +29,7 @@ public class NewsApprove implements Serializable{
 	@Column(name = "news_approve_userid")
 	private Integer news_approve_userid;
 	@Column(name = "approve_state")
-	private Integer approve_state;
+	private String approve_state;
 	@Column(name = "approve_opinion")
 	private String approve_opinion;
 	@Temporal(TemporalType.TIMESTAMP)
@@ -80,12 +80,12 @@ public class NewsApprove implements Serializable{
 	}
 
 
-	public Integer getApprove_state() {
+	public String getApprove_state() {
 		return approve_state;
 	}
 
 
-	public void setApprove_state(Integer approve_state) {
+	public void setApprove_state(String approve_state) {
 		this.approve_state = approve_state;
 	}
 

@@ -51,7 +51,7 @@ public class StudentController {
 			modelMap.put("addstate", "添加成功");
 		}
 		catch(Exception e){
-			log.error(e.getMessage());
+			e.printStackTrace();
 			modelMap.put("addstate", "添加失败");
 		}
 		

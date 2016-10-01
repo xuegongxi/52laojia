@@ -65,7 +65,7 @@
 	background: url("../../images/person/usercenter_nav_bg.png") repeat-y left top; margin: 0px auto; border: 1px solid rgb(253, 202, 180); width: 958px; position: relative;
 }
 .usercenter_nav {
-	width: 240px; float: left;
+	width: 230px; float: left;
 }
 .usercenter_nav .bigtitle {
 	background: url("../../images/person/usercenter_b_bg.png");background-position: 0px -38px; height: 40px; color: rgb(0, 0, 0); line-height: 40px; font-size: 16px; font-weight: bold; margin-right: 12px; background-repeat: repeat-x;
@@ -113,7 +113,7 @@
 	background: rgb(255, 68, 0); border-radius: 100%; left: 5px; top: -5px; width: 8px; height: 8px; overflow: hidden; display: inline-block; position: relative; z-index: 1;
 }
 .usercenter_con {
-	width: 708px; float: right; _border: 1px solid #FFF; _width: 700px; _overflow: hidden;
+	width: 720px; float: right; _border: 1px solid #FFF; _width: 700px; _overflow: hidden;
 }
 .userinfo_box {
 	padding: 34px;
@@ -248,7 +248,7 @@
 	background: rgb(204, 238, 255);
 }
 .user_center_tablebox {
-	margin-top: 10px; margin-right: 14px; margin-bottom: 14px;
+	margin-top: 10px; margin-right: 8px; margin-bottom: 14px;
 }
 .user_center_tablebox table {
 	font-size: 14px;

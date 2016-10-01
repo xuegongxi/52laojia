@@ -1,9 +1,11 @@
 package cn.laojia.news.dao.impl;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
@@ -19,7 +21,7 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	 * 纯SQL 进行分页
 	 */
 	public PageModel getNewsList(PageModel model) {
-	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
+	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,date_format(n.create_time,'%Y-%c-%d') create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());
@@ -45,9 +47,81 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	/**
 	 * 纯SQL 进行分页
 	 */
-	public PageModel getNewsListByAdmin(PageModel model) {
-	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
+	//keywords=为&news_person=额为为&approve_status=&news_type=0&is_delte=1&start_date=2016-08-30&end_date=2016-08-31
+
+	/*SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title, (select k.enum_name from lj_enum k WHERE k.enum_code=n.news_type) news_type,     n.news_person,date_format(n.create_time,'%Y-%c-%d') create_time, 
+			(select k.enum_name from lj_enum k WHERE k.enum_code=na.approve_state) approve_state
+			 from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and 1=1
+	*/
+	
+	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter) {
+		StringBuffer sb = new StringBuffer();
+	   sb.append("SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title, (");
+	   sb.append("select k.enum_name from lj_enum k WHERE k.enum_code=n.news_type ");
+	   sb.append(") news_type,  n.news_person,date_format(n.create_time,'%Y-%c-%d') create_time,");
+	   sb.append(" ( select k.enum_name from lj_enum k WHERE k.enum_code=na.approve_state) approve_state ");
+	   sb.append(" from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0 and 1=1");
+	   
+	    //String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,date_format(n.create_time,'%Y-%c-%d') create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and 1=1";
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
+	    if(!map_parameter.isEmpty()){
+	    	if(map_parameter.containsKey("keywords")){
+	    		String value=map_parameter.get("keywords");
+	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+	    			sb.append(" and n.news_title like '%");
+	    			sb.append(value);
+	    			sb.append("%'");
+	    			//sql+=" and n.news_title like '%"+value+"%' ";
+				}
+	    	}
+	    	if(map_parameter.containsKey("news_person")){
+	    		String value=map_parameter.get("news_person");
+	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+	    			//sql+=" and  n.news_person='"+value+"'";
+	    			sb.append("  and  n.news_person='");
+	    			sb.append(value);
+	    			sb.append("'");
+				}
+	    	}
+	    	if(map_parameter.containsKey("approve_status")){
+	    		String value=map_parameter.get("approve_status");
+	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+	    			//sql+=" and na.approve_state="+value;
+	    			sb.append(" and na.approve_state= ");
+	    			sb.append(value);
+				}
+	    	}
+	    	if(map_parameter.containsKey("news_type")){
+	    		String value=map_parameter.get("news_type");
+	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+	    			//sql+=" and n.news_type="+value;
+	    			sb.append(" and n.news_type= ");
+	    			sb.append(value);
+				}
+	    	}
+	    	/*if(map_parameter.containsKey("is_delte")){
+	    		String value=map_parameter.get("is_delte");
+	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+	    			sql+=" and n.is_delete="+value;
+				}
+	    	}*/
+	    	if(map_parameter.containsKey("start_date")&&map_parameter.containsKey("end_date")){
+    			String start_value=map_parameter.get("start_date");
+    			String end_value=map_parameter.get("end_date");
+    			if(StringUtils.isNotEmpty(start_value)&&StringUtils.isNotEmpty(end_value)){
+    				sb.append(" and n.create_time  BETWEEN '");
+	    			sb.append(start_value);
+	    			sb.append("' AND '");
+	    			sb.append(end_value);
+	    			sb.append("'");
+    				//sql+=" and n.create_time  BETWEEN '"+start_value+"' AND '"+end_value+"'";
+    			}
+    			
+    		}	
+	    	
+	    	
+	    }
+	    String sql =sb.toString();
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());
 	    

@@ -1,5 +1,6 @@
 package cn.laojia.news.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.laojia.common.PageModel;
@@ -9,7 +10,7 @@ import cn.laojia.user.model.User;
 public interface NewsService {
 	
 	public PageModel getNewsList(PageModel model);
-	public PageModel getNewsListByAdmin(PageModel model);
+	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter);
 	
 	/**
 	 * 根据用户名和密码查找用户是否存在

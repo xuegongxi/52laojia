@@ -1,11 +1,11 @@
 package cn.laojia.news.service.impl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.catalina.startup.HomesUserDatabase;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,7 +15,7 @@ import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
-import cn.laojia.utils.HomeConstants;
+import cn.laojia.utils.DictEnum;
 
 @Service
 public class NewsServiceImpl implements NewsService {
@@ -31,8 +31,8 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.getNewsList(model);
 	}
 	
-	public PageModel getNewsListByAdmin(PageModel model) {
-		return newsDao.getNewsListByAdmin(model);
+	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter) {
+		return newsDao.getNewsListByAdmin(model,map_parameter);
 	}
 	
 	//根据信息ID，获取信息
@@ -52,7 +52,7 @@ public class NewsServiceImpl implements NewsService {
 			approve.setCreate_time(new Date());
 			approve.setNews_create_userid(user.getUserid());
 			approve.setNews_id(news_id);
-			approve.setApprove_state(HomeConstants.NEWS_APPROVE_NOSTART);
+			approve.setApprove_state(DictEnum.News_Approve.NEWS_APPROVE_NOSTART);
 			newsDao.save(approve);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
