@@ -29,6 +29,7 @@ String path = request.getContextPath();
 <LINK rel="stylesheet"	href="<%=path%>/css/persion/index_nav_noshadow_style.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/usercenter.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/style_3_common.css">
+<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/admin/approveNews.css">
 <SCRIPT type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
 <SCRIPT type="text/javascript"	src="<%=path%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
 <script type="text/javascript"	src="<%=path%>/js/banner1.js"></script>
@@ -128,7 +129,7 @@ function checklogin(){
 		tr += "<td>" + obj.create_time + "</td>";
 		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
 		if(obj.approve_state=="未审核"){
-			tr += "<td><input type='button' onclick='openApproveNews(" + obj.news_id + ")' value='审核'/>&nbsp;<input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
+			tr += "<td><input type='button' onclick='approveNews(" + obj.news_id + ")' value='审核'/>&nbsp;<input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
 		}else{
 			tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
 		}
@@ -155,6 +156,14 @@ function checklogin(){
 			}
 		});
 		}
+	function approveNews(){
+		$('.theme-popover-mask').fadeIn(100);
+		$('.theme-popover').slideDown(200);
+	}
+	 function closeApproveNews(){
+		 $('.theme-popover-mask').fadeOut(100);
+		 $('.theme-popover').slideUp(200);
+	 }
 </script>
 </head>
 <body onload="checklogin()">
@@ -281,7 +290,27 @@ function checklogin(){
 			</div>
 		</DIV>
 	</DIV>
-	 <div class="footer">
+	<div class="theme-popover">
+		<div class="theme-poptit">
+			<a href="javascript:;" title="关闭" class="close">×</a>
+			<h3>登录 是一种态度</h3>
+		</div>
+		<div class="theme-popbod dform">
+			<form class="theme-signin" name="loginform" action="" method="post">
+				<ol>
+					<li><h4>你必须先登录！</h4></li>
+					<li><strong>用户名：</strong><input class="ipt" type="text"
+						name="log" value="lanrenzhijia" size="20" /></li>
+					<li><strong>密码：</strong><input class="ipt" type="password"
+						name="pwd" value="***" size="20" /></li>
+					<li><input class="btn btn-primary" type="submit" name="submit"
+						value=" 登 录 " /></li>
+				</ol>
+			</form>
+		</div>
+	</div>
+	<div class="theme-popover-mask"></div>
+	<div class="footer">
 		<p>
 			<a href="/gygx/"> 关于我们</a> | <a href=#>人才招聘</a> | <a href="#">联系我们</a>
 			| <a href="#">广告合作</a> | <a href="#">业务合作</a> | <a href="#">版权说明</a>
