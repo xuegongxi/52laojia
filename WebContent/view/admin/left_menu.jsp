@@ -39,8 +39,8 @@
 		</DIV>
 		<UL class="item_list">
 			<LI><A href="#">我的收藏</A></LI>
-			<LI><A href="#">医生动态</A></LI>
-			<LI><A href="#">疾病文章</A></LI>
+			<LI><A href="#">我的订阅</A></LI>
+			<LI><A href="#">收藏文章</A></LI>
 		</UL>
 	</DIV>
 	<DIV class="item">

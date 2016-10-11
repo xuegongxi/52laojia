@@ -12,6 +12,7 @@ import cn.laojia.common.BaseDaoImpl;
 import cn.laojia.common.PageModel;
 import cn.laojia.news.dao.NewsDao;
 import cn.laojia.news.model.News;
+import cn.laojia.news.model.NewsApprove;
 
 
 @Repository
@@ -87,8 +88,9 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	    		String value=map_parameter.get("approve_status");
 	    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
 	    			//sql+=" and na.approve_state="+value;
-	    			sb.append(" and na.approve_state= ");
+	    			sb.append(" and na.approve_state= '");
 	    			sb.append(value);
+	    			sb.append("'");
 				}
 	    	}
 	    	if(map_parameter.containsKey("news_type")){
@@ -277,6 +279,34 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 		}
 		return address;
 	}
+	
+	/**
+	 * …Û∫À–≈œ¢
+	 * @param approve
+	 * @param news_id
+	 */
+	public void approveNews(NewsApprove approve,String news_id){
+		StringBuffer sb = new  StringBuffer();
+		sb.append("update news_approve t set t.news_approve_userid='");
+		sb.append(approve.getNews_approve_userid());
+		sb.append("' ,t.approve_state='");
+		sb.append(approve.getApprove_state());
+		sb.append("' ,t.approve_opinion= '");
+		sb.append(approve.getApprove_opinion());
+		sb.append("' ,t.approve_time= now()");		
+		sb.append(" where t.news_id= '");
+		sb.append(news_id);
+		sb.append("'");
+
+		String sql = sb.toString();
+		try {
+			getJdbcTemplate().execute(sql);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	
 	/*public void addUser(User user){

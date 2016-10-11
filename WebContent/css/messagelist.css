@@ -1,0 +1,454 @@
+@CHARSET "UTF-8";
+
+body {
+    background: #f6f6f6 none repeat scroll 0 0;
+    color: #333;
+}
+a:hover {
+    color: orange !important;
+}
+nav {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #e8e8e8;
+    display: block;
+    font-size: 14px;
+    line-height: 40px;
+}
+nav li {
+    display: inline-table;
+    padding: 0 20px 0 0;
+}
+nav li:last-child {
+    float: right;
+    padding: 0;
+    text-align: right;
+}
+nav li:last-child a {
+    margin: 0 0 0 20px;
+}
+nav li:last-child a i {
+    margin-right: 5px;
+}
+#channel, #menu, #back {
+    display: none;
+}
+.wrapper {
+    max-width: 1000px;
+    width: 100%;
+}
+.main-inner {
+    float: left;
+    margin-right: 20px;
+    width: 680px;
+}
+.side {
+    overflow: hidden;
+}
+.head {
+    height: 100px;
+    padding: 20px 0;
+    text-align: center;
+}
+.logo {
+    float: left;
+}
+.search {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px #eee inset;
+    float: right;
+    margin: 10px 0 0;
+    padding: 5px;
+}
+.search #engine-option-list {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 60px;
+}
+.search input {
+    outline: 0 none;
+}
+.search select {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    width: 100%;
+}
+.search span {
+    color: #999;
+    cursor: pointer;
+    display: block;
+    font-style: normal;
+    height: 30px;
+    line-height: 30px;
+}
+.search span i {
+    background: rgba(0, 0, 0, 0) url("http://fragment.firefoxchina.cn/res/img/sprite.png") no-repeat scroll -32px 7px;
+    display: block;
+    font-style: normal;
+    text-indent: 16px;
+}
+.search i.baidu {
+    background-position: -32px 7px;
+}
+.search i.google {
+    background-position: -32px -32px;
+}
+.search i.taobao {
+    background-position: -32px -64px;
+}
+.search i font {
+    background: rgba(0, 0, 0, 0) url("http://fragment.firefoxchina.cn/res/img/sprite.png") no-repeat scroll 0 -38px;
+    display: inline-table;
+    height: 10px;
+    margin: 0 0 0 10px;
+    width: 16px;
+}
+.search input[type="text"] {
+    border: 0 none;
+    line-height: 30px;
+    width: 360px;
+}
+.search input[type="submit"] {
+    background: rgba(0, 0, 0, 0) url("http://fragment.firefoxchina.cn/res/img/sprite.png") no-repeat scroll 0 0;
+    border: 0 none;
+    cursor: pointer;
+    margin: 0 5px 0 0;
+    width: 20px;
+}
+.hot {
+    float: left;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin: 25px 0 0 30px;
+    max-width: 200px;
+    overflow: hidden;
+}
+.hot a {
+    margin-right: 15px;
+}
+.bread {
+    color: #aaa;
+    line-height: 25px;
+    margin: 0 0 20px;
+}
+.bread a {
+    color: #aaa;
+}
+.bread .channel {
+    border-left: 10px solid #ccc;
+    color: #999;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 30px 0 0;
+    padding: 0 0 0 15px;
+}
+.bread .channel-source {
+    float: right;
+}
+.bread .channel-source img {
+    border: 0 none;
+    max-height: 25px;
+}
+.bread span {
+    margin: 0 0 0 10px;
+}
+.bread font {
+    margin: 0 10px;
+}
+.bread i {
+    display: none;
+}
+.article {
+    margin: 0 0 30px;
+    padding: 50px 40px;
+}
+.article .title {
+    border-bottom: 1px dashed #ddd;
+    margin: 0 0 20px;
+    text-align: center;
+}
+.article .title h1 {
+    font-family: PingFang SC,Verdana,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    margin: 0 0 20px;
+}
+.article .title p {
+    color: #999;
+    margin: 0 0 20px;
+}
+.article .content {
+    line-height: 28px;
+}
+.article .content p {
+    font-size: 16px;
+    margin: 0 0 20px;
+    text-indent: 30px;
+}
+.article .content .f_center {
+    text-align: center;
+    text-indent: 0;
+}
+.article .content img {
+    display: block;
+    margin: 20px auto;
+}
+.article-pn {
+    border-top: 1px dashed #ddd;
+    line-height: 40px;
+    padding: 20px 0 0;
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.article-pn a {
+    background: #fafafa none repeat scroll 0 0;
+    border: 1px solid #eee;
+    color: #999;
+    font-size: 14px;
+    margin: 0 15px 0 0;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.article-pn a:hover, .article a.current {
+    background: #fff none repeat scroll 0 0;
+    border-color: orange;
+}
+.more-list {
+	
+    background: #fff none repeat scroll 0 0;
+    line-height: 30px;
+    margin: 0 0 30px;
+    padding: 20px 30px;
+}
+.more-list .item {
+    margin: 0;
+    padding: 30px 10px;
+}
+.side-list {
+    background: #fff none repeat scroll 0 0;
+    line-height: 30px;
+    margin: 0 0 30px;
+    padding: 20px 25px;
+}
+.side-list p {
+    height: 30px;
+    overflow: hidden;
+}
+.sub-title {
+    border-bottom: 1px dashed #ddd;
+    border-left: 10px solid #ccc;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 0 0 20px;
+    padding: 0 0 5px 10px;
+}
+.more-grid {
+    background: #fff none repeat scroll 0 0;
+    line-height: 30px;
+    margin: 0 0 30px;
+    padding: 20px 30px;
+}
+.more-grid .picture > div {
+    line-height: 20px;
+    overflow: hidden;
+}
+.more-grid img {
+    border: 0 none;
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+}
+.more-grid span {
+    line-height: 24px;
+    overflow: hidden;
+}
+.side-grid {
+    background: #fff none repeat scroll 0 0;
+    margin: 0 0 20px;
+    padding: 20px 25px;
+}
+.side-grid .picture > div {
+    line-height: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.side-grid img {
+    border: 0 none;
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+}
+.side-iframe {
+    text-align: center;
+}
+.side-iframe iframe {
+    margin: 0 auto 20px;
+}
+footer {
+    background: #fff none repeat scroll 0 0;
+    border-top: 1px solid #e8e8e8;
+    color: #999;
+    line-height: 36px;
+    margin: 20px 0 0;
+    padding: 30px 0;
+    text-align: center;
+}
+footer a {
+    margin: 0 5px;
+}
+.item {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #fff;
+    color: #333;
+    display: block;
+    line-height: 30px;
+    margin: 0 0 20px;
+    padding: 30px;
+}
+.item::before, .item::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.item:hover {
+    border: 1px solid orange;
+}
+.item img {
+    border: 0 none;
+    float: left;
+    margin: 0 20px 0 0;
+    width: 200px;
+}
+.item div {
+    display: inline;
+}
+.item h1 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0 0 10px;
+}
+.item p {
+    color: #777;
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    margin: 0 0 10px;
+}
+.item span {
+    color: #333;
+}
+#ad1 {
+    overflow: hidden;
+}
+#ad1 iframe {
+    margin: 0;
+}
+#ad2 {
+    overflow: hidden;
+}
+#ad2 iframe {
+    margin: 0 0 30px;
+}
+.pagination {
+    margin: 50px 0;
+    text-align: center;
+}
+.pagination a, .pagination span {
+    margin: 0 5px 0 0;
+    padding: 5px 10px;
+}
+.pagination a {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+}
+.pagination span {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid orange;
+}
+.pagination span.prev, .pagination span.next {
+    border: 1px solid #e8e8e8;
+    color: #ccc;
+}
+.share {
+    margin: 20px 0 0;
+    text-align: center;
+}
+.thumb {
+    height: 100px;
+    overflow: scroll;
+    width: 100%;
+    word-break: keep-all;
+}
+.thumb li {
+    display: inline;
+    height: 100px;
+}
+.banner {
+    text-align: center;
+}
+.siblings {
+    background: #fff none repeat scroll 0 0;
+    border-top: 1px dashed #ddd;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 30px 0 0;
+    padding: 30px 0 0;
+}
+.siblings a {
+    clear: both;
+    display: block;
+}
+.siblings b {
+    font-size: 14px;
+    margin: 0 10px 0 0;
+}
+#fixable {
+    background: #f6f6f6 none repeat scroll 0 0;
+}
+.article {
+    background: #fff none repeat scroll 0 0;
+}
+.article img {
+    max-width: 80%;
+}
+#trans li img {
+    max-width: 100%;
+}
+#tpth_hidden {
+    display: none;
+}
+#aside {
+    bottom: 35px;
+    height: 200px;
+    left: 50%;
+    margin-left: -665px;
+    position: fixed;
+    width: 150px;
+    z-index: 2;
+}
+#aside img {
+    width: 100%;
+}
+.pop-up-refwin-c {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 20px;
+    position: absolute;
+    right: -215px;
+    width: 200px;
+}
+.pop-up-refwin-c img {
+    margin: 10px auto 0;
+}

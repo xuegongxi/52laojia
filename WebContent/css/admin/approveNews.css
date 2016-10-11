@@ -10,7 +10,7 @@
 	top:50%;
 	left:50%;
 	width:660px;
-	height:360px;
+	height:350px;
 	margin:-180px 0 0 -330px;
 	border-radius:5px;
 	border:solid 2px #666;
@@ -18,10 +18,40 @@
 	display:none;
 	box-shadow: 0 0 10px #666;
 }
+.approvenews-from{
+	padding-top: 20px;
+	padding-left: 80px;
+	
+}
+.approvenews-from .newsbutton{
+	padding-top: 15px;
+	padding-bottom:2px;
+	font-size: 14px;
+	border-bottom: 1px dotted rgb(205, 205, 205);
+	
+}  
+
+.approvenews-from .newsbutton textarea{
+	width: 400px;
+	height: 120px;
+	
+	
+}  
+
+.approvenews-from .buttons{
+	padding-top: 35px;
+	margin-left: 150px;
+	
+}
+#radio {
+	margin-left: 20px;
+}
+
 .theme-poptit {
 	border-bottom:1px solid #ddd;
-	padding:12px;
+	padding:8px;
 	position: relative;
+	background: #f7f7f7 none repeat scroll 0 0;
 }
 .theme-poptit .close {
 	float:right;
@@ -33,42 +63,6 @@
 }
 .theme-poptit .close:hover {
 	color:#444;
-}
-.dform {
-	padding:80px 60px 40px;
-	text-align: center;
-}
-.dform .ipt_error {
-	background-color:#FFFFCC;
-	border-color:#FFCC66
-}
-.dform-tip {
-	display:none;
-	background-color:#080;
-	color:#fff;
-	line-height:42px;
-	margin-top:10px;
-display:;
-	font-size: 14px;
-}
-.dform-tip-errer {
-	background-color: #CF301A;
-}
-.dform-tip a {
-	display: inline-block;
-	padding: 0 20px;
-	margin-left:10px;
-	background-color: #FFE924;
-	color: #CF301A;
-}
-.dform-login {
-	padding:0;
-	height: 270px;
-	overflow: hidden;
-}
-.dform-login iframe {
-	height: 470px;
-	margin-top: -180px;
 }
 .theme-signin {
 	margin: -50px -20px -50px 90px;
@@ -83,7 +77,8 @@ display:;
 }
 .theme-signin li {
 	padding-left: 80px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
+	border-bottom: 1px dotted rgb(205, 205, 205);
 }
 .theme-signin li strong {
 	float: left;

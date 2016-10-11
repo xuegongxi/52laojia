@@ -115,14 +115,14 @@ $(function(){
 							<TABLE width="100%">
 								<TBODY>
 									<TR>
-										<TD width="70%"><STRONG>恭喜您成为好大夫在线患友会成员</STRONG></TD>
+										<TD width="70%"><STRONG>恭喜您成为52老家成员</STRONG></TD>
 										<TD class="time" width="30%" align="right">2016-05-23</TD>
 									</TR>
 									<TR id="msg_box">
 										<TD colSpan="2">
 											<P style="color: rgb(102, 102, 102); line-height: 1.5;">
 
-												${user.username},您好！<BR>您已经加入到廖更新医生的患友会！在电脑上打开医生的患友会可以发表话题。建议您在疾病治疗过程中，多跟病友交流，分享经验！
+												${user.username},您好！<BR>您已经加入老乡会！在电脑上打开老乡会可以发表话题。
 											</P>
 										</TD>
 									</TR>
@@ -133,14 +133,14 @@ $(function(){
 							<TABLE width="100%">
 								<TBODY>
 									<TR>
-										<TD width="70%"><STRONG>鹿相花大夫和您有新对话</STRONG></TD>
+										<TD width="70%"><STRONG>明明和您有新对话</STRONG></TD>
 										<TD class="time" width="30%" align="right">2016-05-20</TD>
 									</TR>
 									<TR id="msg_box">
 										<TD colSpan="2">
 											<P style="color: rgb(102, 102, 102); line-height: 1.5;">
-												鹿相花大夫和您有新对话<A
-													href="http://www.haodf.com/wenda/luxianghuadr_g_4458633177.htm"
+												明明老乡和您有新对话<A
+													href="#"
 													target="_blank">点击查看详情</A>
 											</P>
 										</TD>
@@ -152,14 +152,14 @@ $(function(){
 							<TABLE width="100%">
 								<TBODY>
 									<TR>
-										<TD width="70%"><STRONG>恭喜您成为好大夫在线患友会成员</STRONG></TD>
+										<TD width="70%"><STRONG>恭喜您成为52老家成员</STRONG></TD>
 										<TD class="time" width="30%" align="right">2016-05-20</TD>
 									</TR>
 									<TR id="msg_box">
 										<TD colSpan="2">
 											<P style="color: rgb(102, 102, 102); line-height: 1.5;">
 
-												hdfd7xnp,您好！<BR>您已经加入到鹿相花医生的患友会！在电脑上打开医生的患友会可以发表话题。建议您在疾病治疗过程中，多跟病友交流，分享经验！
+												hdfd7xnp,您好！<BR>您您已经加入老乡会！在电脑上打开老乡会可以发表话题。建议您在上网过程中，多跟老乡交流，分享经验！
 											</P>
 										</TD>
 									</TR>

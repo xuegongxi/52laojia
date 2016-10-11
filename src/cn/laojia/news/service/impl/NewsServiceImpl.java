@@ -131,4 +131,13 @@ public class NewsServiceImpl implements NewsService {
 	public String getHomeTownAddress(String village_id){
 		return newsDao.getHomeTownAddress(village_id);
 	}
+
+	/**
+	 * …Û∫À–≈œ¢
+	 * @param approve
+	 * @param news_id
+	 */
+	public void approveNews(NewsApprove approve,String news_id){
+		newsDao.approveNews(approve,news_id);
+	}
 }

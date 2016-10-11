@@ -23,8 +23,5 @@ public class CtrlUtils {
 		} catch (IOException e) {
 			throw new IllegalArgumentException(e.getMessage());
 		}
-		
 	}
-	
-
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
+import cn.laojia.news.model.NewsApprove;
 
 public interface NewsDao {
 	public PageModel getNewsList(PageModel model);
@@ -62,5 +63,12 @@ public interface NewsDao {
 	 * @return
 	 */
 	public String getHomeTownAddress(String village_id);
+	
+	/**
+	 * …Û∫À–≈œ¢
+	 * @param approve
+	 * @param news_id
+	 */
+	public void approveNews(NewsApprove approve,String news_id);
 }
  

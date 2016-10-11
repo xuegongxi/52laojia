@@ -5,6 +5,7 @@ import java.util.List;
 
 import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
+import cn.laojia.news.model.NewsApprove;
 import cn.laojia.user.model.User;
 
 public interface NewsService {
@@ -20,6 +21,12 @@ public interface NewsService {
 	public List<News> getListUsers(News news);
 	public void saveNews(News news, User user);
 	public void delete(Object obj);
+	/**
+	 * 审核信息
+	 * @param approve
+	 * @param news_id
+	 */
+	public void approveNews(NewsApprove approve,String news_id);
 	//根据信息ID，获取信息
 	public News findNewsById(int id);
 	/**

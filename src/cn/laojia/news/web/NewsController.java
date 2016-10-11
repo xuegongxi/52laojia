@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cn.laojia.common.CtrlUtils;
 import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
+import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
 import cn.laojia.utils.DictEnum;
@@ -236,6 +237,42 @@ public class NewsController {
 			log.error(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping(params = "method=approveNews")
+	public void approveNews(@RequestParam("id") String id,HttpServletRequest request, HttpServletResponse response){
+		boolean approve_success=true;
+		//获取用户信息
+		HttpSession session = request.getSession();// 防止创建Session
+		User user = (User) session.getAttribute("user");
+		
+		String approve_status=request.getParameter("approve_status");
+		String news_comment=request.getParameter("news_comment");
+		try{
+			NewsApprove approve = new  NewsApprove();
+			approve.setApprove_time(new Date());
+			approve.setApprove_state(approve_status);
+			approve.setApprove_opinion(news_comment);
+			approve.setNews_approve_userid(user.getUserid());
+			newsService.approveNews(approve,id);
+		}
+		catch(Exception e){
+			approve_success=false;
+			log.error(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		try {
+			if(approve_success){
+				response.getWriter().print("{\"approve\":\"true\"}");
+			}else{
+				response.getWriter().print("{\"approve\":\"false\"}");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

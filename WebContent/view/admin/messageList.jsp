@@ -58,10 +58,8 @@ function checklogin(){
 	}
  var myPagination;
 	$(function() {
-		
 		init();
 		initEvent();
-		
 		
 		$(".doc_down_codeimg .close").bind("click", function() {
 			$(this).parent("div").css("display", "none");
@@ -156,14 +154,47 @@ function checklogin(){
 			}
 		});
 		}
-	function approveNews(){
+	function approveNews(id){
+		$("#approve_news_id").val(id);
 		$('.theme-popover-mask').fadeIn(100);
 		$('.theme-popover').slideDown(200);
+		
 	}
 	 function closeApproveNews(){
 		 $('.theme-popover-mask').fadeOut(100);
 		 $('.theme-popover').slideUp(200);
 	 }
+	 
+	 function SumbitApproveNews(){
+		 var news_id = $("#approve_news_id").val();
+		 var approve_status= $("#approve_status_radio").val();
+		 var news_comment=$("#news_comment").val();
+		 
+	     $.ajax({
+			type : "post",
+			url : "<%=path%>/news.do?method=approveNews&id=" + news_id,
+			dataType: "json",
+			data: {
+				approve_status:approve_status,
+				news_comment:news_comment
+               
+            },
+			success : function(data) {
+				if(data.approve == "true"){
+					alert("审核成功！");
+					closeApproveNews();
+					init();
+				}
+				else{
+					alert("审核失败！");
+				}
+			},
+			error :function(){
+				alert("网络连接出错！");
+			}
+		});
+
+	}
 </script>
 </head>
 <body onload="checklogin()">
@@ -292,20 +323,30 @@ function checklogin(){
 	</DIV>
 	<div class="theme-popover">
 		<div class="theme-poptit">
-			<a href="javascript:;" title="关闭" class="close">×</a>
-			<h3>登录 是一种态度</h3>
+			<a href="javascript:closeApproveNews();" title="关闭" class="close">关闭</a>
+			<h3>审核意见</h3>
 		</div>
-		<div class="theme-popbod dform">
-			<form class="theme-signin" name="loginform" action="" method="post">
-				<ol>
-					<li><h4>你必须先登录！</h4></li>
-					<li><strong>用户名：</strong><input class="ipt" type="text"
-						name="log" value="lanrenzhijia" size="20" /></li>
-					<li><strong>密码：</strong><input class="ipt" type="password"
-						name="pwd" value="***" size="20" /></li>
-					<li><input class="btn btn-primary" type="submit" name="submit"
-						value=" 登 录 " /></li>
-				</ol>
+		<div>
+			<form  id ="approveFrom" class="approvenews-from" action="" method="post">
+			<input type="hidden" id="approve_news_id" value="">
+				<div class="newsbutton">
+					<label><strong>审核意见:</strong></label><label style="margin: 0 10px 0 0;"> <input
+						id="approve_status_radio" type="radio" value="1000-2" checked="checked"/> 审核通过
+					</label> <label style="margin: 0 10px 0 0;"> <input
+						id="approve_status_radio" type="radio" value="1000-1" /> 审核不通过
+					</label><br/>
+				</div>
+				<div class="newsbutton">
+					<label><strong>备注:</strong></label>
+					<textarea id="news_comment" name="news_comment"></textarea>
+					<br/>
+				</div>
+				<div class="buttons">
+					<input type="button" id="sbutton" value="确定" onclick="SumbitApproveNews()"/>&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" id="rest" value="重置" />&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" id="close" value="关闭" onclick="closeApproveNews()" />
+				</div>
+
 			</form>
 		</div>
 	</div>
