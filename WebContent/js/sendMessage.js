@@ -11,7 +11,7 @@ function select1() {
     $.ajax(
     {
         type: "post",
-        url: "../user.do?method=getposition",
+        url: "user.do?method=getposition",
         data: { "type": "province" },
         dataType: "json", 
         success: function (msg) {
@@ -27,7 +27,7 @@ function select2() {
     $.ajax(
     {
         type: "post",
-        url: "../user.do?method=getposition",
+        url: "user.do?method=getposition",
         data: { "type": "city","provinceID":$('#S1').attr("value") },
         dataType: "json", 
         success: function (msg) {
@@ -44,7 +44,7 @@ function select3() {
     $.ajax(
     {
         type: "post",
-        url: "../user.do?method=getposition",
+        url: "user.do?method=getposition",
         data: { "type": "county","cityID":$('#S2').attr("value") },
         dataType: "json", 
         success: function (msg) {
@@ -60,7 +60,7 @@ function select4() {
     $.ajax(
     {
         type: "post",
-        url: "../user.do?method=getposition",
+        url: "user.do?method=getposition",
         data: { "type": "town","countyID":$('#S3').attr("value") },
         dataType: "json", 
         success: function (msg) {
@@ -76,7 +76,7 @@ function select5() {
     $.ajax(
     {
         type: "post",
-        url: "../user.do?method=getposition",
+        url: "user.do?method=getposition",
         data: { "type": "village","townID":$('#S4').attr("value") },
         dataType: "json", 
         success: function (msg) {
