@@ -12,36 +12,19 @@
 	jQ = jQuery.noConflict();
 </SCRIPT>
 <style type="text/css">
-.bm_h {
-	background: rgb(242, 242, 242);
-	padding: 0px 10px;
-	height: 31px;
-	line-height: 31px;
-	overflow: hidden;
-	border-top-color: rgb(255, 255, 255);
-	border-bottom-color: rgb(194, 213, 227);
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	white-space: nowrap;
-}
-
-.bbs {
-	border-bottom-color: rgb(205, 205, 205) !important;
-	border-bottom-width: 1px !important;
-	border-bottom-style: solid !important;
-}
-
 .bm {
 	margin-bottom: 10px;
 	background: rgb(255, 255, 255);
 	border: 1px solid rgb(205, 205, 205);
 }
 
-.bn {
-	margin-bottom: 10px;
+.bm p {
+	margin: 0 0 20px 0;
+	font-size: 16px;
+	text-indent: 30px;
 }
+
+
 
 .ptm {
 	padding-top: 10px !important;
@@ -69,123 +52,13 @@
 	min-height: 300px;
 }
 
-.xs2 {
-	font-size: 14px !important;
-}
 
-.xi2 {
-	color: rgb(51, 102, 153);
-}
-
-.xi2 a {
-	color: rgb(51, 102, 153);
-}
-
-.y {
-	float: right;
-}
 
 .mn {
 	overflow: hidden;
 }
 
-.flb {
-	padding: 10px 10px 8px;
-	height: 20px;
-	line-height: 20px;
-}
 
-.flb em {
-	color: rgb(51, 102, 153);
-	font-size: 14px;
-	font-weight: 700;
-	float: left;
-}
-
-.flb em a {
-	text-decoration: none;
-}
-
-.rfm {
-	margin: 0px auto;
-	width: 760px;
-	border-bottom-color: rgb(205, 205, 205);
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-}
-
-.rfm a {
-	color: rgb(51, 102, 153);
-}
-.rq {
-	color: red;
-}
-.rfm .rq {
-	
-}
-
-.rfm th {
-	padding: 10px 2px;
-	line-height: 24px;
-	vertical-align: top;
-}
-
-.rfm td {
-	padding: 10px 2px;
-	line-height: 24px;
-	vertical-align: top;
-}
-
-.rfm .tipwide {
-	padding-top: 0px;
-}
-
-.rfm th {
-	width: 10em;
-	text-align: right;
-	padding-right: 10px;
-}
-
-.rfm .px {
-	width: 220px;
-}
-
-.rfm .px:focus {
-	background: rgb(255, 255, 255);
-	border-color: rgb(51, 102, 153);
-}
-
-.rfm .p_tip {
-	background: rgb(255, 255, 255);
-	width: 390px;
-	color: rgb(102, 102, 102);
-	padding-left: 10px;
-	font-style: normal;
-	display: none;
-	position: absolute;
-	z-index: 2;
-}
-
-.rfm .p_chk {
-	width: 390px;
-	color: red;
-	padding-left: 10px;
-	font-family: Tahoma, "Microsoft Yahei", "Simsun";
-	font-weight: 700;
-	position: absolute;
-	z-index: 1;
-}
-
-.rfm #emailmore {
-	position: absolute;
-}
-
-hr.l {
-	background: rgb(205, 205, 205);
-	border: currentColor;
-	height: 1px;
-	color: rgb(205, 205, 205);
-}
 </style>
 <script type="text/javascript" src="js/banner1.js"></script>
 </head>

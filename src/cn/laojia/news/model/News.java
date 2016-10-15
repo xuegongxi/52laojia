@@ -35,6 +35,10 @@ public class News implements Serializable{
 	private String news_type;
 	@Column(name = "news_address")
 	private String news_address;
+	@Column(name = "img_path")
+	private String img_path;
+	@Column(name = "news_summary")
+	private String news_summary;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "create_time", nullable = false, length = 10)
@@ -113,6 +117,22 @@ public class News implements Serializable{
 
 	public void setIs_delete(Integer is_delete) {
 		this.is_delete = is_delete;
+	}
+	
+	public String getImg_path() {
+		return img_path;
+	}
+
+	public void setImg_path(String img_path) {
+		this.img_path = img_path;
+	}
+
+	public String getNews_summary() {
+		return news_summary;
+	}
+
+	public void setNews_summary(String news_summary) {
+		this.news_summary = news_summary;
 	}
 
 	public String getContent(){

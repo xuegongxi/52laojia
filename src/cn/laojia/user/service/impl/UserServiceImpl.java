@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.laojia.user.dao.UserDao;
 import cn.laojia.user.model.User;
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	public List<User> getListUsers() {
 		return userDao.getListUsers();
 	}
-
+	@Transactional
 	public void save(User st){
 		userDao.save(st);
 	}
