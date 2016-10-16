@@ -11,13 +11,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;  
 public class ImagesUtil {
 	 public static void main(String[] args) {  
-		    //zipImageFile(new File("F:\\2.jpg"),new File("F:\\2-1.jpg"),200,0,0.7f);  
+		    zipImageFile(new File("F:\\nopic.jpg"),new File("F:\\nopic-1.jpg"),200,0,0.7f);  
 	          
 	        //zipImageFile(new File("C:\\spider\\2.JPG"),new File("C:\\spider\\2-2.JPG"),425,638,0.7f);  
 	          
 	        //zipImageFile(new File("C:\\spider\\3.jpg"),new File("C:\\spider\\3-3.jpg"),425,638,0.7f);  
-		    String path="ueditor1_4_3jsp/upload/image/20161015/1476498332152008453.jpg";
-		    ChangeFileNameByPath(path);
+		    //String path="ueditor1_4_3jsp/upload/image/20161015/1476498332152008453.jpg";
+		   // ChangeFileNameByPath(path);
 	          
 	        System.out.println("ok");  
 	    }  

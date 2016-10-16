@@ -34,15 +34,13 @@ import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
-import cn.laojia.utils.DictEnum;
 
 
 
 @Controller
 @RequestMapping("/news.do")
 public class NewsController {
-	protected final transient Log log = LogFactory
-	.getLog(NewsController.class);
+	protected final transient Log log = LogFactory.getLog(NewsController.class);
 	@Autowired
 	public NewsService newsService;
 	public NewsController(){
@@ -56,11 +54,14 @@ public class NewsController {
 
 	@RequestMapping
 	public void getNewsList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		//获取用户信息
+	    HttpSession session = request.getSession();// 防止创建Session
+	    User user = (User) session.getAttribute("user");
 		PageModel info = new PageModel();
 		info.setPageSize(10);
 		info.setCurrPageNumberFormRequest(request);
 
-		info = newsService.getNewsList(info);
+		info = newsService.getNewsList(info,user);
 		Map map = new HashMap();
 		map.put("pageCount", info.getPageCount());
 		map.put("result", info.getDatas());

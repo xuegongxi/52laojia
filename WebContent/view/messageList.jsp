@@ -168,7 +168,7 @@ function checklogin(){
 						    <TD width="5%" align="center">序号</TD>
 							<TD width="50%" align="center">信息标题</TD>
 							<TD width="17%" align="center">提交时间</TD>
-							<TD width="14%" align="center">状态</TD>
+							<TD width="14%" align="center">审核状态</TD>
 							<TD width="19%" align="center">操作</TD>
 						</TR>
                     </thead>

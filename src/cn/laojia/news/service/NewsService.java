@@ -10,7 +10,7 @@ import cn.laojia.user.model.User;
 
 public interface NewsService {
 	
-	public PageModel getNewsList(PageModel model);
+	public PageModel getNewsList(PageModel model,User user);
 	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter);
 	
 	/**

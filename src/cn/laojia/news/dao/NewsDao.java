@@ -6,9 +6,10 @@ import java.util.List;
 import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
+import cn.laojia.user.model.User;
 
 public interface NewsDao {
-	public PageModel getNewsList(PageModel model);
+	public PageModel getNewsList(PageModel model,User user);
 	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter);
 	/**
 	 *  根据用户名和密码查找用户是否存在

@@ -79,7 +79,7 @@
   <div class="wrap">
    <ul class="nav_left">
     <li><a href="index.jsp" title="" target="_blank">首 页</a></li>
-    <li><a href="#" title="" target="_blank">家乡动态</a></li>
+    <li><a href="index.do" title="" target="_blank">家乡动态</a></li>
     <li><a href="#" title="" target="_blank">图说家乡</a></li>
     <li><a href="#" title="" target="_blank">风土人情</a></li>
     <li><a href="#" title="" target="_blank">家乡美食</a></li>
