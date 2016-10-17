@@ -1,34 +1,22 @@
-package cn.laojia.news.service;
+package cn.laojia.index.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import cn.laojia.common.PageModel;
-import cn.laojia.news.model.News;
-import cn.laojia.news.model.NewsApprove;
 import cn.laojia.user.model.User;
 
-public interface NewsService {
-	
-	public PageModel getNewsList(PageModel model,User user);
-	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter);
+public interface IndexDao {
+	public List<User> getListUsers();
 	
 	/**
-	 * 根据用户名和密码查找用户是否存在
+	 *  根据用户名和密码查找用户是否存在
 	 * @param user
 	 * @return
 	 */
-	public List<News> getListUsers(News news);
-	public void saveNews(News news, User user);
-	public void delete(Object obj);
-	/**
-	 * 审核信息
-	 * @param approve
-	 * @param news_id
-	 */
-	public void approveNews(NewsApprove approve,String news_id);
-	//根据信息ID，获取信息
-	public News findNewsById(int id);
+	public List<User> getListUsers(User user);
+	public Object save(final Object model);
+	public void update(final Object model);
+	public void delete(final Object model);
 	/**
 	 * 根据用户名查找用户是否存在
 	 * @param username
@@ -42,7 +30,7 @@ public interface NewsService {
 	 */
 	public List getProvince();
 	
-
+	
 	/**
 	 * 获取市的列表
 	 * @return
@@ -72,4 +60,7 @@ public interface NewsService {
 	 */
 	public String getHomeTownAddress(String village_id);
 	
+	public PageModel getNewsList(PageModel model);
+
 }
+ 

@@ -1,11 +1,16 @@
 package cn.laojia.news.web;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,20 +28,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import cn.laojia.common.CtrlUtils;
+import cn.laojia.common.ImagesUtil;
 import cn.laojia.common.PageModel;
 import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
 import cn.laojia.news.service.NewsService;
 import cn.laojia.user.model.User;
-import cn.laojia.utils.DictEnum;
 
 
 
 @Controller
 @RequestMapping("/news.do")
 public class NewsController {
-	protected final transient Log log = LogFactory
-	.getLog(NewsController.class);
+	protected final transient Log log = LogFactory.getLog(NewsController.class);
 	@Autowired
 	public NewsService newsService;
 	public NewsController(){
@@ -50,11 +54,14 @@ public class NewsController {
 
 	@RequestMapping
 	public void getNewsList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		//获取用户信息
+	    HttpSession session = request.getSession();// 防止创建Session
+	    User user = (User) session.getAttribute("user");
 		PageModel info = new PageModel();
 		info.setPageSize(10);
 		info.setCurrPageNumberFormRequest(request);
 
-		info = newsService.getNewsList(info);
+		info = newsService.getNewsList(info,user);
 		Map map = new HashMap();
 		map.put("pageCount", info.getPageCount());
 		map.put("result", info.getDatas());
@@ -181,7 +188,28 @@ public class NewsController {
 	    User user = (User) session.getAttribute("user");
 		
 		String news_content = request.getParameter("editorValue");
+		
+		
+		//项目路径
+		String path =request.getRealPath("/") ;
+		String imgstr=null;
+		System.out.println(path);
+		//获取上传图片的路径
+		List imgstr_list =this.getImgSrc(news_content);
+		if(imgstr_list!=null&&imgstr_list.size()>0){
+			 imgstr=(String) imgstr_list.get(0);
+		}
+		//原始图片地址
+		String imgPath=path+imgstr;
+		//压缩后图片地址
+		String img_change=ImagesUtil.ChangeFileNameByPath(imgstr);
+		String imgPath_change=path+img_change;
+		//压缩图片
+		ImagesUtil.zipImageFile(new File(imgPath),new File(imgPath_change),200,0,0.7f);  
+
+		
 		String news_title = request.getParameter("news_title");
+		String news_summary = request.getParameter("news_summary");
 		String news_type = request.getParameter("news_type");
 		String news_from = request.getParameter("news_from");
 		String province =request.getParameter("S1");
@@ -190,8 +218,10 @@ public class NewsController {
 		String town =request.getParameter("S4");
 		String village =request.getParameter("S5");
 		News news = new News();
+		news.setImg_path(img_change);
 		news.setNews_person(user.getUsername());
 		news.setNews_title(news_title);
+		news.setNews_summary(news_summary);
 		news.setNews_from(news_from);
 		news.setNews_content(news_content.getBytes());
 		news.setNews_type(news_type);
@@ -223,7 +253,27 @@ public class NewsController {
 		return null;
 	}
 	
-	
+	public List<String> getImgSrc(String htmlStr) {
+		String img = "";
+		Pattern p_image;
+		Matcher m_image;
+		List<String> pics = new ArrayList<String>();
+		// String regEx_img = "<img.*src=(.*?)[^>]*?>"; //图片链接地址
+		String regEx_img = "<img.*src\\s*=\\s*(.*?)[^>]*?>";
+		p_image = Pattern.compile(regEx_img, Pattern.CASE_INSENSITIVE);
+		m_image = p_image.matcher(htmlStr);
+		while (m_image.find()) {
+			img = img + "," + m_image.group();
+			// Matcher m =
+			// Pattern.compile("src=\"?(.*?)(\"|>|\\s+)").matcher(img); //匹配src
+			Matcher m = Pattern.compile("src\\s*=\\s*\"?(.*?)(\"|>|\\s+)")
+					.matcher(img);
+			while (m.find()) {
+				pics.add(m.group(1));
+			}
+		}
+		return pics;
+	}
 	
 	@RequestMapping(params = "method=del")
 	public void del(@RequestParam("id") String id, HttpServletResponse response){

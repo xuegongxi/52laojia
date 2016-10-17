@@ -13,6 +13,7 @@ import cn.laojia.common.PageModel;
 import cn.laojia.news.dao.NewsDao;
 import cn.laojia.news.model.News;
 import cn.laojia.news.model.NewsApprove;
+import cn.laojia.user.model.User;
 
 
 @Repository
@@ -21,8 +22,8 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 	/**
 	 * 纯SQL 进行分页
 	 */
-	public PageModel getNewsList(PageModel model) {
-	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,date_format(n.create_time,'%Y-%c-%d') create_time,case na.approve_state when 0 then '未审核'  when 1 then '审核通过'   when 2 then '审核不通过' else '其他' end  as approve_state  from news n,news_approve na,(select @rowno:=0) t where n.news_id=na.news_id and n.is_delete=0";
+	public PageModel getNewsList(PageModel model,User user) {
+	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,date_format(n.create_time,'%Y-%c-%d') create_time,(select k.enum_name from lj_enum k WHERE k.enum_code=na.approve_state)  approve_state  from news n,news_approve na,(select @rowno:=0) t where na.news_create_userid= "+user.getUserid()+" and n.news_id=na.news_id and n.is_delete=0  order by create_time desc";
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());
@@ -120,9 +121,9 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
     			}
     			
     		}	
-	    	
-	    	
 	    }
+    	sb.append(" order by create_time desc");
+
 	    String sql =sb.toString();
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());

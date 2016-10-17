@@ -27,8 +27,8 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PageModel getNewsList(PageModel model) {
-		return newsDao.getNewsList(model);
+	public PageModel getNewsList(PageModel model,User user) {
+		return newsDao.getNewsList(model,user);
 	}
 	
 	public PageModel getNewsListByAdmin(PageModel model,HashMap<String,String> map_parameter) {

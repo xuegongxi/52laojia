@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,26 +17,7 @@
 </SCRIPT>
 <SCRIPT type="text/javascript" src="/js/register.js"></SCRIPT>
 <style type="text/css">
-.bm_h {
-	background: rgb(242, 242, 242);
-	padding: 0px 10px;
-	height: 31px;
-	line-height: 31px;
-	overflow: hidden;
-	border-top-color: rgb(255, 255, 255);
-	border-bottom-color: rgb(194, 213, 227);
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	white-space: nowrap;
-}
 
-.bbs {
-	border-bottom-color: rgb(205, 205, 205) !important;
-	border-bottom-width: 1px !important;
-	border-bottom-style: solid !important;
-}
 
 .bm {
 	margin-bottom: 10px;
@@ -73,21 +55,7 @@
 	min-height: 300px;
 }
 
-.xs2 {
-	font-size: 14px !important;
-}
 
-.xi2 {
-	color: rgb(51, 102, 153);
-}
-
-.xi2 a {
-	color: rgb(51, 102, 153);
-}
-
-.y {
-	float: right;
-}
 
 .mn {
 	overflow: hidden;	
@@ -99,103 +67,7 @@
 	height: 40px;
 }
 
-.flb {
-	padding: 10px 10px 8px;
-	height: 20px;
-	line-height: 20px;
-}
 
-.flb em {
-	color: rgb(51, 102, 153);
-	font-size: 14px;
-	font-weight: 700;
-	float: left;
-}
-
-.flb em a {
-	text-decoration: none;
-}
-
-.rfm {
-	margin: 0px auto;
-	width: 760px;
-	border-bottom-color: rgb(205, 205, 205);
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-}
-
-.rfm a {
-	color: rgb(51, 102, 153);
-}
-.rq {
-	color: red;
-}
-.rfm .rq {
-	
-}
-
-.rfm th {
-	padding: 10px 2px;
-	line-height: 24px;
-	vertical-align: top;
-}
-
-.rfm td {
-	padding: 10px 2px;
-	line-height: 24px;
-	vertical-align: top;
-}
-
-.rfm .tipwide {
-	padding-top: 0px;
-}
-
-.rfm th {
-	width: 10em;
-	text-align: right;
-	padding-right: 10px;
-}
-
-.rfm .px {
-	width: 220px;
-}
-
-.rfm .px:focus {
-	background: rgb(255, 255, 255);
-	border-color: rgb(51, 102, 153);
-}
-
-.rfm .p_tip {
-	background: rgb(255, 255, 255);
-	width: 390px;
-	color: rgb(102, 102, 102);
-	padding-left: 10px;
-	font-style: normal;
-	display: none;
-	position: absolute;
-	z-index: 2;
-}
-
-.rfm .p_chk {
-	width: 390px;
-	color: red;
-	padding-left: 10px;
-	font-family: Tahoma, "Microsoft Yahei", "Simsun";
-	font-weight: 700;
-	position: absolute;
-	z-index: 1;
-}
-
-.rfm #emailmore {
-	position: absolute;
-}
-
-hr.l {
-	background: rgb(205, 205, 205);
-	border: currentColor;
-	height: 1px;
-	color: rgb(205, 205, 205);
-}
 </style>
 <script type="text/javascript" src="js/banner1.js"></script>
 </head>
@@ -206,8 +78,16 @@ hr.l {
 	<DIV id="wp" class="wp">
 		<DIV id="ct" class="ptm wp cl">
 			<DIV class="mn">
-			  <img alt="" src="images/register/ok1.png"><span>${sessionScope.username}</span>注册成功！
-               <a href='view/person_main.jsp' class='index_font'>如果您的浏览器没有自动跳转,请点击这里</a>
+				<c:choose>
+					<c:when	test="${addstate==true}">
+					    <img alt="" src="images/register/ok1.png"><span>${sessionScope.username}</span>注册成功！
+                        <a href='view/person_main.jsp' class='index_font'>如果您的浏览器没有自动跳转,请点击这里</a>	
+					</c:when>
+					<c:otherwise>
+						<img alt="" src="images/register/error.png">注册失败！(由于网络问题，或是系统原因)
+                        <a href='register.jsp' class='index_font'>请重新注册</a>	
+					</c:otherwise>
+				</c:choose>
 			</DIV>
 		</DIV>
 	</DIV>

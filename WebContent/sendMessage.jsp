@@ -79,7 +79,7 @@ function checklogin(){
 	}
 </script>
 </head>
-<body onload="">
+<body onload="checklogin()">
 	<iframe style="width: 100%; height: 200px" scrolling="no"
 		frameborder="0" src="<%=request.getContextPath()%>/header.jsp"></iframe>
 	<DIV class="usercenter_box">
@@ -104,12 +104,15 @@ function checklogin(){
 
 										<table cellspacing="0" cellpadding="0" class="tfm">
 											<tr>
-												<td>标题：<input type="text" id="news_title" name="news_title"
+												<td>标&nbsp;&nbsp;&nbsp;&nbsp;题：<input type="text" id="news_title" name="news_title"
 													value="" size="60" /></td>
 											</tr>
 											<tr>
 												<td>信息发布人：<input type="text" id="news_person" name="news_person"
-													value="" size="20" /></td>
+													value="" size="40" /></td>
+											</tr>
+											<tr>
+												<td>信息摘要：&nbsp;&nbsp;<textarea id="news_summary" name="news_summary" style="width: 550px;height: 200px"></textarea></td>
 											</tr>
 											 <tr>
 												<td>											

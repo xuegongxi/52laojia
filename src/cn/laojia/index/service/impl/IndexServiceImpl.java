@@ -1,4 +1,4 @@
-package cn.laojia.user.service.impl;
+package cn.laojia.index.service.impl;
 
 import java.util.List;
 
@@ -7,43 +7,44 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.laojia.user.dao.UserDao;
+import cn.laojia.common.PageModel;
+import cn.laojia.index.dao.IndexDao;
+import cn.laojia.index.service.IndexService;
 import cn.laojia.user.model.User;
-import cn.laojia.user.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class IndexServiceImpl implements IndexService {
 
 	@Resource//@Autowired
-	private UserDao userDao;
+	private IndexDao indexDao;
 	
-	public UserServiceImpl() {
+	public IndexServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public List<User> getListUsers() {
-		return userDao.getListUsers();
+		return indexDao.getListUsers();
 	}
 	@Transactional
 	public void save(User st){
-		userDao.save(st);
+		indexDao.save(st);
 	}
 	public void delete(Object obj){
-		userDao.delete(obj);
+		indexDao.delete(obj);
 	}
 
     /**
      * 根据用户名和密码查找用户是否存在
     */
 	public List<User> getListUsers(User user) {
-		return userDao.getListUsers(user);
+		return indexDao.getListUsers(user);
 	}
 
 	/**
 	 * 根据用户名查找用户是否存在
 	 */
 	public boolean findUserByName(String username) {
-		return userDao.findUserByName(username);
+		return indexDao.findUserByName(username);
 	}
 
 	/**
@@ -52,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public List getProvince() {
 		// TODO Auto-generated method stub
-		return userDao.getProvince();
+		return indexDao.getProvince();
 	}
      
 	/**
@@ -61,7 +62,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public List getCity(String provice_id) {
 		// TODO Auto-generated method stub
-		return userDao.getCity(provice_id);
+		return indexDao.getCity(provice_id);
 	}
 	/**
 	 * 获取区的列表
@@ -69,7 +70,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public List getCounty(String city_id) {
 		// TODO Auto-generated method stub
-		return userDao.getCounty(city_id);
+		return indexDao.getCounty(city_id);
 	}
 	/**
 	 * 获取镇的列表
@@ -77,7 +78,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public List getTown(String countyID) {
 		// TODO Auto-generated method stub
-		return userDao.getTown(countyID);
+		return indexDao.getTown(countyID);
 	}
 	
 	/**
@@ -86,7 +87,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public List getVillage(String town_id) {
 		// TODO Auto-generated method stub
-		return userDao.getVillage(town_id);
+		return indexDao.getVillage(town_id);
 	}
 	
 	/**
@@ -95,6 +96,12 @@ public class UserServiceImpl implements UserService {
 	 * @return
 	 */
 	public String getHomeTownAddress(String village_id){
-		return userDao.getHomeTownAddress(village_id);
+		return indexDao.getHomeTownAddress(village_id);
+	}
+
+	@Override
+	public PageModel getNewsList(PageModel model) {
+		// TODO Auto-generated method stub
+		return indexDao.getNewsList(model);
 	}
 }

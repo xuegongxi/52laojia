@@ -178,12 +178,12 @@ public class UserController {
 			    	String hometownAddress=userService.getHomeTownAddress(village_id);
 			    	st.setVillage(hometownAddress);
 					modelMap.addAttribute("user", st);
-					modelMap.put("addstate", "×¢²á³É¹¦£¡");
+					modelMap.put("addstate", true);
 					modelMap.addAttribute("username",username);
 				}
 				catch(Exception e){
-					log.error(e.getMessage());
-					modelMap.put("addstate", "×¢²áÊ§°Ü£¡");
+					e.printStackTrace();
+					modelMap.put("addstate", false);
 				} 
 		 }
 		 return "register_success";
