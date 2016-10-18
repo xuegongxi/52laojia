@@ -8,7 +8,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;  
   
 
+
 import javax.imageio.ImageIO;  
+
+import org.apache.commons.lang.StringUtils;
 public class ImagesUtil {
 	 public static void main(String[] args) {  
 		    zipImageFile(new File("F:\\nopic.jpg"),new File("F:\\nopic-1.jpg"),200,0,0.7f);  
@@ -125,10 +128,14 @@ public class ImagesUtil {
 	    }    
  
 	public static String ChangeFileNameByPath(String filename) {
-
-		 String fName = filename.trim();
-	     String fileName =	fName.replace(".jpg", "_200.jpg");
-		 return fileName;
+        if(StringUtils.isNotEmpty(filename)){
+        	 String fName = filename.trim();
+    	     String fileName =	fName.replace(".jpg", "_200.jpg");
+    		 return fileName;
+        }else{
+        	return null;
+        }
+		
 
 	}
 

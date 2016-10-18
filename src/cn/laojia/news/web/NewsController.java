@@ -225,7 +225,11 @@ public class NewsController {
 		news.setNews_from(news_from);
 		news.setNews_content(news_content.getBytes());
 		news.setNews_type(news_type);
-		news.setNews_address(village);
+		news.setNews_province(province);
+		news.setNews_city(city);
+		news.setNews_county(county);
+		news.setNews_town(town);
+		news.setNews_village(village);
 		news.setCreate_time(new Date());
 		news.setIs_delete(0);
 		
@@ -322,9 +326,111 @@ public class NewsController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	@RequestMapping(params = "method=modifyNew")
+	public String modifyNew(@RequestParam("id") String id,HttpServletRequest request, HttpServletResponse response,ModelMap modelMap){
+		//获取用户信息
+		HttpSession session = request.getSession();// 防止创建Session
+	    User user = (User) session.getAttribute("user");
 		
+	    News news = newsService.findNewsById(Integer.valueOf(id));
+		String news_content = news.getContent();
+		modelMap.put("news_id", news.getNews_id());
+		modelMap.put("news_title", news.getNews_title());
+		modelMap.put("news_person", news.getNews_person());
+		modelMap.put("news_summary", news.getNews_summary());
+		modelMap.put("news_from", news.getNews_from());
+		modelMap.put("news_type", news.getNews_type());
+		//省
+		modelMap.put("news_province", news.getNews_province());
+		//市
+		modelMap.put("news_city", news.getNews_city());
+		//县
+		modelMap.put("news_county", news.getNews_county());
+		//镇
+		modelMap.put("news_town", news.getNews_town());
+		//村
+		modelMap.put("news_village", news.getNews_village());
+
+		modelMap.put("news_content", news_content);
+		
+		return "modifyMessage";
 	}
 	
-	
+	@RequestMapping(params = "method=updateNew")
+	public String updateNew(HttpServletRequest request, HttpServletResponse response,ModelMap modelMap){
+		//获取用户信息
+		HttpSession session = request.getSession();// 防止创建Session
+	    User user = (User) session.getAttribute("user");
+		
+		String news_content = request.getParameter("editorValue");
+		
+		
+		//项目路径
+		String path =request.getRealPath("/") ;
+		String imgstr=null;
+		//获取上传图片的路径
+		List imgstr_list =this.getImgSrc(news_content);
+		if(imgstr_list!=null&&imgstr_list.size()>0){
+			 imgstr=(String) imgstr_list.get(0);
+		}
+		//原始图片地址
+		String imgPath=path+imgstr;
+		//压缩后图片地址
+		String img_change=ImagesUtil.ChangeFileNameByPath(imgstr);
+		String imgPath_change=path+img_change;
+		//压缩图片
+		ImagesUtil.zipImageFile(new File(imgPath),new File(imgPath_change),200,0,0.7f);  
+
+		String news_id = request.getParameter("news_id");
+		String news_title = request.getParameter("news_title");
+		String news_summary = request.getParameter("news_summary");
+		String news_type = request.getParameter("news_type");
+		String news_from = request.getParameter("news_from");
+		String province =request.getParameter("S1");
+		String city =request.getParameter("S2");
+		String county =request.getParameter("S3");
+		String town =request.getParameter("S4");
+		String village =request.getParameter("S5");
+		News news = new News();
+		news.setNews_id(Integer.valueOf(news_id));
+		news.setImg_path(img_change);
+		news.setNews_person(user.getUsername());
+		news.setNews_title(news_title);
+		news.setNews_summary(news_summary);
+		news.setNews_from(news_from);
+		news.setNews_content(news_content.getBytes());
+		news.setNews_type(news_type);
+		news.setNews_province(province);
+		news.setNews_city(city);
+		news.setNews_county(county);
+		news.setNews_town(town);
+		news.setNews_village(village);
+		news.setCreate_time(new Date());
+		news.setIs_delete(0);
+		
+		boolean save_yes=true;
+		try {
+			 newsService.updateNews(news);
+		} catch (Exception e) {
+			save_yes=false;
+		    e.printStackTrace();
+		}
+		//返回信息
+		response.setContentType("text/html;charset=gb2312");
+	    try {
+			PrintWriter out = response.getWriter();
+			if(save_yes){
+			out.print("<script language=\"javascript\">alert('更新成功！');</script>");
+			return "/view/messageList";
+			}else{
+			  out.print("<script language=\"javascript\">alert('更新失败！');history.go(-1);</script>");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 }

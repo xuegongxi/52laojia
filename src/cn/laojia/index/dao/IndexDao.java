@@ -1,5 +1,6 @@
 package cn.laojia.index.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.laojia.common.PageModel;
@@ -60,7 +61,7 @@ public interface IndexDao {
 	 */
 	public String getHomeTownAddress(String village_id);
 	
-	public PageModel getNewsList(PageModel model);
+	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter);
 
 }
  

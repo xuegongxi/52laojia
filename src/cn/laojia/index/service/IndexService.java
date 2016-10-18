@@ -1,5 +1,6 @@
 package cn.laojia.index.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cn.laojia.common.PageModel;
@@ -22,7 +23,7 @@ public interface IndexService {
 	 */
 	public boolean findUserByName(String username);
 	
-	public PageModel getNewsList(PageModel model);
+	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter);
 	
 	/**
 	 * 获取省的列表

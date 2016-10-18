@@ -20,6 +20,7 @@ public interface NewsService {
 	 */
 	public List<News> getListUsers(News news);
 	public void saveNews(News news, User user);
+	public void updateNews(News news);
 	public void delete(Object obj);
 	/**
 	 * …Û∫À–≈œ¢

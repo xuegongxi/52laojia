@@ -9,7 +9,7 @@ String path = request.getContextPath();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>我爱老家--信息列表</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" />
-<link href="css/messagelist.css" type="text/css" rel="stylesheet" />
+<link href="css/newsList.css" type="text/css" rel="stylesheet" />
 <SCRIPT type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
 <SCRIPT type="text/javascript"	src="<%=path%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
 <script type="text/javascript"	src="<%=path%>/js/banner1.js"></script>
@@ -37,7 +37,7 @@ function init(){
 				pageSize: 10,
 				ajax: {
 				  on: true,
-				  url: "<%=path%>/index.do?method=getNewsList",
+				  url: "<%=path%>/index.do?method=getNewsList&enum_code=${enum_code}",
 				  dataType: 'json',
 				  param:formData,
 				  ajaxStart:function(){
@@ -74,7 +74,7 @@ function initEvent() {
 		     pageSize: 10,
 		      ajax: {
 		              on: true,                         
-		              url: "<%=path%>/index.do?method=getNewsList",
+		              url: "<%=path%>/index.do?method=getNewsList&enum_code=${enum_code}",
 					  dataType: 'json', 
 					  param:{on:true,page:1,url_param:formData},
 					  callback: 'ajaxCallBack'
@@ -84,7 +84,7 @@ function initEvent() {
 }
 
 function createTR(obj) {
-	var s="<a class='item' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"' > ";
+	var s="<div class='news_one'><a class='item' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"' > ";
 	if(obj.img_path==null||obj.img_path==""){
 	s+="<img src='<%=path%>/images/nopic-1.jpg' alt='"+obj.news_title+"' >";	
 	}else{
@@ -93,49 +93,13 @@ function createTR(obj) {
 	 s+="<div><h1>"+obj.news_title+"</h1>";
 	 s+="<p>"+obj.news_from+" "+ obj.create_time+"</p>"
 	 s+="<span>"+obj.news_summary+"</span>"
-	 s+= "</div> </a>"
+	 s+= "</div></a></div>";
 	
 	return s;
 }
 </script>
 <SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
 <style type="text/css">
-
-.bm {
-	margin-bottom: 10px;
-	background: rgb(255, 255, 255);
-	border: 1px solid rgb(205, 205, 205);
-}
-
-.bn {
-	margin-bottom: 10px;
-}
-
-.ptm {
-	padding-top: 10px !important;
-}
-
-.wp {
-	margin: 0px auto;
-	width: 998px;
-	clear: both;
-}
-
-.cl::after {
-	height: 0px;
-	clear: both;
-	display: block;
-	visibility: hidden;
-	content: ".";
-}
-
-.cl {
-	zoom: 1;
-}
-
-#ct {
-	min-height: 300px;
-}
 
 </style>
 <script type="text/javascript" src="js/banner1.js"></script>
@@ -147,7 +111,8 @@ function createTR(obj) {
 	<DIV id="wp" class="wp">
 		<DIV id="ct" class="ptm wp cl">
 			<div class="more-list">
-				<div id="newsdiv" class="sub-title">新鲜推送</div>
+			    <div class="sub-banner">新鲜推送</div>
+				<div id="newsdiv" class="sub-title"></div>
 				<!-- <a class="item"
 					href="http://domestic.firefox.sina.com/16/1011/08/FRG4SVYXQ5UKNC2L.html">
 					<img
@@ -160,9 +125,8 @@ function createTR(obj) {
 							限购令出台一周，济南新建商品住宅网签量出现断崖式下跌，比限购前下降了76%，济南楼市进入降温期。此外，业内人士指出，网签量下降的客观原因还有…</span>
 					</div>
 				</a> -->
+				 <div id="demo1"></div>
 			</div>
-            <div id="demo1"></div>
-
 		</DIV>
 	</DIV>
 

@@ -1,9 +1,11 @@
 package cn.laojia.index.dao.impl;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
@@ -20,8 +22,26 @@ public class IndexDaoImpl extends BaseDaoImpl implements IndexDao{
 	/**
 	 * 纯SQL 进行分页
 	 */
-	public PageModel getNewsList(PageModel model) {
-	    String sql=" SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.news_content,n.img_path,n.news_summary,n.news_from,date_format(n.create_time,'%Y-%c-%d %h:%i:%s') create_time  from news n,news_approve na,(select @rowno:=0) t where  n.news_id=na.news_id and n.is_delete=0  order by create_time desc";
+	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter) {
+		StringBuffer sb =new StringBuffer();
+		sb.append("SELECT @rowno:=@rowno+1 as rowno, n.news_id,n.news_title,n.news_content,n.img_path, ");
+		sb.append(" n.news_summary,n.news_from,date_format(n.create_time,'%Y-%c-%d %h:%i:%s') create_time ");
+		sb.append("from news n,news_approve na,(select @rowno:=0) t ");
+		sb.append(" where  n.news_id=na.news_id and na.approve_state='1000-2' and n.is_delete=0 and 1=1 ");
+		 if(!map_parameter.isEmpty()){
+			 if(map_parameter.containsKey("enum_code")){
+		    		String value=map_parameter.get("enum_code");
+		    		if (StringUtils.isNotEmpty(value)&&!value.equals("null")) {
+		    			sb.append(" and n.news_type='");
+		    			sb.append(value);
+		    			sb.append("'");
+					}
+		    	}
+		 }
+		
+		sb.append(" order by create_time desc");
+		
+	    String sql=sb.toString();
 		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
 	    List total = super.getJdbcTemplate().queryForList(sql);
 	    model.setRecordCount(total.size());

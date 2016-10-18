@@ -123,7 +123,7 @@ function checklogin(){
 		tr += "<td><a target='_blank' href='<%=path%>/news.do?method=news_detail&news_id="+obj.news_id+"'>" + obj.news_title + "</a></td>";
 		tr += "<td>" + obj.create_time + "</td>";
 		tr += "<td><a href='"+obj.approve_state+"'>" + obj.approve_state + "</a></td>";
-		tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
+		tr += "<td><input type='button' onclick='modifyNew(" + obj.news_id + ")' value='修改'/><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
 		tr += "</tr>";
 		return tr;
 	}
@@ -147,6 +147,12 @@ function checklogin(){
 			}
 		});
 		}
+	function modifyNew(id){
+		//window.location.href="logout.asp?act=logout";
+		window.location="<%=request.getContextPath()%>/news.do?method=modifyNew&id=" + id;
+	}
+	
+	
 </script>
 </head>
 <body onload="checklogin()">

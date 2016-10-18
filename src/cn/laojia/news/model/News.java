@@ -32,9 +32,19 @@ public class News implements Serializable{
     @Column(name = "news_content", columnDefinition = "BLOB",nullable=true)
 	private byte[]  news_content;
 	@Column(name = "news_type")
-	private String news_type;
-	@Column(name = "news_address")
-	private String news_address;
+	private String news_type;	
+	
+	@Column(name = "news_province")
+	private String news_province;
+	@Column(name = "news_city")
+	private String news_city;
+	@Column(name = "news_county")
+	private String news_county;
+	@Column(name = "news_town")
+	private String news_town;
+	@Column(name = "news_village")
+	private String news_village;
+	
 	@Column(name = "img_path")
 	private String img_path;
 	@Column(name = "news_summary")
@@ -95,14 +105,14 @@ public class News implements Serializable{
 		this.news_type = news_type;
 	}
 
-	public String getNews_address() {
-		return news_address;
+	public String getNews_village() {
+		return news_village;
 	}
 
-	public void setNews_address(String news_address) {
-		this.news_address = news_address;
+	public void setNews_village(String news_village) {
+		this.news_village = news_village;
 	}
-	
+
 	public Date getCreate_time() {
 		return create_time;
 	}
@@ -133,6 +143,38 @@ public class News implements Serializable{
 
 	public void setNews_summary(String news_summary) {
 		this.news_summary = news_summary;
+	}
+	
+	public String getNews_province() {
+		return news_province;
+	}
+
+	public void setNews_province(String news_province) {
+		this.news_province = news_province;
+	}
+
+	public String getNews_city() {
+		return news_city;
+	}
+
+	public void setNews_city(String news_city) {
+		this.news_city = news_city;
+	}
+
+	public String getNews_county() {
+		return news_county;
+	}
+
+	public void setNews_county(String news_county) {
+		this.news_county = news_county;
+	}
+
+	public String getNews_town() {
+		return news_town;
+	}
+
+	public void setNews_town(String news_town) {
+		this.news_town = news_town;
 	}
 
 	public String getContent(){

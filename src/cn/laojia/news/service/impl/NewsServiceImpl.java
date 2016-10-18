@@ -140,4 +140,12 @@ public class NewsServiceImpl implements NewsService {
 	public void approveNews(NewsApprove approve,String news_id){
 		newsDao.approveNews(approve,news_id);
 	}
+
+	/**
+	 * 更新新闻
+	 */
+	@Transactional
+	public void updateNews(News news) {
+		newsDao.update(news);
+	}
 }

@@ -1,5 +1,6 @@
 package cn.laojia.index.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -100,8 +101,8 @@ public class IndexServiceImpl implements IndexService {
 	}
 
 	@Override
-	public PageModel getNewsList(PageModel model) {
+	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter) {
 		// TODO Auto-generated method stub
-		return indexDao.getNewsList(model);
+		return indexDao.getNewsList(model,map_parameter);
 	}
 }

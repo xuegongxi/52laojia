@@ -36,21 +36,25 @@ public class IndexController {
 
 	@RequestMapping
 	public String indexMessage(HttpServletRequest request, ModelMap modelMap,RedirectAttributes ra){
+		String enum_code=request.getParameter("enum_code");
 	    /*RedirectView redirect = new RedirectView("/success/");
 		 redirect.setExposeModelAttributes(false);
 		 return redirect;*/
-		return "redirect:newsList.jsp";  
+		modelMap.put("enum_code", enum_code);
+		return "newsList";  
 	}
 	
 	
 	@RequestMapping(params = "method=getNewsList")
 	public void getNewsList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
-		
+		String enum_code=request.getParameter("enum_code");
+		HashMap<String,String> map_parameter =new HashMap<String,String>();
+		map_parameter.put("enum_code", enum_code);
 		PageModel info = new PageModel();
 		info.setPageSize(10);
 		info.setCurrPageNumberFormRequest(request);
 
-		info = indexService.getNewsList(info);
+		info = indexService.getNewsList(info,map_parameter);
 		Map map = new HashMap();
 		map.put("pageCount", info.getPageCount());
 		map.put("result", info.getDatas());
