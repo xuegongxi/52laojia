@@ -2,6 +2,7 @@ package cn.laojia.index.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.laojia.common.PageModel;
 import cn.laojia.user.model.User;
@@ -60,5 +61,11 @@ public interface IndexService {
 	 * @return
 	 */
 	public String getHomeTownAddress(String village_id);
+	
+	/**
+	 * 获取枚举字典表
+	 * @return
+	 */
+	public Map getEnum();
 	
 }

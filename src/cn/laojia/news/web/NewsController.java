@@ -173,7 +173,7 @@ public class NewsController {
 		}
 		
 		modelMap.put("newscontent",news.getContent());
-	  
+		modelMap.put("news_title",news.getNews_title());
 		return "/view/news_detail";  
 	}
 	

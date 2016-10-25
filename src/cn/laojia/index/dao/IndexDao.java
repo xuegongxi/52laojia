@@ -2,6 +2,7 @@ package cn.laojia.index.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.laojia.common.PageModel;
 import cn.laojia.user.model.User;
@@ -62,6 +63,12 @@ public interface IndexDao {
 	public String getHomeTownAddress(String village_id);
 	
 	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter);
+	/**
+	 * 获取枚举字典表
+	 * @return
+	 */
+	public Map getEnum();
+	
 
 }
  

@@ -4,6 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%
+String path = request.getContextPath();
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>我爱老家</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" />
@@ -30,17 +33,15 @@
             <div class="scdt">
                <h1>家乡动态</h1>
                <div class="intro">
-                  <a href="" title=""><img src="images/scdt.jpg" width="140px" height="113px" alt="" /></a>
-                  <h2><a href="" title="">郑步春：日元急跌后将转为阴跌</a></h2>
-                  <p>本周欧元连续反弹，美元小幅回落，日元继续大贬，全球风险偏好有所提升。欧元财长...<a href="" title="">[详细]</a></p>
+                  <a href="" title=""><img src="${jxdt_n1.img_path}" width="140px" height="113px" alt="" /></a>
+                  <h2><a href="" title="">${jxdt_n1.news_title}</a></h2>
+                  <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" title="">[详细]</a></p>
                </div><!--intro end-->
                <div class="list">
                   <ul>
-                      <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">美国不是巴以冲突的旁观者</a></li>
-                      <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">塞浦路斯与&ldquo;三驾马车&rdquo;达成救助协议</a></li>
-                      <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">郑步春：日元急跌后将转为阴跌</a></li>
-                      <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">美&ldquo;财政悬崖&rdquo;扰动 金价有望震荡上行</a></li>
-                      <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">美元/日元微幅收跌 平淡交投催生获利回吐</a></li>
+                        <c:forEach var="news1" items="${jxdt_list}">
+                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news1.news_id}" title="">${news1.news_title}</a></li>
+                        </c:forEach>
                   </ul>
                </div><!--list end-->
             </div><!--scdt end-->
@@ -83,14 +84,12 @@
                 <div class="list">
                   <ul>
                      <li class="li1">
-                        <h2><a href="" title="">ING套现撤离亚洲 友邦保险扩大版图</a></h2>
-                        <p>ING（荷兰国际集团）为了履行即将到期的偿债协议，近期频频抛售亚洲业务，引来众多...<a href="" title="">[详细]</a></p>
+                        <h2><a href="" title="">${jxdt_n1.news_title}</a></h2>
+                        <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" title="">[详细]</a></p>
                      </li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">ING套现撤离亚洲 友邦保险扩大版图</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">标准普尔调降西班牙多家银行信用评级</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">花旗集团高层地震 CEO潘伟迪与COO同时宣布辞</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">德银亚太区CEO：欧美银行去杠杆化对亚洲有利</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">德瑞强调欧盟不应匆忙推银行单一监管机制</a></li>
+                      <c:forEach var="news2" items="${jxdt_list}">
+                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news2.news_id}" title="">${news2.news_title}</a></li>
+                       </c:forEach>
                    </ul>
                 </div>
             </div><!--hyyw end-->
@@ -100,16 +99,12 @@
                 <div class="list">
                   <ul>
                      <li class="li1">
-                        <h2><a href="" title="">微软Windows业务主管离职：被蚕食的危机</a></h2>
-                        <p>微软今日宣布，Windows和Windows Live部门总裁史蒂芬 辛诺夫斯基(Steven Sino...<a href="" title="">[详细]</a></p>
+                        <h2><a href="" title="">${jxfs_n4.news_title}</a></h2>
+                        <p>${jxfs_n4.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxfs_n4.news_id}" title="">[详细]</a></p>
                      </li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">微软Windows业务主管离职：被蚕食的危机</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">永远不要低估一位CEO的权利</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">莫亚义：南非政府正积极推动农产品进入中国</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">亚洲女首富：澳大利亚将面临欧债危机式重大</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">叙利亚谴责土耳其要求北约在两国边境部署导</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">美国Sunland公司坚果受污染致病 中国暂停进</a></li>
-                     <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">德瑞强调欧盟不应匆忙推银行单一监管机制</a></li>
+                     <c:forEach var="news4" items="${jxfs_list}">
+                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news4.news_id}" title="">${news4.news_title}</a></li>
+                      </c:forEach>
                    </ul>
                 </div>
             </div><!--hyfx end-->

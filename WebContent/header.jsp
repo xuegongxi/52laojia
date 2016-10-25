@@ -79,11 +79,11 @@
   <div class="wrap">
    <ul class="nav_left">
     <li><a href="index.jsp" title="" target="_blank">首 页</a></li>
-    <li><a href="index.do?enum_code=1001-0" title="" target="_blank">家乡动态</a></li>
-    <li><a href="index.do?enum_code=1001-4" title="" target="_blank">图说家乡</a></li>
-    <li><a href="index.do?enum_code=1001-3" title="" target="_blank">风土人情</a></li>
-    <li><a href="index.do?enum_code=1001-1" title="" target="_blank">家乡美食</a></li>
-    <li><a href="index.do?enum_code=1001-2" title="" target="_blank">家乡特产</a></li>
+    <li><a href="index.do?method=newsList&enum_code=1001-0" title="" target="_blank">家乡动态</a></li>
+    <li><a href="index.do?method=newsList&enum_code=1001-4" title="" target="_blank">图说家乡</a></li>
+    <li><a href="index.do?method=newsList&enum_code=1001-3" title="" target="_blank">风土人情</a></li>
+    <li><a href="index.do?method=newsList&enum_code=1001-1" title="" target="_blank">家乡美食</a></li>
+    <li><a href="index.do?method=newsList&enum_code=1001-2" title="" target="_blank">家乡特产</a></li>
    </ul>
    <ul class="nav_right">
     <li><a href="#" title="" target="_blank">风俗</a><span>|</span></li>

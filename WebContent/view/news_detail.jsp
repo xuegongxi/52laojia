@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>我爱老家--新闻详细页面</title>
+<title>${news_title}--我爱老家</title>
 <link href="css/style.css" type="text/css" rel="stylesheet" />
 <SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/script/jquery.min.js"></SCRIPT>
 <SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/script/jquery-1.4.2.min.js"></SCRIPT>
@@ -76,6 +76,13 @@
 		</DIV>
 	</DIV>
 
+<!-- JiaThis Button BEGIN --><div id="ckepop">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a> 
+<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a> </div> 
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+</div> <!-- JiaThis Button END -->
 
 
 

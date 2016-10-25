@@ -17,6 +17,12 @@ public interface NewsDao {
 	 * @return
 	 */
 	public List<News> getListUsers(News news);
+	/**
+	 * 根据信息类型查找信息列表
+	 * @param news_type
+	 * @return
+	 */
+	public List<News> getNewListByType(String news_type);
 	public Object save(final Object model);
 	public void update(final Object model);
 	public void delete(final Object model);

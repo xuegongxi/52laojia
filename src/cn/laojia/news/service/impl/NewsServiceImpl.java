@@ -148,4 +148,13 @@ public class NewsServiceImpl implements NewsService {
 	public void updateNews(News news) {
 		newsDao.update(news);
 	}
+
+	/**
+	 * 根据信息类型查找信息列表
+	 * @param news_type
+	 * @return
+	 */
+	public List<News> getNewListByType(String news_type){
+		return newsDao.getNewListByType(news_type);
+	}
 }

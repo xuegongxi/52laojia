@@ -2,6 +2,7 @@ package cn.laojia.index.web;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import cn.laojia.common.CtrlUtils;
 import cn.laojia.common.PageModel;
 import cn.laojia.index.service.IndexService;
+import cn.laojia.news.model.News;
+import cn.laojia.news.service.NewsService;
 
 @Controller
 @RequestMapping("/index.do")
@@ -29,12 +32,68 @@ public class IndexController {
 	protected final transient Log log = LogFactory.getLog(IndexController.class);
 	@Autowired
 	public IndexService indexService;
-
+	@Autowired
+	public NewsService newsService;
 	public IndexController() {
 
 	}
-
 	@RequestMapping
+	public String index(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		
+	Map map =	indexService.getEnum();
+	//家乡动态
+	/* <li><a href="index.do?method=newsList&enum_code=1001-0" title="" target="_blank">家乡动态</a></li>
+	    <li><a href="index.do?method=newsList&enum_code=1001-4" title="" target="_blank">图说家乡</a></li>
+	    <li><a href="index.do?method=newsList&enum_code=1001-3" title="" target="_blank">风土人情</a></li>
+	    <li><a href="index.do?method=newsList&enum_code=1001-1" title="" target="_blank">家乡美食</a></li>
+	    <li><a href="index.do?method=newsList&enum_code=1001-2" title="" target="_blank">家乡特产</a></li>*/
+	  List<News> list= newsService.getNewListByType("1001-0");
+	   if(list!=null&&list.size()>0){
+		   News n1=list.get(0);
+		   modelMap.put("jxdt_n1", n1);
+		   list.remove(0);
+		   modelMap.put("jxdt_list", list);
+	   }
+	  //家乡美食
+	   List<News> jxms_list= newsService.getNewListByType("1001-1");
+	   if(jxms_list!=null&&jxms_list.size()>0){
+		   News n2=jxms_list.get(0);
+		   modelMap.put("jxms_n2", n2);
+		   jxms_list.remove(0);
+		   modelMap.put("jxms_list", jxms_list);
+	   }
+	   
+	   //家乡特产
+	   List<News> jxtc_list= newsService.getNewListByType("1001-2");
+	   if(jxtc_list!=null&&jxtc_list.size()>0){
+		   News n3=jxtc_list.get(0);
+		   modelMap.put("jxtc_n3", n3);
+		   jxtc_list.remove(0);
+		   modelMap.put("jxtc_list", jxtc_list);
+	   }
+	   //风土人情
+	   List<News> jxfs_list= newsService.getNewListByType("1001-3");
+	   if(jxfs_list!=null&&jxfs_list.size()>0){
+		   News n4=jxfs_list.get(0);
+		   modelMap.put("jxfs_n4", n4);
+		   jxfs_list.remove(0);
+		   modelMap.put("jxfs_list", jxfs_list);
+	   }
+		
+	   //>图说家乡
+	   List<News> tsjx_list= newsService.getNewListByType("1001-4");
+	   if(tsjx_list!=null&&tsjx_list.size()>0){
+		   News n5=tsjx_list.get(0);
+		   modelMap.put("tsjx_n5", n5);
+		   tsjx_list.remove(0);
+		   modelMap.put("tsjx_list", tsjx_list);
+	   }
+		
+		return "index";  
+		
+	}
+
+	@RequestMapping(params = "method=newsList")
 	public String indexMessage(HttpServletRequest request, ModelMap modelMap,RedirectAttributes ra){
 		String enum_code=request.getParameter("enum_code");
 	    /*RedirectView redirect = new RedirectView("/success/");
@@ -43,7 +102,6 @@ public class IndexController {
 		modelMap.put("enum_code", enum_code);
 		return "newsList";  
 	}
-	
 	
 	@RequestMapping(params = "method=getNewsList")
 	public void getNewsList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){

@@ -1,6 +1,7 @@
 package cn.laojia.news.dao.impl;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -306,6 +307,37 @@ public class NewsDaoImpl extends BaseDaoImpl implements NewsDao{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	/**
+	 * 根据信息类型查找信息列表
+	 * @param news_type
+	 * @return
+	 */
+	public List<News> getNewListByType(String news_type) {
+		StringBuffer sb =new StringBuffer();
+		sb.append(" select n.news_id,n.news_title,n.news_summary,n.img_path from news n,news_approve na ");
+		sb.append(" where n.news_id=na.news_id and na.approve_state='1000-2' and  1=1 ");
+		
+		if(StringUtils.isNotEmpty(news_type)){
+			sb.append(" and n.news_type='");
+			sb.append(news_type);
+			sb.append("'");
+		}
+
+		sb.append("  order by n.create_time desc ");
+		String sql=sb.toString();
+		List<News> newslist = new ArrayList<News>();
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		for(Map<String, Object> m : list)
+		{
+			News n = new News();
+			n.setNews_id((Integer)m.get("news_id"));
+			n.setNews_title((String)m.get("news_title"));
+			n.setNews_summary((String)m.get("news_summary"));
+            n.setImg_path((String)m.get("img_path"));
+			newslist.add(n);
+		}
+		return newslist;		
 	}
 	
 	

@@ -186,6 +186,27 @@ public class IndexDaoImpl extends BaseDaoImpl implements IndexDao{
 		}
 		return address;
 	}
+
+	/**
+	 * 获取枚举字典表
+	 * @return
+	 */
+	public Map getEnum() {
+		Map re_map= new HashMap<String,String>();
+		String sql = "select e.enum_code,e.enum_name from lj_enum e";
+		List<Map<String, Object>> list =  getJdbcTemplate().queryForList(sql);
+		if(list!=null&&list.size()>0){
+			for (int i = 0; i < list.size(); i++) {
+				Map<String, Object> map=list.get(i);
+				String enum_name=(String) map.get("enum_name");
+				String enum_code=(String) map.get("enum_code");
+				re_map.put(enum_code, enum_name);
+			}
+		}else{
+			return null;
+		}
+		return re_map;
+	}
 	
 	
 	/*public void addUser(User user){

@@ -2,9 +2,11 @@ package cn.laojia.index.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -104,5 +106,10 @@ public class IndexServiceImpl implements IndexService {
 	public PageModel getNewsList(PageModel model,HashMap<String,String> map_parameter) {
 		// TODO Auto-generated method stub
 		return indexDao.getNewsList(model,map_parameter);
+	}
+
+	@Cacheable(value = "enumCache")
+	public Map getEnum() {
+		return indexDao.getEnum();
 	}
 }
