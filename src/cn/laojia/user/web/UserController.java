@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hsqldb.lib.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
+import cn.laojia.utils.MD5Util;
 
 @Controller
 @SessionAttributes({"username","user"})//将ModelMap中属性名字为u的再放入session中。这样，request和session中都有了。
@@ -54,9 +56,13 @@ public class UserController {
 	public String login(HttpServletRequest request, ModelMap modelMap){
 		String username = (String) request.getParameter("username");
 		String psw = (String) request.getParameter("password");
+		if(StringUtils.isEmpty(username)||StringUtils.isEmpty(psw)){
+			modelMap.put("loginerror", "用户名或密码为空，请重新登录！");
+	    	return "login";
+		}
 		User st = new User();
 		st.setUsername(username);
-		st.setPassword(psw);
+		st.setPassword(MD5Util.string2MD5(psw));
 	    List<User> list=userService.getListUsers(st);
 	    if(list!=null&&list.size()>0){
 	    	modelMap.addAttribute("username",username);  //将u放入request作用域中，这样转发页面也可以取到这个数据。
@@ -157,9 +163,9 @@ public class UserController {
 		User st = new User();
 		st.setUsername(username);
 		st.setNickname(nickname);
-		st.setPassword(psw);
+		st.setPassword(MD5Util.string2MD5(psw));
 		st.setEmail(email);
-		st.setPassword2(password2);
+		st.setPassword2(MD5Util.string2MD5(password2));
 		st.setPhone(phone);
 		st.setProvince(province);
 		st.setCity(city);
