@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.user.dao.UserDao;
 import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
@@ -96,5 +97,10 @@ public class UserServiceImpl implements UserService {
 	 */
 	public String getHomeTownAddress(String village_id){
 		return userDao.getHomeTownAddress(village_id);
+	}
+
+	@Override
+	public PageModel getUserList(PageModel info) {
+		return userDao.getUserList(info);
 	}
 }

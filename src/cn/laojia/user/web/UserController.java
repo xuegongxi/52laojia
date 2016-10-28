@@ -1,12 +1,15 @@
 package cn.laojia.user.web;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import net.sf.json.JSONObject;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -20,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import cn.laojia.common.CtrlUtils;
+import cn.laojia.common.PageModel;
 import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
 import cn.laojia.utils.MD5Util;
@@ -196,7 +201,20 @@ public class UserController {
 		//return "forward:index.jsp";
 	}
 	
-	
+	@RequestMapping(params = "method=getUserList")
+	public void getUserList(HttpServletRequest request,HttpServletResponse res,ModelMap modelMap){
+		PageModel info = new PageModel();
+		info.setPageSize(10);
+		info.setCurrPageNumberFormRequest(request);
+
+		info = userService.getUserList(info);
+		Map map = new HashMap();
+		map.put("pageCount", info.getPageCount());
+		map.put("result", info.getDatas());
+		String jsonStr = JSONObject.fromObject(map).toString();
+		System.out.println(jsonStr);
+		CtrlUtils.writeStrRes(jsonStr, res);
+	}
 	
 	@RequestMapping(params = "method=del")
 	public void del(@RequestParam("id") String id, HttpServletResponse response){

@@ -2,11 +2,12 @@ package cn.laojia.user.dao;
 
 import java.util.List;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.user.model.User;
 
 public interface UserDao {
 	public List<User> getListUsers();
-	
+	public PageModel getUserList(PageModel model);
 	/**
 	 *  根据用户名和密码查找用户是否存在
 	 * @param user

@@ -2,6 +2,7 @@ package cn.laojia.user.service;
 
 import java.util.List;
 
+import cn.laojia.common.PageModel;
 import cn.laojia.user.model.User;
 
 public interface UserService {
@@ -12,6 +13,13 @@ public interface UserService {
 	 * @return
 	 */
 	public List<User> getListUsers(User user);
+	
+	/**
+	 * 获取注册用户的列表
+	 * @param info
+	 * @return
+	 */
+	public PageModel getUserList(PageModel info);
 	public void save(User st);
 	public void delete(Object obj);
 	/**

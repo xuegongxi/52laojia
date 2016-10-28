@@ -9,6 +9,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import cn.laojia.common.BaseDaoImpl;
+import cn.laojia.common.PageModel;
 import cn.laojia.common.utils.string.StringUtils;
 import cn.laojia.user.dao.UserDao;
 import cn.laojia.user.model.User;
@@ -137,6 +138,20 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 			e.printStackTrace();
 		}
 		return address;
+	}
+	/**
+	 * 纯SQL 进行分页 查询用户列表
+	 */
+	public PageModel getUserList(PageModel model) {
+	    String sql="select @rowno:=@rowno+1 as rowno,u.userid,u.username,u.nickname,u.email,u.phone,date_format(u.create_time,'%Y-%c-%d') create_time from user u,(select @rowno:=0) t";
+		//List<News>  lists=getHibernateTemplate().find(hql);//方法二
+	    List total = super.getJdbcTemplate().queryForList(sql);
+	    model.setRecordCount(total.size());
+	    
+	    String sql1=sql+" limit  "+ model.getStartRow()+"," +model.getPageSize();
+	    List newslist = super.getJdbcTemplate().queryForList(sql1);
+	    model.setDatas(newslist);
+		return model;
 	}
 	
 	
