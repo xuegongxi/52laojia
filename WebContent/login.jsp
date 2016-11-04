@@ -11,7 +11,7 @@
 	 padding: 0px 10px; height: 35px; line-height: 35px; overflow: hidden;   border-top-width: 1px; border-bottom-width: 1px;   white-space: nowrap;background-repeat: repeat-x;
 }
 .bbs {
-	border-bottom-color: rgb(205, 205, 205) !important; border-bottom-width: 1px !important; border-bottom-style: solid !important; background: url("images/person/usercenter_b_bg.png");
+	border-bottom-color: rgb(205, 205, 205) !important; border-bottom-width: 1px !important; border-bottom-style: solid !important; background: rgb(242, 242, 242) none repeat scroll 0 0;
 }
 .bm {
 	margin-bottom: 10px;
