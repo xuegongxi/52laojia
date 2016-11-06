@@ -22,6 +22,8 @@ public interface UserService {
 	public PageModel getUserList(PageModel info);
 	public void save(User st);
 	public void delete(Object obj);
+	public void update(User st);
+	public User findUserById(int id);
 	/**
 	 * 根据用户名查找用户是否存在
 	 * @param username

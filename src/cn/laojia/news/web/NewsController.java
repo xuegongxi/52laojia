@@ -171,9 +171,13 @@ public class NewsController {
 		if(StringUtils.isNotBlank(news_id)){
 			  news = newsService.findNewsById(Integer.valueOf(news_id));
 		}
-		
-		modelMap.put("newscontent",news.getContent());
-		modelMap.put("news_title",news.getNews_title());
+		if(news!=null){
+			modelMap.put("newscontent",news.getContent());
+			modelMap.put("news_title",news.getNews_title());
+		}else{
+			modelMap.put("newscontent",null);
+			modelMap.put("news_title",null);
+		}
 		return "/view/news_detail";  
 	}
 	

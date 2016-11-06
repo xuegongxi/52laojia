@@ -29,8 +29,15 @@ public class UserServiceImpl implements UserService {
 	public void save(User st){
 		userDao.save(st);
 	}
+	@Transactional
+	public void update(User st){
+		userDao.update(st);
+	}
 	public void delete(Object obj){
 		userDao.delete(obj);
+	}
+	public User findUserById(int id){
+		return userDao.findUserById(id);
 	}
 
     /**

@@ -29,7 +29,6 @@ String path = request.getContextPath();
 <LINK rel="stylesheet"	href="<%=path%>/css/persion/index_nav_noshadow_style.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/usercenter.css">
 <LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/persion/style_3_common.css">
-<LINK rel="stylesheet" type="text/css"	href="<%=path%>/css/admin/approveNews.css">
 <SCRIPT type="text/javascript"	src="<%=path%>/script/jquery-1.4.2.min.js"></SCRIPT>
 <SCRIPT type="text/javascript"	src="<%=path%>/css/persion/usercenter.d4d53894.js"></SCRIPT>
 <script type="text/javascript"	src="<%=path%>/js/banner1.js"></script>
@@ -126,11 +125,7 @@ function checklogin(){
 		tr += "<td>" + obj.email + "</td>";
 		tr += "<td>" + obj.phone + "</td>";
 		tr += "<td>" + obj.create_time + "</td>";
-		if(obj.approve_state=="未审核"){
-			tr += "<td><input type='button' onclick='approveNews(" + obj.news_id + ")' value='审核'/>&nbsp;<input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
-		}else{
-			tr += "<td><input type='button' onclick='del(" + obj.news_id + ")' value='删除'/></td>";
-		}
+		tr += "<td><input type='button' onclick='del(" + obj.userid + ")' value='删除'/><input type='button' onclick='resetPassword(" + obj.userid + ")' value='重置密码'/></td>";
 		tr += "</tr>";
 		return tr;
 	}
@@ -138,7 +133,7 @@ function checklogin(){
 	function del(id){
 		$.ajax( {
 			type : "POST",
-			url : "<%=path%>/news.do?method=del&id=" + id,
+			url : "<%=path%>/user.do?method=del&id=" + id,
 			dataType: "json",
 			success : function(data) {
 				if(data.del == "true"){
@@ -153,48 +148,25 @@ function checklogin(){
 				alert("网络连接出错！");
 			}
 		});
-		}
-	function approveNews(id){
-		$("#approve_news_id").val(id);
-		$('.theme-popover-mask').fadeIn(100);
-		$('.theme-popover').slideDown(200);
-		
-	}
-	 function closeApproveNews(){
-		 $('.theme-popover-mask').fadeOut(100);
-		 $('.theme-popover').slideUp(200);
-	 }
-	 
-	 function SumbitApproveNews(){
-		 var news_id = $("#approve_news_id").val();
-		 var approve_status= $("#approve_status_radio").val();
-		 var news_comment=$("#news_comment").val();
-		 
-	     $.ajax({
-			type : "post",
-			url : "<%=path%>/news.do?method=approveNews&id=" + news_id,
+	} 
+	function resetPassword(id){
+		$.ajax( {
+			type : "POST",
+			url : "<%=path%>/user.do?method=resetPassword&id=" + id,
 			dataType: "json",
-			data: {
-				approve_status:approve_status,
-				news_comment:news_comment
-               
-            },
 			success : function(data) {
-				if(data.approve == "true"){
-					alert("审核成功！");
-					closeApproveNews();
-					init();
+				if(data.reset == "true"){
+					alert("重置密码成功！");
 				}
 				else{
-					alert("审核失败！");
+					alert("重置密码失败！");
 				}
 			},
 			error :function(){
 				alert("网络连接出错！");
 			}
 		});
-
-	}
+	} 
 </script>
 </head>
 <body onload="checklogin()">
@@ -215,52 +187,36 @@ function checklogin(){
 						</thead>
 						<tbody>
 							<tr>
-								<td class="td_css">关&nbsp;&nbsp;键&nbsp;&nbsp;字：</td>
-								<td colspan="2"><input type="text" id="keywords"
-									name="keywords" style="width: 130px; color: #000;" /></td>
-								<td class="td_css">信息发布人：</td>
-								<td colspan="2"><input type="text" id="news_person"
-									name="news_person" style="width: 130px; color: #000;"/></td>
+								<td class="td_css">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</td>
+								<td colspan="2"><input type="text" id="username"
+									name="username" style="width: 130px; color: #000;" /></td>
+								<td class="td_css"> &nbsp;&nbsp; 昵称：</td>
+								<td colspan="2"><input type="text" id="nickname"
+									name="nickname" style="width: 130px; color: #000;"/></td>
 								<td colspan="1"><input id="query" name="query"
 									type="button"
 									style="width: 63px; height: 25px; line-height: 21px; margin: 0 50px 0 0px; font-weight: bold; float: right;"
 									value="搜索" /></td>
 							</tr>
+							
 							<tr class="tr_edd">
-								<td class="td_css">审核状态：</td>
-								<td colspan="6"><label style="margin: 0 10px 0 0;">
-										<input name="approve_status" type="radio" value="" /> 全部
-								</label> <label style="margin: 0 10px 0 0;"> <input
-										name="approve_status" type="radio" value="1000-0" /> 未审核
-								</label> <label style="margin: 0 10px 0 0;"> <input
-										name="approve_status" type="radio" value="1000-2" /> 审核通过
-								</label> <label style="margin: 0 10px 0 0;"> <input
-										name="approve_status" type="radio" value="1000-1" /> 审核不通过
-								</label></td>
-							</tr>
-							<tr class="tr_edd">
-								<td class="td_css">日志类型：</td>
-								<td colspan="2"><select name="news_type"><option
-											value="" selected="">--请选择--</option>
-										<option value="1001-0">家乡动态</option>
-										<option value="1001-1">家乡美食</option>
-										<option value="1001-2">家乡特产</option>
-										<option value="1001-3">风俗文化</option>
-										<option value="1001-4">旅游日志</option>
-								</select></td>
-								<td class="td_css">删除状态：</td>
-								<td colspan="3"><label style="margin: 0 10px 0 0;">
-										<label style="margin: 0 10px 0 0;"> <input
-											name="is_delte" type="checkbox" value="1" /> 用户删除
-									</label> <label style="margin: 0 10px 0 0;"> <input
-											name="is_delte" type="checkbox" value="2" /> 管理员删除
-									</label></td>
+								<td class="td_css">邮箱：</td>
+								<td colspan="2"><input type="text" id="email"
+									name="email" style="width: 130px; color: #000;" /></td>
+									<td class="td_css">手机号：</td>
+								<td colspan="2"><input type="text" id="phone"
+									name="phone" style="width: 130px; color: #000;" /></td>
 							</tr>
 							<tr>
-								<td class="td_css">发布日期：</td>
-								<td colspan="6"><input name ="start_date"class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
+								<td class="td_css">创建日期：</td>
+								<td colspan="4"><input name ="start_date"class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
 								&nbsp;至&nbsp;   <input name="end_date" class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
 								</td>
+								<td class="td_css">删除状态：</td>
+								<td colspan="2"><label style="margin: 0 10px 0 0;">
+										<label style="margin: 0 10px 0 0;"> <input
+											name="is_delte" type="checkbox" value="1" /> 已删除
+									</label> </td>
 								
 							</tr>
 						</tbody>
@@ -277,12 +233,12 @@ function checklogin(){
 					<thead>
 						<TR class="user_center_tabletitle">
 						    <TD width="5%" align="center">序号</TD>
-							<TD width="40%" align="center">用户名</TD>
+							<TD width="25%" align="center">用户名</TD>
 							<TD width="15%" align="center">昵称</TD>
-							<TD width="15%" align="center">邮箱</TD>
-							<TD width="17%" align="center">电话</TD>
-							<TD width="14%" align="center">创建时间</TD>
-							<TD width="19%" align="center">操作</TD>
+							<TD width="25%" align="center">邮箱</TD>
+							<TD width="25%" align="center">电话</TD>
+							<TD width="20%" align="center">创建时间</TD>
+							<TD width="25%" align="center">操作</TD>
 						</TR>
                     </thead>
 						<tbody>
@@ -305,51 +261,13 @@ function checklogin(){
 						    <td>&nbsp;</td>
 						    <td>&nbsp;</td>
 						  </tr>
-						  </tbody>
-						<c:forEach items="${list}" var="news" varStatus="status">
-								<tr>
-								    <td>${ status.index + 1}</td>
-									<td class="rela_pad90" align="left"><A  target="_blank"  href="news.do?method=news_detail&news_id=${news.news_id}"><c:out value="${news.news_title}"/></A></td>
-									<td align="center"><c:out value="${news.create_time}" /></td>
-									<td align="center">待审核</td>
-									<td align="center"><input type="button" onclick="del('<c:out value="${news.news_id}"/>')" value="删除"/></td>
-								</tr>
-						</c:forEach>	
+						  </tbody>						
 				</TABLE>
 				<div id="demo1"></div>
 				</DIV>
 			</div>
 		</DIV>
-	</DIV>
-	<div class="theme-popover">
-		<div class="theme-poptit">
-			<a href="javascript:closeApproveNews();" title="关闭" class="close">关闭</a>
-			<h3>审核意见</h3>
-		</div>
-		<div>
-			<form  id ="approveFrom" class="approvenews-from" action="" method="post">
-			<input type="hidden" id="approve_news_id" value="">
-				<div class="newsbutton">
-					<label><strong>审核意见:</strong></label><label style="margin: 0 10px 0 0;"> <input
-						id="approve_status_radio" type="radio" value="1000-2" checked="checked"/> 审核通过
-					</label> <label style="margin: 0 10px 0 0;"> <input
-						id="approve_status_radio" type="radio" value="1000-1" /> 审核不通过
-					</label><br/>
-				</div>
-				<div class="newsbutton">
-					<label><strong>备注:</strong></label>
-					<textarea id="news_comment" name="news_comment"></textarea>
-					<br/>
-				</div>
-				<div class="buttons">
-					<input type="button" id="sbutton" value="确定" onclick="SumbitApproveNews()"/>&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="reset" id="rest" value="重置" />&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="button" id="close" value="关闭" onclick="closeApproveNews()" />
-				</div>
-
-			</form>
-		</div>
-	</div>
+	</DIV>	
 	<div class="theme-popover-mask"></div>
 	<div class="footer">
 		<p>

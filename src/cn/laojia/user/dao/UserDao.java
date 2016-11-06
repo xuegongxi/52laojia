@@ -17,6 +17,7 @@ public interface UserDao {
 	public Object save(final Object model);
 	public void update(final Object model);
 	public void delete(final Object model);
+	public User findUserById(int id);
 	/**
 	 * 根据用户名查找用户是否存在
 	 * @param username

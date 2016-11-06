@@ -20,15 +20,16 @@ public class DictEnum {
 	public static  class News_Type{
 		/** 1001-0  家乡动态 */
 		public static final String  NEWS_TYPE_NEW  = "1001-0";
-		/** 1001-1  家乡美食 */
-		public static final String  NEWS_TYPE_FOOD ="1001-1";
-		/** 1001-2 家乡特产 */
-		public static final String  NEWS_TYPE_NATIVE="1001-2";
-		/** 1001-3 风俗文化 */
-		public static final String  NEWS_TYPE_CIVILIZATION="1001-3";
-		/** 1001-4 旅游日志 */
-		public static final String  NEWS_TYPE_TOUR="1001-4";
-		 
+		/** 1001-1  图说家乡 */
+		public static final String  NEWS_TYPE_PIC ="1001-1";
+		/** 1001-2 风土人情 */
+		public static final String  NEWS_TYPE_CIVILIZATION="1001-2";
+		/** 1001-3 家乡美食 */
+		public static final String  NEWS_TYPE_FOOD="1001-3";
+		/** 1001-4 家乡特产 */
+		public static final String  NEWS_TYPE_NATIVE="1001-4";
+		/** 1001-5 家乡旅游 */
+		public static final String  NEWS_TYPE_TOUR="1001-5"; 
 	}
 	
 	

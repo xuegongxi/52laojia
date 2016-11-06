@@ -12,10 +12,10 @@
 	</DIV>
 	<DIV class="item">
 		<DIV class="listtitle on">
-			<I></I>个人服务
+			<I></I>基础信息管理
 		</DIV>
 		<UL class="item_list">
-			<LI><A href="#">我的文章</A></LI>
+			<LI><A href="<%=request.getContextPath() %>/view/admin/userList.jsp">用户管理</A></LI>
 			<LI><A href="#">我的旅游</A></LI>
 			<LI><A href="#">品质生活</A></LI>
 			<LI><A href="#">老乡会</A></LI>

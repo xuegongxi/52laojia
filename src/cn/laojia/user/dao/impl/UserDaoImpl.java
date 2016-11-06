@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import cn.laojia.common.BaseDaoImpl;
 import cn.laojia.common.PageModel;
 import cn.laojia.common.utils.string.StringUtils;
+import cn.laojia.news.model.News;
 import cn.laojia.user.dao.UserDao;
 import cn.laojia.user.model.User;
 
@@ -31,8 +32,17 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao{
 		super.update(model);
 	}
 	public void delete(final Object model) {
-		super.delete(model);
+		super.update(model);
 	}
+	/**
+	 * 根据信息ID，获取信息
+	 */
+	public User findUserById(int id){
+		Object obj =super.get(User.class, id);
+		return (User) obj;
+	}
+	
+	
 	/**
 	 * 根据用户名和密码查找用户是否存在
 	 */

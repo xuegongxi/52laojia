@@ -1,6 +1,7 @@
 package cn.laojia.user.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -42,7 +45,11 @@ public class User implements Serializable  {
 	private String town;
 	@Column(name = "village")
 	private String village;
-	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "create_time", nullable = false, length = 10)
+	private Date create_time;
+	@Column(name = "is_delete")
+	private Integer is_delete;
 	public Integer getUserid() {
 		return userid;
 	}
@@ -142,6 +149,22 @@ public class User implements Serializable  {
 
 	public void setVillage(String village) {
 		this.village = village;
+	}
+    	
+	public Date getCreate_time() {
+		return create_time;
+	}
+
+	public void setCreate_time(Date create_time) {
+		this.create_time = create_time;
+	}
+
+	public Integer getIs_delete() {
+		return is_delete;
+	}
+
+	public void setIs_delete(Integer is_delete) {
+		this.is_delete = is_delete;
 	}
 
 	public User() {

@@ -1,6 +1,7 @@
 package cn.laojia.user.web;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cn.laojia.common.CtrlUtils;
 import cn.laojia.common.PageModel;
+import cn.laojia.news.model.News;
 import cn.laojia.user.model.User;
 import cn.laojia.user.service.UserService;
 import cn.laojia.utils.MD5Util;
@@ -177,6 +179,7 @@ public class UserController {
 		st.setCounty(county);
 		st.setTown(town);
 		st.setVillage(village);
+		st.setCreate_time(new Date());
 		//1.首先检查用户是否存在
 		boolean is_exist=userService.findUserByName(username);
 		 if(is_exist){
@@ -215,14 +218,43 @@ public class UserController {
 		System.out.println(jsonStr);
 		CtrlUtils.writeStrRes(jsonStr, res);
 	}
-	
+	/**
+	 * 删除用户
+	 * @param id
+	 * @param response
+	 */
 	@RequestMapping(params = "method=del")
 	public void del(@RequestParam("id") String id, HttpServletResponse response){
 		try{
 			User st = new User();
 			st.setUserid(Integer.valueOf(id));
+			st.setIs_delete(1);
 			userService.delete(st);
 			response.getWriter().print("{\"del\":\"true\"}");
+		}
+		catch(Exception e){
+			log.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 重置密码
+	 * @param id
+	 * @param response
+	 */
+	
+	@RequestMapping(params = "method=resetPassword")
+	public void resetPassword(@RequestParam("id") String id, HttpServletResponse response){
+		try{
+			User st = userService.findUserById(Integer.valueOf(id));
+			st.setUserid(Integer.valueOf(id));
+			//重置密码为111111
+			String resetPassword ="111111";
+			st.setPassword(MD5Util.string2MD5(resetPassword));
+			st.setPassword2(MD5Util.string2MD5(resetPassword));
+			userService.update(st);
+			response.getWriter().print("{\"reset\":\"true\"}");
 		}
 		catch(Exception e){
 			log.error(e.getMessage());

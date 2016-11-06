@@ -48,9 +48,9 @@
 			<I></I>我的账户
 		</DIV>
 		<UL style="display: none;" class="item_list">
-			<LI><A href="#">我的个人资料</A></LI>
-			<LI><A href="#">更改手机</A></LI>
-			<LI><A href="#">修改密码</A></LI>
+			<LI><A href="<%=request.getContextPath() %>/view/personinfo.jsp">我的个人资料</A></LI>
+			<!-- <LI><A href="#">更改手机</A></LI> -->
+			<LI><A href="<%=request.getContextPath() %>/view/changePassword.jsp">修改密码</A></LI>
 		</UL>
 	</DIV>
 	<DIV class="item">

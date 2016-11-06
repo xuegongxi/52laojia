@@ -34,19 +34,21 @@ String path = request.getContextPath();
                <h1>家乡动态</h1>
                <div class="intro">
                   <a href="" title=""><img src="${jxdt_n1.img_path}" width="140px" height="113px" alt="" /></a>
-                  <h2><a href="" title="">${jxdt_n1.news_title}</a></h2>
-                  <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" title="">[详细]</a></p>
+                  <h2><a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}"  target="_blank" title="">${jxdt_n1.news_title}</a></h2>
+                  <c:if test="${jxdt_n1!=null}">
+                  <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" target="_blank" title="">[详细]</a></p>
+                  </c:if>
                </div><!--intro end-->
                <div class="list">
                   <ul>
                         <c:forEach var="news1" items="${jxdt_list}">
-                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news1.news_id}" title="">${news1.news_title}</a></li>
+                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news1.news_id}" target="_blank" title="">${news1.news_title}</a></li>
                         </c:forEach>
                   </ul>
                </div><!--list end-->
             </div><!--scdt end-->
             <div class="hyaq">
-               <h1>食品安全</h1>
+               <h1>风土人情</h1>
                <div class="intro">
                   <a href="" title=""><img src="images/hyaq.jpg" width="140px" height="113px" alt="" /></a>
                   <h2><a href="" title="">欧盟内部争议多 英国进退皆为难</a></h2>
@@ -64,7 +66,7 @@ String path = request.getContextPath();
                </div><!--list end-->
             </div><!--hyaq end-->
             <div class="ppzs">
-               <h1>特产展示</h1>
+               <h1>家乡特产</h1>
                <div class="list">
                  <ul>
                    <li><a href="" title=""><img src="images/ppzs1.jpg" width="101px" height="99px" alt="" /><span>中联重科董事长...</span></a></li>
@@ -79,28 +81,32 @@ String path = request.getContextPath();
          </div><!--top_left_zuo end-->
          <div class="left_top_you">
             <div class="hyyw">
-                <h1><span>家乡要闻</span><a class="more" href="" title="">更多>></a></h1>
+                <h1><span>时政要闻</span><a class="more" href="" title="">更多>></a></h1>
                 <div class="clear"></div>
                 <div class="list">
                   <ul>
                      <li class="li1">
-                        <h2><a href="" title="">${jxdt_n1.news_title}</a></h2>
-                        <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" title="">[详细]</a></p>
+                        <h2><a href="<%=path%>/news.do?method=news_detail&news_id=${news2.news_id}" target="_blank" title="">${jxdt_n1.news_title}</a></h2>
+                        <c:if test="${jxdt_n1!=null}">
+                        <p>${jxdt_n1.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxdt_n1.news_id}" target="_blank" title="">[详细]</a></p>
+                        </c:if>
                      </li>
                       <c:forEach var="news2" items="${jxdt_list}">
-                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news2.news_id}" title="">${news2.news_title}</a></li>
+                        <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news2.news_id}" target="_blank" title="">${news2.news_title}</a></li>
                        </c:forEach>
                    </ul>
                 </div>
             </div><!--hyyw end-->
             <div class="hyfx">
-                <h1><span>风土人情</span><a class="more" href="" title="">更多>></a></h1>
+                <h1><span>图说家乡</span><a class="more" href="" title="">更多>></a></h1>
                 <div class="clear"></div>
                 <div class="list">
                   <ul>
                      <li class="li1">
                         <h2><a href="" title="">${jxfs_n4.news_title}</a></h2>
+                         <c:if test="${jxfs_n4!=null}">
                         <p>${jxfs_n4.news_summary}<a href="<%=path%>/news.do?method=news_detail&news_id=${jxfs_n4.news_id}" title="">[详细]</a></p>
+                        </c:if>
                      </li>
                      <c:forEach var="news4" items="${jxfs_list}">
                         <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="<%=path%>/news.do?method=news_detail&news_id=${news4.news_id}" title="">${news4.news_title}</a></li>
@@ -127,7 +133,7 @@ String path = request.getContextPath();
                </div><!--list end-->
             </div><!--dfdt end-->
             <div class="zhxx">
-               <h1>家乡特产</h1>
+               <h1>家乡旅游</h1>
                <div class="intro">
                   <a href="" title=""><img src="images/dfdt.jpg" width="140px" height="113px" alt="" /></a>
                   <h2><a href="" title="">欧盟特别峰会未能就中期预算达成一致</a></h2>
@@ -146,10 +152,13 @@ String path = request.getContextPath();
             </div><!--zhxx end-->
          </div><!--top_left_you end-->
       </div><!--left_top end-->
-      <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+      <div class="copyrights">Collect from <a href="#"  title="网站模板">网站模板</a></div>
       <div class="clear"></div><!--清除浮动-->
       <div class="left_center"><a href="" title=""><img src="images/left_center.jpg" width="754px" height="80px" alt="" /></a></div><!--left_center end-->
-      <div class="left_under">
+      
+      
+      
+      <!-- <div class="left_under">
          <div class="left_under_zuo">
            <div class="mjgf">
             <h1>蜜饯果脯</h1>
@@ -157,7 +166,7 @@ String path = request.getContextPath();
                   <a href="" title=""><img src="images/mjgf.jpg" width="140px" height="113px" alt="" /></a>
                   <h2><a href="" title="">欧盟特别峰会未能就中期预算达成一致</a></h2>
                   <p>欧洲理事会主席范龙佩23日宣布，为期两天的欧盟特别峰会未能就2014年至2020年欧盟...<a href="" title="">[详细]</a></p>
-               </div><!--intro end-->
+               </div>intro end
                <div class="list">
                   <ul>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">法国巴黎南郊发生枪击案造成1人死亡</a></li>
@@ -167,9 +176,9 @@ String path = request.getContextPath();
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">欧洲三大股指23日全线上涨</a></li>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">俄罗斯担忧北约在土耳其扩大军事力量</a></li>
                   </ul>
-               </div><!--list end-->
-         </div><!--mjgf end-->
-          </div><!--left_under_zuo end-->
+               </div>list end
+         </div>mjgf end
+          </div>left_under_zuo end
          <div class="left_under_you">
            <div class="mjgf">
             <h1>炒货干果</h1>
@@ -177,7 +186,7 @@ String path = request.getContextPath();
                   <a href="" title=""><img src="images/chgg.jpg" width="140px" height="113px" alt="" /></a>
                   <h2><a href="" title="">欧盟特别峰会未能就中期预算达成一致</a></h2>
                   <p>欧洲理事会主席范龙佩23日宣布，为期两天的欧盟特别峰会未能就2014年至2020年欧盟...<a href="" title="">[详细]</a></p>
-               </div><!--intro end-->
+               </div>intro end
                <div class="list">
                   <ul>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">法国巴黎南郊发生枪击案造成1人死亡</a></li>
@@ -187,10 +196,10 @@ String path = request.getContextPath();
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">欧洲三大股指23日全线上涨</a></li>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">俄罗斯担忧北约在土耳其扩大军事力量</a></li>
                   </ul>
-               </div><!--list end-->
-           </div><!--tgmj end-->
-         </div><!--left_under_you end-->
-      </div><!--left_under end-->
+               </div>list end
+           </div>tgmj end
+         </div>left_under_you end
+      </div>  -->     <!--left_under end-->
    </div><!--content_left end-->
    <div class="content_right">
       <div class="rdsp">
@@ -202,12 +211,12 @@ String path = request.getContextPath();
             <li><a href="" title=""><img src="images/rdsp3.jpg" width="108px" height="110px" alt="" /><span>德国会议通过...</span></a></li>
         </ul>
       </div><!--rdsp end-->
-      <div class="qyfc">
+      <!-- <div class="qyfc">
             <h1>企业风采</h1>
                <div class="intro">
                   <a href="" title=""><img src="images/chgg.jpg" width="110px" height="113px" alt="" /></a>
                   <p>欧洲理事会主席范龙佩23日宣布，为期两天的欧盟特别峰会未能就2014年至2020年欧盟...<a href="" title="">[详细]</a></p>
-               </div><!--intro end-->
+               </div>intro end
                <div class="list">
                   <ul>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">法国巴黎南郊发生枪击案造成1人死亡</a></li>
@@ -217,10 +226,10 @@ String path = request.getContextPath();
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">欧洲三大股指23日全线上涨</a></li>
                       <li><img src="images/dian.png" width="5px" height="5px" alt="" /><a href="" title="">欧洲三大股指23日全线上涨</a></li>
                   </ul>
-               </div><!--list end-->
-           </div><!--qyfc end-->
+               </div>list end
+           </div> --><!--qyfc end-->
            <div class="rwzf">
-               <h1>人物专访</h1>
+               <h1>家乡人物</h1>
                <div class="intro">
                   <a href="" title=""><img src="images/rwzf1.jpg" width="110px" height="113px" alt="" /></a>
                   <h2><a href="" title="">阿根廷面临内外两</a></h2>
@@ -238,7 +247,7 @@ String path = request.getContextPath();
                </div><!--intro end-->
            </div><!--rwzf end-->
            <div class="dfpp">
-            <h1>地方品牌</h1>
+            <h1>家乡品牌</h1>
                <div class="intro">
                   <a href="" title=""><img src="images/dfpp.jpg" width="110px" height="113px" alt="" /></a>
                   <p>欧洲理事会主席范龙佩23日宣布，为期两天的欧盟特别峰会未能就2014年至2020年欧盟...<a href="" title="">[详细]</a></p>
