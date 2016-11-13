@@ -8,10 +8,32 @@
 var lastusername = '', lastpassword = '', lastemail = '', lastinvitecode = '', stmp = new Array(), modifypwd = false, profileTips = '如不需要更改密码，此处请留空';
 $(function(){
     select1();
-    $('#S1').bind("change", select2);
+    $("#S1").change(function(){
+    	 $("#S3 option:gt(0)").remove();
+    	 $("#S4 option:gt(0)").remove();
+    	 $("#S5 option:gt(0)").remove();
+    	 select2();
+    });
+    $("#S2").change(function(){
+      $("#S3 option:gt(0)").remove();
+      $("#S4 option:gt(0)").remove();
+      $("#S5 option:gt(0)").remove();
+   	 select3();
+   });
+    $("#S3").change(function(){
+      $("#S4 option:gt(0)").remove();
+      $("#S5 option:gt(0)").remove();
+   	 select4();
+   });
+    $("#S4").change(function(){
+    $("#S5 option:gt(0)").remove();
+   	 select5();
+   });
+    
+   /* $('#S1').bind("change", select2);
     $('#S2').bind("change", select3);
     $('#S3').bind("change", select4);
-    $('#S4').bind("change", select5);
+    $('#S4').bind("change", select5);*/
 });
 
 function select1() {
@@ -25,7 +47,7 @@ function select1() {
             for (var i = 0; i < msg.length; i++) {
                 $("#S1").append("<option value=" + msg[i].ProvinceID + ">" + msg[i].ProvinceName + "</option>");
             }
-            select2();
+           // select2();
         }
     });
 };
@@ -38,10 +60,15 @@ function select2() {
         data: { "type": "city","provinceID":$('#S1').attr("value") },
         dataType: "json", 
         success: function (msg) {
-            for (var i = 0; i < msg.length; i++) {
-                $("#S2").append("<option value=" + msg[i].CityID + ">" + msg[i].CityName + "</option>");
-            }
-            select3();
+        	if(msg==null){
+        		 $("#S2").append("<option value='0'>所有城市</option>");
+        	}else{
+        		 $("#S2").append("<option value='0'>所有城市</option>");
+        		 for (var i = 0; i < msg.length; i++) {
+                     $("#S2").append("<option value=" + msg[i].CityID + ">" + msg[i].CityName + "</option>");
+                 }
+                 //select3();
+        	}
         }
     });
 };
@@ -55,10 +82,16 @@ function select3() {
         data: { "type": "county","cityID":$('#S2').attr("value") },
         dataType: "json", 
         success: function (msg) {
-            for (var i = 0; i < msg.length; i++) {
-                $("#S3").append("<option value=" + msg[i].county_id + ">" + msg[i].county_name + "</option>");
-            }
-            select4();
+        	if(msg==null){
+        		 $("#S3").append("<option value='0'>所有区/县</option>");
+        	}else{
+        		$("#S3").append("<option value='0'>所有区/县</option>");
+        		for (var i = 0; i < msg.length; i++) {
+                    $("#S3").append("<option value=" + msg[i].county_id + ">" + msg[i].county_name + "</option>");
+                }
+                //select4();
+        	}
+            
         }
     });
 };
@@ -71,10 +104,15 @@ function select4() {
         data: { "type": "town","countyID":$('#S3').attr("value") },
         dataType: "json", 
         success: function (msg) {
-            for (var i = 0; i < msg.length; i++) {
-                $("#S4").append("<option value=" + msg[i].town_id + ">" + msg[i].town_name + "</option>");
-            }
-            select5();
+        	if(msg==null){
+        		 $("#S4").append("<option value='0'>所有乡镇</option>");
+        	}else{
+        		 $("#S4").append("<option value='0'>所有乡镇</option>");
+        		 for (var i = 0; i < msg.length; i++) {
+                     $("#S4").append("<option value=" + msg[i].town_id + ">" + msg[i].town_name + "</option>");
+                 }
+                 //select5();
+        	}
         }
     });
 };
@@ -87,9 +125,14 @@ function select5() {
         data: { "type": "village","townID":$('#S4').attr("value") },
         dataType: "json", 
         success: function (msg) {
-            for (var i = 0; i < msg.length; i++) {
-                $("#S5").append("<option value=" + msg[i].village_id + ">" + msg[i].village_name + "</option>");
-            }
+        	if(msg==null){
+        		 $("#S5").append("<option value='0'>所有村</option>");
+        	}else{
+        		 $("#S5").append("<option value='0'>所有村</option>");
+        		for (var i = 0; i < msg.length; i++) {
+                    $("#S5").append("<option value=" + msg[i].village_id + ">" + msg[i].village_name + "</option>");
+                }
+        	}
         }
     });
 };

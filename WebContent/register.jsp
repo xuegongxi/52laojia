@@ -126,11 +126,11 @@
 										<TBODY>
 											<TR>
 												<TH><LABEL for="reg_mobile2">家乡所在地:</LABEL></TH>
-												<TD><select id="S1" name="S1"></select>
-												    <select id="S2" name="S2"></select>
-												    <select id="S3" name="S3"></select>
-												    <select id="S4" name="S4"></select>
-												    <select id="S5" name="S5"></select>
+												<TD><select id="S1" name="S1"><option value="0">所有省份</option></select>
+												    <select id="S2" name="S2"><option value="0">所有城市</option></select>
+												    <select id="S3" name="S3"><option value="0">所有区/县</option></select>
+												    <select id="S4" name="S4"><option value="0">所有乡镇</option></select>
+												    <select id="S5" name="S5"><option value="0">所有村</option></select>
 												 </TD>												
 											</TR>
 										</TBODY>

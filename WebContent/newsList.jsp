@@ -100,7 +100,9 @@ function createTR(obj) {
 </script>
 <SCRIPT type="text/javascript" src="<%=request.getContextPath() %>/js/register.js"></SCRIPT>
 <style type="text/css">
-
+#changediqu{
+ float:right;width:80px;font-size:14px;padding-top: 6px;
+}
 </style>
 <script type="text/javascript" src="js/banner1.js"></script>
 </head>
@@ -111,7 +113,7 @@ function createTR(obj) {
 	<DIV id="wp" class="wp">
 		<DIV id="ct" class="ptm wp cl">
 			<div class="more-list">
-			    <div class="sub-banner">新鲜推送</div>
+			    <div  class="sub-banner">新鲜推送 <div id="changediqu"><a href="#">切换地区</a></div></div>
 				<div id="newsdiv" class="sub-title"></div>
 				<!-- <a class="item"
 					href="http://domestic.firefox.sina.com/16/1011/08/FRG4SVYXQ5UKNC2L.html">

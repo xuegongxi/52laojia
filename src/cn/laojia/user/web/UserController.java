@@ -317,7 +317,7 @@ public class UserController {
 
 
 	    public String  select2 (String  provice_id ) {
-	    	if(StringUtils.isEmpty(provice_id)){
+	    	if(StringUtils.isEmpty(provice_id)||provice_id.equals("0")){
 	    		return null;
 	    	}
 	        StringBuffer sb = new StringBuffer();
@@ -336,7 +336,7 @@ public class UserController {
 	    }
 	    
 	    public String select3(String city_id) {
-	    	if(StringUtils.isEmpty(city_id)){
+	    	if(StringUtils.isEmpty(city_id)||city_id.equals("0")){
 	    		return null;
 	    	}
 	        StringBuffer sb = new StringBuffer();
@@ -357,7 +357,7 @@ public class UserController {
 	    }
 	
 	    public String select4(String countyID) {
-	    	if(StringUtils.isEmpty(countyID)){
+	    	if(StringUtils.isEmpty(countyID)||countyID.equals("0")){
 	    		return null;
 	    	}
 	        StringBuffer sb = new StringBuffer();
@@ -378,7 +378,7 @@ public class UserController {
 	    }
 	
 	    public String select5(String town_id) {
-	    	if(StringUtils.isEmpty(town_id)){
+	    	if(StringUtils.isEmpty(town_id)||town_id.equals("0")){
 	    		return null;
 	    	}
 	        StringBuffer sb = new StringBuffer();
